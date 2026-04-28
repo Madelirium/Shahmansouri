@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   const ANALYTICS_ID = 'G-3J9NJQF75Y';
   const CONSENT_KEY = 'shahmansouri_cookie_consent_v1';
   let loaded = false;
@@ -17,6 +17,12 @@
 
     loaded = true;
     ensureAnalyticsRuntime();
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
 
     const script = document.createElement('script');
     script.async = true;
@@ -29,16 +35,19 @@
 
   function grantAnalytics() {
     loadAnalytics();
-
-    if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', { analytics_storage: 'granted' });
-    }
+    window.gtag('consent', 'update', {
+      analytics_storage: 'granted'
+    });
   }
 
   function denyAnalytics() {
-    if (typeof window.gtag === 'function') {
-      window.gtag('consent', 'update', { analytics_storage: 'denied' });
-    }
+    loadAnalytics();
+    window.gtag('consent', 'update', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
   }
 
   window.ShahmansouriAnalytics = {
@@ -46,11 +55,15 @@
     deny: denyAnalytics
   };
 
+  loadAnalytics();
+
   try {
     if (window.localStorage.getItem(CONSENT_KEY) === 'accepted') {
       grantAnalytics();
+    } else {
+      denyAnalytics();
     }
   } catch (error) {
-    // Ignore storage access issues.
+    denyAnalytics();
   }
 })();
