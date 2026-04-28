@@ -5,7 +5,7 @@ const isEnglishPage = document.documentElement.lang.toLowerCase().startsWith('en
 const siteText = isEnglishPage
   ? {
       cookieTitle: 'Cookies and external content',
-      cookieText: 'This site uses essential technical tools and, with your consent, loads Google Maps, which may install third-party cookies.',
+      cookieText: 'This site uses essential technical tools and, with your consent, loads Google Analytics and Google Maps, which may install third-party cookies.',
       cookieInfo: 'Cookie policy',
       privacyInfo: 'Privacy policy',
       manageCookies: 'Manage cookies',
@@ -18,7 +18,7 @@ const siteText = isEnglishPage
     }
     : {
       cookieTitle: 'Cookie e contenuti esterni',
-      cookieText: 'Questo sito usa strumenti tecnici essenziali e, con il tuo consenso, carica Google Maps, che puo\' installare cookie di terze parti.',
+      cookieText: 'Questo sito usa strumenti tecnici essenziali e, con il tuo consenso, carica Google Analytics e Google Maps, che possono installare cookie di terze parti.',
       cookieInfo: 'Informativa cookie',
       privacyInfo: 'Privacy policy',
       manageCookies: 'Gestisci cookie',
@@ -180,10 +180,15 @@ function applyCookieConsent(state) {
   if (state === 'accepted') {
     hideCookieBanner();
     loadMapIfNeeded();
+    if (window.ShahmansouriAnalytics) {
+      window.ShahmansouriAnalytics.grant();
+    }
     return;
   }
-
   unloadMap();
+  if (window.ShahmansouriAnalytics) {
+    window.ShahmansouriAnalytics.deny();
+  }
 
   if (state === 'rejected') {
     hideCookieBanner();
@@ -366,4 +371,5 @@ function setupMobileNav() {
     }
   });
 }
+
 
