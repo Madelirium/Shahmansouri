@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon-tappeti-verona-shahmansouri.svg" type="image/svg+xml">
+    <title>Catalogo Tappeti Persiani a Verona | Shahmansouri</title>
+    <meta name="description" content="Esplora il catalogo Shahmansouri con tappeti persiani, runner, kilim e oggetti selezionati disponibili a Verona.">
+    <meta name="theme-color" content="#6f1d1b">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+    <link rel="canonical" href="https://shahmansouri.com/catalogo/">
+    <link rel="preload" href="../css/style.css" as="style">
+    <link rel="preload" href="catalogo.css" as="style">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">    <link rel="stylesheet" href="catalogo.css">
+    <script src="../js/main.js" defer></script>
+    <script src="catalogo.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header">
+            <a class="logo-area" href="../index-it.html" aria-label="Shahmansouri Home">
+                <img
+                    src="../images/logo-shahmansouri-tappeti-verona.webp"
+                    alt="Logo Shahmansouri Tappeti Persiani"
+                    width="280"
+                    height="160"
+                    decoding="async"
+                >
+            </a>
+            <div class="tagline" aria-hidden="true">
+                <span>tappeti</span>
+                <span>artigianato persiano</span>
+                <span>lavaggi</span>
+                <span>restauri</span>
+            </div>
+        </div>
+
+        <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="nav" id="site-nav" aria-label="Navigazione principale">
+    <ul>
+        <li><a href="../index-it.html">home</a></li>
+        <li><a href="index.html" class="active">catalogo</a></li>
+        <li><a href="../tappeti.html">tappeti</a></li>
+        <li><a href="../artigianato.html">artigianato</a></li>
+        <li class="dropdown"><span class="nav-parent">iran</span>
+          <ul class="submenu">
+            <li><a href="../cultura.html">cultura</a></li>
+            <li><a href="../persia.html">persia</a></li>
+          </ul>
+        </li>
+        <li><a href="../contatti.html">contatti</a></li>
+        <li class="nav-language-switch"><a href="index.html" class="lang-it is-active">IT</a><span>/</span><a href="index-en.html" class="lang-en">EN</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main id="top">
+        <section id="prodotti" class="catalog-shell">
+            <div class="container catalog-layout">
+                <button type="button" class="catalog-mobile-filter-button" data-open-filters aria-expanded="false" aria-controls="filtri">
+                    <span class="catalog-mobile-filter-button__label">Filtri</span>
+                </button>
+
+                <aside id="filtri" class="filters-card" data-filters-panel>
+                    <div class="filters-card__header">
+                        <p class="eyebrow">Filtri</p>
+                    </div>
+
+                    <form class="filters-form" data-catalog-form>
+                        <label class="filters-field">
+                            <span>Cerca</span>
+                            <input type="search" name="search" placeholder="Es. Tabriz, runner, soggiorno">
+                        </label>
+
+                        <details class="filters-accordion" open>
+                            <summary>Tipologia</summary>
+                            <div class="filters-accordion__content">
+                                <label class="filters-check">
+                                    <input type="checkbox" name="categories" value="Tappeto classico">
+                                    <span>Tappeto classico</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="categories" value="Tappeto contemporaneo">
+                                    <span>Tappeto contemporaneo</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="categories" value="Runner">
+                                    <span>Runner</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="categories" value="Kilim">
+                                    <span>Kilim</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="categories" value="Oggetto decorativo">
+                                    <span>Oggetto decorativo</span>
+                                </label>
+                            </div>
+                        </details>
+
+                        <div class="filters-field filters-field--split">
+                            <span>Dimensioni in cm</span>
+                            <div class="filters-slider">
+                                <label for="lengthRange">Lunghezza massima</label>
+                                <div class="filters-slider__topline">
+                                    <span>Fino a</span>
+                                    <strong data-length-value>350 cm</strong>
+                                </div>
+                                <input id="lengthRange" type="range" name="lengthMax" min="0" max="350" step="1" value="350">
+                            </div>
+                            <div class="filters-slider">
+                                <label for="widthRange">Larghezza massima</label>
+                                <div class="filters-slider__topline">
+                                    <span>Fino a</span>
+                                    <strong data-width-value>350 cm</strong>
+                                </div>
+                                <input id="widthRange" type="range" name="widthMax" min="0" max="350" step="1" value="350">
+                            </div>
+                        </div>
+
+                        <details class="filters-accordion" open>
+                            <summary>Materiali</summary>
+                            <div class="filters-accordion__content">
+                                <label class="filters-check">
+                                    <input type="checkbox" name="materials" value="lana">
+                                    <span>Lana</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="materials" value="seta">
+                                    <span>Seta</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="materials" value="cotone">
+                                    <span>Cotone</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="materials" value="ceramica">
+                                    <span>Ceramica</span>
+                                </label>
+                                <label class="filters-check">
+                                    <input type="checkbox" name="materials" value="legno">
+                                    <span>Legno</span>
+                                </label>
+                            </div>
+                        </details>
+
+                        <div class="filters-actions">
+                            <button type="reset" class="button button-secondary" data-reset-filters>Azzera filtri</button>
+                        </div>
+                    </form>
+                </aside>
+
+                <div class="catalog-mobile-overlay" data-filters-overlay hidden></div>
+
+                <div class="catalog-results">
+                    <div class="catalog-toolbar">
+                        <div>
+                            <p class="eyebrow">Catalogo</p>
+                            <h2>Selezione attuale</h2>
+                        </div>
+                        <p class="catalog-toolbar__count" data-results-count></p>
+                    </div>
+
+                    <div class="active-filters" data-active-filters aria-live="polite"></div>
+                    <div class="product-grid" data-product-grid aria-live="polite"></div>
+                    <p class="catalog-empty" data-empty-state hidden>Nessun prodotto corrisponde ai filtri selezionati. Prova a rimuoverne qualcuno.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="consulenza" class="catalog-consulting">
+            <div class="container catalog-consulting__grid">
+                <div>
+                    <p class="eyebrow">Consulenza</p>
+                    <h2>Se desideri un consiglio nella scelta, siamo a disposizione.</h2>
+                    <p>
+                        Se hai dubbi su misure, materiali o stile, possiamo aiutarti a individuare il pezzo
+                        piu' adatto ai tuoi spazi con la cura e l'esperienza del negozio.
+                    </p>
+                </div>
+                <div class="catalog-consulting__actions">
+                    <a class="button button-primary" href="tel:+390458013280">Chiamaci</a>
+                    <a class="button button-secondary" href="../index-it.html#contatti">Contattaci</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <span class="footer-logo-badge">
+                    <img
+                        class="footer-logo"
+                        src="../images/logo-shahmansouri-tappeti-verona.webp"
+                        alt="Logo Shahmansouri Tappeti Persiani"
+                        width="280"
+                        height="160"
+                        loading="lazy"
+                        decoding="async"
+                    >
+                </span>
+                <strong>Shahmansouri Tappeti Persiani</strong>
+                <p>Tappeti, artigianato persiano, lavaggi e restauri nel centro storico di Verona.</p>
+            </div>
+            <div>
+                <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
+                <p><a href="tel:+390458013280">+39 045 801 3280</a></p>
+                <p><a href="mailto:shahmansouri@tiscali.it">shahmansouri@tiscali.it</a></p>
+            </div>
+            <div>
+                <p>&copy; <span id="current-year">2026</span> Shahmansouri</p>
+                <p><a href="../contatti.html">Contatti</a></p>
+            </div>
+        </div>
+    </footer>
+
+  </body>
+  </html>
+
+
+
+
+
+
+
+
+
+

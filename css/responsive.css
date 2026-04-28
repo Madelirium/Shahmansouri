@@ -1,0 +1,317 @@
+﻿/*
+ * Stili responsive per il sito Shahmansouri.
+ * Le regole presenti in questo file sovrascrivono alcune impostazioni
+ * di style.css per migliorare la fruibilitÃ  su tablet e smartphone.
+ */
+
+@media (max-width: 900px) {
+  .page {
+    margin: 0 auto 32px;
+    border-left-width: 3px;
+    border-right-width: 3px;
+  }
+  .nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .tagline {
+    display: none;
+  }
+  .logo-area {
+      position: static;
+      width: 264px;
+      height: 136px;
+      padding: 4px 6px;
+      margin: 0 auto;
+      margin-bottom: 10px;
+    }
+  .header {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+  .contact-gallery--double {
+    display: block;
+    margin: 18px 0 14px;
+  }
+  .contact-gallery--double figure {
+    margin: 0 0 18px;
+  }
+  .contact-gallery--double figure:last-child {
+    margin-bottom: 0;
+  }
+  .sidebar {
+    width: 100%;
+  }
+  .side-image img {
+    height: 120px;
+  }
+  .intro-image {
+    width: min(34%, 140px);
+    height: auto;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 8px;
+  }
+  .intro-image--right {
+    float: right;
+    margin-left: 12px;
+    margin-right: 0;
+  }
+  .intro-image img {
+    height: auto;
+  }
+  .article-figure--right {
+    flex: none;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .article-inline-media {
+      display: block;
+      margin: 14px 0 12px;
+    }
+  .article-inline-media p {
+      margin-top: 12px;
+    }
+  .article-figure-pair__grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      justify-content: stretch;
+    }
+  .article-list-pair {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+  .article-figure--pair {
+      width: 100%;
+      max-width: 360px;
+      margin: 0 auto;
+    }
+  .article-image-row {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .footer {
+      position: static;
+      text-align: right;
+      padding: 10px 20px;
+    }
+
+  .site-footer-global {
+    margin: 24px 14px 0;
+    padding: 16px 14px 18px;
+  }
+
+  .site-footer-global__grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .site-footer-global__grid > div {
+    min-height: 0;
+    display: block;
+  }
+
+  .map-consent-actions,
+  .cookie-banner__actions,
+  .contact-direct-actions {
+    flex-direction: column;
+  }
+
+  .map-action-button,
+  .map-action-link,
+  .cookie-banner__button,
+  .cookie-banner__link {
+    width: 100%;
+  }
+
+  .cookie-banner__content {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-actions {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .floating-action {
+    width: 50px;
+    height: 50px;
+  }
+
+  .site-back-to-top {
+    right: 12px;
+    bottom: 192px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-mobile-toggle {
+    display: block;
+    position: sticky;
+    top: 12px;
+    z-index: 95;
+  }
+
+  .nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(320px, calc(100vw - 42px));
+    margin: 0;
+    padding-top: 74px;
+    border: 1px solid #c9a340;
+    background: linear-gradient(to bottom, #f1e0aa, #e5cb7d);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.28),
+      0 4px 10px rgba(87, 55, 7, 0.12);
+    z-index: 110;
+    overflow-y: auto;
+    transform: translateX(108%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.24s ease, opacity 0.24s ease;
+  }
+
+  .nav::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(36, 11, 5, 0.42);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.24s ease;
+    z-index: -1;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 6px 0;
+  }
+
+  .nav li {
+    width: 100%;
+    border-top: 1px solid rgba(139, 98, 26, 0.18);
+  }
+
+  .nav .nav-language-switch {
+    position: static;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-left: 0;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 11px 16px;
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+
+  .nav .nav-language-switch a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    width: auto;
+    padding: 0 0 2px;
+    font-size: 13px;
+  }
+
+  .nav .nav-language-switch span {
+    display: inline-block;
+  }
+
+  .nav li:first-child {
+    border-top: none;
+  }
+
+  .nav a,
+  .nav .nav-parent {
+    display: block;
+    width: 100%;
+    padding: 13px 16px;
+    border-bottom: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #6f2b00;
+  }
+
+  .nav .submenu {
+    display: block;
+    position: static;
+    border: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 0 0 4px;
+    min-width: 0;
+  }
+
+  .nav .submenu li a {
+    padding: 10px 16px 10px 32px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #7d4b1f;
+  }
+
+  .nav .submenu li {
+    border-top: 1px solid rgba(139, 98, 26, 0.1);
+  }
+
+  .nav .submenu li:first-child {
+    border-top: 1px solid rgba(139, 98, 26, 0.14);
+  }
+
+  .nav a.active,
+  .nav .dropdown:hover > .nav-parent {
+    color: #a63500;
+    background: rgba(255, 250, 232, 0.22);
+  }
+
+  .nav .nav-parent {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .nav .dropdown:hover > .nav-parent,
+  .nav .dropdown:active > .nav-parent,
+  .nav .dropdown:focus-within > .nav-parent {
+    color: #6f2b00;
+    background: transparent;
+    border-color: transparent;
+  }
+
+  body.nav-open {
+    overflow: hidden;
+  }
+
+  body.nav-open .nav {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.nav-open .nav::before {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  body.filters-open .nav-mobile-toggle {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+
