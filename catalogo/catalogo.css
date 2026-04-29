@@ -44,11 +44,11 @@ img {
 }
 
 .site-header {
-  margin-top: 8px;
-  background: linear-gradient(to bottom, #f2e2ae 0%, var(--catalog-page) 100%);
-  border-left: 2px solid #d3b869;
-  border-right: 2px solid #d3b869;
-  box-shadow: var(--catalog-shadow);
+  margin-top: 0;
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
 }
 
 .site-header .logo-area {
@@ -75,10 +75,10 @@ img {
 
 .catalog-shell {
   padding: 0 0 34px;
-  background: linear-gradient(to bottom, #f2e2ae 0%, var(--catalog-page) 100%);
-  border-left: 2px solid #d3b869;
-  border-right: 2px solid #d3b869;
-  box-shadow: var(--catalog-shadow);
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
 }
 
 .catalog-layout {
@@ -421,11 +421,12 @@ img {
 .catalog-consulting {
   margin: 0 auto 0;
   padding: 28px 30px 34px;
-  background: linear-gradient(to bottom, #f2e2ae 0%, var(--catalog-page) 100%);
-  border-left: 2px solid #d3b869;
-  border-right: 2px solid #d3b869;
-  box-shadow: var(--catalog-shadow);
+  background: transparent;
+  border-left: 0;
+  border-right: 0;
+  box-shadow: none;
 }
+
 
 .catalog-consulting__grid {
   display: grid;

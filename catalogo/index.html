@@ -9,6 +9,26 @@
     <meta name="theme-color" content="#6f1d1b">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net; object-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
     <link rel="canonical" href="https://shahmansouri.com/catalogo/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://shahmansouri.com/index-it.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Catalogo",
+          "item": "https://shahmansouri.com/catalogo/"
+        }
+      ]
+    }
+    </script>
     <link rel="preload" href="../css/style.css" as="style">
     <link rel="preload" href="catalogo.css" as="style">
     <link rel="stylesheet" href="../css/style.css">
@@ -18,6 +38,7 @@
     <script src="catalogo.js" defer></script>
 </head>
 <body>
+    <div class="page">
     <header class="site-header">
         <div class="header">
             <a class="logo-area" href="../index-it.html" aria-label="Shahmansouri Home">
@@ -188,12 +209,12 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
+    <footer class="site-footer-global">
+        <div class="site-footer-global__grid">
             <div>
-                <span class="footer-logo-badge">
+                <span class="site-footer-global__logo-badge">
                     <img
-                        class="footer-logo"
+                        class="site-footer-global__logo"
                         src="../images/logo-shahmansouri-tappeti-verona.webp"
                         alt="Logo Shahmansouri Tappeti Persiani"
                         width="280"
@@ -209,13 +230,14 @@
                 <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
                 <p><a href="tel:+390458013280">+39 045 801 3280</a></p>
                 <p><a href="mailto:shahmansouri@tiscali.it">shahmansouri@tiscali.it</a></p>
+                <p><a href="../contatti.html">Contatti</a></p>
             </div>
             <div>
-                <p>&copy; <span id="current-year">2026</span> Shahmansouri</p>
-                <p><a href="../contatti.html">Contatti</a></p>
+                <p class="footer-copyright">&copy; 2026 Shahmansouri</p>
             </div>
         </div>
     </footer>
+    </div>
 
   </body>
   </html>
