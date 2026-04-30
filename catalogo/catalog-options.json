@@ -1,16 +1,34 @@
 {
   "categories": [
-    "classico",
-    "Oggetto decorativo",
+    "Kilim",
+    "Runner",
+    "Senza categoria",
     "Tappeto",
+    "Tappeto Antico",
     "Tappeto classico",
-    "Tappeto Contemporaneo"
+    "Tappeto contemporaneo"
   ],
   "materials": [
     "Ceramica",
     "Cotone",
     "Lana",
     "Legno",
-    "Seta"
-  ]
+    "Seta",
+    "Trama E Ordito Di Cotone",
+    "Trama E Ordito Di Lana",
+    "Vello In Lana"
+  ],
+  "fallbackCategory": "Senza categoria",
+  "categoryLabelsEn": {
+    "Tappeto": "Rug",
+    "Tappeto classico": "Classic rug",
+    "Tappeto Antico": "Ancient Rug"
+  },
+  "materialLabelsEn": {
+    "Lana": "wool",
+    "Cotone": "Cotton",
+    "Trama E Ordito Di Cotone": "warp and weft cotton",
+    "Vello In Lana": "wool veil",
+    "Trama E Ordito Di Lana": "warp and weft wool"
+  }
 }

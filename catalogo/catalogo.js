@@ -7,10 +7,16 @@ const totalProductsTarget = document.querySelector("[data-total-products]");
 const resetButton = document.querySelector("[data-reset-filters]");
 const widthValue = document.querySelector("[data-width-value]");
 const lengthValue = document.querySelector("[data-length-value]");
+const widthInput = document.querySelector("[data-width-input]");
+const lengthInput = document.querySelector("[data-length-input]");
+const widthRange = document.querySelector("[data-width-range]");
+const lengthRange = document.querySelector("[data-length-range]");
 const openFiltersButton = document.querySelector("[data-open-filters]");
 const closeFiltersButton = document.querySelector("[data-close-filters]");
 const filtersPanel = document.querySelector("[data-filters-panel]");
 const filtersOverlay = document.querySelector("[data-filters-overlay]");
+const categoryOptions = document.querySelector("[data-category-options]");
+const materialOptions = document.querySelector("[data-material-options]");
 let catalogProducts = [];
 let maxWidth = 0;
 let maxLength = 0;
@@ -25,8 +31,8 @@ const catalogI18n = isEnglishCatalog
             openCard: "Open product",
             search: "Search",
             material: "Material",
-            widthUpTo: "Width up to",
-            lengthUpTo: "Length up to",
+            widthDesired: "Desired width",
+            lengthDesired: "Desired length",
             results: (filtered, total) => `${filtered} results out of ${total}`,
             emptyCatalog: "The online catalog is being updated.",
             noMatch: "No product matches the selected filters. Try removing some of them.",
@@ -62,8 +68,8 @@ const catalogI18n = isEnglishCatalog
             openCard: "Apri scheda",
             search: "Ricerca",
             material: "Materiale",
-            widthUpTo: "Larghezza fino a",
-            lengthUpTo: "Lunghezza fino a",
+            widthDesired: "Larghezza desiderata",
+            lengthDesired: "Lunghezza desiderata",
             results: (filtered, total) => `${filtered} risultati su ${total}`,
             emptyCatalog: "Il catalogo online e' in aggiornamento.",
             noMatch: "Nessun prodotto corrisponde ai filtri selezionati. Prova a rimuoverne qualcuno.",
@@ -91,6 +97,78 @@ function translateAvailability(value) {
     return catalogI18n.availability[value] || value;
 }
 
+function createFilterCheckbox(name, value, label) {
+    return `
+        <label class="filters-check">
+            <input type="checkbox" name="${name}" value="${value}">
+            <span>${label}</span>
+        </label>
+    `;
+}
+
+function getUniqueCategories(products) {
+    return Array.from(new Set(
+        products
+            .map((product) => String(product.category || "").trim())
+            .filter(Boolean)
+    )).sort((left, right) => left.localeCompare(right, catalogI18n.locale));
+}
+
+function extractMaterialTokens(materialValue) {
+    return String(materialValue || "")
+        .split(/,|\/|&|\band\b/gi)
+        .map((token) => normalizeText(token))
+        .filter(Boolean);
+}
+
+function getProductMaterialTokens(product) {
+    if (Array.isArray(product?.materials) && product.materials.length) {
+        return product.materials
+            .map((material) => normalizeText(String(material)))
+            .filter(Boolean);
+    }
+
+    return extractMaterialTokens(product?.material);
+}
+
+function getUniqueMaterials(products) {
+    const materialsMap = new Map();
+
+    products.forEach((product) => {
+        getProductMaterialTokens(product).forEach((token) => {
+            if (!materialsMap.has(token)) {
+                materialsMap.set(token, token);
+            }
+        });
+    });
+
+    return Array.from(materialsMap.keys()).sort((left, right) => left.localeCompare(right, catalogI18n.locale));
+}
+
+function renderDynamicFilterOptions() {
+    if (categoryOptions) {
+        if (!catalogProducts.length) {
+            categoryOptions.innerHTML = "";
+        } else {
+            const categories = getUniqueCategories(catalogProducts);
+            categoryOptions.innerHTML = categories
+                .map((category) => createFilterCheckbox("categories", category, translateCategory(category)))
+                .join("");
+        }
+    }
+
+    if (materialOptions) {
+        if (!catalogProducts.length) {
+            materialOptions.innerHTML = "";
+        } else {
+            const materials = getUniqueMaterials(catalogProducts);
+            materialOptions.innerHTML = materials
+                .map((material) => createFilterCheckbox("materials", material, translateMaterial(material)))
+                .join("");
+        }
+    }
+}
+
 function getFormState() {
     if (!catalogForm) {
         return {
@@ -103,21 +181,31 @@ function getFormState() {
     }
 
     const formData = new FormData(catalogForm);
-    return {
-        search: normalizeText(String(formData.get("search") || "")),
-        categories: formData.getAll("categories").map((value) => String(value)),
-        materials: formData.getAll("materials").map((value) => normalizeText(String(value))),
-        widthMax: Number(String(formData.get("widthMax") || maxWidth).trim()) || maxWidth,
-        lengthMax: Number(String(formData.get("lengthMax") || maxLength).trim()) || maxLength
-    };
+        return {
+            search: normalizeText(String(formData.get("search") || "")),
+            categories: formData.getAll("categories").map((value) => String(value)),
+            materials: formData.getAll("materials").map((value) => normalizeText(String(value))),
+            widthTarget: parseOptionalDimension(formData.get("widthTarget")),
+            lengthTarget: parseOptionalDimension(formData.get("lengthTarget"))
+        };
+}
+
+function parseOptionalDimension(value) {
+    const normalized = String(value || "").trim();
+    if (!normalized) {
+        return null;
+    }
+
+    const parsed = Number(normalized);
+    return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
 }
 
 function matchesDimensions(product, filters) {
-    if (product.widthCm > filters.widthMax) {
+    if (filters.widthTarget !== null && Math.abs(product.widthCm - filters.widthTarget) > 15) {
         return false;
     }
 
-    if (product.lengthCm > filters.lengthMax) {
+    if (filters.lengthTarget !== null && Math.abs(product.lengthCm - filters.lengthTarget) > 15) {
         return false;
     }
 
@@ -146,8 +234,8 @@ function matchesMaterials(product, selectedMaterials) {
         return true;
     }
 
-    const productMaterial = normalizeText(String(product.material || ""));
-    return selectedMaterials.some((material) => productMaterial.includes(material));
+    const productMaterials = getProductMaterialTokens(product);
+    return selectedMaterials.some((material) => productMaterials.includes(material));
 }
 
 function filterProducts(filters) {
@@ -160,7 +248,11 @@ function filterProducts(filters) {
 }
 
 function createProductCard(product) {
-    const productPage = `products/${product.slug}.html`;
+    const productPage = isEnglishCatalog && product.hasEnglish && product.slugEn
+        ? `products/${product.slugEn}.html`
+        : `products/${product.slug}.html`;
+    const cardTitle = isEnglishCatalog && product.titleEn ? product.titleEn : product.title;
+    const cardAlt = isEnglishCatalog && product.altEn ? product.altEn : product.alt;
     const hasNumericPrice = Number.isFinite(product.priceValue);
     const hasSalePrice = Number.isFinite(product.salePriceValue);
     const displayPrice = hasNumericPrice
@@ -196,13 +288,13 @@ function createProductCard(product) {
         <article class="product-card">
             <div class="product-card__media">
                 <a href="${productPage}">
-                    <img src="${product.coverImage}" alt="${product.alt}" loading="lazy" decoding="async" width="800" height="600">
+                    <img src="${product.coverImage}" alt="${cardAlt}" loading="lazy" decoding="async" width="800" height="600">
                 </a>
             </div>
             <div class="product-card__body">
                 ${priceMarkup ? `<div class="product-card__meta">${priceMarkup}</div>` : ""}
                 <div>
-                    <h3 class="product-card__title"><a href="${productPage}">${product.title}</a></h3>
+                    <h3 class="product-card__title"><a href="${productPage}">${cardTitle}</a></h3>
                 </div>
                 <ul class="product-card__detail-list" aria-label="${catalogI18n.labels.productDetails}">
                     <li><strong>${catalogI18n.labels.measures}:</strong> ${product.dimensions}</li>
@@ -235,12 +327,12 @@ function renderActiveFilters(filters) {
         chips.push(`${catalogI18n.labels.material}: ${translateMaterial(material)}`);
     });
 
-    if (filters.widthMax < maxWidth) {
-        chips.push(`${catalogI18n.labels.widthUpTo} ${filters.widthMax} cm`);
+    if (filters.widthTarget !== null) {
+        chips.push(`${catalogI18n.labels.widthDesired}: ${filters.widthTarget} cm`);
     }
 
-    if (filters.lengthMax < maxLength) {
-        chips.push(`${catalogI18n.labels.lengthUpTo} ${filters.lengthMax} cm`);
+    if (filters.lengthTarget !== null) {
+        chips.push(`${catalogI18n.labels.lengthDesired}: ${filters.lengthTarget} cm`);
     }
 
     activeFilters.innerHTML = chips.map((chip) => `<span class="filter-chip">${chip}</span>`).join("");
@@ -248,12 +340,56 @@ function renderActiveFilters(filters) {
 
 function renderSliderValues(filters) {
     if (widthValue) {
-        widthValue.textContent = `${filters.widthMax} cm`;
+        widthValue.textContent = filters.widthTarget !== null ? `${filters.widthTarget} cm` : "-";
     }
 
     if (lengthValue) {
-        lengthValue.textContent = `${filters.lengthMax} cm`;
+        lengthValue.textContent = filters.lengthTarget !== null ? `${filters.lengthTarget} cm` : "-";
     }
+}
+
+function clampDimension(value, maxValue) {
+    const parsed = Number(value);
+
+    if (!Number.isFinite(parsed)) {
+        return null;
+    }
+
+    return Math.min(Math.max(Math.round(parsed), 0), maxValue);
+}
+
+function syncRangeFromInput(input, range, maxValue) {
+    if (!(input instanceof HTMLInputElement) || !(range instanceof HTMLInputElement)) {
+        return;
+    }
+
+    const normalized = input.value.trim();
+    if (!normalized) {
+        range.value = String(maxValue);
+        return;
+    }
+
+    const clamped = clampDimension(normalized, maxValue);
+    if (clamped === null) {
+        return;
+    }
+
+    input.value = String(clamped);
+    range.value = String(clamped);
+}
+
+function syncInputFromRange(range, input, maxValue) {
+    if (!(range instanceof HTMLInputElement) || !(input instanceof HTMLInputElement)) {
+        return;
+    }
+
+    const clamped = clampDimension(range.value, maxValue);
+    if (clamped === null) {
+        return;
+    }
+
+    range.value = String(clamped);
+    input.value = String(clamped);
 }
 
 function renderCatalog() {
@@ -306,7 +442,30 @@ if (catalogForm) {
         const target = event.target;
 
         if (target instanceof HTMLInputElement && target.type === "range") {
+            if (target === widthRange) {
+                syncInputFromRange(widthRange, widthInput, maxWidth);
+            }
+
+            if (target === lengthRange) {
+                syncInputFromRange(lengthRange, lengthInput, maxLength);
+            }
+
             renderSliderValues(getFormState());
+            renderCatalog();
+            return;
+        }
+
+        if (target === widthInput) {
+            syncRangeFromInput(widthInput, widthRange, maxWidth);
+            renderSliderValues(getFormState());
+            renderCatalog();
+            return;
+        }
+
+        if (target === lengthInput) {
+            syncRangeFromInput(lengthInput, lengthRange, maxLength);
+            renderSliderValues(getFormState());
+            renderCatalog();
             return;
         }
 
@@ -323,15 +482,20 @@ if (catalogForm) {
 if (resetButton) {
     resetButton.addEventListener("click", () => {
         if (catalogForm) {
-            const widthRange = catalogForm.elements.namedItem("widthMax");
-            const lengthRange = catalogForm.elements.namedItem("lengthMax");
-
             if (widthRange instanceof HTMLInputElement) {
                 widthRange.value = String(maxWidth);
             }
 
             if (lengthRange instanceof HTMLInputElement) {
                 lengthRange.value = String(maxLength);
+            }
+
+            if (widthInput instanceof HTMLInputElement) {
+                widthInput.value = "";
+            }
+
+            if (lengthInput instanceof HTMLInputElement) {
+                lengthInput.value = "";
             }
         }
 
@@ -410,11 +574,9 @@ async function loadCatalogProducts() {
     catalogProducts = await response.json();
     maxWidth = Math.max(...catalogProducts.map((product) => product.widthCm), 0);
     maxLength = Math.max(...catalogProducts.map((product) => product.lengthCm), 0);
+    renderDynamicFilterOptions();
 
     if (catalogForm) {
-        const widthRange = catalogForm.elements.namedItem("widthMax");
-        const lengthRange = catalogForm.elements.namedItem("lengthMax");
-
         if (widthRange instanceof HTMLInputElement) {
             widthRange.max = String(maxWidth);
             widthRange.value = String(maxWidth);
@@ -423,6 +585,20 @@ async function loadCatalogProducts() {
         if (lengthRange instanceof HTMLInputElement) {
             lengthRange.max = String(maxLength);
             lengthRange.value = String(maxLength);
+        }
+
+        if (widthInput instanceof HTMLInputElement) {
+            widthInput.placeholder = maxWidth ? `Es. ${Math.min(maxWidth, 120)}` : widthInput.placeholder;
+            if (isEnglishCatalog) {
+                widthInput.placeholder = maxWidth ? `Ex. ${Math.min(maxWidth, 120)}` : widthInput.placeholder;
+            }
+        }
+
+        if (lengthInput instanceof HTMLInputElement) {
+            lengthInput.placeholder = maxLength ? `Es. ${Math.min(maxLength, 200)}` : lengthInput.placeholder;
+            if (isEnglishCatalog) {
+                lengthInput.placeholder = maxLength ? `Ex. ${Math.min(maxLength, 200)}` : lengthInput.placeholder;
+            }
         }
     }
 

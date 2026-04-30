@@ -83,6 +83,7 @@
     </header>
 
     <main id="top">
+        <h1 class="visually-hidden">Shahmansouri Persian carpet catalog in Verona</h1>
         <section id="products" class="catalog-shell">
             <div class="container catalog-layout">
                 <button type="button" class="catalog-mobile-filter-button" data-open-filters aria-expanded="false" aria-controls="filters">
@@ -102,7 +103,7 @@
 
                         <details class="filters-accordion" open>
                             <summary>Type</summary>
-                            <div class="filters-accordion__content">
+                            <div class="filters-accordion__content" data-category-options>
                                 <label class="filters-check">
                                     <input type="checkbox" name="categories" value="Tappeto classico">
                                     <span>Classic carpet</span>
@@ -127,28 +128,31 @@
                         </details>
 
                         <div class="filters-field filters-field--split">
-                            <span>Dimensions in cm</span>
+                            <span>Desired dimensions in cm</span>
                             <div class="filters-slider">
-                                <label for="lengthRange">Maximum length</label>
+                                <label for="lengthRange">Desired length</label>
                                 <div class="filters-slider__topline">
-                                    <span>Up to</span>
-                                    <strong data-length-value>350 cm</strong>
+                                    <span>Value</span>
+                                    <strong data-length-value>-</strong>
                                 </div>
-                                <input id="lengthRange" type="range" name="lengthMax" min="0" max="350" step="1" value="350">
+                                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 200" data-length-input>
+                                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range>
                             </div>
                             <div class="filters-slider">
-                                <label for="widthRange">Maximum width</label>
+                                <label for="widthRange">Desired width</label>
                                 <div class="filters-slider__topline">
-                                    <span>Up to</span>
-                                    <strong data-width-value>350 cm</strong>
+                                    <span>Value</span>
+                                    <strong data-width-value>-</strong>
                                 </div>
-                                <input id="widthRange" type="range" name="widthMax" min="0" max="350" step="1" value="350">
+                                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 120" data-width-input>
+                                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range>
                             </div>
+                            <p class="filters-field__note">Automatic tolerance of 15 cm above or below the selected value.</p>
                         </div>
 
                         <details class="filters-accordion" open>
                             <summary>Materials</summary>
-                            <div class="filters-accordion__content">
+                            <div class="filters-accordion__content" data-material-options>
                                 <label class="filters-check">
                                     <input type="checkbox" name="materials" value="lana">
                                     <span>Wool</span>
