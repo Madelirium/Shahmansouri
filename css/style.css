@@ -969,6 +969,10 @@ img {
   background: #25d366;
 }
 
+.floating-instagram {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 52%, #8134af 100%);
+}
+
 .floating-maps {
   background: #b58821;
 }
@@ -976,7 +980,7 @@ img {
 .site-back-to-top {
   position: fixed;
   right: 18px;
-  bottom: 190px;
+  bottom: 254px;
   z-index: 78;
   display: inline-flex;
   align-items: center;

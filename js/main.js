@@ -14,7 +14,8 @@ const siteText = isEnglishPage
       mailFeedback: 'Opening your email app with the pre-filled message.',
       mapsLabel: 'Maps',
       phoneLabel: 'Call',
-      whatsappLabel: 'WhatsApp'
+      whatsappLabel: 'WhatsApp',
+      instagramLabel: 'Instagram'
     }
     : {
       cookieTitle: 'Cookie e contenuti esterni',
@@ -27,7 +28,8 @@ const siteText = isEnglishPage
       mailFeedback: 'Sto aprendo il tuo client email con il messaggio precompilato.',
       mapsLabel: 'Mappa',
       phoneLabel: 'Chiama',
-      whatsappLabel: 'WhatsApp'
+      whatsappLabel: 'WhatsApp',
+      instagramLabel: 'Instagram'
     };
 
 function getPolicyPrefix() {
@@ -70,6 +72,12 @@ function injectFloatingActions() {
         <path d="M19.05 4.94A9.84 9.84 0 0 0 12.02 2a9.94 9.94 0 0 0-8.6 14.94L2 22l5.22-1.36A9.93 9.93 0 0 0 12.02 22h.01a9.99 9.99 0 0 0 7.02-17.06Zm-7.03 15.37h-.01a8.22 8.22 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.29 8.29 0 1 1 6.96 3.84Zm4.54-6.2c-.25-.13-1.48-.73-1.72-.81-.23-.08-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.56.06-.25-.13-1.07-.39-2.04-1.24-.75-.67-1.26-1.49-1.41-1.74-.15-.25-.02-.39.11-.52.12-.12.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.02 2.61.13.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.17.21-.58.21-1.07.15-1.17-.06-.1-.23-.15-.48-.27Z" fill="currentColor"></path>
       </svg>
       <span class="sr-only">${siteText.whatsappLabel}</span>
+    </a>
+    <a href="https://www.instagram.com/shahmansouri_tappeti_persiani/" class="floating-action floating-instagram" target="_blank" rel="noopener" aria-label="${siteText.instagramLabel}" title="${siteText.instagramLabel}">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.4 1.7a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z" fill="currentColor"></path>
+      </svg>
+      <span class="sr-only">${siteText.instagramLabel}</span>
     </a>
     <a href="${STORE_MAP_URL}" class="floating-action floating-maps" target="_blank" rel="noopener" aria-label="${siteText.mapsLabel}" title="${siteText.mapsLabel}">
       <svg viewBox="0 0 24 24" aria-hidden="true">
