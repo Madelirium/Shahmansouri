@@ -201,11 +201,11 @@ function parseOptionalDimension(value) {
 }
 
 function matchesDimensions(product, filters) {
-    if (filters.widthTarget !== null && Math.abs(product.widthCm - filters.widthTarget) > 15) {
+    if (filters.widthTarget !== null && product.widthCm > filters.widthTarget + 15) {
         return false;
     }
 
-    if (filters.lengthTarget !== null && Math.abs(product.lengthCm - filters.lengthTarget) > 15) {
+    if (filters.lengthTarget !== null && product.lengthCm > filters.lengthTarget + 15) {
         return false;
     }
 
@@ -472,11 +472,6 @@ if (catalogForm) {
         renderCatalog();
     });
     catalogForm.addEventListener("change", renderCatalog);
-    catalogForm.addEventListener("change", () => {
-        if (isMobileFiltersMode()) {
-            setFiltersOpen(false);
-        }
-    });
 }
 
 if (resetButton) {
