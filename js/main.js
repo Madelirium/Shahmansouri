@@ -1,4 +1,4 @@
-﻿const COOKIE_CONSENT_KEY = 'shahmansouri_cookie_consent_v1';
+const COOKIE_CONSENT_KEY = 'shahmansouri_cookie_consent_v1';
 const STORE_MAP_URL = 'https://maps.app.goo.gl/zpeoCrwWZPhkYZ7K6';
 const isEnglishPage = document.documentElement.lang.toLowerCase().startsWith('en');
 
@@ -284,6 +284,44 @@ function setupContactForms() {
   });
 }
 
+function initClickableGuideCards() {
+  const cards = document.querySelectorAll('.guide-index-page .guide-index-card');
+  if (!cards.length) {
+    return;
+  }
+
+  cards.forEach(function (card) {
+    const primaryLink = card.querySelector('a[href]');
+    if (!primaryLink) {
+      return;
+    }
+
+    if (!card.hasAttribute('tabindex')) {
+      card.tabIndex = 0;
+    }
+
+    card.setAttribute('role', 'link');
+    card.setAttribute('aria-label', primaryLink.textContent.trim());
+
+    card.addEventListener('click', function (event) {
+      if (event.target.closest('a[href]')) {
+        return;
+      }
+
+      window.location.href = primaryLink.href;
+    });
+
+    card.addEventListener('keydown', function (event) {
+      if (event.key !== 'Enter' && event.key !== ' ') {
+        return;
+      }
+
+      event.preventDefault();
+      window.location.href = primaryLink.href;
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const path = window.location.pathname;
   const page = path.split('/').pop();
@@ -303,6 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupContactForms();
   applyCookieConsent(getCookieConsent());
   setupMobileNav();
+  initClickableGuideCards();
 });
 
 function setupMobileNav() {

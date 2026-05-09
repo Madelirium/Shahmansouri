@@ -1,7 +1,7 @@
-﻿/*
+/*
  * Stili responsive per il sito Shahmansouri.
  * Le regole presenti in questo file sovrascrivono alcune impostazioni
- * di style.css per migliorare la fruibilitÃ  su tablet e smartphone.
+ * di style.css per migliorare la fruibilità su tablet e smartphone.
  */
 
 @media (max-width: 900px) {
@@ -31,6 +31,13 @@
 }
 
 @media (max-width: 768px) {
+  .header {
+    min-height: 0;
+    padding: 10px 18px 0;
+  }
+  .header .logo-area {
+    display: none;
+  }
   .content {
     flex-direction: column;
     padding: 30px 20px;
@@ -171,7 +178,7 @@
     bottom: 0;
     width: min(320px, calc(100vw - 42px));
     margin: 0;
-    padding-top: 74px;
+    padding-top: 14px;
     border: 1px solid #c9a340;
     background: linear-gradient(to bottom, #f1e0aa, #e5cb7d);
     box-shadow:
@@ -183,6 +190,36 @@
     opacity: 0;
     pointer-events: none;
     transition: transform 0.24s ease, opacity 0.24s ease;
+  }
+
+  .nav-mobile-brand {
+    display: block;
+    width: fit-content;
+    padding: 10px 16px 8px;
+    margin: 8px auto 6px;
+    border: 1px solid rgba(123, 31, 22, 0.18);
+    background: linear-gradient(to bottom, rgba(124, 23, 23, 0.98), rgba(97, 16, 16, 0.98));
+    box-shadow: 0 6px 14px rgba(87, 55, 7, 0.08);
+  }
+
+  .nav-mobile-brand__link {
+    display: block;
+    pointer-events: none;
+    cursor: default;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    line-height: 0;
+  }
+
+  .nav-mobile-brand img {
+    display: block;
+    width: min(190px, 100%);
+    height: auto;
+    max-height: 88px;
+    margin: 0 auto;
+    background: transparent;
+    box-shadow: none;
   }
 
   .nav::before {
@@ -200,7 +237,7 @@
     flex-direction: column;
     align-items: stretch;
     gap: 0;
-    padding: 6px 0;
+    padding: 6px 0 12px;
   }
 
   .nav li {

@@ -1,26 +1,29 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="favicon-tappeti-verona-shahmansouri.svg" type="image/svg+xml">
-    <link rel="icon" href="tappeti-verona-favicon-shahmansouri.ico" sizes="any">
-    <link rel="icon" href="tappeti-verona-favicon-64.png" type="image/png" sizes="64x64">
-  <meta name="description" content="Intarsio, miniature, ceramiche, tessuti stampati e artigianato persiano autentico nel negozio Shahmansouri a Verona.">
-  <title>Artigianato Persiano a Verona | Shahmansouri</title>
-  <link rel="canonical" href="https://shahmansouri.com/artigianato.html">
-  <link rel="alternate" hreflang="it" href="https://shahmansouri.com/artigianato.html">
-  <link rel="alternate" hreflang="en" href="https://shahmansouri.com/crafts.html">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Artigianato Persiano a Verona | Shahmansouri">
-  <meta property="og:description" content="Intarsio, miniature, ceramiche, tessuti stampati e artigianato persiano autentico nel negozio Shahmansouri a Verona.">
-  <meta property="og:url" content="https://shahmansouri.com/artigianato.html">
-  <meta property="og:image" content="https://shahmansouri.com/images/tappeti-verona-shahmansouri-og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="848">
-  <meta property="og:locale" content="it_IT">
-  <meta name="twitter:card" content="summary_large_image">
-  <script type="application/ld+json">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="icon" href="favicon-tappeti-verona-shahmansouri.svg" type="image/svg+xml">
+ <link rel="icon" href="tappeti-verona-favicon-shahmansouri.ico" sizes="any">
+ <link rel="icon" href="tappeti-verona-favicon-64.png" type="image/png" sizes="64x64">
+ <meta name="description" content="Scopri artigianato persiano a Verona: ceramiche, miniature, cesellature, khatam e oggetti decorativi selezionati da Shahmansouri.">
+ <title>Artiginato Persiano a Verona | Shahmansouri</title>
+ <link rel="canonical" href="https://shahmansouri.com/artigianato.html">
+ <link rel="alternate" hreflang="it" href="https://shahmansouri.com/artigianato.html">
+ <link rel="alternate" hreflang="en" href="https://shahmansouri.com/crafts.html">
+ <meta property="og:type" content="website">
+ <meta property="og:title" content="Artigianato Persiano a Verona | Shahmansouri">
+ <meta property="og:description" content="Scopri artigianato persiano a Verona: ceramiche, miniature, cesellature, khatam e oggetti decorativi selezionati da Shahmansouri.">
+ <meta property="og:url" content="https://shahmansouri.com/artigianato.html">
+ <meta property="og:image" content="https://shahmansouri.com/images/tappeti-verona-shahmansouri-og.png">
+ <meta property="og:image:width" content="1200">
+ <meta property="og:image:height" content="848">
+ <meta property="og:locale" content="it_IT">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Artigianato Persiano a Verona | Shahmansouri">
+ <meta name="twitter:description" content="Scopri artigianato persiano a Verona: ceramiche, miniature, cesellature, khatam e oggetti decorativi selezionati da Shahmansouri.">
+ <meta name="twitter:image" content="https://shahmansouri.com/images/tappeti-verona-shahmansouri-og.png">
+ <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -29,7 +32,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shahmansouri.com/index-it.html"
+        "item": "https://shahmansouri.com/"
       },
       {
         "@type": "ListItem",
@@ -40,224 +43,902 @@
     ]
   }
   </script>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
+ <link rel="stylesheet" href="css/style.css">
+ <link rel="stylesheet" href="css/responsive.css">
+ <style>
+  .artigianato-intro-collapsible {
+    position: relative;
+  }
+
+  .artigianato-intro-extra[hidden] {
+    display: none;
+  }
+
+  .artigianato-intro-toggle {
+    display: none;
+  }
+
+  .khatam-mobile-cards,
+  .khatam-mobile-cards-v2,
+  .ceramica-mobile-cards-v2,
+  .cesellatura-mobile-cards-v2,
+  .miniature-mobile-cards-v2,
+  .papier-mobile-cards-v2 {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .artigianato-intro-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      margin: 8px 0 18px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #7a2c0d;
+      font: inherit;
+      font-weight: 600;
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 44, 13, 0.34);
+      text-underline-offset: 0.2em;
+      cursor: pointer;
+    }
+
+    .artigianato-intro-toggle:focus-visible {
+      outline: 2px solid rgba(122, 44, 13, 0.32);
+      outline-offset: 4px;
+    }
+
+    .artigianato-content,
+    .article {
+      overflow-x: hidden;
+    }
+
+    .khatam-desktop-block,
+    .ceramica-desktop-block,
+    .cesellatura-desktop-block,
+    .miniature-desktop-block,
+    .papier-desktop-block {
+      display: none;
+    }
+
+    .khatam-mobile-cards {
+      display: none !important;
+    }
+
+    .khatam-mobile-cards-v2,
+    .ceramica-mobile-cards-v2,
+    .cesellatura-mobile-cards-v2,
+    .miniature-mobile-cards-v2,
+    .papier-mobile-cards-v2 {
+      display: flex;
+      box-sizing: border-box;
+      width: 100%;
+      gap: 14px;
+      margin: 14px 0 24px;
+      max-width: 100%;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0 0 8px 0;
+      scroll-snap-type: x proximity;
+      -webkit-overflow-scrolling: touch;
+      contain: inline-size;
+    }
+
+    .khatam-mobile-cards-v2,
+    .ceramica-mobile-cards-v2,
+    .cesellatura-mobile-cards-v2,
+    .miniature-mobile-cards-v2,
+    .papier-mobile-cards-v2 {
+      gap: 12px;
+      padding: 0 10px 10px 0;
+      scroll-snap-type: x mandatory;
+    }
+
+    .khatam-mobile-cards-v2::-webkit-scrollbar,
+    .ceramica-mobile-cards-v2::-webkit-scrollbar,
+    .cesellatura-mobile-cards-v2::-webkit-scrollbar,
+    .miniature-mobile-cards-v2::-webkit-scrollbar,
+    .papier-mobile-cards-v2::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .khatam-mobile-cards-v2::-webkit-scrollbar-thumb,
+    .ceramica-mobile-cards-v2::-webkit-scrollbar-thumb,
+    .cesellatura-mobile-cards-v2::-webkit-scrollbar-thumb,
+    .miniature-mobile-cards-v2::-webkit-scrollbar-thumb,
+    .papier-mobile-cards-v2::-webkit-scrollbar-thumb {
+      background: rgba(123, 31, 22, 0.24);
+      border-radius: 999px;
+    }
+
+    .khatam-mobile-cards-v2::-webkit-scrollbar-track,
+    .ceramica-mobile-cards-v2::-webkit-scrollbar-track,
+    .cesellatura-mobile-cards-v2::-webkit-scrollbar-track,
+    .miniature-mobile-cards-v2::-webkit-scrollbar-track,
+    .papier-mobile-cards-v2::-webkit-scrollbar-track {
+      background: rgba(229, 203, 125, 0.22);
+      border-radius: 999px;
+    }
+
+    .khatam-mobile-card {
+      box-sizing: border-box;
+      flex: 0 0 min(64vw, 240px);
+      min-width: min(64vw, 240px);
+      max-width: min(64vw, 240px);
+      padding: 14px 16px 16px;
+      border: 1px solid rgba(177, 145, 83, 0.22);
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 251, 241, 0.72) 0%, rgba(244, 232, 201, 0.78) 100%),
+        radial-gradient(circle at top left, rgba(214, 186, 124, 0.16) 0%, rgba(214, 186, 124, 0) 44%),
+        repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0 2px, rgba(234, 220, 187, 0.04) 2px 4px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
+        0 10px 18px rgba(112, 71, 35, 0.08);
+      scroll-snap-align: start;
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card,
+    .miniature-mobile-cards-v2 .khatam-mobile-card,
+    .papier-mobile-cards-v2 .khatam-mobile-card {
+      flex: 0 0 min(84vw, 320px);
+      min-width: min(84vw, 320px);
+      max-width: min(84vw, 320px);
+      min-height: 430px;
+      padding: 18px 18px 20px;
+      border-color: rgba(176, 145, 86, 0.26);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.42),
+        0 14px 24px rgba(112, 71, 35, 0.1);
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card p,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card p,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card p,
+    .miniature-mobile-cards-v2 .khatam-mobile-card p,
+    .papier-mobile-cards-v2 .khatam-mobile-card p {
+      font-size: 1rem;
+      line-height: 1.78;
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card figure,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card figure,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card figure,
+    .miniature-mobile-cards-v2 .khatam-mobile-card figure,
+    .papier-mobile-cards-v2 .khatam-mobile-card figure {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card img,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card img,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card img,
+    .miniature-mobile-cards-v2 .khatam-mobile-card img,
+    .papier-mobile-cards-v2 .khatam-mobile-card img {
+      height: 250px;
+      margin: 0 0 14px;
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card figcaption,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card figcaption,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card figcaption,
+    .miniature-mobile-cards-v2 .khatam-mobile-card figcaption,
+    .papier-mobile-cards-v2 .khatam-mobile-card figcaption {
+      margin-top: auto;
+    }
+
+    .khatam-mobile-card--intro {
+      border: 1px solid rgba(255, 240, 220, 0.16);
+      background:
+        radial-gradient(circle at top left, rgba(178, 84, 77, 0.22) 0%, rgba(178, 84, 77, 0) 42%),
+        radial-gradient(circle at bottom right, rgba(255, 224, 177, 0.08) 0%, rgba(255, 224, 177, 0) 36%),
+        linear-gradient(180deg, rgba(126, 39, 42, 0.98) 0%, rgba(101, 26, 31, 0.98) 52%, rgba(83, 20, 26, 0.98) 100%);
+      box-shadow:
+        0 16px 28px rgba(35, 10, 13, 0.22),
+        0 3px 10px rgba(35, 10, 13, 0.18),
+        inset 0 1px 0 rgba(255, 244, 231, 0.1);
+    }
+
+    .khatam-mobile-card--intro h3 {
+      margin: 0 0 18px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.16rem;
+      line-height: 1.2;
+      color: #faf4ea;
+    }
+
+    .khatam-mobile-card--intro p {
+      display: inline-flex;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #faf4ea;
+      background: transparent;
+      border: 0;
+      text-shadow: 0 2px 8px rgba(35, 10, 13, 0.3);
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card--intro,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card--intro,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card--intro,
+    .miniature-mobile-cards-v2 .khatam-mobile-card--intro,
+    .papier-mobile-cards-v2 .khatam-mobile-card--intro {
+      padding-bottom: 18px;
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card--intro h3,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card--intro h3,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card--intro h3,
+    .miniature-mobile-cards-v2 .khatam-mobile-card--intro h3,
+    .papier-mobile-cards-v2 .khatam-mobile-card--intro h3 {
+      margin-bottom: 16px;
+      font-size: 1.32rem;
+      line-height: 1.14;
+    }
+
+    .khatam-mobile-card--intro-arrow {
+      display: block;
+      margin-top: 10px;
+      font-size: 2rem;
+      line-height: 1;
+      color: #faf4ea;
+      text-shadow: 0 2px 8px rgba(35, 10, 13, 0.28);
+    }
+
+    .khatam-mobile-cards-v2 .khatam-mobile-card--intro-arrow,
+    .ceramica-mobile-cards-v2 .khatam-mobile-card--intro-arrow,
+    .cesellatura-mobile-cards-v2 .khatam-mobile-card--intro-arrow,
+    .miniature-mobile-cards-v2 .khatam-mobile-card--intro-arrow,
+    .papier-mobile-cards-v2 .khatam-mobile-card--intro-arrow {
+      margin-top: 8px;
+      margin-bottom: 14px;
+      font-size: 2.2rem;
+    }
+
+    .khatam-mobile-card p {
+      margin: 0;
+      line-height: 1.68;
+      color: #7a2c0d;
+    }
+
+    .khatam-mobile-card.khatam-mobile-card--intro p {
+      color: #faf4ea;
+    }
+
+    .khatam-mobile-card figure {
+      margin: 0;
+    }
+
+    .khatam-mobile-card img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      height: 220px;
+      object-fit: cover;
+      margin: 0 0 12px;
+    }
+
+    .khatam-mobile-card figcaption {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.45;
+      color: #7a2c0d;
+    }
+  }
+ </style>
 </head>
 <body>
-  <div class="page">
-    <header class="header">
-      <div class="logo-area">
-        <img src="images/logo-shahmansouri-tappeti-verona.webp" alt="Shahmansouri Tappeti Persiani" width="1080" height="688" decoding="async">
-      </div>
-      <div class="tagline">
-        <span>tappeti</span>
-        <span>artigianato persiano</span>
-        <span>lavaggi</span>
-        <span>restauri</span>
-      </div>
-    </header>
-    <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="nav" id="site-nav">
-      <ul>
-        <li><a href="index-it.html">home</a></li>
-        <li><a href="catalogo/index.html">catalogo</a></li>
-        <li><a href="tappeti.html">tappeti</a></li>
-        <li><a href="artigianato.html" class="active">artigianato</a></li>
-        <li class="dropdown"><span class="nav-parent">iran</span>
-          <ul class="submenu">
-            <li><a href="cultura.html">cultura</a></li>
-            <li><a href="persia.html">persia</a></li>
-          </ul>
-        </li>
-        <li><a href="contatti.html">contatti</a></li>
-        <li class="nav-language-switch"><a href="artigianato.html" class="lang-it is-active">IT</a><span>/</span><a href="crafts.html" class="lang-en">EN</a></li>
-      </ul>
-    </nav>
-    <main class="content artigianato-content">
-      <article class="article">
-        <h1>Artigianato Persiano</h1>
-        <p>
-          L'artigianato persiano e' ricco di colori, forme e tradizioni antichissime. Oltre ai <a href="tappeti.html">tappeti persiani</a>, la cultura iraniana
-          offre manufatti raffinati realizzati a mano: intarsi in legno, vetro soffiato, ceramiche, miniature su carta e
-          tessuti stampati. In questa pagina troverete alcune delle arti piu' rappresentative.
-        </p>
-        <h2>Khatam - l'intarsio</h2>
-        <p>
-          Il Khatam consiste nella creazione di motivi geometrici attraverso sottili intarsi di legno, osso e metallo.
-          Le composizioni minuziose richiedono maestria e pazienza: un singolo cofanetto puo' richiedere mesi di lavoro.
-        </p>
-        <div class="article-image-row">
-          <figure class="article-image-row__figure">
-            <img src="images/khatam-intarsio-tappeti verona-astuccio.webp" alt="Astuccio in Khatam persiano" width="1080" height="1344" decoding="async">
-            <figcaption>Astuccio in Khatam persiano.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/khatam-intarsio-persiano-shahmansouri-tappeti-verona.webp" alt="Dettaglio di intarsio Khatam persiano" width="899" height="899" decoding="async">
-            <figcaption>Dettaglio di intarsio Khatam.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/intarsio-persiano-khatam-verona-tappeti.webp" alt="Oggetto in intarsio persiano Khatam" width="768" height="1024" decoding="async">
-            <figcaption>Oggetto in intarsio persiano Khatam.</figcaption>
-          </figure>
-        </div>
-        <h2>Vetro soffiato</h2>
-        <p>
-          La tradizione del vetro soffiato persiano risale a oltre mille anni fa. Le forme armoniose e i colori vivaci
-          catturano la luce creando riflessi unici. Ogni pezzo e' modellato a mano e porta con se' l'impronta del suo
-          artigiano.
-        </p>
-        <h2>Ceramiche</h2>
-        <p>
-          Le ceramiche di Isfahan e di altre citta' sono decorate con smalti policromi e motivi floreali. Vasi, piatti e
-          piastrelle raccontano storie della natura e della mitologia persiana. Le tecniche di smaltatura danno vita a
-          superfici lucide che durano nel tempo.
-        </p>
-        <div class="article-image-row">
-          <figure class="article-image-row__figure">
-            <img src="images/piastrelle-persiane-verona-shahmansouri.webp" alt="Piastrelle persiane decorate" width="768" height="1024" decoding="async">
-            <figcaption>Piastrelle persiane decorate.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/vasi-ceramica-verona-shahmansouri.webp" alt="Vasi in ceramica persiana" width="2048" height="2048" decoding="async">
-            <figcaption>Vasi in ceramica persiana.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/porta-penne-ceramica-verona-shahmansouri.webp" alt="Porta penne in ceramica persiana" width="2048" height="2048" decoding="async">
-            <figcaption>Porta penne in ceramica persiana.</figcaption>
-          </figure>
-        </div>
-        <h2>Cesellatura</h2>
-        <p>
-          Dal certosino lavoro dello scalpellino, da uno stampo incatramato prendono vita vasi, piatti, vassoi, samovar
-          in metalli diversi: dal bronzo, al rame all'argento. Interamente forgiati a mano sono dei capolavori
-          artistici per stile, creativita' e minuziosita' dei decori e nell'ambientazione dei moderni arredamenti
-          occidentali risultano maggiormente esclusivi.
-        </p>
-        <div class="article-image-row">
-          <figure class="article-image-row__figure">
-            <img class="article-image-row__image--cesellatura" src="images/cesellatura-persiana-verona-shahmansouri.webp" alt="Oggetto di cesellatura persiana" width="1080" height="1078" decoding="async">
-            <figcaption>Oggetto di cesellatura persiana.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img class="article-image-row__image--cesellatura" src="images/acqua-santiera-cesellata-persia-verona.webp" alt="Acqua santiera cesellata persiana" width="1500" height="2000" decoding="async">
-            <figcaption>Acqua santiera cesellata persiana.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img class="article-image-row__image--cesellatura" src="images/cesellatura-persiana-verona-isfahan.webp" alt="Cesellatura persiana di Isfahan" width="1080" height="1348" decoding="async">
-            <figcaption>Cesellatura persiana di Isfahan.</figcaption>
-          </figure>
-        </div>
-        <h2>Miniature</h2>
-        <p>
-          Le miniature persiane sono piccoli dipinti su carta o pergamena che illustrano scene poetiche ed epiche. I colori
-          brillanti e la cura dei dettagli rendono ogni opera un piccolo capolavoro, spesso accompagnato da calligrafia.
-        </p>
-        <div class="article-image-row">
-          <figure class="article-image-row__figure">
-            <img src="images/miniatura-persiana-isfahan-shahmansouri.webp" alt="Miniatura persiana di Isfahan" width="717" height="978" decoding="async">
-            <figcaption>Miniatura persiana di Isfahan.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img class="article-image-row__image--shah" src="images/miniatura-persiana-shah-shahmansouri.webp" alt="Miniatura persiana con figura di Shah" width="1000" height="1800" decoding="async">
-            <figcaption>Miniatura persiana con figura di Shah.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-          <img src="images/miniatura-shahmansouri-persiana-isfahan.webp" alt="Miniatura persiana dipinta a mano di Isfahan" width="1200" height="1600" decoding="async">
-            <figcaption>Miniatura persiana di Isfahan.</figcaption>
-          </figure>
-        </div>
-        <h2>Miniature su Osso</h2>
-        <p>
-          Le miniature su osso uniscono la precisione del dipinto persiano a un supporto raro e prezioso. Astucci,
-          piccoli oggetti decorativi e superfici levigate vengono impreziositi da scene minuziose e motivi raffinati,
-          diventando pezzi da collezione di grande fascino.
-        </p>
-        <div class="article-image-row">
-          <figure class="article-image-row__figure">
-            <img src="images/miniatura-persiana-osso-astuccio-shahmansouri-tappeti-verona.webp" alt="Astuccio con miniatura persiana su osso" width="1080" height="1078" decoding="async">
-            <figcaption>Astuccio con miniatura persiana su osso.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/miniatura-osso-persiana-isfahan-shahmansouri.webp" alt="Miniatura persiana su osso di Isfahan" width="1000" height="1000" decoding="async">
-            <figcaption>Miniatura persiana su osso di Isfahan.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/osso-miniatura-persiana-shahmansouri.webp" alt="Oggetto in osso con miniatura persiana" width="1500" height="1125" decoding="async">
-            <figcaption>Oggetto in osso con miniatura persiana.</figcaption>
-          </figure>
-        </div>
-        <h2>Papier Mache</h2>
-        <p>
-          Oggetti decorativi di diversa foggia e uso come portapenne, specchi, portagioie, in carta pesta dai colori
-          scuri sono finemente dipinti con miniature e finissimi fregi.
-        </p>
-        <div class="article-image-row">
-          <figure class="article-image-row__figure">
-            <img src="images/papier-mache-miniatura-persiana-verona-shahmansouri.webp" alt="Miniatura persiana in papier mache" width="768" height="1024" decoding="async">
-            <figcaption>Miniatura persiana in papier mache.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/specchio-papier-mache-miniatura-persiana-shahmansouri.webp" alt="Specchio decorato in papier mache persiano" width="1080" height="1346" decoding="async">
-            <figcaption>Specchio decorato in papier mache persiano.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/papier-mache-persiana-isfahan-shahmansouri.webp" alt="Oggetto persiano in papier mache di Isfahan" width="1000" height="1000" decoding="async">
-            <figcaption>Oggetto persiano in papier mache di Isfahan.</figcaption>
-          </figure>
-        </div>
-        <h2>Tessuti stampati</h2>
-        <p>
-          I tessuti stampati a mano (Ghalamkar) vengono creati con blocchi di legno incisi che vengono immersi nel colore
-          e poi applicati sul tessuto. Il risultato e' un disegno ripetuto, armonioso e irregolare allo stesso tempo.
-        </p>
-        <p>
-          Per vedere da vicino questi manufatti o ricevere consigli sugli abbinamenti con i tappeti, potete <a href="contatti.html">contattarci o venirci a trovare a Verona</a>.
-        </p>
-        <div class="article-image-row">
-          <figure class="article-image-row__figure">
-            <img src="images/stoffa-stampata-persiana-verona-shahmansouri.webp" alt="Stoffa persiana stampata a mano" width="800" height="1067" decoding="async">
-            <figcaption>Stoffa persiana stampata a mano.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/stoffa-stampata-persiana-shahmansouri.webp" alt="Tessuto persiano stampato" width="1000" height="914" decoding="async">
-            <figcaption>Tessuto persiano stampato.</figcaption>
-          </figure>
-          <figure class="article-image-row__figure">
-            <img src="images/stoffa-stampata-verona-shahmansouri-regali.webp" alt="Stoffa stampata persiana per regali" width="1000" height="988" decoding="async">
-            <figcaption>Stoffa stampata persiana per regali.</figcaption>
-          </figure>
-        </div>
-        </article>
-    </main>
-    <footer class="site-footer-global">
-      <div class="site-footer-global__grid">
-        <div>
-          <span class="site-footer-global__logo-badge">
-            <img class="site-footer-global__logo" src="images/logo-shahmansouri-tappeti-verona.webp" alt="Logo Shahmansouri Tappeti Persiani" width="280" height="160" loading="lazy" decoding="async">
-          </span>
-          <strong>Shahmansouri Tappeti Persiani</strong>
-          <p>Tappeti, artigianato persiano, lavaggi e restauri nel centro storico di Verona.</p>
-        </div>
-        <div>
-          <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
-          <p><a href="tel:+390458013280">+39 045 801 3280</a></p>
-          <p><a href="mailto:shahmansouri@tiscali.it">shahmansouri@tiscali.it</a></p>
-          <p><a href="contatti.html">Contatti</a></p>
-        </div>
-        <div>
-          <p class="footer-copyright">&copy; 2026 Shahmansouri</p>
-        </div>
-      </div>
-    </footer>
-  </div>
-  <script src="js/analytics.js" defer></script>
-  <script src="js/main.js"></script>
+ <div class="page">
+  <header class="header">
+   <div class="logo-area">
+    <img src="images/logo-shahmansouri-tappeti-verona.webp" alt="Shahmansouri Tappeti Persiani" width="1080" height="688" decoding="async">
+   </div>
+   <div class="tagline">
+    <span>tappeti</span>
+    <span>artigianato persiano</span>
+    <span>lavaggi</span>
+    <span>restauri</span>
+   </div>
+  </header>
+  <button class="nav-mobile-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+  <nav class="nav" id="site-nav">
+   <div class="nav-mobile-brand">
+    <a class="nav-mobile-brand__link" href="index.html">
+     <img src="images/logo-shahmansouri-tappeti-verona.webp" alt="Shahmansouri Tappeti Persiani" width="1080" height="688" decoding="async">
+    </a>
+   </div>
+   <ul>
+    <li><a href="/">home</a></li>
+    <li><a href="catalogo/index.html">catalogo</a></li>
+    <li><a href="tappeti.html">tappeti</a></li>
+    <li><a href="artigianato.html" class="active">artigianato</a></li>
+    <li class="dropdown"><span class="nav-parent">iran</span>
+     <ul class="submenu">
+      <li><a href="cultura.html">cultura</a></li>
+      <li><a href="persia.html">persia</a></li>
+     </ul>
+    </li>
+    <li><a href="contatti.html">contatti</a></li>
+    <li class="nav-language-switch"><a href="artigianato.html" class="lang-it is-active">IT</a><span>/</span><a href="crafts.html" class="lang-en">EN</a></li>
+   </ul>
+  </nav>
+  <main class="content artigianato-content">
+   <article class="article">
+    <h1>Artiginato persiano a Verona</h1>
+    <div class="artigianato-intro-collapsible" data-artigianato-intro-collapsible>
+    <p>
+     L'artigianato persiano non è un semplice insieme di oggetti decorativi, ma una parte viva della cultura
+     materiale iraniana. Ceramiche, miniature, cesellature, vetri, tessuti stampati a mano e intarsi come il
+     khatam raccontano lo stesso mondo di forme, colori e simboli che ritroviamo anche nei tappeti persiani. Per
+     questo Shahmansouri affianca alla selezione di <a href="tappeti.html">tappeti persiani e orientali</a> una
+     scelta di manufatti realizzati a mano, pensati sia per chi cerca un oggetto da collezione sia per chi vuole
+     portare in casa un dettaglio autentico della tradizione persiana.
+    </p>
+    <div class="artigianato-intro-extra" data-artigianato-intro-extra>
+    <p>
+     Nel negozio di Verona l'artigianato persiano viene proposto con la stessa attenzione riservata ai tappeti:
+     provenienza, qualità esecutiva, coerenza decorativa e valore nel tempo. Questo significa selezionare oggetti
+     che possano funzionare come regalo, come presenza d'arredo o come piccolo nucleo di una collezione personale.
+     Chi entra in negozio non trova quindi una semplice oggettistica esotica, ma una lettura più ampia di
+     materiali, tecniche e culture decorative iraniane.
+    </p>
+    </div>
+    <button type="button" class="artigianato-intro-toggle" data-artigianato-intro-toggle aria-expanded="false">Leggi tutto</button>
+    </div>
+
+    <h2>Khatam: l'arte dell'intarsio persiano</h2>
+    <div class="khatam-desktop-block">
+    <p>
+     Il khatam è una delle tecniche decorative più affascinanti dell'Iran. Si basa su minuscoli elementi di legno,
+     metallo e osso assemblati in moduli geometrici di straordinaria precisione. Ogni superficie viene costruita
+     attraverso un lavoro lungo e paziente, dove la regolarità del disegno dipende da un controllo quasi
+     miniaturistico del dettaglio. Il risultato finale è elegante, ordinato fortemente riconoscibile.
+    </p>
+    <p>
+     Astucci, cofanetti, cornici e piccoli oggetti in khatam hanno un valore decorativo immediato, ma raccontano
+     anche una tradizione di bottega molto raffinata. Sono perfetti per chi cerca un regalo importante oppure un
+     oggetto da scrivania o da libreria con carattere autentico.
+    </p>
+    <div class="article-image-row">
+     <figure class="article-image-row__figure">
+      <img src="images/khatam-intarsio-tappeti verona-astuccio.webp" alt="Astuccio in khatam persiano" width="1080" height="1344" decoding="async">
+      <figcaption>Astucci in khatam persiano.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/khatam-intarsio-persiano-shahmansouri-tappeti-verona.webp" alt="Dettaglio di intarsio khatam persiano" width="899" height="899" decoding="async" loading="lazy">
+      <figcaption>Dettaglio di intarsio khatam.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/intarsio-persiano-khatam-verona-tappeti.webp" alt="Oggetto in intarsio khatam persiano" width="768" height="1024" decoding="async" loading="lazy">
+      <figcaption>Oggetto in khatam persiano.</figcaption>
+     </figure>
+    </div>
+    </div>
+    <div class="khatam-mobile-cards" aria-label="Khatam su mobile">
+     <article class="khatam-mobile-card">
+      <p>
+       Il khatam è una delle tecniche decorative più affascinanti dell'Iran. Si basa su minuscoli elementi di legno,
+       metallo e osso assemblati in moduli geometrici di straordinaria precisione. Ogni superficie viene costruita
+       attraverso un lavoro lungo e paziente, dove la regolarità del disegno dipende da un controllo quasi
+       miniaturistico del dettaglio. Il risultato finale è elegante, ordinato fortemente riconoscibile.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/khatam-intarsio-tappeti verona-astuccio.webp" alt="Astuccio in khatam persiano" width="1080" height="1344" decoding="async" loading="lazy">
+       <figcaption>Astucci in khatam persiano.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       Astucci, cofanetti, cornici e piccoli oggetti in khatam hanno un valore decorativo immediato, ma raccontano
+       anche una tradizione di bottega molto raffinata. Sono perfetti per chi cerca un regalo importante oppure un
+       oggetto da scrivania o da libreria con carattere autentico.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/khatam-intarsio-persiano-shahmansouri-tappeti-verona.webp" alt="Dettaglio di intarsio khatam persiano" width="899" height="899" decoding="async" loading="lazy">
+       <figcaption>Dettaglio di intarsio khatam.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/intarsio-persiano-khatam-verona-tappeti.webp" alt="Oggetto in intarsio khatam persiano" width="768" height="1024" decoding="async" loading="lazy">
+       <figcaption>Oggetto in khatam persiano.</figcaption>
+      </figure>
+     </article>
+    </div>
+
+    <div class="khatam-mobile-cards-v2" aria-label="Khatam su mobile">
+     <article class="khatam-mobile-card khatam-mobile-card--intro">
+      <h3>Khatam: l'arte dell'intarsio persiano</h3>
+      <p>Scorri</p>
+      <span class="khatam-mobile-card--intro-arrow" aria-hidden="true">→</span>
+      <figure>
+       <img src="images/intarsio-persiano-khatam-verona-tappeti.webp" alt="Oggetto in khatam persiano" width="768" height="1024" decoding="async" loading="lazy">
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       Il khatam &egrave; una delle tecniche decorative pi&ugrave; affascinanti dell'Iran. Si basa su minuscoli elementi di legno,
+       metallo e osso assemblati in moduli geometrici di straordinaria precisione. Ogni superficie viene costruita
+       attraverso un lavoro lungo e paziente, dove la regolarit&agrave; del disegno dipende da un controllo quasi
+       miniaturistico del dettaglio. Il risultato finale &egrave; elegante, ordinato e fortemente riconoscibile.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/khatam-intarsio-tappeti verona-astuccio.webp" alt="Astuccio in khatam persiano" width="1080" height="1344" decoding="async" loading="lazy">
+       <figcaption>Astucci in khatam persiano.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       Astucci, cofanetti, cornici e piccoli oggetti in khatam hanno un valore decorativo immediato, ma raccontano
+       anche una tradizione di bottega molto raffinata. Sono perfetti per chi cerca un regalo importante oppure un
+       oggetto da scrivania o da libreria con carattere autentico.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/khatam-intarsio-persiano-shahmansouri-tappeti-verona.webp" alt="Dettaglio di intarsio khatam persiano" width="899" height="899" decoding="async" loading="lazy">
+       <figcaption>Dettaglio di intarsio khatam.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/intarsio-persiano-khatam-verona-tappeti.webp" alt="Oggetto in khatam persiano" width="768" height="1024" decoding="async" loading="lazy">
+       <figcaption>Oggetto in khatam persiano.</figcaption>
+      </figure>
+     </article>
+    </div>
+
+    <h2>Ceramica persiana e superfici smaltate</h2>
+    <div class="ceramica-desktop-block">
+    <p>
+     La ceramica persiana è uno dei campi in cui il gusto iraniano per il colore e per il motivo ornamentale si
+     esprime con maggiore libertà. Piatti, vasi, mattonelle decorative e piccoli contenitori utilizzano smalti,
+     floreali, arabeschi e motivi tradizionali che dialogano bene sia con interni classici sia con ambienti più
+     contemporanei. La luce sulle superfici smaltate è parte dell'effetto decorativo: non si tratta solo di forma,
+     ma anche di riflesso, tatto e presenza visiva.
+    </p>
+    <p>
+     Nel contesto di Verona queste ceramiche funzionano molto bene come oggetti da appoggio, elementi da parete o
+     accenti cromatici in stanze con tappeti, legni chiari o arredi neutri. La loro forza sta nel portare
+     immediatezza decorativa senza perdere identità culturale.
+    </p>
+    <div class="article-image-row">
+     <figure class="article-image-row__figure">
+      <img src="images/piastrelle-persiane-verona-shahmansouri.webp" alt="Piastrelle persiane decorate" width="768" height="1024" decoding="async" loading="lazy">
+      <figcaption>Piastrelle persiane decorate.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/vasi-ceramica-verona-shahmansouri.webp" alt="Vasi in ceramica persiana" width="2048" height="2048" decoding="async" loading="lazy">
+      <figcaption>Vasi in ceramica persiana.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/porta-penne-ceramica-verona-shahmansouri.webp" alt="Porta penne in ceramica persiana" width="2048" height="2048" decoding="async" loading="lazy">
+      <figcaption>Porta penne in ceramica persiana.</figcaption>
+     </figure>
+    </div>
+    </div>
+    <div class="ceramica-mobile-cards-v2" aria-label="Ceramica persiana su mobile">
+     <article class="khatam-mobile-card khatam-mobile-card--intro">
+      <h3>Ceramica persiana</h3>
+      <p>Scorri</p>
+      <span class="khatam-mobile-card--intro-arrow" aria-hidden="true">→</span>
+      <figure>
+       <img src="images/piastrelle-persiane-verona-shahmansouri.webp" alt="Piastrelle persiane decorate" width="768" height="1024" decoding="async" loading="lazy">
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       La ceramica persiana &egrave; uno dei campi in cui il gusto iraniano per il colore e per il motivo ornamentale si
+       esprime con maggiore libert&agrave;. Piatti, vasi, mattonelle decorative e piccoli contenitori utilizzano smalti,
+       floreali, arabeschi e motivi tradizionali che dialogano bene sia con interni classici sia con ambienti pi&ugrave;
+       contemporanei. La luce sulle superfici smaltate &egrave; parte dell'effetto decorativo: non si tratta solo di forma,
+       ma anche di riflesso, tatto e presenza visiva.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/piastrelle-persiane-verona-shahmansouri.webp" alt="Piastrelle persiane decorate" width="768" height="1024" decoding="async" loading="lazy">
+       <figcaption>Piastrelle persiane decorate.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/vasi-ceramica-verona-shahmansouri.webp" alt="Vasi in ceramica persiana" width="2048" height="2048" decoding="async" loading="lazy">
+       <figcaption>Vasi in ceramica persiana.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/porta-penne-ceramica-verona-shahmansouri.webp" alt="Porta penne in ceramica persiana" width="2048" height="2048" decoding="async" loading="lazy">
+       <figcaption>Porta penne in ceramica persiana.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       Nel contesto di Verona queste ceramiche funzionano molto bene come oggetti da appoggio, elementi da parete o
+       accenti cromatici in stanze con tappeti, legni chiari o arredi neutri. La loro forza sta nel portare
+       immediatezza decorativa senza perdere identit&agrave; culturale.
+      </p>
+     </article>
+    </div>
+
+    <div class="cesellatura-desktop-block">
+    <h2>Cesellatura persiana e metlli decorati</h2>
+    <p>
+     La cesellatura persiana trasforma rame, bronzo, argento e altre leghe in superfici ricche di segni, bordure,
+     campiture floreali e dettagli minuti. Vassoi, samovar, vasi, ciotole e oggetti d'arredo vengono lavorati a
+     mano con una pazienza che rende ogni pezzo diverso dal successivo. Ciò che colpisce è il ritmo della
+     decorazione: il metallo non viene solo inciso, ma costruito come una superficie narrativa.
+    </p>
+    <p>
+     In casa questi oggetti funzionano bene come presenze singole, su una consolle, una tavola, una libreria o in
+     dialogo con tappeti e tessuti. Il loro valore sta anche nella capacità di introdurre una materia diversa, più
+     brillante e più solida, dentro ambienti dominati da legno, tessuti e luce naturale.
+    </p>
+    <div class="article-image-row">
+     <figure class="article-image-row__figure">
+      <img class="article-image-row__image--cesellatura" src="images/cesellatura-persiana-verona-shahmansouri.webp" alt="Oggetto di cesellatura persiana" width="1080" height="1078" decoding="async" loading="lazy">
+      <figcaption>Oggetto di cesellatura persiana.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img class="article-image-row__image--cesellatura" src="images/acqua-santiera-cesellata-persia-verona.webp" alt="Acquasantiera cesellata persiana" width="1500" height="2000" decoding="async" loading="lazy">
+      <figcaption>Acquasantiera cesellata persiana.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img class="article-image-row__image--cesellatura" src="images/cesellatura-persiana-verona-isfahan.webp" alt="Cesellatura persiana di Isfahan" width="1080" height="1348" decoding="async" loading="lazy">
+      <figcaption>Cesellatura persiana di Isfahan.</figcaption>
+     </figure>
+    </div>
+    </div>
+    <div class="cesellatura-mobile-cards-v2" aria-label="Cesellatura persiana su mobile">
+     <article class="khatam-mobile-card khatam-mobile-card--intro">
+      <h3>Cesellatura persiana</h3>
+      <p>Scorri</p>
+      <span class="khatam-mobile-card--intro-arrow" aria-hidden="true">→</span>
+      <figure>
+       <img src="images/cesellatura-persiana-verona-shahmansouri.webp" alt="Oggetto di cesellatura persiana" width="1080" height="1078" decoding="async" loading="lazy">
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       La cesellatura persiana trasforma rame, bronzo, argento e altre leghe in superfici ricche di segni, bordure,
+       campiture floreali e dettagli minuti. Vassoi, samovar, vasi, ciotole e oggetti d'arredo vengono lavorati a
+       mano con una pazienza che rende ogni pezzo diverso dal successivo. Ci&ograve; che colpisce &egrave; il ritmo della
+       decorazione: il metallo non viene solo inciso, ma costruito come una superficie narrativa.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       In casa questi oggetti funzionano bene come presenze singole, su una consolle, una tavola, una libreria o in
+       dialogo con tappeti e tessuti. Il loro valore sta anche nella capacit&agrave; di introdurre una materia diversa, pi&ugrave;
+       brillante e pi&ugrave; solida, dentro ambienti dominati da legno, tessuti e luce naturale.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/cesellatura-persiana-verona-shahmansouri.webp" alt="Oggetto di cesellatura persiana" width="1080" height="1078" decoding="async" loading="lazy">
+       <figcaption>Oggetto di cesellatura persiana.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/acqua-santiera-cesellata-persia-verona.webp" alt="Acquasantiera cesellata persiana" width="1500" height="2000" decoding="async" loading="lazy">
+       <figcaption>Acquasantiera cesellata persiana.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/cesellatura-persiana-verona-isfahan.webp" alt="Cesellatura persiana di Isfahan" width="1080" height="1348" decoding="async" loading="lazy">
+       <figcaption>Cesellatura persiana di Isfahan.</figcaption>
+      </figure>
+     </article>
+    </div>
+
+    <div class="miniature-desktop-block">
+    <h2>Miniature persiane e miniature su osso</h2>
+    <p>
+     Le miniature persiane traducono poesia, racconti, corti, giardini e scene simboliche in uno spazio ridotto,
+     ma di grande ricchezza narrativa. La loro forza è la precisione: linee sottili, cromie intense, dettagli
+     quasi invisibili a una prima lettura una composizione che unisce pittura e decorazione. Le miniature su
+     osso aggiungono a questo linguaggio un supporto più raro, luminoso e prezioso.
+    </p>
+    <p>
+     A Verona questi oggetti vengono spesso scelti da chi desidera un elemento raffinato, da appoggiare o
+     incorniciare, capace di evocare la tradizione persiana senza bisogno di grandi dimensioni. Sono perfetti come
+     dono e come piccoli oggetti da collezione.
+    </p>
+    <div class="article-image-row">
+     <figure class="article-image-row__figure">
+      <img src="images/miniatura-persiana-isfahan-shahmansouri.webp" alt="Miniatura persiana di Isfahan" width="717" height="978" decoding="async" loading="lazy">
+      <figcaption>Miniatura persiana di Isfahan.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img class="article-image-row__image--shah" src="images/miniatura-persiana-shah-shahmansouri.webp" alt="Miniatura persiana con figura di shah" width="1000" height="1800" decoding="async" loading="lazy">
+      <figcaption>Miniatura persiana con figura di shah.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/miniatura-shahmansouri-persiana-isfahan.webp" alt="Miniatura persiana dipinta a mano di Isfahan" width="1200" height="1600" decoding="async" loading="lazy">
+      <figcaption>Miniatura persiana di Isfahan.</figcaption>
+     </figure>
+    </div>
+    <div class="article-image-row">
+     <figure class="article-image-row__figure">
+      <img src="images/miniatura-persiana-osso-astuccio-shahmansouri-tappeti-verona.webp" alt="Astuccio con miniatura persiana su osso" width="1080" height="1078" decoding="async" loading="lazy">
+      <figcaption>Astucci con miniatura persiana su osso.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/miniatura-osso-persiana-isfahan-shahmansouri.webp" alt="Miniatura persiana su osso di Isfahan" width="1000" height="1000" decoding="async" loading="lazy">
+      <figcaption>Miniatura persiana su osso di Isfahan.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/osso-miniatura-persiana-shahmansouri.webp" alt="Oggetto in osso con miniatura persiana" width="1500" height="1125" decoding="async" loading="lazy">
+      <figcaption>Oggetto in osso con miniatura persiana.</figcaption>
+     </figure>
+    </div>
+    </div>
+    <div class="miniature-mobile-cards-v2" aria-label="Miniature persiane su mobile">
+     <article class="khatam-mobile-card khatam-mobile-card--intro">
+      <h3>Miniature persiane</h3>
+      <p>Scorri</p>
+      <span class="khatam-mobile-card--intro-arrow" aria-hidden="true">→</span>
+      <figure>
+       <img src="images/miniatura-persiana-isfahan-shahmansouri.webp" alt="Miniatura persiana di Isfahan" width="717" height="978" decoding="async" loading="lazy">
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       Le miniature persiane traducono poesia, racconti, corti, giardini e scene simboliche in uno spazio ridotto,
+       ma di grande ricchezza narrativa. La loro forza &egrave; la precisione: linee sottili, cromie intense, dettagli
+       quasi invisibili a una prima lettura una composizione che unisce pittura e decorazione. Le miniature su
+       osso aggiungono a questo linguaggio un supporto pi&ugrave; raro, luminoso e prezioso.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       A Verona questi oggetti vengono spesso scelti da chi desidera un elemento raffinato, da appoggiare o
+       incorniciare, capace di evocare la tradizione persiana senza bisogno di grandi dimensioni. Sono perfetti come
+       dono e come piccoli oggetti da collezione.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/miniatura-persiana-isfahan-shahmansouri.webp" alt="Miniatura persiana di Isfahan" width="717" height="978" decoding="async" loading="lazy">
+       <figcaption>Miniatura persiana di Isfahan.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/miniatura-persiana-shah-shahmansouri.webp" alt="Miniatura persiana con figura di shah" width="1000" height="1800" decoding="async" loading="lazy">
+       <figcaption>Miniatura persiana con figura di shah.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/miniatura-shahmansouri-persiana-isfahan.webp" alt="Miniatura persiana dipinta a mano di Isfahan" width="1200" height="1600" decoding="async" loading="lazy">
+       <figcaption>Miniatura persiana di Isfahan.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/miniatura-persiana-osso-astuccio-shahmansouri-tappeti-verona.webp" alt="Astuccio con miniatura persiana su osso" width="1080" height="1078" decoding="async" loading="lazy">
+       <figcaption>Astucci con miniatura persiana su osso.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/miniatura-osso-persiana-isfahan-shahmansouri.webp" alt="Miniatura persiana su osso di Isfahan" width="1000" height="1000" decoding="async" loading="lazy">
+       <figcaption>Miniatura persiana su osso di Isfahan.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/osso-miniatura-persiana-shahmansouri.webp" alt="Oggetto in osso con miniatura persiana" width="1500" height="1125" decoding="async" loading="lazy">
+       <figcaption>Oggetto in osso con miniatura persiana.</figcaption>
+      </figure>
+     </article>
+    </div>
+
+    <div class="papier-desktop-block">
+    <h2>Papier-mache, tessuti stampati e oggetti decorativi</h2>
+    <p>
+     Nel mondo dell'artigianato persiano hanno un ruolo importante anche il papier-mache decorato e i tessuti
+     stampati a mano come i ghalamkar. Nel primo caso, superfici scure e leggere vengono dipinte con fregi e
+     miniature; nel secondo, matrici in legno imprimono motivi ripetuti su stoffe che mantengono sempre una lieve
+     irregolarità artigianale. Sono oggetti che portano in casa non solo un'estetica, ma un gesto tecnico ancora
+     leggibile.
+    </p>
+    <p>
+     Questi manufatti sono interessanti perché ampliano il rapporto tra tappeto e arredo. Chi sceglie un tessuto
+     stampato, un cofanetto dipinto o uno specchio decorato può costruire un dialogo più ricco tra superfici,
+     colori e oggetti, senza trasformare l'ambiente in un allestimento tematico.
+    </p>
+    <div class="article-image-row">
+     <figure class="article-image-row__figure">
+      <img src="images/papier-mache-miniatura-persiana-verona-shahmansouri.webp" alt="Miniatura persiana in papier-mache" width="768" height="1024" decoding="async" loading="lazy">
+      <figcaption>Miniatura persiana in papier-mache.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/specchio-papier-mache-miniatura-persiana-shahmansouri.webp" alt="Specchio decorato in papier-mache persiano" width="1080" height="1346" decoding="async" loading="lazy">
+      <figcaption>Specchio decorato in papier-mache persiano.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/papier-mache-persiana-isfahan-shahmansouri.webp" alt="Oggetto persiano in papier-mache di Isfahan" width="1000" height="1000" decoding="async" loading="lazy">
+      <figcaption>Oggetto persiano in papier-mache di Isfahan.</figcaption>
+     </figure>
+    </div>
+    <div class="article-image-row">
+     <figure class="article-image-row__figure">
+      <img src="images/stoffa-stampata-persiana-verona-shahmansouri.webp" alt="Stoffa persiana stampata a mano" width="800" height="1067" decoding="async" loading="lazy">
+      <figcaption>Stoffa persiana stampata a mano.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/stoffa-stampata-persiana-shahmansouri.webp" alt="Tessuto persiano stampato" width="1000" height="914" decoding="async" loading="lazy">
+      <figcaption>Tessuto persiano stampato.</figcaption>
+     </figure>
+     <figure class="article-image-row__figure">
+      <img src="images/stoffa-stampata-verona-shahmansouri-regali.webp" alt="Stoffa stampata persiana per regali" width="1000" height="988" decoding="async" loading="lazy">
+      <figcaption>Stoffa stampata persiana per regali.</figcaption>
+     </figure>
+    </div>
+
+    </div>
+    <div class="papier-mobile-cards-v2" aria-label="Papier-mache e tessuti stampati su mobile">
+     <article class="khatam-mobile-card khatam-mobile-card--intro">
+      <h3>Papier-mache e tessuti stampati</h3>
+      <p>Scorri</p>
+      <span class="khatam-mobile-card--intro-arrow" aria-hidden="true">→</span>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       Nel mondo dell'artigianato persiano hanno un ruolo importante anche il papier-mache decorato e i tessuti
+       stampati a mano come i ghalamkar. Nel primo caso, superfici scure e leggere vengono dipinte con fregi e
+       miniature; nel secondo, matrici in legno imprimono motivi ripetuti su stoffe che mantengono sempre una lieve
+       irregolarit&agrave; artigianale. Sono oggetti che portano in casa non solo un'estetica, ma un gesto tecnico ancora
+       leggibile.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <p>
+       Questi manufatti sono interessanti perch&eacute; ampliano il rapporto tra tappeto e arredo. Chi sceglie un tessuto
+       stampato, un cofanetto dipinto o uno specchio decorato pu&ograve; costruire un dialogo pi&ugrave; ricco tra superfici,
+       colori e oggetti, senza trasformare l'ambiente in un allestimento tematico.
+      </p>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/papier-mache-miniatura-persiana-verona-shahmansouri.webp" alt="Miniatura persiana in papier-mache" width="768" height="1024" decoding="async" loading="lazy">
+       <figcaption>Miniatura persiana in papier-mache.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/specchio-papier-mache-miniatura-persiana-shahmansouri.webp" alt="Specchio decorato in papier-mache persiano" width="1080" height="1346" decoding="async" loading="lazy">
+       <figcaption>Specchio decorato in papier-mache persiano.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/papier-mache-persiana-isfahan-shahmansouri.webp" alt="Oggetto persiano in papier-mache di Isfahan" width="1000" height="1000" decoding="async" loading="lazy">
+       <figcaption>Oggetto persiano in papier-mache di Isfahan.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/stoffa-stampata-persiana-verona-shahmansouri.webp" alt="Stoffa persiana stampata a mano" width="800" height="1067" decoding="async" loading="lazy">
+       <figcaption>Stoffa persiana stampata a mano.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/stoffa-stampata-persiana-shahmansouri.webp" alt="Tessuto persiano stampato" width="1000" height="914" decoding="async" loading="lazy">
+       <figcaption>Tessuto persiano stampato.</figcaption>
+      </figure>
+     </article>
+     <article class="khatam-mobile-card">
+      <figure>
+       <img src="images/stoffa-stampata-verona-shahmansouri-regali.webp" alt="Stoffa stampata persiana per regali" width="1000" height="988" decoding="async" loading="lazy">
+       <figcaption>Stoffa stampata persiana per regali.</figcaption>
+      </figure>
+     </article>
+    </div>
+
+    <h2>Artiginato persiano come regalo e come arredo</h2>
+    <p>
+     Uno dei valori più interessanti dell'artigianato persiano sta nella sua versatilità. Un oggetto può essere un
+     regalo di pregio, ma anche un punto di appoggio visivo in una stanza, un complemento per un tappeto antico,
+     una nota di colore su una libreria o una presenza colta su una tavola. Per questo l'artigianato non va
+     pensato come categoria separata dai tappeti, ma come parte di uno stesso modo di intendere la casa e il
+     dettaglio decorativo.
+    </p>
+    <p>
+     Se desideri vedere questi oggetti da vicino, confrontare materiali e trovare l'abbinamento giusto con un
+     tappeto o con l'ambiente, pui <a href="contatti.html">contattarci o venirci a trovare a Verona</a>. Per
+     continuare il percorso nel sito pui anche visitare la sezione <a href="tappeti.html">Tappeti</a> o le pagine
+     dedicate a <a href="cultura.html">Cultura</a> e <a href="persia.html">Persia</a>.
+    </p>
+   </article>
+  </main>
+  <footer class="site-footer-global">
+   <div class="site-footer-global__grid">
+    <div>
+     <span class="site-footer-global__logo-badge">
+      <img class="site-footer-global__logo" src="images/logo-shahmansouri-tappeti-verona.webp" alt="Logo Shahmansouri Tappeti Persiani" width="280" height="160" loading="lazy" decoding="async">
+     </span>
+     <strong>Shahmansouri Tappeti Persiani</strong>
+     <p>Tappeti, artigianato persiano, lavaggi e restauri nel centro storico di Verona.</p>
+    </div>
+    <div>
+     <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
+     <p><a href="tel:+390458013280">+39 045 801 3280</a></p>
+     <p><a href="mailto:shahmansouri@tiscali.it">shahmansouri@tiscali.it</a></p>
+     <p><a href="contatti.html">Contatti</a></p>
+    </div>
+    <div>
+     <p class="footer-copyright">&copy; 2026 Shahmansouri</p>
+    </div>
+   </div>
+  </footer>
+ </div>
+ <script src="js/analytics.js" defer></script>
+ <script src="js/main.js"></script>
+ <script>
+  (function () {
+   const introWrapper = document.querySelector("[data-artigianato-intro-collapsible]");
+   const introToggle = document.querySelector("[data-artigianato-intro-toggle]");
+   const introExtra = document.querySelector("[data-artigianato-intro-extra]");
+   const mobileQuery = window.matchMedia("(max-width: 768px)");
+
+   if (!introWrapper || !introToggle || !introExtra) {
+    return;
+   }
+
+   function setExpanded(expanded) {
+    introExtra.hidden = !expanded;
+    introToggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+    introToggle.textContent = expanded ? "Mostra meno" : "Leggi tutto";
+   }
+
+   function syncMode() {
+    if (mobileQuery.matches) {
+     setExpanded(false);
+     return;
+    }
+    introExtra.hidden = false;
+   }
+
+   syncMode();
+
+   introToggle.addEventListener("click", function () {
+    if (!mobileQuery.matches) {
+     return;
+    }
+    const expanded = introToggle.getAttribute("aria-expanded") === "true";
+    setExpanded(!expanded);
+   });
+
+   if (typeof mobileQuery.addEventListener === "function") {
+    mobileQuery.addEventListener("change", syncMode);
+   } else if (typeof mobileQuery.addListener === "function") {
+    mobileQuery.addListener(syncMode);
+   }
+  }());
+ </script>
 </body>
 </html>
-
-
-
-
-
-
-

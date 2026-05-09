@@ -4,7 +4,7 @@ const resultsCount = document.querySelector("[data-results-count]");
 const activeFilters = document.querySelector("[data-active-filters]");
 const emptyState = document.querySelector("[data-empty-state]");
 const totalProductsTarget = document.querySelector("[data-total-products]");
-const resetButton = document.querySelector("[data-reset-filters]");
+const resetButton = document.querySelector("[data-reseta-filters]");
 const widthValue = document.querySelector("[data-width-value]");
 const lengthValue = document.querySelector("[data-length-value]");
 const widthInput = document.querySelector("[data-width-input]");
@@ -17,6 +17,7 @@ const filtersPanel = document.querySelector("[data-filters-panel]");
 const filtersOverlay = document.querySelector("[data-filters-overlay]");
 const categoryOptions = document.querySelector("[data-category-options]");
 const materialOptions = document.querySelector("[data-material-options]");
+
 let catalogProducts = [];
 let maxWidth = 0;
 let maxLength = 0;
@@ -40,7 +41,9 @@ const catalogI18n = isEnglishCatalog
             productDetails: "Product details"
         },
         categories: {
+            "Tappeto Antico": "Antique rug",
             "Tappeto classico": "Classic carpet",
+            "Tappeto figurativo": "Figurative rug",
             "Tappeto contemporaneo": "Contemporary carpet",
             "Runner": "Runner",
             "Kilim": "Kilim",
@@ -64,16 +67,16 @@ const catalogI18n = isEnglishCatalog
         locale: "it-IT",
         labels: {
             measures: "Misure",
-            availability: "Disponibilita'",
+            availability: "Disponibilità",
             openCard: "Apri scheda",
             search: "Ricerca",
             material: "Materiale",
             widthDesired: "Larghezza desiderata",
             lengthDesired: "Lunghezza desiderata",
             results: (filtered, total) => `${filtered} risultati su ${total}`,
-            emptyCatalog: "Il catalogo online e' in aggiornamento.",
+            emptyCatalog: "Il catalogo online è in aggiornamento.",
             noMatch: "Nessun prodotto corrisponde ai filtri selezionati. Prova a rimuoverne qualcuno.",
-            unavailable: "Il catalogo non e' disponibile in questo momento.",
+            unavailable: "Il catalogo non è disponibile in questo momento.",
             productDetails: "Dettagli prodotto"
         },
         categories: {},
@@ -93,6 +96,34 @@ function translateMaterial(value) {
     return catalogI18n.materials[normalizeText(String(value))] || value;
 }
 
+function getProductCategoryValue(product) {
+    if (isEnglishCatalog && String(product.categoryEn || "").trim()) {
+        return String(product.categoryEn).trim();
+    }
+
+    return String(product.category || "").trim();
+}
+
+function getProductMaterialLabels(product) {
+    if (isEnglishCatalog && Array.isArray(product.materialsEn) && product.materialsEn.length) {
+        return product.materialsEn
+            .map((material) => String(material || "").trim())
+            .filter(Boolean);
+    }
+
+    if (Array.isArray(product.materials) && product.materials.length) {
+        return product.materials
+            .map((material) => String(material || "").trim())
+            .filter(Boolean);
+    }
+
+    const fallbackValue = isEnglishCatalog && String(product.materialEn || "").trim()
+        ? product.materialEn
+        : product.material;
+
+    return extractMaterialTokens(fallbackValue);
+}
+
 function translateAvailability(value) {
     return catalogI18n.availability[value] || value;
 }
@@ -109,7 +140,7 @@ function createFilterCheckbox(name, value, label) {
 function getUniqueCategories(products) {
     return Array.from(new Set(
         products
-            .map((product) => String(product.category || "").trim())
+            .map((product) => getProductCategoryValue(product))
             .filter(Boolean)
     )).sort((left, right) => left.localeCompare(right, catalogI18n.locale));
 }
@@ -122,13 +153,9 @@ function extractMaterialTokens(materialValue) {
 }
 
 function getProductMaterialTokens(product) {
-    if (Array.isArray(product?.materials) && product.materials.length) {
-        return product.materials
-            .map((material) => normalizeText(String(material)))
-            .filter(Boolean);
-    }
-
-    return extractMaterialTokens(product?.material);
+    return getProductMaterialLabels(product)
+        .map((material) => normalizeText(String(material)))
+        .filter(Boolean);
 }
 
 function getUniqueMaterials(products) {
@@ -147,47 +174,20 @@ function getUniqueMaterials(products) {
 
 function renderDynamicFilterOptions() {
     if (categoryOptions) {
-        if (!catalogProducts.length) {
-            categoryOptions.innerHTML = "";
-        } else {
-            const categories = getUniqueCategories(catalogProducts);
-            categoryOptions.innerHTML = categories
+        categoryOptions.innerHTML = catalogProducts.length
+            ? getUniqueCategories(catalogProducts)
                 .map((category) => createFilterCheckbox("categories", category, translateCategory(category)))
-                .join("");
-        }
+                .join("")
+            : "";
     }
 
     if (materialOptions) {
-        if (!catalogProducts.length) {
-            materialOptions.innerHTML = "";
-        } else {
-            const materials = getUniqueMaterials(catalogProducts);
-            materialOptions.innerHTML = materials
+        materialOptions.innerHTML = catalogProducts.length
+            ? getUniqueMaterials(catalogProducts)
                 .map((material) => createFilterCheckbox("materials", material, translateMaterial(material)))
-                .join("");
-        }
+                .join("")
+            : "";
     }
-}
-
-function getFormState() {
-    if (!catalogForm) {
-        return {
-            search: "",
-            category: "all",
-            material: "all",
-            widthMax: maxWidth,
-            lengthMax: maxLength
-        };
-    }
-
-    const formData = new FormData(catalogForm);
-        return {
-            search: normalizeText(String(formData.get("search") || "")),
-            categories: formData.getAll("categories").map((value) => String(value)),
-            materials: formData.getAll("materials").map((value) => normalizeText(String(value))),
-            widthTarget: parseOptionalDimension(formData.get("widthTarget")),
-            lengthTarget: parseOptionalDimension(formData.get("lengthTarget"))
-        };
 }
 
 function parseOptionalDimension(value) {
@@ -198,6 +198,27 @@ function parseOptionalDimension(value) {
 
     const parsed = Number(normalized);
     return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
+}
+
+function getFormState() {
+    if (!catalogForm) {
+        return {
+            search: "",
+            categories: [],
+            materials: [],
+            widthTarget: null,
+            lengthTarget: null
+        };
+    }
+
+    const formData = new FormData(catalogForm);
+    return {
+        search: normalizeText(String(formData.get("search") || "")),
+        categories: formData.getAll("categories").map((value) => String(value)),
+        materials: formData.getAll("materials").map((value) => normalizeText(String(value))),
+        widthTarget: parseOptionalDimension(formData.get("widthTarget")),
+        lengthTarget: parseOptionalDimension(formData.get("lengthTarget"))
+    };
 }
 
 function matchesDimensions(product, filters) {
@@ -219,12 +240,17 @@ function matchesSearch(product, query) {
 
     const haystack = [
         product.title,
+        product.titleEn,
         product.category,
+        product.categoryEn,
         product.material,
+        product.materialEn,
         product.origin,
         product.description,
-        ...product.tags
-    ].join(" ").toLowerCase();
+        product.descriptionEn,
+        ...(Array.isArray(product.materialsEn) ? product.materialsEn : []),
+        ...(Array.isArray(product.tags) ? product.tags : [])
+    ].filter(Boolean).join(" ").toLowerCase();
 
     return haystack.includes(query);
 }
@@ -240,8 +266,10 @@ function matchesMaterials(product, selectedMaterials) {
 
 function filterProducts(filters) {
     return catalogProducts.filter((product) => {
-        return matchesSearch(product, filters.search)
-            && (!filters.categories.length || filters.categories.includes(product.category))
+        const languageMatch = !isEnglishCatalog || product.hasEnglish;
+        return languageMatch
+            && matchesSearch(product, filters.search)
+            && (!filters.categories.length || filters.categories.includes(getProductCategoryValue(product)))
             && matchesMaterials(product, filters.materials)
             && matchesDimensions(product, filters);
     });
@@ -378,12 +406,12 @@ function syncRangeFromInput(input, range, maxValue) {
     range.value = String(clamped);
 }
 
-function syncInputFromRange(range, input, maxValue) {
+function syncInputFromRange(range, input) {
     if (!(range instanceof HTMLInputElement) || !(input instanceof HTMLInputElement)) {
         return;
     }
 
-    const clamped = clampDimension(range.value, maxValue);
+    const clamped = clampDimension(range.value, Number(range.max));
     if (clamped === null) {
         return;
     }
@@ -443,11 +471,11 @@ if (catalogForm) {
 
         if (target instanceof HTMLInputElement && target.type === "range") {
             if (target === widthRange) {
-                syncInputFromRange(widthRange, widthInput, maxWidth);
+                syncInputFromRange(widthRange, widthInput);
             }
 
             if (target === lengthRange) {
-                syncInputFromRange(lengthRange, lengthInput, maxLength);
+                syncInputFromRange(lengthRange, lengthInput);
             }
 
             renderSliderValues(getFormState());
@@ -471,12 +499,15 @@ if (catalogForm) {
 
         renderCatalog();
     });
+
     catalogForm.addEventListener("change", renderCatalog);
 }
 
 if (resetButton) {
     resetButton.addEventListener("click", () => {
         if (catalogForm) {
+            catalogForm.reset();
+
             if (widthRange instanceof HTMLInputElement) {
                 widthRange.value = String(maxWidth);
             }
@@ -500,7 +531,7 @@ if (resetButton) {
 
 if (openFiltersButton) {
     openFiltersButton.addEventListener("click", () => {
-        const isOpen = filtersPanel?.classList.contains("is-open");
+        const isOpen = Boolean(filtersPanel && filtersPanel.classList.contains("is-open"));
         setFiltersOpen(!isOpen);
     });
 }
@@ -518,11 +549,11 @@ if (filtersOverlay) {
 }
 
 document.addEventListener("click", (event) => {
-    if (!isMobileFiltersMode()) {
+    if (!isMobileFiltersMode() || !filtersPanel || !openFiltersButton) {
         return;
     }
 
-    if (!filtersPanel?.classList.contains("is-open")) {
+    if (!filtersPanel.classList.contains("is-open")) {
         return;
     }
 
@@ -532,7 +563,7 @@ document.addEventListener("click", (event) => {
     }
 
     const clickedInsidePanel = filtersPanel.contains(target);
-    const clickedOpenButton = openFiltersButton?.contains(target);
+    const clickedOpenButton = openFiltersButton.contains(target);
 
     if (!clickedInsidePanel && !clickedOpenButton) {
         setFiltersOpen(false);
@@ -583,22 +614,20 @@ async function loadCatalogProducts() {
         }
 
         if (widthInput instanceof HTMLInputElement) {
-            widthInput.placeholder = maxWidth ? `Es. ${Math.min(maxWidth, 120)}` : widthInput.placeholder;
-            if (isEnglishCatalog) {
-                widthInput.placeholder = maxWidth ? `Ex. ${Math.min(maxWidth, 120)}` : widthInput.placeholder;
-            }
+            widthInput.placeholder = maxWidth
+                ? (isEnglishCatalog ? `Ex. ${Math.min(maxWidth, 120)}` : `Es. ${Math.min(maxWidth, 120)}`)
+                : widthInput.placeholder;
         }
 
         if (lengthInput instanceof HTMLInputElement) {
-            lengthInput.placeholder = maxLength ? `Es. ${Math.min(maxLength, 200)}` : lengthInput.placeholder;
-            if (isEnglishCatalog) {
-                lengthInput.placeholder = maxLength ? `Ex. ${Math.min(maxLength, 200)}` : lengthInput.placeholder;
-            }
+            lengthInput.placeholder = maxLength
+                ? (isEnglishCatalog ? `Ex. ${Math.min(maxLength, 200)}` : `Es. ${Math.min(maxLength, 200)}`)
+                : lengthInput.placeholder;
         }
     }
 
     if (totalProductsTarget) {
-        totalProductsTarget.textContent = String(catalogProducts.length);
+        totalProductsTarget.textContent = String(filterProducts(getFormState()).length);
     }
 
     renderCatalog();
