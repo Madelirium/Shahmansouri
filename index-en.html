@@ -1319,6 +1319,12 @@
       });
 
       track.addEventListener("pointerdown", function (event) {
+        if (event.button !== 0) {
+          return;
+        }
+        if (event.target.closest("a")) {
+          return;
+        }
         isPointerDragging = true;
         isTouchDragging = true;
         suppressTrackClick = false;

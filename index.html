@@ -1558,6 +1558,7 @@
       let dragStartX = 0;
       let dragStartScrollLeft = 0;
       let suppressTrackClick = false;
+      let hasDraggedPointer = false;
 
       if (!track || !status) {
         return;
@@ -1789,10 +1790,32 @@
         event.preventDefault();
       });
 
+      function endPointerDrag() {
+        if (!isPointerDragging && !isTouchDragging) {
+          return;
+        }
+        isPointerDragging = false;
+        isTouchDragging = false;
+        track.classList.remove("is-dragging");
+        resumeAutoScroll(90);
+        startAutoScroll();
+        window.setTimeout(function () {
+          suppressTrackClick = false;
+          hasDraggedPointer = false;
+        }, 0);
+      }
+
       track.addEventListener("pointerdown", function (event) {
+        if (event.button !== 0) {
+          return;
+        }
+        if (event.target.closest("a")) {
+          return;
+        }
         isPointerDragging = true;
         isTouchDragging = true;
         suppressTrackClick = false;
+        hasDraggedPointer = false;
         dragStartX = event.clientX;
         dragStartScrollLeft = track.scrollLeft;
         clearResumeTimeout();
@@ -1808,28 +1831,22 @@
         }
         const deltaX = event.clientX - dragStartX;
         if (Math.abs(deltaX) > 6) {
+          hasDraggedPointer = true;
           suppressTrackClick = true;
+          track.classList.add("is-dragging");
+        }
+        if (!hasDraggedPointer) {
+          return;
         }
         event.preventDefault();
         track.scrollLeft = dragStartScrollLeft - deltaX;
         syncVirtualScrollLeft();
       });
 
-      track.addEventListener("pointerup", function () {
-        isPointerDragging = false;
-        isTouchDragging = false;
-        track.classList.remove("is-dragging");
-        resumeAutoScroll(90);
-        startAutoScroll();
-      });
-
-      track.addEventListener("pointercancel", function () {
-        isPointerDragging = false;
-        isTouchDragging = false;
-        track.classList.remove("is-dragging");
-        resumeAutoScroll(90);
-        startAutoScroll();
-      });
+      track.addEventListener("pointerup", endPointerDrag);
+      track.addEventListener("pointercancel", endPointerDrag);
+      track.addEventListener("lostpointercapture", endPointerDrag);
+      window.addEventListener("pointerup", endPointerDrag);
 
       track.addEventListener("touchstart", function () {
         isTouchDragging = true;
