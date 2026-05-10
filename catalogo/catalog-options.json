@@ -1,40 +1,16 @@
 {
   "categories": [
-    "Kilim",
-    "Runner",
-    "Senza categoria",
+    "classico",
+    "Oggetto decorativo",
     "Tappeto",
-    "Tappeto Antico",
     "Tappeto classico",
-    "Tappeto contemporaneo",
-    "Tappeto figurativo",
-    "TEST ITA"
+    "Tappeto Contemporaneo"
   ],
   "materials": [
     "Ceramica",
     "Cotone",
     "Lana",
     "Legno",
-    "Seta",
-    "Test Ita Mat",
-    "Trama E Ordito Di Cotone",
-    "Trama E Ordito Di Lana",
-    "Vello In Lana"
-  ],
-  "fallbackCategory": "Senza categoria",
-  "categoryLabelsEn": {
-    "Tappeto": "Rug",
-    "Tappeto classico": "Classic rug",
-    "Tappeto Antico": "Ancient Rug",
-    "Tappeto figurativo": "Figurative Rug",
-    "TEST ITA": "TEST EN"
-  },
-  "materialLabelsEn": {
-    "Lana": "wool",
-    "Cotone": "Cotton",
-    "Trama E Ordito Di Cotone": "warp and weft cotton",
-    "Vello In Lana": "wool veil",
-    "Trama E Ordito Di Lana": "warp and weft wool",
-    "Test Ita Mat": "TESTI EN MAT"
-  }
+    "Seta"
+  ]
 }

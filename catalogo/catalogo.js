@@ -4,20 +4,13 @@ const resultsCount = document.querySelector("[data-results-count]");
 const activeFilters = document.querySelector("[data-active-filters]");
 const emptyState = document.querySelector("[data-empty-state]");
 const totalProductsTarget = document.querySelector("[data-total-products]");
-const resetButton = document.querySelector("[data-reseta-filters]");
+const resetButton = document.querySelector("[data-reset-filters]");
 const widthValue = document.querySelector("[data-width-value]");
 const lengthValue = document.querySelector("[data-length-value]");
-const widthInput = document.querySelector("[data-width-input]");
-const lengthInput = document.querySelector("[data-length-input]");
-const widthRange = document.querySelector("[data-width-range]");
-const lengthRange = document.querySelector("[data-length-range]");
 const openFiltersButton = document.querySelector("[data-open-filters]");
 const closeFiltersButton = document.querySelector("[data-close-filters]");
 const filtersPanel = document.querySelector("[data-filters-panel]");
 const filtersOverlay = document.querySelector("[data-filters-overlay]");
-const categoryOptions = document.querySelector("[data-category-options]");
-const materialOptions = document.querySelector("[data-material-options]");
-
 let catalogProducts = [];
 let maxWidth = 0;
 let maxLength = 0;
@@ -32,8 +25,8 @@ const catalogI18n = isEnglishCatalog
             openCard: "Open product",
             search: "Search",
             material: "Material",
-            widthDesired: "Desired width",
-            lengthDesired: "Desired length",
+            widthUpTo: "Width up to",
+            lengthUpTo: "Length up to",
             results: (filtered, total) => `${filtered} results out of ${total}`,
             emptyCatalog: "The online catalog is being updated.",
             noMatch: "No product matches the selected filters. Try removing some of them.",
@@ -41,9 +34,7 @@ const catalogI18n = isEnglishCatalog
             productDetails: "Product details"
         },
         categories: {
-            "Tappeto Antico": "Antique rug",
             "Tappeto classico": "Classic carpet",
-            "Tappeto figurativo": "Figurative rug",
             "Tappeto contemporaneo": "Contemporary carpet",
             "Runner": "Runner",
             "Kilim": "Kilim",
@@ -67,16 +58,16 @@ const catalogI18n = isEnglishCatalog
         locale: "it-IT",
         labels: {
             measures: "Misure",
-            availability: "Disponibilità",
+            availability: "Disponibilita'",
             openCard: "Apri scheda",
             search: "Ricerca",
             material: "Materiale",
-            widthDesired: "Larghezza desiderata",
-            lengthDesired: "Lunghezza desiderata",
+            widthUpTo: "Larghezza fino a",
+            lengthUpTo: "Lunghezza fino a",
             results: (filtered, total) => `${filtered} risultati su ${total}`,
-            emptyCatalog: "Il catalogo online è in aggiornamento.",
+            emptyCatalog: "Il catalogo online e' in aggiornamento.",
             noMatch: "Nessun prodotto corrisponde ai filtri selezionati. Prova a rimuoverne qualcuno.",
-            unavailable: "Il catalogo non è disponibile in questo momento.",
+            unavailable: "Il catalogo non e' disponibile in questo momento.",
             productDetails: "Dettagli prodotto"
         },
         categories: {},
@@ -96,118 +87,18 @@ function translateMaterial(value) {
     return catalogI18n.materials[normalizeText(String(value))] || value;
 }
 
-function getProductCategoryValue(product) {
-    if (isEnglishCatalog && String(product.categoryEn || "").trim()) {
-        return String(product.categoryEn).trim();
-    }
-
-    return String(product.category || "").trim();
-}
-
-function getProductMaterialLabels(product) {
-    if (isEnglishCatalog && Array.isArray(product.materialsEn) && product.materialsEn.length) {
-        return product.materialsEn
-            .map((material) => String(material || "").trim())
-            .filter(Boolean);
-    }
-
-    if (Array.isArray(product.materials) && product.materials.length) {
-        return product.materials
-            .map((material) => String(material || "").trim())
-            .filter(Boolean);
-    }
-
-    const fallbackValue = isEnglishCatalog && String(product.materialEn || "").trim()
-        ? product.materialEn
-        : product.material;
-
-    return extractMaterialTokens(fallbackValue);
-}
-
 function translateAvailability(value) {
     return catalogI18n.availability[value] || value;
-}
-
-function createFilterCheckbox(name, value, label) {
-    return `
-        <label class="filters-check">
-            <input type="checkbox" name="${name}" value="${value}">
-            <span>${label}</span>
-        </label>
-    `;
-}
-
-function getUniqueCategories(products) {
-    return Array.from(new Set(
-        products
-            .map((product) => getProductCategoryValue(product))
-            .filter(Boolean)
-    )).sort((left, right) => left.localeCompare(right, catalogI18n.locale));
-}
-
-function extractMaterialTokens(materialValue) {
-    return String(materialValue || "")
-        .split(/,|\/|&|\band\b/gi)
-        .map((token) => normalizeText(token))
-        .filter(Boolean);
-}
-
-function getProductMaterialTokens(product) {
-    return getProductMaterialLabels(product)
-        .map((material) => normalizeText(String(material)))
-        .filter(Boolean);
-}
-
-function getUniqueMaterials(products) {
-    const materialsMap = new Map();
-
-    products.forEach((product) => {
-        getProductMaterialTokens(product).forEach((token) => {
-            if (!materialsMap.has(token)) {
-                materialsMap.set(token, token);
-            }
-        });
-    });
-
-    return Array.from(materialsMap.keys()).sort((left, right) => left.localeCompare(right, catalogI18n.locale));
-}
-
-function renderDynamicFilterOptions() {
-    if (categoryOptions) {
-        categoryOptions.innerHTML = catalogProducts.length
-            ? getUniqueCategories(catalogProducts)
-                .map((category) => createFilterCheckbox("categories", category, translateCategory(category)))
-                .join("")
-            : "";
-    }
-
-    if (materialOptions) {
-        materialOptions.innerHTML = catalogProducts.length
-            ? getUniqueMaterials(catalogProducts)
-                .map((material) => createFilterCheckbox("materials", material, translateMaterial(material)))
-                .join("")
-            : "";
-    }
-}
-
-function parseOptionalDimension(value) {
-    const normalized = String(value || "").trim();
-    if (!normalized) {
-        return null;
-    }
-
-    const parsed = Number(normalized);
-    return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
 }
 
 function getFormState() {
     if (!catalogForm) {
         return {
             search: "",
-            categories: [],
-            materials: [],
-            widthTarget: null,
-            lengthTarget: null
+            category: "all",
+            material: "all",
+            widthMax: maxWidth,
+            lengthMax: maxLength
         };
     }
 
@@ -216,17 +107,17 @@ function getFormState() {
         search: normalizeText(String(formData.get("search") || "")),
         categories: formData.getAll("categories").map((value) => String(value)),
         materials: formData.getAll("materials").map((value) => normalizeText(String(value))),
-        widthTarget: parseOptionalDimension(formData.get("widthTarget")),
-        lengthTarget: parseOptionalDimension(formData.get("lengthTarget"))
+        widthMax: Number(String(formData.get("widthMax") || maxWidth).trim()) || maxWidth,
+        lengthMax: Number(String(formData.get("lengthMax") || maxLength).trim()) || maxLength
     };
 }
 
 function matchesDimensions(product, filters) {
-    if (filters.widthTarget !== null && product.widthCm > filters.widthTarget + 15) {
+    if (product.widthCm > filters.widthMax) {
         return false;
     }
 
-    if (filters.lengthTarget !== null && product.lengthCm > filters.lengthTarget + 15) {
+    if (product.lengthCm > filters.lengthMax) {
         return false;
     }
 
@@ -240,17 +131,12 @@ function matchesSearch(product, query) {
 
     const haystack = [
         product.title,
-        product.titleEn,
         product.category,
-        product.categoryEn,
         product.material,
-        product.materialEn,
         product.origin,
         product.description,
-        product.descriptionEn,
-        ...(Array.isArray(product.materialsEn) ? product.materialsEn : []),
-        ...(Array.isArray(product.tags) ? product.tags : [])
-    ].filter(Boolean).join(" ").toLowerCase();
+        ...product.tags
+    ].join(" ").toLowerCase();
 
     return haystack.includes(query);
 }
@@ -260,27 +146,21 @@ function matchesMaterials(product, selectedMaterials) {
         return true;
     }
 
-    const productMaterials = getProductMaterialTokens(product);
-    return selectedMaterials.some((material) => productMaterials.includes(material));
+    const productMaterial = normalizeText(String(product.material || ""));
+    return selectedMaterials.some((material) => productMaterial.includes(material));
 }
 
 function filterProducts(filters) {
     return catalogProducts.filter((product) => {
-        const languageMatch = !isEnglishCatalog || product.hasEnglish;
-        return languageMatch
-            && matchesSearch(product, filters.search)
-            && (!filters.categories.length || filters.categories.includes(getProductCategoryValue(product)))
+        return matchesSearch(product, filters.search)
+            && (!filters.categories.length || filters.categories.includes(product.category))
             && matchesMaterials(product, filters.materials)
             && matchesDimensions(product, filters);
     });
 }
 
 function createProductCard(product) {
-    const productPage = isEnglishCatalog && product.hasEnglish && product.slugEn
-        ? `products/${product.slugEn}.html`
-        : `products/${product.slug}.html`;
-    const cardTitle = isEnglishCatalog && product.titleEn ? product.titleEn : product.title;
-    const cardAlt = isEnglishCatalog && product.altEn ? product.altEn : product.alt;
+    const productPage = `products/${product.slug}.html`;
     const hasNumericPrice = Number.isFinite(product.priceValue);
     const hasSalePrice = Number.isFinite(product.salePriceValue);
     const displayPrice = hasNumericPrice
@@ -316,13 +196,13 @@ function createProductCard(product) {
         <article class="product-card">
             <div class="product-card__media">
                 <a href="${productPage}">
-                    <img src="${product.coverImage}" alt="${cardAlt}" loading="lazy" decoding="async" width="800" height="600">
+                    <img src="${product.coverImage}" alt="${product.alt}" loading="lazy" decoding="async" width="800" height="600">
                 </a>
             </div>
             <div class="product-card__body">
                 ${priceMarkup ? `<div class="product-card__meta">${priceMarkup}</div>` : ""}
                 <div>
-                    <h3 class="product-card__title"><a href="${productPage}">${cardTitle}</a></h3>
+                    <h3 class="product-card__title"><a href="${productPage}">${product.title}</a></h3>
                 </div>
                 <ul class="product-card__detail-list" aria-label="${catalogI18n.labels.productDetails}">
                     <li><strong>${catalogI18n.labels.measures}:</strong> ${product.dimensions}</li>
@@ -355,12 +235,12 @@ function renderActiveFilters(filters) {
         chips.push(`${catalogI18n.labels.material}: ${translateMaterial(material)}`);
     });
 
-    if (filters.widthTarget !== null) {
-        chips.push(`${catalogI18n.labels.widthDesired}: ${filters.widthTarget} cm`);
+    if (filters.widthMax < maxWidth) {
+        chips.push(`${catalogI18n.labels.widthUpTo} ${filters.widthMax} cm`);
     }
 
-    if (filters.lengthTarget !== null) {
-        chips.push(`${catalogI18n.labels.lengthDesired}: ${filters.lengthTarget} cm`);
+    if (filters.lengthMax < maxLength) {
+        chips.push(`${catalogI18n.labels.lengthUpTo} ${filters.lengthMax} cm`);
     }
 
     activeFilters.innerHTML = chips.map((chip) => `<span class="filter-chip">${chip}</span>`).join("");
@@ -368,56 +248,12 @@ function renderActiveFilters(filters) {
 
 function renderSliderValues(filters) {
     if (widthValue) {
-        widthValue.textContent = filters.widthTarget !== null ? `${filters.widthTarget} cm` : "-";
+        widthValue.textContent = `${filters.widthMax} cm`;
     }
 
     if (lengthValue) {
-        lengthValue.textContent = filters.lengthTarget !== null ? `${filters.lengthTarget} cm` : "-";
+        lengthValue.textContent = `${filters.lengthMax} cm`;
     }
-}
-
-function clampDimension(value, maxValue) {
-    const parsed = Number(value);
-
-    if (!Number.isFinite(parsed)) {
-        return null;
-    }
-
-    return Math.min(Math.max(Math.round(parsed), 0), maxValue);
-}
-
-function syncRangeFromInput(input, range, maxValue) {
-    if (!(input instanceof HTMLInputElement) || !(range instanceof HTMLInputElement)) {
-        return;
-    }
-
-    const normalized = input.value.trim();
-    if (!normalized) {
-        range.value = String(maxValue);
-        return;
-    }
-
-    const clamped = clampDimension(normalized, maxValue);
-    if (clamped === null) {
-        return;
-    }
-
-    input.value = String(clamped);
-    range.value = String(clamped);
-}
-
-function syncInputFromRange(range, input) {
-    if (!(range instanceof HTMLInputElement) || !(input instanceof HTMLInputElement)) {
-        return;
-    }
-
-    const clamped = clampDimension(range.value, Number(range.max));
-    if (clamped === null) {
-        return;
-    }
-
-    range.value = String(clamped);
-    input.value = String(clamped);
 }
 
 function renderCatalog() {
@@ -470,43 +306,25 @@ if (catalogForm) {
         const target = event.target;
 
         if (target instanceof HTMLInputElement && target.type === "range") {
-            if (target === widthRange) {
-                syncInputFromRange(widthRange, widthInput);
-            }
-
-            if (target === lengthRange) {
-                syncInputFromRange(lengthRange, lengthInput);
-            }
-
             renderSliderValues(getFormState());
-            renderCatalog();
-            return;
-        }
-
-        if (target === widthInput) {
-            syncRangeFromInput(widthInput, widthRange, maxWidth);
-            renderSliderValues(getFormState());
-            renderCatalog();
-            return;
-        }
-
-        if (target === lengthInput) {
-            syncRangeFromInput(lengthInput, lengthRange, maxLength);
-            renderSliderValues(getFormState());
-            renderCatalog();
             return;
         }
 
         renderCatalog();
     });
-
     catalogForm.addEventListener("change", renderCatalog);
+    catalogForm.addEventListener("change", () => {
+        if (isMobileFiltersMode()) {
+            setFiltersOpen(false);
+        }
+    });
 }
 
 if (resetButton) {
     resetButton.addEventListener("click", () => {
         if (catalogForm) {
-            catalogForm.reset();
+            const widthRange = catalogForm.elements.namedItem("widthMax");
+            const lengthRange = catalogForm.elements.namedItem("lengthMax");
 
             if (widthRange instanceof HTMLInputElement) {
                 widthRange.value = String(maxWidth);
@@ -514,14 +332,6 @@ if (resetButton) {
 
             if (lengthRange instanceof HTMLInputElement) {
                 lengthRange.value = String(maxLength);
-            }
-
-            if (widthInput instanceof HTMLInputElement) {
-                widthInput.value = "";
-            }
-
-            if (lengthInput instanceof HTMLInputElement) {
-                lengthInput.value = "";
             }
         }
 
@@ -531,7 +341,7 @@ if (resetButton) {
 
 if (openFiltersButton) {
     openFiltersButton.addEventListener("click", () => {
-        const isOpen = Boolean(filtersPanel && filtersPanel.classList.contains("is-open"));
+        const isOpen = filtersPanel?.classList.contains("is-open");
         setFiltersOpen(!isOpen);
     });
 }
@@ -549,11 +359,11 @@ if (filtersOverlay) {
 }
 
 document.addEventListener("click", (event) => {
-    if (!isMobileFiltersMode() || !filtersPanel || !openFiltersButton) {
+    if (!isMobileFiltersMode()) {
         return;
     }
 
-    if (!filtersPanel.classList.contains("is-open")) {
+    if (!filtersPanel?.classList.contains("is-open")) {
         return;
     }
 
@@ -563,7 +373,7 @@ document.addEventListener("click", (event) => {
     }
 
     const clickedInsidePanel = filtersPanel.contains(target);
-    const clickedOpenButton = openFiltersButton.contains(target);
+    const clickedOpenButton = openFiltersButton?.contains(target);
 
     if (!clickedInsidePanel && !clickedOpenButton) {
         setFiltersOpen(false);
@@ -600,9 +410,11 @@ async function loadCatalogProducts() {
     catalogProducts = await response.json();
     maxWidth = Math.max(...catalogProducts.map((product) => product.widthCm), 0);
     maxLength = Math.max(...catalogProducts.map((product) => product.lengthCm), 0);
-    renderDynamicFilterOptions();
 
     if (catalogForm) {
+        const widthRange = catalogForm.elements.namedItem("widthMax");
+        const lengthRange = catalogForm.elements.namedItem("lengthMax");
+
         if (widthRange instanceof HTMLInputElement) {
             widthRange.max = String(maxWidth);
             widthRange.value = String(maxWidth);
@@ -612,22 +424,10 @@ async function loadCatalogProducts() {
             lengthRange.max = String(maxLength);
             lengthRange.value = String(maxLength);
         }
-
-        if (widthInput instanceof HTMLInputElement) {
-            widthInput.placeholder = maxWidth
-                ? (isEnglishCatalog ? `Ex. ${Math.min(maxWidth, 120)}` : `Es. ${Math.min(maxWidth, 120)}`)
-                : widthInput.placeholder;
-        }
-
-        if (lengthInput instanceof HTMLInputElement) {
-            lengthInput.placeholder = maxLength
-                ? (isEnglishCatalog ? `Ex. ${Math.min(maxLength, 200)}` : `Es. ${Math.min(maxLength, 200)}`)
-                : lengthInput.placeholder;
-        }
     }
 
     if (totalProductsTarget) {
-        totalProductsTarget.textContent = String(filterProducts(getFormState()).length);
+        totalProductsTarget.textContent = String(catalogProducts.length);
     }
 
     renderCatalog();

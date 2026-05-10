@@ -38,39 +38,17 @@ if (productHero && productHeroImage) {
         const overlay = document.createElement("dialog");
         overlay.className = "product-lightbox";
         overlay.innerHTML = `
-            <div class="product-lightbox__frame">
-                <button type="button" class="product-lightbox__close" aria-label="Chiudi immagine">&times;</button>
-                <div class="product-lightbox__viewport">
-                    <img src="${productHeroImage.dataset.zoomSrc || productHeroImage.src}" alt="${productHeroImage.alt}">
-                </div>
-            </div>
+            <button type="button" class="product-lightbox__close" aria-label="Chiudi immagine">&times;</button>
+            <img src="${productHeroImage.dataset.zoomSrc || productHeroImage.src}" alt="${productHeroImage.alt}">
         `;
 
         document.body.appendChild(overlay);
         overlay.showModal();
-        const overlayViewport = overlay.querySelector(".product-lightbox__viewport");
-        const overlayImage = overlay.querySelector("img");
 
         const close = () => {
             overlay.close();
             overlay.remove();
         };
-
-        if (overlayViewport instanceof HTMLElement && overlayImage instanceof HTMLImageElement) {
-            overlayViewport.addEventListener("mousemove", (event) => {
-                const rect = overlayViewport.getBoundingClientRect();
-                const x = ((event.clientX - rect.left) / rect.width) * 100;
-                const y = ((event.clientY - rect.top) / rect.height) * 100;
-
-                overlayViewport.style.setProperty("--lightbox-zoom-x", `${x}%`);
-                overlayViewport.style.setProperty("--lightbox-zoom-y", `${y}%`);
-                overlayViewport.classList.add("is-zoomed");
-            });
-
-            overlayViewport.addEventListener("mouseleave", () => {
-                overlayViewport.classList.remove("is-zoomed");
-            });
-        }
 
         overlay.addEventListener("click", (event) => {
             if (event.target === overlay) {
