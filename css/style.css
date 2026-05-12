@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Stili principali per il sito Shahmansouri.
  * Questo foglio definisce il layout desktop e le
  * componenti condivise come header, menu, contenuto e footer.
@@ -171,6 +171,22 @@ img {
     inset 0 1px 0 rgba(255, 255, 255, 0.42),
     0 3px 8px rgba(125, 93, 20, 0.1);
   position: relative;
+}
+
+.nav-mobile-brand {
+  display: none;
+}
+
+.nav-mobile-brand__link {
+  display: block;
+  text-decoration: none;
+}
+
+.nav-mobile-brand img {
+  display: block;
+  width: min(220px, 100%);
+  height: auto;
+  margin: 0 auto;
 }
 
 .nav::before,
@@ -545,12 +561,142 @@ img {
   color: #a63500;
 }
 
+.guide-index-page .nav-language-switch a {
+  color: #8a3c00;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.guide-index-page .nav-language-switch a:hover,
+.guide-index-page .nav-language-switch a:focus-visible {
+  color: #a63500;
+}
+
+.guide-index-article a {
+  color: #8a3c00;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.guide-index-article a:hover,
+.guide-index-article a:focus-visible {
+  color: #a63500;
+}
+
+.guide-index-list {
+  margin-left: 22px;
+}
+
+.guide-index-list li + li {
+  margin-top: 10px;
+}
+
+.guide-index-section + .guide-index-section {
+  margin-top: 26px;
+}
+
+.guide-index-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 18px;
+  margin-top: 12px;
+}
+
+.guide-index-card {
+  padding: 14px 16px;
+  border: 1px solid rgba(167, 120, 28, 0.62);
+  background: linear-gradient(to bottom, rgba(252, 244, 210, 0.92), rgba(243, 226, 170, 0.74));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    0 3px 10px rgba(84, 36, 0, 0.08);
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    border-color 0.16s ease,
+    background 0.16s ease;
+}
+
+.guide-index-card:hover,
+.guide-index-card:focus-visible,
+.guide-index-card:focus-within {
+  border-color: rgba(146, 94, 11, 0.88);
+  background: linear-gradient(to bottom, rgba(255, 248, 223, 0.98), rgba(247, 231, 179, 0.86));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 6px 16px rgba(84, 36, 0, 0.14);
+  transform: translateY(-1px);
+}
+
+.guide-index-card:focus-visible {
+  outline: 2px solid rgba(123, 31, 22, 0.75);
+  outline-offset: 2px;
+}
+
+.guide-index-card h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.guide-index-card p {
+  margin: 0;
+  text-align: left;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+  .guide-index-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .iran-content .article figure {
   margin: 16px auto 12px;
 }
 
 .iran-content .article figure img {
   max-width: min(100%, 430px);
+}
+
+.guide-article-page {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.guide-article-toc,
+.guide-article-facts,
+.guide-article-summary {
+  margin: 18px 0 22px;
+  padding: 14px 16px;
+  border: 1px solid rgba(167, 120, 28, 0.52);
+  background: linear-gradient(to bottom, rgba(251, 243, 209, 0.96), rgba(244, 229, 181, 0.78));
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
+.guide-article-toc h2,
+.guide-article-summary h2 {
+  margin-top: 0;
+}
+
+.guide-article-toc ul,
+.guide-article-facts ul,
+.guide-article-related {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.guide-article-facts li + li,
+.guide-article-related li + li,
+.guide-article-toc li + li {
+  margin-top: 6px;
+}
+
+.guide-article-summary p {
+  margin-bottom: 0;
 }
 
 .contact-gallery--double {
@@ -969,6 +1115,10 @@ img {
   background: #25d366;
 }
 
+.floating-instagram {
+  background: linear-gradient(135deg, #f58529 0%, #dd2a7b 52%, #8134af 100%);
+}
+
 .floating-maps {
   background: #b58821;
 }
@@ -976,7 +1126,7 @@ img {
 .site-back-to-top {
   position: fixed;
   right: 18px;
-  bottom: 190px;
+  bottom: 254px;
   z-index: 78;
   display: inline-flex;
   align-items: center;
@@ -1082,11 +1232,11 @@ img {
   width: calc(100% - 60px);
   min-height: 58px;
   padding: 0 18px;
-  border: 1px solid #b89028;
+  border: 1px solid rgba(214, 177, 102, 0.42);
   background:
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0) 48%),
-    linear-gradient(to bottom, #efd98c, #d4ad45);
-  color: #6f2b00;
+    linear-gradient(to bottom, rgba(255, 241, 214, 0.14), rgba(255, 241, 214, 0) 48%),
+    linear-gradient(to bottom, #7c1717, #611010);
+  color: #f6ead8;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 15px;
   font-weight: bold;
@@ -1094,8 +1244,8 @@ img {
   text-transform: uppercase;
   text-align: left;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 4px 8px rgba(125, 93, 20, 0.18);
+    inset 0 1px 0 rgba(255, 241, 214, 0.12),
+    0 8px 18px rgba(49, 9, 0, 0.18);
   cursor: pointer;
   position: relative;
 }
@@ -1119,7 +1269,7 @@ img {
   font-size: 11px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(111, 43, 0, 0.72);
+  color: rgba(246, 234, 216, 0.78);
 }
 
 .nav-mobile-toggle[aria-expanded="true"]::before {
