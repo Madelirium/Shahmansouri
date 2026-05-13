@@ -46,6 +46,18 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <style>
+    .tappeti-content .article-image-row--two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 720px;
+      margin: 12px auto 18px;
+    }
+
+    .tappeti-content .article-image-row--two .article-image-row__figure {
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
     .home-featured-products {
       margin: 34px 40px 0;
       padding: 20px 24px 24px;
@@ -171,6 +183,15 @@
     }
 
     @media (max-width: 640px) {
+      .tappeti-content .article-image-row--two {
+        gap: 10px;
+        max-width: 100%;
+      }
+
+      .tappeti-content .article-image-row--two .article-image-row__figure {
+        max-width: 100%;
+      }
+
       .home-featured-products {
         margin: 14px 20px 0;
         padding: 16px 16px 20px;

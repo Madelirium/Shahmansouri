@@ -494,8 +494,11 @@
         margin: 0 20px 14px;
         overflow-x: auto;
         overflow-y: visible;
-        padding: 0 28px 8px 2px;
-        scroll-snap-type: x proximity;
+        padding: 0 36px 8px 2px;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: 2px;
+        overscroll-behavior-x: contain;
+        scroll-behavior: auto;
         -webkit-overflow-scrolling: touch;
       }
 
@@ -518,8 +521,8 @@
       }
 
       .home-mobile-intro-card {
-        flex: 0 0 min(72vw, 280px);
-        min-width: min(72vw, 280px);
+        flex: 0 0 min(64vw, 252px);
+        min-width: min(64vw, 252px);
         padding: 14px 16px 16px;
         border: 1px solid rgba(177, 145, 83, 0.22);
         background:
@@ -531,6 +534,7 @@
           0 10px 18px rgba(112, 71, 35, 0.08),
           10px 0 18px rgba(112, 71, 35, 0.05);
         scroll-snap-align: start;
+        scroll-snap-stop: always;
       }
 
       .home-mobile-intro-card__image {
