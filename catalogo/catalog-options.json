@@ -8,6 +8,7 @@
     "Tappeto classico",
     "Tappeto contemporaneo",
     "Tappeto figurativo",
+    "Tappeto Fine",
     "TEST ITA"
   ],
   "materials": [
@@ -19,7 +20,9 @@
     "Test Ita Mat",
     "Trama E Ordito Di Cotone",
     "Trama E Ordito Di Lana",
-    "Vello In Lana"
+    "Trama E Ordito Di Seta",
+    "Vello In Lana",
+    "Vello Misto Lana E Seta"
   ],
   "fallbackCategory": "Senza categoria",
   "categoryLabelsEn": {
@@ -27,7 +30,8 @@
     "Tappeto classico": "Classic rug",
     "Tappeto Antico": "Ancient Rug",
     "Tappeto figurativo": "Figurative Rug",
-    "TEST ITA": "TEST EN"
+    "TEST ITA": "TEST EN",
+    "Tappeto Fine": "Fine rug"
   },
   "materialLabelsEn": {
     "Lana": "wool",
@@ -35,6 +39,8 @@
     "Trama E Ordito Di Cotone": "warp and weft cotton",
     "Vello In Lana": "wool veil",
     "Trama E Ordito Di Lana": "warp and weft wool",
-    "Test Ita Mat": "TESTI EN MAT"
+    "Test Ita Mat": "TESTI EN MAT",
+    "Trama E Ordito Di Seta": "warp and weft silk",
+    "Vello Misto Lana E Seta": "Wool and silk veil"
   }
 }
