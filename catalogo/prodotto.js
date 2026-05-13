@@ -1,6 +1,10 @@
 const productHero = document.querySelector(".product-gallery__hero");
 const productHeroImage = productHero?.querySelector("img");
 const productThumbButtons = document.querySelectorAll("[data-product-thumb]");
+const isEnglishProduct = document.documentElement.lang.toLowerCase().startsWith("en");
+const productUiLabels = {
+    closeImage: isEnglishProduct ? "Close image" : "Chiudi immagine"
+};
 
 function setHeroImage(image) {
     if (!productHeroImage || !(image instanceof HTMLImageElement)) {
@@ -39,7 +43,7 @@ if (productHero && productHeroImage) {
         overlay.className = "product-lightbox";
         overlay.innerHTML = `
             <div class="product-lightbox__frame">
-                <button type="button" class="product-lightbox__close" aria-label="Chiudi immagine">&times;</button>
+                <button type="button" class="product-lightbox__close" aria-label="${productUiLabels.closeImage}">&times;</button>
                 <div class="product-lightbox__viewport">
                     <img src="${productHeroImage.dataset.zoomSrc || productHeroImage.src}" alt="${productHeroImage.alt}">
                 </div>

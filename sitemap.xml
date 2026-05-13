@@ -269,7 +269,39 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/catalogo/products/antique-caucasian-daghistan-rug-264x106.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/antique-caucasian-derbend-rug-190x123.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/caucasian-baku-rug-210x146.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/isfahan-silk-persian-rug-163x105.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/nain-6la-persian-rug-92x63.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-abadeh-rug-mosque-figurative.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-armanibaf-rug-tribal.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/catalogo/products/persian-bakhtiari-rug-classic-floral.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-bakhtiari-rug-couple-figurative.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -277,7 +309,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-bakhtiari-rug-double-medallion.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/catalogo/products/persian-bakhtiari-rug-garden-design.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-bakhtiari-rug-garden-panel.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -285,7 +325,15 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-bijar-rug-medallion.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/catalogo/products/persian-burujerd-rug-all-over.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-hosseinabad-rug-medallion.html</loc>
     <priority>0.6</priority>
   </url>
   <url>
@@ -297,11 +345,71 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-senneh-rug-compact-medallion.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-senneh-rug-contrast-medallion.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-senneh-rug-geometric.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-tabriz-rug-birds-figurative.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-tabriz-rug-black-medallion.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-tabriz-rug-red-medallion.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/persian-tafresh-rug-medallion.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/qom-persian-rug-141x71.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/sirdjand-persian-rug-136x76.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-caucasico-baku-210x146.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-caucasico-daghistan-antico-264x106.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-caucasico-derbend-antico-190x123.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-abadeh-figurativo-moschea.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-armanibaf-tribale.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bakhtiari-classico-floreale.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bakhtiari-giardino-decorato.html</loc>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bakhtiari-doppio-medaglione.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bakhtiari-figurativo-coppia.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -309,7 +417,19 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bakhtiari-giardino-decorato.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bakhtiari-giardino-riquadri.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bakhtiari-medaglione.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-bijar-medaglione.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -317,11 +437,67 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-hosseinabad-medaglione.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-isfahan-seta-163x105.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-kum-141x71.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-malayer-medaglione-tribale.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-nain-6la-92x63.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-qashqai-medaglione.html</loc>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-senneh-geometrico.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-senneh-medaglione-compatto.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-senneh-medaglione-contrasto.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-sirdjand-136x76.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-tabriz-figurativo-uccelli.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-tabriz-fondo-nero-medaglione.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-tabriz-rosso-medaglione.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-tafresh-medaglione.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-turkmeno-bianco.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/white-turkmen-persian-rug-121x98.html</loc>
+    <priority>0.6</priority>
   </url>
 </urlset>

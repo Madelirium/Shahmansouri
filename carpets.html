@@ -45,6 +45,173 @@
   </script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .tappeti-content .article-image-row--two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 720px;
+      margin: 12px auto 18px;
+    }
+
+    .tappeti-content .article-image-row--two .article-image-row__figure {
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    .home-featured-products {
+      margin: 34px 40px 0;
+      padding: 20px 24px 24px;
+      border: 1px solid rgba(112, 71, 35, 0.16);
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(248, 243, 234, 0.98) 0%, rgba(239, 231, 219, 0.96) 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.54),
+        0 16px 32px rgba(112, 71, 35, 0.08);
+    }
+
+    .home-featured-products__controls {
+      position: absolute;
+      inset: 50% 0 auto;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      pointer-events: none;
+      padding: 0 6px;
+      z-index: 2;
+    }
+
+    .home-featured-products__button {
+      appearance: none;
+      border: 1px solid rgba(122, 44, 13, 0.18);
+      background: rgba(255, 248, 239, 0.94);
+      color: #7a2c0d;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      font-size: 1.55rem;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(61, 21, 11, 0.12);
+      pointer-events: auto;
+    }
+
+    .home-featured-products__viewport {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .home-featured-products__track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(220px, 26%);
+      gap: 18px;
+      overflow-x: auto;
+      padding: 0 52px 2px;
+      scroll-behavior: auto;
+      scrollbar-width: none;
+      touch-action: pan-x;
+      overscroll-behavior-x: contain;
+      -ms-overflow-style: none;
+    }
+
+    .home-featured-products__track.is-dragging {
+      cursor: grabbing;
+    }
+
+    .home-featured-products__track.is-dragging a,
+    .home-featured-products__track.is-dragging img {
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .home-featured-products__track::-webkit-scrollbar {
+      display: none;
+    }
+
+    .home-featured-product {
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border: 1px solid rgba(112, 71, 35, 0.14);
+      border-radius: 14px;
+      background: rgba(255, 251, 245, 0.9);
+      overflow: hidden;
+    }
+
+    .home-featured-product__image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 4.8;
+      background: rgba(227, 208, 178, 0.55);
+      overflow: hidden;
+    }
+
+    .home-featured-product__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .home-featured-product__body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 12px 16px 16px;
+    }
+
+    .home-featured-product__link {
+      margin-top: auto;
+      text-align: center;
+      color: #7a2c0d;
+      text-decoration: underline;
+      text-decoration-color: rgba(122, 44, 13, 0.28);
+      text-underline-offset: 0.18em;
+    }
+
+    .home-featured-products__status {
+      margin: 0;
+      color: #6b4b3b;
+    }
+
+    .home-featured-products__status:empty {
+      display: none;
+    }
+
+    @media (max-width: 640px) {
+      .tappeti-content .article-image-row--two {
+        gap: 10px;
+        max-width: 100%;
+      }
+
+      .tappeti-content .article-image-row--two .article-image-row__figure {
+        max-width: 100%;
+      }
+
+      .home-featured-products {
+        margin: 14px 20px 0;
+        padding: 16px 16px 20px;
+      }
+
+      .home-featured-products__track {
+        grid-auto-columns: minmax(240px, 82%);
+        padding: 0 40px 2px;
+      }
+
+      .home-featured-products__controls {
+        padding: 0 4px;
+      }
+
+      .home-featured-products__button {
+        width: 38px;
+        height: 38px;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="page">
@@ -84,12 +251,6 @@
     <main class="content tappeti-content">
       <article class="article">
         <h1>Persian and Oriental Rugs in Verona</h1>
-        <p>
-          In our rug shop in Verona we present a carefully selected range of handmade Persian and Oriental rugs, together with advice, maintenance and restoration services that accompany each purchase over time. A carpet is not seen simply as a furnishing element, but as a unique handcrafted piece born from natural materials, inherited gestures and different decorative traditions.
-        </p>
-        <p>
-          Each rug is an unrepeatable piece. Its quality depends on origin, wool, silk, foundation, knotting technique, design and state of conservation. For this reason, choosing a rug requires time, observation and, when useful, expert advice. If you would like to browse a first selection online, you can visit the <a href="catalogo/index-en.html">Persian carpet catalog</a>; for advice on sizes, materials or care, you can also <a href="contacts-en.html">contact us directly</a>.
-        </p>
         <div class="article-image-row article-image-row--two">
           <figure class="article-image-row__figure">
           <img src="images/tappeti-verona-shahmansouri-duomo-verona.webp" alt="Persian carpets at Shahmansouri near Verona Cathedral" width="1500" height="1125" decoding="async">
@@ -100,6 +261,12 @@
             <figcaption>The Shahmansouri entrance in Verona's historic centre.</figcaption>
           </figure>
         </div>
+        <p>
+          In our rug shop in Verona we present a carefully selected range of handmade Persian and Oriental rugs, together with advice, maintenance and restoration services that accompany each purchase over time. A carpet is not seen simply as a furnishing element, but as a unique handcrafted piece born from natural materials, inherited gestures and different decorative traditions.
+        </p>
+        <p>
+          Each rug is an unrepeatable piece. Its quality depends on origin, wool, silk, foundation, knotting technique, design and state of conservation. For this reason, choosing a rug requires time, observation and, when useful, expert advice. If you would like to browse a first selection online, you can visit the <a href="catalogo/index-en.html">Persian carpet catalog</a>; for advice on sizes, materials or care, you can also <a href="contacts-en.html">contact us directly</a>.
+        </p>
         <h2>Every carpet is a unique handcrafted work</h2>
         <p>
           Every carpet is a unique and irreplaceable handcrafted work whose characteristics differ according to
@@ -239,6 +406,16 @@
         </ul>
       </article>
     </main>
+    <section class="home-featured-products" aria-label="Featured products from the catalog">
+      <div class="home-featured-products__viewport">
+        <div class="home-featured-products__controls" aria-label="Featured products carousel controls">
+          <button type="button" class="home-featured-products__button" data-featured-products-prev aria-label="Previous products">&#8249;</button>
+          <button type="button" class="home-featured-products__button" data-featured-products-next aria-label="Next products">&#8250;</button>
+        </div>
+        <div class="home-featured-products__track" data-featured-products-track aria-live="polite"></div>
+      </div>
+      <p class="home-featured-products__status" data-featured-products-status>Loading featured selection...</p>
+    </section>
     <footer class="site-footer-global">
       <div class="site-footer-global__grid">
         <div>
@@ -262,6 +439,372 @@
   </div>
   <script src="js/analytics.js" defer></script>
   <script src="js/main.js"></script>
+  <script>
+    (function () {
+      const track = document.querySelector("[data-featured-products-track]");
+      const status = document.querySelector("[data-featured-products-status]");
+      const prevButton = document.querySelector("[data-featured-products-prev]");
+      const nextButton = document.querySelector("[data-featured-products-next]");
+      const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      let autoScrollId = null;
+      let resumeTimeoutId = null;
+      let loopWidth = 0;
+      let autoScrollEnabled = !reduceMotionQuery.matches;
+      let currentSpeed = 0;
+      let targetSpeed = 0;
+      let virtualScrollLeft = 0;
+      let isTouchDragging = false;
+      let isPointerDragging = false;
+      let dragStartX = 0;
+      let dragStartScrollLeft = 0;
+      let suppressTrackClick = false;
+
+      if (!track || !status) {
+        return;
+      }
+
+      function escapeHtml(value) {
+        return String(value || "")
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function getProductUrl(product) {
+        return "catalogo/products/" + (product.slugEn || product.slug) + ".html";
+      }
+
+      function getImageUrl(product) {
+        const image = String(product.coverImage || "").trim();
+        if (!image) {
+          return "";
+        }
+        return image.startsWith("/") ? image.slice(1) : image;
+      }
+
+      function renderProduct(product) {
+        const imageUrl = escapeHtml(getImageUrl(product));
+        const imageAlt = escapeHtml(product.altEn || product.alt || product.titleEn || product.title || "Shahmansouri Persian rug");
+        const productUrl = escapeHtml(getProductUrl(product));
+
+        return `
+          <article class="home-featured-product">
+            <a class="home-featured-product__image" href="${productUrl}" draggable="false">
+              <img src="${imageUrl}" alt="${imageAlt}" width="900" height="675" loading="lazy" decoding="async" draggable="false">
+            </a>
+            <div class="home-featured-product__body">
+              <a class="home-featured-product__link" href="${productUrl}" draggable="false">Open product</a>
+            </div>
+          </article>
+        `;
+      }
+
+      function updateButtons() {
+        const hasContent = track.children.length > 0;
+        if (prevButton) {
+          prevButton.disabled = !hasContent;
+        }
+        if (nextButton) {
+          nextButton.disabled = !hasContent;
+        }
+      }
+
+      function clearResumeTimeout() {
+        if (!resumeTimeoutId) {
+          return;
+        }
+        window.clearTimeout(resumeTimeoutId);
+        resumeTimeoutId = null;
+      }
+
+      function getBaseSpeed() {
+        return 0.34;
+      }
+
+      function setAutoScrollState(shouldRun, delay) {
+        clearResumeTimeout();
+        if (!autoScrollEnabled || !loopWidth) {
+          targetSpeed = 0;
+          return;
+        }
+
+        if (typeof delay === "number" && delay > 0) {
+          resumeTimeoutId = window.setTimeout(function () {
+            targetSpeed = shouldRun ? getBaseSpeed() : 0;
+          }, delay);
+          return;
+        }
+
+        targetSpeed = shouldRun ? getBaseSpeed() : 0;
+      }
+
+      function pauseAutoScroll() {
+        setAutoScrollState(false);
+      }
+
+      function resumeAutoScroll(delay) {
+        setAutoScrollState(true, delay);
+      }
+
+      function stopAutoScroll() {
+        if (!autoScrollId) {
+          return;
+        }
+        window.cancelAnimationFrame(autoScrollId);
+        autoScrollId = null;
+        currentSpeed = 0;
+        targetSpeed = 0;
+      }
+
+      function syncVirtualScrollLeft() {
+        virtualScrollLeft = track.scrollLeft;
+      }
+
+      function startAutoScroll() {
+        stopAutoScroll();
+        if (!autoScrollEnabled || !loopWidth) {
+          return;
+        }
+
+        function normalizeScrollPosition() {
+          if (virtualScrollLeft >= loopWidth * 2) {
+            virtualScrollLeft -= loopWidth;
+          } else if (virtualScrollLeft < loopWidth) {
+            virtualScrollLeft += loopWidth;
+          }
+        }
+
+        function tick() {
+          currentSpeed += (targetSpeed - currentSpeed) * 0.16;
+
+          if (Math.abs(currentSpeed) < 0.006 && Math.abs(targetSpeed) < 0.006) {
+            currentSpeed = 0;
+          }
+
+          if (currentSpeed > 0) {
+            virtualScrollLeft += currentSpeed;
+          }
+
+          normalizeScrollPosition();
+          track.scrollLeft = virtualScrollLeft;
+
+          autoScrollId = window.requestAnimationFrame(tick);
+        }
+
+        autoScrollId = window.requestAnimationFrame(tick);
+      }
+
+      function rebuildLoopWidth() {
+        loopWidth = track.scrollWidth / 3;
+      }
+
+      function shuffleProducts(products) {
+        const shuffled = products.slice();
+        for (let index = shuffled.length - 1; index > 0; index -= 1) {
+          const randomIndex = Math.floor(Math.random() * (index + 1));
+          const current = shuffled[index];
+          shuffled[index] = shuffled[randomIndex];
+          shuffled[randomIndex] = current;
+        }
+        return shuffled;
+      }
+
+      function scrollTrack(direction) {
+        const amount = Math.max(track.clientWidth * 0.86, 260);
+        stopAutoScroll();
+        clearResumeTimeout();
+        isTouchDragging = false;
+        virtualScrollLeft = track.scrollLeft + (amount * direction);
+
+        if (loopWidth > 0) {
+          if (virtualScrollLeft >= loopWidth * 2) {
+            virtualScrollLeft -= loopWidth;
+          } else if (virtualScrollLeft < loopWidth) {
+            virtualScrollLeft += loopWidth;
+          }
+        }
+
+        track.scrollTo({ left: virtualScrollLeft, behavior: "smooth" });
+
+        window.setTimeout(function () {
+          track.scrollLeft = virtualScrollLeft;
+          resumeAutoScroll(120);
+          startAutoScroll();
+        }, 420);
+      }
+
+      if (prevButton) {
+        prevButton.addEventListener("click", function () {
+          scrollTrack(-1);
+        });
+        prevButton.addEventListener("mouseenter", pauseAutoScroll);
+        prevButton.addEventListener("mouseleave", function () {
+          resumeAutoScroll(0);
+        });
+        prevButton.addEventListener("focus", pauseAutoScroll);
+        prevButton.addEventListener("blur", function () {
+          resumeAutoScroll(0);
+        });
+      }
+
+      if (nextButton) {
+        nextButton.addEventListener("click", function () {
+          scrollTrack(1);
+        });
+        nextButton.addEventListener("mouseenter", pauseAutoScroll);
+        nextButton.addEventListener("mouseleave", function () {
+          resumeAutoScroll(0);
+        });
+        nextButton.addEventListener("focus", pauseAutoScroll);
+        nextButton.addEventListener("blur", function () {
+          resumeAutoScroll(0);
+        });
+      }
+
+      track.addEventListener("mouseenter", pauseAutoScroll);
+      track.addEventListener("mouseleave", function () {
+        resumeAutoScroll(0);
+      });
+      track.addEventListener("focusin", pauseAutoScroll);
+      track.addEventListener("focusout", function () {
+        resumeAutoScroll(0);
+      });
+      track.addEventListener("scroll", function () {
+        if (!isTouchDragging && !isPointerDragging) {
+          syncVirtualScrollLeft();
+        }
+      }, { passive: true });
+
+      track.addEventListener("click", function (event) {
+        if (!suppressTrackClick) {
+          return;
+        }
+        event.preventDefault();
+        event.stopPropagation();
+        suppressTrackClick = false;
+      }, true);
+
+      track.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+      });
+
+      track.addEventListener("pointerdown", function (event) {
+        if (event.button !== 0) {
+          return;
+        }
+        if (event.target.closest("a")) {
+          return;
+        }
+        isPointerDragging = true;
+        isTouchDragging = true;
+        suppressTrackClick = false;
+        dragStartX = event.clientX;
+        dragStartScrollLeft = track.scrollLeft;
+        clearResumeTimeout();
+        currentSpeed = 0;
+        targetSpeed = 0;
+        stopAutoScroll();
+        track.classList.add("is-dragging");
+      });
+
+      track.addEventListener("pointermove", function (event) {
+        if (!isPointerDragging) {
+          return;
+        }
+        const deltaX = event.clientX - dragStartX;
+        if (Math.abs(deltaX) > 6) {
+          suppressTrackClick = true;
+        }
+        event.preventDefault();
+        track.scrollLeft = dragStartScrollLeft - deltaX;
+        syncVirtualScrollLeft();
+      });
+
+      track.addEventListener("pointerup", function () {
+        isPointerDragging = false;
+        isTouchDragging = false;
+        track.classList.remove("is-dragging");
+        resumeAutoScroll(90);
+        startAutoScroll();
+      });
+
+      track.addEventListener("pointercancel", function () {
+        isPointerDragging = false;
+        isTouchDragging = false;
+        track.classList.remove("is-dragging");
+        resumeAutoScroll(90);
+        startAutoScroll();
+      });
+
+      track.addEventListener("touchstart", function () {
+        isTouchDragging = true;
+        clearResumeTimeout();
+        currentSpeed = 0;
+        targetSpeed = 0;
+        stopAutoScroll();
+      }, { passive: true });
+
+      track.addEventListener("touchend", function () {
+        isTouchDragging = false;
+        syncVirtualScrollLeft();
+        resumeAutoScroll(90);
+        startAutoScroll();
+      }, { passive: true });
+
+      track.addEventListener("touchcancel", function () {
+        isTouchDragging = false;
+        syncVirtualScrollLeft();
+        resumeAutoScroll(90);
+        startAutoScroll();
+      }, { passive: true });
+
+      if (typeof reduceMotionQuery.addEventListener === "function") {
+        reduceMotionQuery.addEventListener("change", function (event) {
+          autoScrollEnabled = !event.matches;
+          if (autoScrollEnabled) {
+            resumeAutoScroll();
+            startAutoScroll();
+          } else {
+            stopAutoScroll();
+          }
+        });
+      }
+
+      fetch("catalogo/products.json", { cache: "no-store" })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Unable to load catalog");
+          }
+          return response.json();
+        })
+        .then(function (products) {
+          const validProducts = products.filter(function (product) {
+            return product.hasEnglish && (product.slugEn || product.slug) && product.coverImage;
+          });
+          const featuredProducts = shuffleProducts(validProducts).slice(0, 6);
+
+          if (!featuredProducts.length) {
+            status.textContent = "No featured products available right now.";
+            return;
+          }
+
+          const repeatedProducts = featuredProducts.concat(featuredProducts, featuredProducts);
+          track.innerHTML = repeatedProducts.map(renderProduct).join("");
+          rebuildLoopWidth();
+          virtualScrollLeft = loopWidth;
+          track.scrollLeft = virtualScrollLeft;
+          status.textContent = "";
+          updateButtons();
+          resumeAutoScroll();
+          startAutoScroll();
+        })
+        .catch(function () {
+          status.textContent = "Unable to load the featured selection right now.";
+        });
+    }());
+  </script>
 </body>
 </html>
 
