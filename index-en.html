@@ -305,7 +305,7 @@
       position: relative;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 900px) {
       .home-sections {
         gap: 14px;
         margin: 14px 20px 0;
@@ -356,7 +356,7 @@
       }
 
       div.home-content {
-        padding: 20px;
+        padding: 16px;
       }
 
       main.home-content {
@@ -401,11 +401,11 @@
 
       .home-mobile-intro-cards {
         display: flex !important;
-        gap: 14px;
-        margin: 0 20px 14px;
+        gap: 12px;
+        margin: 0 16px 16px;
         overflow-x: auto;
         overflow-y: visible;
-        padding: 0 28px 8px 2px;
+        padding: 0 26px 8px 0;
       }
 
       .home-mobile-intro-cards::-webkit-scrollbar,
@@ -426,8 +426,9 @@
       }
 
       .home-mobile-intro-card {
-        flex: 0 0 min(72vw, 280px);
-        min-width: min(72vw, 280px);
+        flex: 0 0 300px;
+        min-width: 300px;
+        max-width: 300px;
         padding: 14px 16px 16px;
         border: 1px solid rgba(177, 145, 83, 0.22);
         background:
@@ -476,17 +477,18 @@
 
       .home-mobile-quicklinks {
         display: flex !important;
-        gap: 14px;
-        margin: 14px 20px 0;
+        gap: 12px;
+        margin: 14px 16px 0;
         overflow-x: auto;
         overflow-y: visible;
-        padding: 0 28px 8px 2px;
+        padding: 0 26px 8px 0;
       }
 
       .home-mobile-quicklink-card {
         position: relative;
-        flex: 0 0 min(72vw, 280px);
-        min-width: min(72vw, 280px);
+        flex: 0 0 286px;
+        min-width: 286px;
+        max-width: 286px;
         padding: 16px 16px 18px;
         border: 1px solid rgba(113, 32, 27, 0.26);
         border-radius: 16px;
@@ -564,6 +566,21 @@
       .home-featured-products__button {
         width: 38px;
         height: 38px;
+      }
+
+      .site-footer-global {
+        margin: 24px 14px 0;
+        padding: 16px 14px 18px;
+      }
+
+      .site-footer-global__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .site-footer-global__grid > div {
+        min-height: 0;
+        display: block;
       }
     }
   </style>
