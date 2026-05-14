@@ -105,6 +105,74 @@
       grid-template-columns: 1fr;
       gap: 14px;
     }
+  .artigianato-content,
+  .article {
+      overflow-x: hidden;
+      min-width: 0;
+    }
+  .artigianato-content .article-image-row {
+      display: flex;
+      box-sizing: border-box;
+      inline-size: calc(100% - 2px);
+      max-inline-size: calc(100% - 2px);
+      gap: 14px;
+      margin: 16px 0 26px;
+      padding: 0 0 8px 0;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-padding-inline: 0;
+      -webkit-overflow-scrolling: touch;
+      contain: inline-size;
+    }
+  .artigianato-content .article-image-row::-webkit-scrollbar {
+      height: 8px;
+    }
+  .artigianato-content .article-image-row::-webkit-scrollbar-thumb {
+      background: rgba(123, 31, 22, 0.24);
+      border-radius: 999px;
+    }
+  .artigianato-content .article-image-row::-webkit-scrollbar-track {
+      background: rgba(229, 203, 125, 0.22);
+      border-radius: 999px;
+    }
+  .artigianato-content .article-image-row__figure {
+      flex: 0 0 calc(100% - 52px);
+      min-width: calc(100% - 52px);
+      max-width: calc(100% - 52px);
+      margin: 0;
+      scroll-snap-align: start;
+    }
+  .artigianato-content .article-image-row__figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  .artigianato-content .article-image-row__figure figcaption {
+      margin-top: 8px;
+    }
+  .tappeti-content .article-image-row--two {
+      gap: 10px;
+      max-width: 100%;
+    }
+  .tappeti-content .article-image-row--two .article-image-row__figure {
+      max-width: 100%;
+    }
+  .home-featured-products {
+      margin: 14px 20px 0;
+      padding: 16px 16px 20px;
+    }
+  .home-featured-products__track {
+      grid-auto-columns: minmax(240px, 82%);
+      padding: 0 40px 2px;
+    }
+  .home-featured-products__controls {
+      padding: 0 4px;
+    }
+  .home-featured-products__button {
+      width: 38px;
+      height: 38px;
+    }
     .footer {
       position: static;
       text-align: right;
