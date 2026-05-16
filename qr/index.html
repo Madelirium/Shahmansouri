@@ -201,30 +201,6 @@
       box-shadow: 0 10px 18px rgba(49, 9, 0, 0.32);
     }
 
-    .brand h1 {
-      margin: 0;
-      font-size: clamp(1.9rem, 7vw, 2.6rem);
-      line-height: 1.05;
-      color: #682f0b;
-    }
-
-    .brand h2 {
-      margin: 0;
-      font-size: clamp(1rem, 3.9vw, 1.22rem);
-      font-weight: 400;
-      line-height: 1.45;
-      color: var(--text-soft);
-      max-width: 28rem;
-    }
-
-    .intro {
-      margin: 0 auto 24px;
-      max-width: 34rem;
-      text-align: center;
-      font-size: 1rem;
-      color: var(--text-soft);
-    }
-
     .actions {
       display: grid;
       gap: 12px;
@@ -267,12 +243,51 @@
         inset 0 1px 0 rgba(255, 244, 231, 0.1);
     }
 
-    .closing {
-      margin: 0 auto;
-      max-width: 32rem;
-      text-align: center;
-      font-size: 0.98rem;
-      color: var(--text-soft);
+    .action-link--whatsapp {
+      background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0) 38%),
+        linear-gradient(180deg, #2a8f5a 0%, #24794d 52%, #1c613d 100%);
+      color: #f4f1e5;
+      border-color: rgba(226, 247, 235, 0.18);
+      box-shadow:
+        0 16px 28px rgba(16, 54, 36, 0.18),
+        0 3px 10px rgba(16, 54, 36, 0.14),
+        inset 0 1px 0 rgba(239, 255, 246, 0.12);
+    }
+
+    .action-link--instagram {
+      background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 38%),
+        linear-gradient(180deg, #a84f73 0%, #8f3f67 48%, #6d2d58 100%);
+      color: #fbf2ea;
+      border-color: rgba(255, 234, 242, 0.16);
+      box-shadow:
+        0 16px 28px rgba(73, 24, 52, 0.18),
+        0 3px 10px rgba(73, 24, 52, 0.14),
+        inset 0 1px 0 rgba(255, 243, 247, 0.12);
+    }
+
+    .action-link--facebook {
+      background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0) 38%),
+        linear-gradient(180deg, #355e9a 0%, #2f5388 48%, #25416b 100%);
+      color: #f3f1ea;
+      border-color: rgba(233, 240, 255, 0.16);
+      box-shadow:
+        0 16px 28px rgba(24, 41, 68, 0.18),
+        0 3px 10px rgba(24, 41, 68, 0.14),
+        inset 0 1px 0 rgba(241, 246, 255, 0.12);
+    }
+
+    .action-link--maps {
+      background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.04) 42%),
+        linear-gradient(180deg, #f2ecdf 0%, #e7dfcf 52%, #dbd1bf 100%);
+      color: #6b4b3b;
+      border-color: rgba(114, 87, 63, 0.18);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.58),
+        0 6px 12px rgba(82, 25, 8, 0.1);
     }
 
     .footer {
@@ -282,16 +297,56 @@
       color: var(--text-soft);
     }
 
-    .footer-language-trigger {
-      appearance: none;
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      padding: 0;
-      cursor: pointer;
-      text-decoration: underline;
-      text-underline-offset: 0.18em;
+    .footer-language-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.88rem;
+    }
+
+    .footer-language-links a,
+    .footer-language-links .is-active {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid transparent;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .footer-language-links a::before,
+    .footer-language-links .is-active::before {
+      content: "";
+      width: 14px;
+      height: 10px;
+      border: 1px solid rgba(124, 83, 32, 0.28);
+      box-shadow: 0 1px 2px rgba(64, 39, 4, 0.12);
+      flex: 0 0 auto;
+    }
+
+    .footer-language-links .lang-it::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3Crect width='1' height='2' x='0' fill='%23009246'/%3E%3Crect width='1' height='2' x='1' fill='%23ffffff'/%3E%3Crect width='1' height='2' x='2' fill='%23ce2b37'/%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .footer-language-links .lang-en::before {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3CclipPath id='t'%3E%3Cpath d='M0,0 v30 h60 v-30 z'/%3E%3C/clipPath%3E%3Cpath d='M0,0 v30 h60 v-30 z' fill='%23012169'/%3E%3Cg stroke='%23FFF' stroke-width='6' clip-path='url(%23t)'%3E%3Cpath d='M0,0 60,30 M60,0 0,30'/%3E%3C/g%3E%3Cg stroke='%23C8102E' stroke-width='4' clip-path='url(%23t)'%3E%3Cpath d='M0,0 60,30 M60,0 0,30'/%3E%3C/g%3E%3Cg stroke='%23FFF' stroke-width='10'%3E%3Cpath d='M30,0 v30 M0,15 h60'/%3E%3C/g%3E%3Cg stroke='%23C8102E' stroke-width='6'%3E%3Cpath d='M30,0 v30 M0,15 h60'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .footer-language-links .is-active {
+      color: #a63500;
+      border-color: #a63500;
+      font-weight: 700;
+    }
+
+    .footer-language-links .separator {
+      opacity: 0.65;
     }
 
     @media (min-width: 700px) {
@@ -351,30 +406,26 @@
       <div class="brand__logo">
         <img src="../images/logo-shahmansouri-tappeti-verona.webp" alt="Logo Shahmansouri Tappeti Persiani" width="1080" height="688" fetchpriority="high" decoding="async">
       </div>
-      <div>
-        <h1>Shahmansouri Tappeti Persiani</h1>
-        <h2>Tappeti persiani, tappeti orientali e artigianato persiano a Verona</h2>
-      </div>
     </header>
 
     <main>
-      <p class="intro">Un accesso rapido e diretto al mondo Shahmansouri: sito, contatti, social e indicazioni per raggiungere il negozio nel centro storico di Verona.</p>
-
       <nav class="actions" aria-label="Contatti rapidi Shahmansouri">
         <a class="action-link action-link--primary" href="https://www.shahmansouri.com/" data-qr-button="home">Visita il sito</a>
-        <a class="action-link action-link--primary" href="https://wa.me/393392668950" data-qr-button="whatsapp">Contattaci su WhatsApp</a>
+        <a class="action-link action-link--primary action-link--whatsapp" href="https://wa.me/393392668950" data-qr-button="whatsapp">Contattaci su WhatsApp</a>
         <a class="action-link" href="tel:+390458013280" data-qr-button="telefono">Chiama il negozio</a>
-        <a class="action-link" href="https://maps.app.goo.gl/zpeoCrwWZPhkYZ7K6" data-qr-button="google_maps">Indicazioni su Google Maps</a>
-        <a class="action-link" href="https://www.instagram.com/shahmansouri_tappeti_persiani/" data-qr-button="instagram">Instagram</a>
-        <a class="action-link" href="https://www.facebook.com/profile.php?id=100047379565616" data-qr-button="facebook">Facebook</a>
+        <a class="action-link action-link--maps" href="https://maps.app.goo.gl/zpeoCrwWZPhkYZ7K6" data-qr-button="google_maps">Indicazioni su Google Maps</a>
+        <a class="action-link action-link--instagram" href="https://www.instagram.com/shahmansouri_tappeti_persiani/" data-qr-button="instagram">Instagram</a>
+        <a class="action-link action-link--facebook" href="https://www.facebook.com/profile.php?id=100047379565616" data-qr-button="facebook">Facebook</a>
       </nav>
-
-      <p class="closing">Nel cuore di Verona, una selezione autentica di tappeti persiani, orientali e artigianato persiano fatto a mano.</p>
     </main>
 
     <footer class="footer">
       <p>Stradone Arcidiacono Pacifico 14, Verona</p>
-      <p><button type="button" class="footer-language-trigger" data-open-language-overlay>Cambia lingua</button></p>
+      <div class="footer-language-links" role="group" aria-label="Cambio lingua">
+        <span class="lang-it is-active">IT</span>
+        <span class="separator">/</span>
+        <a href="index-en.html" class="lang-en" data-qr-button="language_en_footer" data-language-choice="en">EN</a>
+      </div>
     </footer>
   </div>
 
@@ -385,8 +436,8 @@
       var overlay = document.getElementById("languageOverlay");
       var choiceWrap = document.getElementById("languageChoice");
       var languageLinks = overlay ? Array.prototype.slice.call(overlay.querySelectorAll("[data-language-choice]")) : [];
-      var openTriggers = Array.prototype.slice.call(document.querySelectorAll("[data-open-language-overlay]"));
       var links = document.querySelectorAll("[data-qr-button]");
+      var footerLanguageLinks = Array.prototype.slice.call(document.querySelectorAll(".footer-language-links a[data-language-choice]"));
       var activeLanguageLink = null;
       var lastFocusedElement = null;
       window.dataLayer = window.dataLayer || [];
@@ -487,9 +538,12 @@
         link.addEventListener("click", handleLanguageChoice);
       });
 
-      openTriggers.forEach(function (trigger) {
-        trigger.addEventListener("click", function () {
-          openLanguageOverlay(getDefaultLanguageLink());
+      footerLanguageLinks.forEach(function (link) {
+        link.addEventListener("click", function () {
+          var language = link.getAttribute("data-language-choice");
+          if (language) {
+            setPreferredLanguage(language);
+          }
         });
       });
 
