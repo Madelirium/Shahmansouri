@@ -57,6 +57,10 @@
         var(--bg-dark);
     }
 
+    body.language-overlay-open {
+      overflow: hidden;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -71,6 +75,97 @@
       display: block;
       max-width: 100%;
       height: auto;
+    }
+
+    .language-overlay[hidden] {
+      display: none;
+    }
+
+    .language-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(76, 11, 11, 0.98);
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .language-overlay.is-visible {
+      opacity: 1;
+    }
+
+    .language-modal {
+      width: min(100%, 760px);
+      text-align: center;
+    }
+
+    .language-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    .language-logo img {
+      display: block;
+      width: min(420px, 82vw);
+      height: auto;
+      margin: 0 auto 26px;
+    }
+
+    .language-choice-wrap {
+      --line-left: 0px;
+      --line-width: 0px;
+      position: relative;
+      display: inline-block;
+      padding: 18px 0;
+    }
+
+    .language-line {
+      position: absolute;
+      left: var(--line-left);
+      width: var(--line-width);
+      height: 1px;
+      background: rgba(255, 255, 255, 0.92);
+      transition: left 0.28s ease, width 0.28s ease;
+      pointer-events: none;
+    }
+
+    .language-line-top {
+      top: 0;
+    }
+
+    .language-line-bottom {
+      bottom: 0;
+    }
+
+    .language-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 52px;
+    }
+
+    .language-links a {
+      position: relative;
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 1.1rem;
+      padding: 8px 0;
+      white-space: nowrap;
+    }
+
+    .language-links a:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.7);
+      outline-offset: 8px;
     }
 
     .page {
@@ -120,29 +215,6 @@
       line-height: 1.45;
       color: var(--text-soft);
       max-width: 28rem;
-    }
-
-    .language-switch {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      margin: 0 0 20px;
-      font-size: 0.95rem;
-      color: var(--text-soft);
-    }
-
-    .language-switch a,
-    .language-switch span {
-      display: inline-block;
-      padding: 6px 10px;
-      border-radius: 999px;
-    }
-
-    .language-switch .is-active {
-      background: rgba(123, 31, 22, 0.12);
-      color: var(--accent-deep);
-      font-weight: 700;
     }
 
     .intro {
@@ -210,6 +282,18 @@
       color: var(--text-soft);
     }
 
+    .footer-language-trigger {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      padding: 0;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+
     @media (min-width: 700px) {
       .page {
         padding: 32px 32px 28px;
@@ -219,9 +303,49 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
+
+    @media (max-width: 768px) {
+      .language-overlay {
+        padding: 20px 16px;
+      }
+
+      .language-line {
+        display: none;
+      }
+
+      .language-logo img {
+        width: min(320px, 84vw);
+        margin-bottom: 22px;
+      }
+
+      .language-links {
+        gap: 26px;
+      }
+
+      .language-links a {
+        font-size: 0.96rem;
+        letter-spacing: 0.16em;
+      }
+    }
   </style>
 </head>
 <body>
+  <div id="languageOverlay" class="language-overlay" role="dialog" aria-modal="true" aria-label="Select language" hidden>
+    <div class="language-modal">
+      <div class="language-logo">
+        <img src="../images/logo-shahmansouri-tappeti-verona.webp" alt="Shahmansouri Persian Carpets" width="1080" height="688" decoding="async">
+      </div>
+      <div class="language-choice-wrap" id="languageChoice">
+        <span class="language-line language-line-top"></span>
+        <span class="language-line language-line-bottom"></span>
+        <div class="language-links">
+          <a href="/qr/" data-language-choice="it" data-qr-button="language_it">Italiano</a>
+          <a href="index-en.html" data-language-choice="en" data-qr-button="language_en">English</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="page">
     <header class="brand">
       <div class="brand__logo">
@@ -234,11 +358,6 @@
     </header>
 
     <main>
-      <div class="language-switch" role="group" aria-label="Language selection">
-        <a href="/qr/" lang="it" data-qr-button="language_it">Italiano</a>
-        <span class="is-active" lang="en">English</span>
-      </div>
-
       <p class="intro">A fast and direct way into the Shahmansouri world: website, contacts, social media and directions to the shop in the historic centre of Verona.</p>
 
       <nav class="actions" aria-label="Shahmansouri quick contacts">
@@ -255,18 +374,140 @@
 
     <footer class="footer">
       <p>Stradone Arcidiacono Pacifico 14, Verona</p>
+      <p><button type="button" class="footer-language-trigger" data-open-language-overlay>Change language</button></p>
     </footer>
   </div>
 
   <script src="../js/analytics.js" defer></script>
   <script>
     (function () {
+      var storageKey = "preferredLanguage";
+      var overlay = document.getElementById("languageOverlay");
+      var choiceWrap = document.getElementById("languageChoice");
+      var languageLinks = overlay ? Array.prototype.slice.call(overlay.querySelectorAll("[data-language-choice]")) : [];
+      var openTriggers = Array.prototype.slice.call(document.querySelectorAll("[data-open-language-overlay]"));
       var links = document.querySelectorAll("[data-qr-button]");
-      if (!links.length) {
-        return;
+      var activeLanguageLink = null;
+      var lastFocusedElement = null;
+      window.dataLayer = window.dataLayer || [];
+
+      function getPreferredLanguage() {
+        try {
+          return window.localStorage.getItem(storageKey);
+        } catch (error) {
+          return null;
+        }
       }
 
-      window.dataLayer = window.dataLayer || [];
+      function setPreferredLanguage(language) {
+        try {
+          window.localStorage.setItem(storageKey, language);
+        } catch (error) {
+          return;
+        }
+      }
+
+      function getDefaultLanguageLink() {
+        var preferred = getPreferredLanguage();
+        var fallback = languageLinks[1] || languageLinks[0] || null;
+        return languageLinks.find(function (link) {
+          return link.getAttribute("data-language-choice") === preferred;
+        }) || fallback;
+      }
+
+      function moveLanguageLines(targetLink) {
+        if (!choiceWrap || !targetLink) {
+          return;
+        }
+        var wrapRect = choiceWrap.getBoundingClientRect();
+        var targetRect = targetLink.getBoundingClientRect();
+        var left = targetRect.left - wrapRect.left;
+        var width = targetRect.width;
+        choiceWrap.style.setProperty("--line-left", left + "px");
+        choiceWrap.style.setProperty("--line-width", width + "px");
+        activeLanguageLink = targetLink;
+      }
+
+      function closeLanguageOverlay() {
+        if (!overlay) {
+          return;
+        }
+        overlay.classList.remove("is-visible");
+        document.body.classList.remove("language-overlay-open");
+        window.setTimeout(function () {
+          overlay.hidden = true;
+        }, 250);
+        if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+          lastFocusedElement.focus();
+        }
+      }
+
+      function openLanguageOverlay(preselectedLink) {
+        if (!overlay) {
+          return;
+        }
+        lastFocusedElement = document.activeElement;
+        overlay.hidden = false;
+        document.body.classList.add("language-overlay-open");
+        var targetLink = preselectedLink || getDefaultLanguageLink();
+        window.requestAnimationFrame(function () {
+          overlay.classList.add("is-visible");
+          if (targetLink) {
+            moveLanguageLines(targetLink);
+            targetLink.focus();
+          }
+        });
+      }
+
+      function handleLanguageChoice(event) {
+        event.preventDefault();
+        var link = event.currentTarget;
+        var language = link.getAttribute("data-language-choice");
+        if (!language) {
+          return;
+        }
+        setPreferredLanguage(language);
+        if (language === "en") {
+          closeLanguageOverlay();
+          if (window.location.search.indexOf("show-language=1") !== -1) {
+            window.history.replaceState({}, document.title, "/qr/index-en.html");
+          }
+          return;
+        }
+        window.location.href = link.getAttribute("href");
+      }
+
+      languageLinks.forEach(function (link) {
+        link.addEventListener("mouseenter", function () {
+          moveLanguageLines(link);
+        });
+        link.addEventListener("focus", function () {
+          moveLanguageLines(link);
+        });
+        link.addEventListener("click", handleLanguageChoice);
+      });
+
+      openTriggers.forEach(function (trigger) {
+        trigger.addEventListener("click", function () {
+          openLanguageOverlay(getDefaultLanguageLink());
+        });
+      });
+
+      window.addEventListener("resize", function () {
+        if (!overlay || overlay.hidden) {
+          return;
+        }
+        moveLanguageLines(activeLanguageLink || getDefaultLanguageLink());
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Escape" || !overlay || overlay.hidden) {
+          return;
+        }
+        if (getPreferredLanguage()) {
+          closeLanguageOverlay();
+        }
+      });
 
       links.forEach(function (link) {
         link.addEventListener("click", function () {
@@ -289,6 +530,15 @@
           }
         });
       });
+
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("show-language") === "1") {
+        openLanguageOverlay(getDefaultLanguageLink());
+      } else if (getPreferredLanguage() === "it") {
+        window.location.replace("/qr/");
+      } else if (!getPreferredLanguage()) {
+        openLanguageOverlay(getDefaultLanguageLink());
+      }
     }());
   </script>
 </body>
