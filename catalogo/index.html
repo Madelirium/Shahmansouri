@@ -102,7 +102,7 @@
           <form class="filters-form" data-catalog-form>
             <label class="filters-field">
               <span>Cerca</span>
-              <input type="search" name="search" placeholder="Es. Tabriz, runner, soggiorno">
+              <input type="search" name="search" placeholder="Es. Tabriz, runner, soggiorno" data-track="click_catalog_filter" data-filter-name="search">
             </label>
 
             <details class="filters-accordion" open>
@@ -139,8 +139,8 @@
                   <span>Valore</span>
                   <strong data-length-value>-</strong>
                 </div>
-                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 200" data-length-input>
-                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range>
+                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 200" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget">
+                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range data-track="click_catalog_filter" data-filter-name="lengthTarget">
               </div>
               <div class="filters-slider">
                 <label for="widthRange">Larghezza desiderata</label>
@@ -148,8 +148,8 @@
                   <span>Valore</span>
                   <strong data-width-value>-</strong>
                 </div>
-                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 120" data-width-input>
-                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range>
+                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 120" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget">
+                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range data-track="click_catalog_filter" data-filter-name="widthTarget">
               </div>
               <p class="filters-field__note">Tolleranza automatica fino a 15 cm in più rispetto alla misura inserita.</p>
             </div>
@@ -181,7 +181,7 @@
             </details>
 
             <div class="filters-actions">
-              <button type="reset" class="button button-secondary" data-reset-filters>Azzera filtri</button>
+              <button type="reset" class="button button-secondary" data-reset-filters data-track="click_clear_filters">Azzera filtri</button>
             </div>
           </form>
         </aside>
@@ -199,7 +199,7 @@
 
           <div class="active-filters" data-active-filters aria-live="polite"></div>
           <div class="product-grid" data-product-grid aria-live="polite"></div>
-          <p class="catalog-empty" data-empty-state hidden>Nessun prodotto corrisponde ai filtri selezionati. Prova a rimuoverne qualcuno.</p>
+          <div class="catalog-empty" data-empty-state hidden>Nessun prodotto corrisponde ai filtri selezionati. Prova a rimuoverne qualcuno.</div>
         </div>
       </div>
     </section>
@@ -210,13 +210,18 @@
           <p class="eyebrow">Consulenza</p>
           <h2>Se desideri un consiglio nella scelta, siamo a disposizione.</h2>
           <p>
+            Per un orientamento più ampio puoi consultare anche la pagina <a href="../tappeti.html">Tappeti</a>, i
+            servizi di <a href="../lavaggio-restauro-tappeti-verona/">lavaggio e restauro tappeti</a> e i
+            <a href="../contatti.html">contatti del negozio</a>.
+          </p>
+          <p>
             Se hai dubbi su misure, materiali o stile, possiamo aiutarti a individuare il pezzo
             più adatto ai tuoi spazi con la cura e l'esperienza del negozio.
           </p>
         </div>
         <div class="catalog-consulting__actions">
-          <a class="button button-primary" href="tel:+390458013280">Chiamaci</a>
-          <a class="button button-secondary" href="../contatti.html">Contattaci</a>
+          <a class="button button-primary" href="tel:+390458013280" data-track="click_phone">Chiamaci</a>
+          <a class="button button-secondary" href="../contatti.html" data-track="click_contact_page">Contattaci</a>
         </div>
       </div>
     </section>
@@ -261,9 +266,9 @@
       </div>
       <div>
         <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
-        <p><a href="tel:+390458013280">+39 045 801 3280</a></p>
+        <p><a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a></p>
         <p><a href="mailto:shahmansouri@tiscali.it">shahmansouri@tiscali.it</a></p>
-        <p><a href="../contatti.html">Contatti</a></p>
+        <p><a href="../contatti.html" data-track="click_contact_page">Contatti</a></p>
       </div>
       <div>
         <p class="footer-copyright">&copy; 2026 Shahmansouri</p>

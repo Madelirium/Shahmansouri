@@ -55,6 +55,170 @@
     deny: denyAnalytics
   };
 
+  function isAnalyticsGranted() {
+    try {
+      return window.localStorage.getItem(CONSENT_KEY) === 'accepted';
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function sanitizeTrackingUrl(href) {
+    if (!href) {
+      return '';
+    }
+
+    const normalizedHref = String(href).trim();
+    if (!normalizedHref) {
+      return '';
+    }
+
+    if (/^tel:/i.test(normalizedHref) || /^mailto:/i.test(normalizedHref)) {
+      const separatorIndex = normalizedHref.search(/[?#]/);
+      return separatorIndex >= 0 ? normalizedHref.slice(0, separatorIndex) : normalizedHref;
+    }
+
+    try {
+      const url = new URL(normalizedHref, window.location.href);
+      const isWhatsappLink = /(^|\.)wa\.me$/i.test(url.hostname) || /(^|\.)api\.whatsapp\.com$/i.test(url.hostname);
+      url.search = '';
+      url.hash = '';
+
+      if (isWhatsappLink) {
+        return `${url.origin}${url.pathname}`;
+      }
+
+      return `${url.origin}${url.pathname}`;
+    } catch (error) {
+      const separatorIndex = normalizedHref.search(/[?#]/);
+      return separatorIndex >= 0 ? normalizedHref.slice(0, separatorIndex) : normalizedHref;
+    }
+  }
+
+  function getTrackingLabel(element) {
+    const explicitLabel = element.getAttribute('data-track-label') || element.getAttribute('aria-label');
+    const rawLabel = explicitLabel || element.textContent || '';
+    return rawLabel.replace(/\s+/g, ' ').trim().slice(0, 80);
+  }
+
+  function buildTrackingPayload(element) {
+    const href = 'href' in element ? element.href : '';
+    const payload = {
+      event_category: 'engagement',
+      page_path: window.location.pathname,
+      language: document.documentElement.lang
+    };
+    const linkUrl = sanitizeTrackingUrl(href);
+    const buttonLabel = getTrackingLabel(element);
+    const productName = element.getAttribute('data-product-name');
+    const filterName = element.getAttribute('data-filter-name');
+    const filterValue = element.getAttribute('data-filter-value');
+
+    if (linkUrl) {
+      payload.link_url = linkUrl;
+    }
+
+    if (buttonLabel) {
+      payload.button_label = buttonLabel;
+    }
+
+    if (productName) {
+      payload.product_name = productName;
+    }
+
+    if (filterName) {
+      payload.filter_name = filterName;
+    }
+
+    if (filterValue) {
+      payload.filter_value = filterValue;
+    }
+
+    return payload;
+  }
+
+  function trackElement(element) {
+    const eventName = element.getAttribute('data-track');
+    if (!eventName || typeof window.gtag !== 'function' || !isAnalyticsGranted()) {
+      return;
+    }
+
+    window.gtag('event', eventName, buildTrackingPayload(element));
+  }
+
+  function getTrackableTarget(target) {
+    if (!(target instanceof Element)) {
+      return null;
+    }
+
+    return target.closest('[data-track]');
+  }
+
+  function getControlTrackingValue(element) {
+    if (element instanceof HTMLInputElement) {
+      if (element.type === 'checkbox' || element.type === 'radio') {
+        return element.checked ? element.value || 'checked' : 'unchecked';
+      }
+
+      return element.value;
+    }
+
+    if (element instanceof HTMLSelectElement || element instanceof HTMLTextAreaElement) {
+      return element.value;
+    }
+
+    return '';
+  }
+
+  function handleTrackableClick(event) {
+    const trackable = getTrackableTarget(event.target);
+    if (!trackable) {
+      return;
+    }
+
+    trackElement(trackable);
+  }
+
+  function handleTrackableChange(event) {
+    const trackable = getTrackableTarget(event.target);
+    if (!trackable) {
+      return;
+    }
+
+    if (!(trackable instanceof HTMLInputElement || trackable instanceof HTMLSelectElement || trackable instanceof HTMLTextAreaElement)) {
+      return;
+    }
+
+    const currentValue = getControlTrackingValue(trackable);
+    const previousValue = trackable.dataset.trackLastValue || '';
+    if (currentValue === previousValue) {
+      return;
+    }
+
+    trackable.dataset.trackLastValue = currentValue;
+    const isChoiceControl =
+      trackable instanceof HTMLInputElement
+      && (trackable.type === 'checkbox' || trackable.type === 'radio');
+
+    if (!isChoiceControl) {
+      if (currentValue) {
+        trackable.setAttribute('data-filter-value', currentValue);
+      } else {
+        trackable.removeAttribute('data-filter-value');
+      }
+    }
+    trackElement(trackable);
+  }
+
+  if (!window.__shTrackingInitialized) {
+    document.addEventListener('click', handleTrackableClick);
+    document.addEventListener('change', handleTrackableChange);
+    window.__shTrackingInitialized = true;
+  }
+
+  window.ShahmansouriAnalytics.sanitizeTrackingUrl = sanitizeTrackingUrl;
+  window.ShahmansouriAnalytics.trackElement = trackElement;
+
   loadAnalytics();
 
   try {

@@ -103,7 +103,7 @@
                     <form class="filters-form" data-catalog-form>
                         <label class="filters-field">
                             <span>Search</span>
-                            <input type="search" name="search" placeholder="Ex. Tabriz, runner, living room">
+                            <input type="search" name="search" placeholder="Ex. Tabriz, runner, living room" data-track="click_catalog_filter" data-filter-name="search">
                         </label>
 
                         <details class="filters-accordion" open>
@@ -140,8 +140,8 @@
                                     <span>Value</span>
                                     <strong data-length-value>-</strong>
                                 </div>
-                                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 200" data-length-input>
-                                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range>
+                                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 200" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget">
+                                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range data-track="click_catalog_filter" data-filter-name="lengthTarget">
                             </div>
                             <div class="filters-slider">
                                 <label for="widthRange">Desired width</label>
@@ -149,8 +149,8 @@
                                     <span>Value</span>
                                     <strong data-width-value>-</strong>
                                 </div>
-                                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 120" data-width-input>
-                                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range>
+                                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 120" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget">
+                                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range data-track="click_catalog_filter" data-filter-name="widthTarget">
                             </div>
                             <p class="filters-field__note">Automatic tolerance up to 15 cm above the selected measurement.</p>
                         </div>
@@ -182,7 +182,7 @@
                         </details>
 
                         <div class="filters-actions">
-                            <button type="reset" class="button button-secondary" data-reset-filters>Reset filters</button>
+                            <button type="reset" class="button button-secondary" data-reset-filters data-track="click_clear_filters">Reset filters</button>
                         </div>
                     </form>
                 </aside>
@@ -200,7 +200,7 @@
 
                     <div class="active-filters" data-active-filters aria-live="polite"></div>
                     <div class="product-grid" data-product-grid aria-live="polite"></div>
-                    <p class="catalog-empty" data-empty-state hidden>No product matches the selected filters. Try removing some of them.</p>
+                    <div class="catalog-empty" data-empty-state hidden>No product matches the selected filters. Try removing some of them.</div>
                 </div>
             </div>
         </section>
@@ -211,13 +211,18 @@
                     <p class="eyebrow">Consulting</p>
                     <h2>If you would like advice on your selection, we are at your disposal.</h2>
                     <p>
+                        For broader guidance you can also visit the <a href="../carpets.html">carpets page</a>, our
+                        <a href="../lavaggio-restauro-tappeti-verona/">carpet washing and restoration services</a> and the
+                        <a href="../contacts-en.html">contact page</a>.
+                    </p>
+                    <p>
                         If you have doubts about size, materials or style, we can help you identify the piece
                         best suited to your spaces with the care and experience of the shop.
                     </p>
                 </div>
                 <div class="catalog-consulting__actions">
-                    <a class="button button-primary" href="tel:+390458013280">Call us</a>
-                    <a class="button button-secondary" href="../contacts-en.html">Contact us</a>
+                    <a class="button button-primary" href="tel:+390458013280" data-track="click_phone">Call us</a>
+                    <a class="button button-secondary" href="../contacts-en.html" data-track="click_contact_page">Contact us</a>
                 </div>
             </div>
         </section>
@@ -262,9 +267,9 @@
             </div>
             <div>
                 <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
-                <p><a href="tel:+390458013280">+39 045 801 3280</a></p>
+                <p><a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a></p>
                 <p><a href="mailto:shahmansouri@tiscali.it">shahmansouri@tiscali.it</a></p>
-                <p><a href="../contacts-en.html">Contacts</a></p>
+                <p><a href="../contacts-en.html" data-track="click_contact_page">Contacts</a></p>
             </div>
             <div>
                 <p class="footer-copyright">&copy; 2026 Shahmansouri</p>

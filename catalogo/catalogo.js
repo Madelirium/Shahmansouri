@@ -4,7 +4,7 @@ const resultsCount = document.querySelector("[data-results-count]");
 const activeFilters = document.querySelector("[data-active-filters]");
 const emptyState = document.querySelector("[data-empty-state]");
 const totalProductsTarget = document.querySelector("[data-total-products]");
-const resetButton = document.querySelector("[data-reseta-filters]");
+const resetButton = document.querySelector("[data-reset-filters]");
 const widthValue = document.querySelector("[data-width-value]");
 const lengthValue = document.querySelector("[data-length-value]");
 const widthInput = document.querySelector("[data-width-input]");
@@ -38,7 +38,11 @@ const catalogI18n = isEnglishCatalog
             emptyCatalog: "The online catalog is being updated.",
             noMatch: "No product matches the selected filters. Try removing some of them.",
             unavailable: "The catalog is currently unavailable.",
-            productDetails: "Product details"
+            productDetails: "Product details",
+            noResultsTitle: "No rugs match the selected filters",
+            noResultsText: "Try clearing the filters or contact us: we have more rugs available in our store in Verona.",
+            clearFilters: "Clear filters",
+            whatsappCta: "Contact us on WhatsApp"
         },
         categories: {
             "Tappeto Antico": "Antique rug",
@@ -77,7 +81,11 @@ const catalogI18n = isEnglishCatalog
             emptyCatalog: "Il catalogo online è in aggiornamento.",
             noMatch: "Nessun prodotto corrisponde ai filtri selezionati. Prova a rimuoverne qualcuno.",
             unavailable: "Il catalogo non è disponibile in questo momento.",
-            productDetails: "Dettagli prodotto"
+            productDetails: "Dettagli prodotto",
+            noResultsTitle: "Nessun tappeto corrisponde ai filtri selezionati",
+            noResultsText: "Prova a rimuovere i filtri oppure contattaci: abbiamo altri tappeti disponibili in negozio a Verona.",
+            clearFilters: "Rimuovi filtri",
+            whatsappCta: "Contattaci su WhatsApp"
         },
         categories: {},
         materials: {},
@@ -131,7 +139,7 @@ function translateAvailability(value) {
 function createFilterCheckbox(name, value, label) {
     return `
         <label class="filters-check">
-            <input type="checkbox" name="${name}" value="${value}">
+            <input type="checkbox" name="${name}" value="${value}" data-track="click_catalog_filter" data-filter-name="${name}" data-filter-value="${value}">
             <span>${label}</span>
         </label>
     `;
@@ -281,6 +289,7 @@ function createProductCard(product) {
         : `products/${product.slug}.html`;
     const cardTitle = isEnglishCatalog && product.titleEn ? product.titleEn : product.title;
     const cardAlt = isEnglishCatalog && product.altEn ? product.altEn : product.alt;
+    const productName = String(cardTitle).replace(/"/g, '&quot;');
     const hasNumericPrice = Number.isFinite(product.priceValue);
     const hasSalePrice = Number.isFinite(product.salePriceValue);
     const displayPrice = hasNumericPrice
@@ -315,21 +324,21 @@ function createProductCard(product) {
     return `
         <article class="product-card">
             <div class="product-card__media">
-                <a href="${productPage}">
+                <a href="${productPage}" data-track="click_catalog_product" data-product-name="${productName}" data-track-label="${catalogI18n.labels.openCard}">
                     <img src="${product.coverImage}" alt="${cardAlt}" loading="lazy" decoding="async" width="800" height="600">
                 </a>
             </div>
             <div class="product-card__body">
                 ${priceMarkup ? `<div class="product-card__meta">${priceMarkup}</div>` : ""}
                 <div>
-                    <h3 class="product-card__title"><a href="${productPage}">${cardTitle}</a></h3>
+                    <h3 class="product-card__title"><a href="${productPage}" data-track="click_catalog_product" data-product-name="${productName}" data-track-label="${catalogI18n.labels.openCard}">${cardTitle}</a></h3>
                 </div>
                 <ul class="product-card__detail-list" aria-label="${catalogI18n.labels.productDetails}">
                     <li><strong>${catalogI18n.labels.measures}:</strong> ${product.dimensions}</li>
                     <li><strong>${catalogI18n.labels.availability}:</strong> ${translateAvailability(product.availability)}</li>
                 </ul>
                 <div class="product-card__actions">
-                    <a class="button button-primary" href="${productPage}">${catalogI18n.labels.openCard}</a>
+                    <a class="button button-primary" href="${productPage}" data-track="click_catalog_product" data-product-name="${productName}" data-track-label="${catalogI18n.labels.openCard}">${catalogI18n.labels.openCard}</a>
                 </div>
             </div>
         </article>
@@ -374,6 +383,57 @@ function renderSliderValues(filters) {
     if (lengthValue) {
         lengthValue.textContent = filters.lengthTarget !== null ? `${filters.lengthTarget} cm` : "-";
     }
+}
+
+function getCatalogWhatsappUrl() {
+    const message = isEnglishCatalog
+        ? "Hello, I am looking for a rug but I could not find the right one in the online catalog. Can you help me?"
+        : "Buongiorno, sto cercando un tappeto ma non ho trovato quello giusto nel catalogo online. Potete aiutarmi?";
+
+    return `https://wa.me/393392668950?text=${encodeURIComponent(message)}`;
+}
+
+function resetCatalogFilters() {
+    if (catalogForm) {
+        catalogForm.reset();
+
+        if (widthRange instanceof HTMLInputElement) {
+            widthRange.value = String(maxWidth);
+        }
+
+        if (lengthRange instanceof HTMLInputElement) {
+            lengthRange.value = String(maxLength);
+        }
+
+        if (widthInput instanceof HTMLInputElement) {
+            widthInput.value = "";
+        }
+
+        if (lengthInput instanceof HTMLInputElement) {
+            lengthInput.value = "";
+        }
+    }
+
+    renderSliderValues(getFormState());
+    renderCatalog();
+    setFiltersOpen(false);
+}
+
+function renderNoResultsState() {
+    if (!emptyState) {
+        return;
+    }
+
+    emptyState.innerHTML = `
+        <div class="catalog-empty__box">
+            <h3>${catalogI18n.labels.noResultsTitle}</h3>
+            <p>${catalogI18n.labels.noResultsText}</p>
+            <div class="catalog-empty__actions">
+                <button type="button" class="button button-secondary" data-empty-reset-filters data-track="click_clear_filters">${catalogI18n.labels.clearFilters}</button>
+                <a class="button button-primary" href="${getCatalogWhatsappUrl()}" target="_blank" rel="noopener" data-track="click_catalog_no_results_contact">${catalogI18n.labels.whatsappCta}</a>
+            </div>
+        </div>
+    `;
 }
 
 function clampDimension(value, maxValue) {
@@ -441,11 +501,12 @@ function renderCatalog() {
 
     if (!filteredProducts.length) {
         emptyState.hidden = false;
-        emptyState.textContent = catalogI18n.labels.noMatch;
+        renderNoResultsState();
         return;
     }
 
     emptyState.hidden = true;
+    emptyState.innerHTML = "";
 }
 
 function isMobileFiltersMode() {
@@ -505,27 +566,20 @@ if (catalogForm) {
 
 if (resetButton) {
     resetButton.addEventListener("click", () => {
-        if (catalogForm) {
-            catalogForm.reset();
+        window.requestAnimationFrame(resetCatalogFilters);
+    });
+}
 
-            if (widthRange instanceof HTMLInputElement) {
-                widthRange.value = String(maxWidth);
-            }
-
-            if (lengthRange instanceof HTMLInputElement) {
-                lengthRange.value = String(maxLength);
-            }
-
-            if (widthInput instanceof HTMLInputElement) {
-                widthInput.value = "";
-            }
-
-            if (lengthInput instanceof HTMLInputElement) {
-                lengthInput.value = "";
-            }
+if (emptyState) {
+    emptyState.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) {
+            return;
         }
 
-        window.requestAnimationFrame(renderCatalog);
+        if (target.closest("[data-empty-reset-filters]")) {
+            resetCatalogFilters();
+        }
     });
 }
 
