@@ -22,13 +22,21 @@
     "Vello In Lana",
     "Vello Misto Lana E Seta"
   ],
+  "origins": [
+    "Caucaso",
+    "Iran"
+  ],
+  "availabilities": [
+    "Disponibile"
+  ],
   "fallbackCategory": "Senza categoria",
   "categoryLabelsEn": {
     "Tappeto": "Rug",
     "Tappeto classico": "Classic rug",
     "Tappeto Antico": "Ancient Rug",
     "Tappeto figurativo": "Figurative Rug",
-    "Tappeto Fine": "Fine rug"
+    "Tappeto Fine": "Fine rug",
+    "Kilim": "Kilim"
   },
   "materialLabelsEn": {
     "Lana": "wool",
@@ -38,5 +46,7 @@
     "Trama E Ordito Di Lana": "warp and weft wool",
     "Trama E Ordito Di Seta": "warp and weft silk",
     "Vello Misto Lana E Seta": "Wool and silk veil"
-  }
+  },
+  "originLabelsEn": {},
+  "availabilityLabelsEn": {}
 }
