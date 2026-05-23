@@ -8,6 +8,7 @@ const siteText = isEnglishPage
       cookieText: 'This site uses essential technical tools and, with your consent, loads Google Analytics and Google Maps, which may install third-party cookies.',
       cookieInfo: 'Cookie policy',
       privacyInfo: 'Privacy policy',
+      returnsInfo: 'Returns and refunds',
       manageCookies: 'Manage cookies',
       cookieReject: 'Reject',
       cookieAccept: 'Accept',
@@ -22,6 +23,7 @@ const siteText = isEnglishPage
       cookieText: 'Questo sito usa strumenti tecnici essenziali e, con il tuo consenso, carica Google Analytics e Google Maps, che possono installare cookie di terze parti.',
       cookieInfo: 'Informativa cookie',
       privacyInfo: 'Privacy policy',
+      returnsInfo: 'Resi e rimborsi',
       manageCookies: 'Gestisci cookie',
       cookieReject: 'Rifiuta',
       cookieAccept: 'Accetta',
@@ -33,7 +35,15 @@ const siteText = isEnglishPage
     };
 
 function getPolicyPrefix() {
-  return window.location.pathname.includes('/catalogo/') ? '../' : '';
+  if (window.location.pathname.includes('/catalogo/products/')) {
+    return '../../';
+  }
+
+  if (window.location.pathname.includes('/catalogo/')) {
+    return '../';
+  }
+
+  return '';
 }
 
 function getCookieConsent() {
@@ -241,6 +251,7 @@ function injectFooterUtilityLinks() {
   wrapper.innerHTML = `
     <p><a href="${policyPrefix}${isEnglishPage ? 'cookie-policy-en.html' : 'cookie-policy.html'}">${siteText.cookieInfo}</a></p>
     <p><a href="${policyPrefix}${isEnglishPage ? 'privacy-policy-en.html' : 'privacy-policy.html'}">${siteText.privacyInfo}</a></p>
+    <p><a href="${policyPrefix}${isEnglishPage ? 'returns-and-refunds.html' : 'resi-e-rimborsi.html'}">${siteText.returnsInfo}</a></p>
     <p><button type="button" class="footer-link-button" data-manage-cookies>${siteText.manageCookies}</button></p>
   `;
 
