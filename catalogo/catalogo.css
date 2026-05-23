@@ -97,6 +97,7 @@ img {
 .filters-card {
   position: sticky;
   top: 20px;
+  max-height: calc(100vh - 40px);
   padding: 14px;
   border: 1px solid var(--catalog-line);
   background: linear-gradient(to bottom, #efdfad, #e5d093);
@@ -104,6 +105,36 @@ img {
     inset 0 1px 0 rgba(255, 255, 255, 0.28),
     0 2px 6px rgba(125, 93, 20, 0.1);
   border-radius: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(123, 31, 22, 0.28) rgba(229, 208, 147, 0.2);
+}
+
+.filters-card::-webkit-scrollbar {
+  width: 8px;
+}
+
+.filters-card::-webkit-scrollbar-track {
+  background: rgba(229, 208, 147, 0.18);
+}
+
+.filters-card::-webkit-scrollbar-thumb {
+  background: rgba(123, 31, 22, 0.28);
+  border: 1px solid rgba(168, 125, 44, 0.22);
+}
+
+.filters-card::-webkit-scrollbar-thumb:hover {
+  background: rgba(123, 31, 22, 0.38);
+}
+
+.filters-card__header {
+  position: sticky;
+  top: -14px;
+  z-index: 1;
+  margin: -14px -14px 0;
+  padding: 14px 14px 10px;
+  background: linear-gradient(to bottom, #efdfad, #e5d093);
 }
 
 .filters-card__header .eyebrow,
@@ -615,6 +646,15 @@ img {
 
   .filters-card {
     position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .filters-card__header {
+    position: static;
+    margin: 0;
+    padding: 0;
+    background: transparent;
   }
 }
 

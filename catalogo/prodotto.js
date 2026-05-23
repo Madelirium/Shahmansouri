@@ -1,3 +1,4 @@
+const productPageRoot = document.querySelector(".product-page");
 const productHero = document.querySelector(".product-gallery__hero");
 const productHeroImage = productHero?.querySelector("img");
 const productThumbButtons = document.querySelectorAll("[data-product-thumb]");
@@ -85,4 +86,95 @@ if (productHero && productHeroImage) {
         overlay.querySelector(".product-lightbox__close")?.addEventListener("click", close);
         overlay.addEventListener("close", () => overlay.remove());
     });
+}
+
+function getProductTrackingPayload() {
+    if (!(productPageRoot instanceof HTMLElement)) {
+        return {};
+    }
+
+    return {
+        product_name: productPageRoot.dataset.productName || "",
+        product_slug: productPageRoot.dataset.productSlug || "",
+        product_url: productPageRoot.dataset.productUrl || "",
+        product_category: productPageRoot.dataset.productCategory || "",
+        product_category_label: productPageRoot.dataset.productCategoryLabel || "",
+        product_origin: productPageRoot.dataset.productOrigin || "",
+        product_size: productPageRoot.dataset.productSize || "",
+        product_material: productPageRoot.dataset.productMaterial || "",
+        product_material_label: productPageRoot.dataset.productMaterialLabel || "",
+        product_price_status: productPageRoot.dataset.productPriceStatus || "",
+        language: productPageRoot.dataset.productLanguage || document.documentElement.lang || "",
+        page_path: productPageRoot.dataset.pagePath || window.location.pathname
+    };
+}
+
+function isProductAnalyticsAllowed() {
+    try {
+        return typeof window.gtag === "function"
+            && window.localStorage.getItem("shahmansouri_cookie_consent_v1") === "accepted";
+    } catch (_error) {
+        return false;
+    }
+}
+
+function sanitizeProductTrackingUrl(href) {
+    if (window.ShahmansouriAnalytics && typeof window.ShahmansouriAnalytics.sanitizeTrackingUrl === "function") {
+        return window.ShahmansouriAnalytics.sanitizeTrackingUrl(href);
+    }
+
+    return String(href || "").trim();
+}
+
+function cleanProductTrackingPayload(payload) {
+    return Object.fromEntries(
+        Object.entries(payload).filter(([, value]) => value !== "" && value != null)
+    );
+}
+
+function sendProductTrackingEvent(eventName, extraPayload = {}) {
+    if (!eventName || !isProductAnalyticsAllowed()) {
+        return;
+    }
+
+    window.gtag("event", eventName, cleanProductTrackingPayload({
+        ...getProductTrackingPayload(),
+        ...extraPayload
+    }));
+}
+
+function bindProductTracking() {
+    if (!(productPageRoot instanceof HTMLElement) || productPageRoot.dataset.productTrackingBound === "true") {
+        return;
+    }
+
+    const ctaElements = productPageRoot.querySelectorAll("[data-product-track]");
+    ctaElements.forEach((element) => {
+        element.addEventListener("click", () => {
+            const href = "href" in element ? element.href : "";
+            const buttonLabel = (element.getAttribute("data-track-label") || element.textContent || "").replace(/\s+/g, " ").trim();
+            sendProductTrackingEvent(String(element.getAttribute("data-product-track") || "").trim(), {
+                button_label: buttonLabel,
+                link_url: sanitizeProductTrackingUrl(href)
+            });
+        });
+    });
+
+    productPageRoot.dataset.productTrackingBound = "true";
+}
+
+function initProductTracking() {
+    if (!(productPageRoot instanceof HTMLElement) || productPageRoot.dataset.productViewTracked === "true") {
+        return;
+    }
+
+    bindProductTracking();
+    sendProductTrackingEvent("view_product");
+    productPageRoot.dataset.productViewTracked = "true";
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initProductTracking, { once: true });
+} else {
+    initProductTracking();
 }

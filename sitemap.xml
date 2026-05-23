@@ -548,4 +548,12 @@
     <loc>https://shahmansouri.com/catalogo/products/white-turkmen-persian-rug-121x98.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/khorjin-bakhtiari-vecchio-sumak.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/vintage-bakhtiari-sumak-khorjin.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

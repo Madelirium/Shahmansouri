@@ -33,7 +33,7 @@
   "categoryLabelsEn": {
     "Tappeto": "Rug",
     "Tappeto classico": "Classic rug",
-    "Tappeto Antico": "Ancient Rug",
+    "Tappeto Antico": "Antique rug",
     "Tappeto figurativo": "Figurative Rug",
     "Tappeto Fine": "Fine rug",
     "Kilim": "Kilim"
@@ -42,10 +42,10 @@
     "Lana": "wool",
     "Cotone": "Cotton",
     "Trama E Ordito Di Cotone": "warp and weft cotton",
-    "Vello In Lana": "wool veil",
+    "Vello In Lana": "wool pile",
     "Trama E Ordito Di Lana": "warp and weft wool",
     "Trama E Ordito Di Seta": "warp and weft silk",
-    "Vello Misto Lana E Seta": "Wool and silk veil"
+    "Vello Misto Lana E Seta": "wool and silk pile"
   },
   "originLabelsEn": {},
   "availabilityLabelsEn": {}

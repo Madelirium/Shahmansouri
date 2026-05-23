@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
  <meta charset="UTF-8">
@@ -942,13 +942,13 @@
     <div class="side-box">
      <a class="side-title" href="catalogo/index.html">Catalogo <span class="arrow">&#9660;</span></a>
      <div class="side-image">
-      <a href="catalogo/index.html"><img src="images/tappeti-verona-shahmansouri-duomo-verona.webp" alt="Selezione di tappeti persiani Shahmansouri a Verona" width="900" height="675" loading="lazy" decoding="async"></a>
+      <a href="catalogo/index.html"><img src="images/tappeti-verona-shahmansouri-duomo-verona.webp" alt="Selezione di tappeti persiani Shahmansouri a Verona" width="900" height="675" decoding="sync" fetchpriority="high"></a>
      </div>
     </div>
     <div class="side-box">
      <a class="side-title" href="links-consigliati.html">Links consigliati <span class="arrow">&#9660;</span></a>
      <div class="side-image">
-      <a href="links-consigliati.html"><img src="images/tappeti-verona-shahmansouri-duomo.webp" alt="Negozio Shahmansouri nel centro storico di Verona" width="900" height="675" loading="lazy" decoding="async"></a>
+      <a href="links-consigliati.html"><img src="images/tappeti-verona-shahmansouri-duomo-mehdi.webp" alt="Negozio Shahmansouri nel centro storico di Verona" width="900" height="675" decoding="sync" fetchpriority="high"></a>
      </div>
     </div>
    </aside>
@@ -1001,13 +1001,13 @@
     <p><a href="tappeti.html#manutenzioni">Cura e manutenzione</a></p>
    </article>
    <article class="home-mobile-quicklink-card">
-    <a class="home-mobile-quicklink-card__image" href="catalogo/index.html"><img src="images/tappeti-verona-shahmansouri-duomo-verona.webp" alt="Selezione di tappeti persiani Shahmansouri a Verona" width="900" height="675" loading="lazy" decoding="async"></a>
+    <a class="home-mobile-quicklink-card__image" href="catalogo/index.html"><img src="images/tappeti-verona-shahmansouri-duomo-verona.webp" alt="Selezione di tappeti persiani Shahmansouri a Verona" width="900" height="675" decoding="sync" fetchpriority="high"></a>
     <h2>Catalogo</h2>
     <p>Una selezione di tappeti persiani e orientali visibile online, con immagini e dettagli utili per un primo orientamento. Puoi anche scoprire i <a href="tappeti-persiani-verona/">tappeti persiani a Verona</a> tra showroom, consulenza e visita in negozio.</p>
     <p><a href="catalogo/index.html">Vedi il catalogo</a></p>
    </article>
    <article class="home-mobile-quicklink-card">
-    <a class="home-mobile-quicklink-card__image" href="links-consigliati.html"><img src="images/tappeti-verona-shahmansouri-duomo.webp" alt="Negozio Shahmansouri nel centro storico di Verona" width="900" height="675" loading="lazy" decoding="async"></a>
+    <a class="home-mobile-quicklink-card__image" href="links-consigliati.html"><img src="images/tappeti-verona-shahmansouri-duomo-mehdi.webp" alt="Negozio Shahmansouri nel centro storico di Verona" width="900" height="675" decoding="sync" fetchpriority="high"></a>
     <h2>Links consigliati</h2>
     <p>Una raccolta di pagine utili per approfondire il mondo dei tappeti, della Persia e della cultura artigianale.</p>
     <p><a href="links-consigliati.html">Apri i links</a></p>
@@ -1682,9 +1682,14 @@
           startAutoScroll();
         })
         .catch(function () {
-          status.textContent = "La selezione dal catalogo non è disponibile in questo momento.";
+          status.textContent = "La selezione dal catalogo non Ã¨ disponibile in questo momento.";
         });
     }());
   </script>
 </body>
 </html>
+
+
+
+
+

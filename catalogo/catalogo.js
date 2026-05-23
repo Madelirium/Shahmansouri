@@ -29,6 +29,7 @@ const catalogI18n = isEnglishCatalog
         labels: {
             measures: "Size",
             availability: "Availability",
+            priceOnRequest: "Price on request",
             openCard: "Open product",
             search: "Search",
             material: "Material",
@@ -74,6 +75,7 @@ const catalogI18n = isEnglishCatalog
             availability: "Disponibilità",
             openCard: "Apri scheda",
             search: "Ricerca",
+            priceOnRequest: "Prezzo su richiesta",
             material: "Materiale",
             widthDesired: "Larghezza desiderata",
             lengthDesired: "Lunghezza desiderata",
@@ -112,6 +114,23 @@ function getProductCategoryValue(product) {
     return String(product.category || "").trim();
 }
 
+function getProductCategoryValues(product) {
+    const rawCategories = isEnglishCatalog
+        ? (Array.isArray(product.categoriesEn) && product.categoriesEn.length ? product.categoriesEn : [product.categoryEn])
+        : (Array.isArray(product.categories) && product.categories.length ? product.categories : [product.category]);
+
+    const normalizedCategories = rawCategories
+        .map((category) => String(category || "").trim())
+        .filter(Boolean);
+
+    if (normalizedCategories.length) {
+        return Array.from(new Set(normalizedCategories));
+    }
+
+    const fallbackCategory = getProductCategoryValue(product);
+    return fallbackCategory ? [fallbackCategory] : [];
+}
+
 function getProductMaterialLabels(product) {
     if (isEnglishCatalog && Array.isArray(product.materialsEn) && product.materialsEn.length) {
         return product.materialsEn
@@ -147,9 +166,7 @@ function createFilterCheckbox(name, value, label) {
 
 function getUniqueCategories(products) {
     return Array.from(new Set(
-        products
-            .map((product) => getProductCategoryValue(product))
-            .filter(Boolean)
+        products.flatMap((product) => getProductCategoryValues(product))
     )).sort((left, right) => left.localeCompare(right, catalogI18n.locale));
 }
 
@@ -251,6 +268,8 @@ function matchesSearch(product, query) {
         product.titleEn,
         product.category,
         product.categoryEn,
+        ...(Array.isArray(product.categories) ? product.categories : []),
+        ...(Array.isArray(product.categoriesEn) ? product.categoriesEn : []),
         product.material,
         product.materialEn,
         product.origin,
@@ -275,9 +294,10 @@ function matchesMaterials(product, selectedMaterials) {
 function filterProducts(filters) {
     return catalogProducts.filter((product) => {
         const languageMatch = !isEnglishCatalog || product.hasEnglish;
+        const productCategories = getProductCategoryValues(product);
         return languageMatch
             && matchesSearch(product, filters.search)
-            && (!filters.categories.length || filters.categories.includes(getProductCategoryValue(product)))
+            && (!filters.categories.length || filters.categories.some((category) => productCategories.includes(category)))
             && matchesMaterials(product, filters.materials)
             && matchesDimensions(product, filters);
     });
@@ -317,6 +337,12 @@ function createProductCard(product) {
         priceMarkup = `
             <div class="product-card__price-wrap">
                 <span class="product-card__price">${displayPrice}</span>
+            </div>
+        `;
+    } else {
+        priceMarkup = `
+            <div class="product-card__price-wrap">
+                <span class="product-card__price">${catalogI18n.labels.priceOnRequest}</span>
             </div>
         `;
     }
@@ -669,13 +695,13 @@ async function loadCatalogProducts() {
 
         if (widthInput instanceof HTMLInputElement) {
             widthInput.placeholder = maxWidth
-                ? (isEnglishCatalog ? `Ex. ${Math.min(maxWidth, 120)}` : `Es. ${Math.min(maxWidth, 120)}`)
+                ? (isEnglishCatalog ? `Ex. ${maxWidth}` : `Es. ${maxWidth}`)
                 : widthInput.placeholder;
         }
 
         if (lengthInput instanceof HTMLInputElement) {
             lengthInput.placeholder = maxLength
-                ? (isEnglishCatalog ? `Ex. ${Math.min(maxLength, 200)}` : `Es. ${Math.min(maxLength, 200)}`)
+                ? (isEnglishCatalog ? `Ex. ${maxLength}` : `Es. ${maxLength}`)
                 : lengthInput.placeholder;
         }
     }
