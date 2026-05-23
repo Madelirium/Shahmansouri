@@ -73,7 +73,7 @@ function injectFloatingActions() {
       </svg>
       <span class="sr-only">${siteText.whatsappLabel}</span>
     </a>
-    <a href="https://www.instagram.com/shahmansouri_tappeti_persiani/" class="floating-action floating-instagram" target="_blank" rel="noopener" aria-label="${siteText.instagramLabel}" title="${siteText.instagramLabel}" data-track="click_instagram" data-track-label="${siteText.instagramLabel}">
+    <a href="https://www.instagram.com/shahmansouri_tappeti_persiani/" class="floating-action floating-instagram" target="_blank" rel="noopener" aria-label="${siteText.instagramLabel}" title="${siteText.instagramLabel}" data-track="click_social_instagram" data-track-label="${siteText.instagramLabel}">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.4 1.7a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z" fill="currentColor"></path>
       </svg>
@@ -279,7 +279,14 @@ function setupContactForms() {
       }
 
       feedback.textContent = siteText.mailFeedback;
-  window.location.href = `mailto:shahmansouri@tiscali.it?subject=${subject}&body=${body}`;
+      if (window.ShahmansouriAnalytics && typeof window.ShahmansouriAnalytics.trackEvent === 'function') {
+        window.ShahmansouriAnalytics.trackEvent('click_email', {
+          button_label: isEnglishPage ? 'Contact form email' : 'Email dal modulo contatti',
+          link_url: 'mailto:shahmansouri@tiscali.it',
+          section: 'contact_form'
+        });
+      }
+      window.location.href = `mailto:shahmansouri@tiscali.it?subject=${subject}&body=${body}`;
     });
   });
 }
