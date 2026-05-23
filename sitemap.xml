@@ -49,6 +49,14 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/qr/</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/qr/index-en.html</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/lavaggio-restauro-tappeti-verona/</loc>
     <priority>0.8</priority>
   </url>
@@ -333,6 +341,14 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://shahmansouri.com/catalogo/products/signed-persian-isfahan-silk-rug-105x75.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/signed-persian-isfahan-silk-rug-130x85.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://shahmansouri.com/catalogo/products/nain-6la-persian-rug-92x63.html</loc>
     <priority>0.6</priority>
   </url>
@@ -490,6 +506,14 @@
   </url>
   <url>
     <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-isfahan-seta-163x105.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-isfahan-firmato-seta-105x75.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shahmansouri.com/catalogo/products/tappeto-persiano-isfahan-firmato-seta-130x85.html</loc>
     <priority>0.7</priority>
   </url>
   <url>
