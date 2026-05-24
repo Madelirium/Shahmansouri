@@ -31,6 +31,7 @@ const CATALOG_MOBILE_VIEW_KEY = "shahmansouri_catalog_mobile_columns_v1";
 const DEFAULT_CATALOG_COLUMNS = "2";
 
 const isEnglishCatalog = document.documentElement.lang.toLowerCase().startsWith("en");
+const CARD_IMAGE_SIZES = "(max-width: 759px) calc(100vw - 72px), (max-width: 1399px) 320px, 240px";
 const catalogI18n = isEnglishCatalog
     ? {
         locale: "en-GB",
@@ -332,7 +333,38 @@ function filterProducts(filters) {
     });
 }
 
-function createProductCard(product) {
+function getResponsiveCatalogImageSources(product) {
+    const imagePath = typeof product?.coverImage === "string" ? product.coverImage : "";
+    const image360 = typeof product?.coverImage360 === "string" ? product.coverImage360 : "";
+    const image640 = typeof product?.coverImage640 === "string" ? product.coverImage640 : "";
+
+    if (!imagePath) {
+        return {
+            src: imagePath,
+            srcset: "",
+            sizes: ""
+        };
+    }
+
+    const srcsetParts = [];
+    if (image360) {
+        srcsetParts.push(`${image360} 360w`);
+    }
+    if (image640) {
+        srcsetParts.push(`${image640} 640w`);
+    }
+    if (srcsetParts.length) {
+        srcsetParts.push(`${imagePath} 1080w`);
+    }
+
+    return {
+        src: image640 || image360 || imagePath,
+        srcset: srcsetParts.join(", "),
+        sizes: srcsetParts.length ? CARD_IMAGE_SIZES : ""
+    };
+}
+
+function createProductCard(product, index = 0) {
     const productPage = isEnglishCatalog && product.hasEnglish && product.slugEn
         ? `products/${product.slugEn}.html`
         : `products/${product.slug}.html`;
@@ -376,11 +408,16 @@ function createProductCard(product) {
         `;
     }
 
+    const image = getResponsiveCatalogImageSources(product);
+    const imageLoading = index < 4 ? "eager" : "lazy";
+    const imageFetchPriority = index === 0 ? ' fetchpriority="high"' : "";
+    const imageSrcset = image.srcset ? ` srcset="${image.srcset}" sizes="${image.sizes}"` : "";
+
     return `
         <article class="product-card">
             <div class="product-card__media">
                 <a href="${productPage}" data-track="click_catalog_product" data-product-name="${productName}" data-track-label="${catalogI18n.labels.openCard}">
-                    <img src="${product.coverImage}" alt="${cardAlt}" loading="lazy" decoding="async" width="800" height="600">
+                    <img src="${image.src}"${imageSrcset} alt="${cardAlt}" loading="${imageLoading}" decoding="async" width="800" height="600"${imageFetchPriority}>
                 </a>
             </div>
             <div class="product-card__body">
@@ -546,7 +583,9 @@ function renderCatalog() {
     renderActiveFilters(filters);
 
     resultsCount.textContent = catalogI18n.labels.results(filteredProducts.length, catalogProducts.length);
-    productGrid.innerHTML = filteredProducts.map(createProductCard).join("");
+    productGrid.innerHTML = filteredProducts.map((product, index) => createProductCard(product, index)).join("");
+    productGrid.classList.remove("product-grid--skeleton");
+    productGrid.setAttribute("aria-busy", "false");
 
     if (!catalogProducts.length) {
         emptyState.hidden = false;
@@ -842,6 +881,12 @@ async function loadCatalogProducts() {
 }
 
 loadCatalogProducts().catch((error) => {
+    if (productGrid) {
+        productGrid.innerHTML = "";
+        productGrid.classList.remove("product-grid--skeleton");
+        productGrid.setAttribute("aria-busy", "false");
+    }
+
     if (resultsCount) {
         resultsCount.textContent = error.message;
     }
