@@ -819,3 +819,35 @@ a.product-badge:focus-visible {
     border-bottom: 0;
   }
 }
+
+
+/* Product page footer placement */
+.site-footer-global--product-page {
+  margin: 18px 0 0;
+}
+
+.site-footer-global--product-page.site-footer-global--compact {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+@media (max-width: 768px) {
+  .site-footer-global--product-page {
+    margin-top: 14px;
+  }
+
+  .product-summary {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-summary__actions--primary {
+    order: -3;
+    margin: 0 0 14px;
+  }
+
+  .product-summary__meta {
+    order: -2;
+    margin-bottom: 10px;
+  }
+}

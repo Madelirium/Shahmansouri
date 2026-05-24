@@ -9,6 +9,8 @@ const siteText = isEnglishPage
       cookieInfo: 'Cookie policy',
       privacyInfo: 'Privacy policy',
       returnsInfo: 'Returns and refunds',
+      contactsInfo: 'Contacts',
+      changeLanguage: 'Change language',
       manageCookies: 'Manage cookies',
       cookieReject: 'Reject',
       cookieAccept: 'Accept',
@@ -24,6 +26,8 @@ const siteText = isEnglishPage
       cookieInfo: 'Informativa cookie',
       privacyInfo: 'Privacy policy',
       returnsInfo: 'Resi e rimborsi',
+      contactsInfo: 'Contatti',
+      changeLanguage: 'Change language',
       manageCookies: 'Gestisci cookie',
       cookieReject: 'Rifiuta',
       cookieAccept: 'Accetta',
@@ -263,6 +267,76 @@ function injectFooterUtilityLinks() {
   }
 }
 
+function getFooterLanguageControl(policyPrefix) {
+  const languageOverlay = document.getElementById('languageOverlay');
+  if (languageOverlay) {
+    return `<button type="button" class="footer-language-trigger" data-open-language-overlay>${siteText.changeLanguage}</button>`;
+  }
+
+  const alternateHref = isEnglishPage
+    ? document.querySelector('link[rel="alternate"][hreflang="it"]')?.getAttribute('href')
+    : document.querySelector('link[rel="alternate"][hreflang="en"]')?.getAttribute('href');
+
+  if (alternateHref) {
+    return `<a href="${alternateHref}" data-track="change_language" data-track-label="${siteText.changeLanguage}" data-language-target="${isEnglishPage ? 'it' : 'en'}">${siteText.changeLanguage}</a>`;
+  }
+
+  const fallbackHref = `${policyPrefix}${isEnglishPage ? 'index.html' : 'index-en.html'}`;
+  return `<a href="${fallbackHref}" data-track="change_language" data-track-label="${siteText.changeLanguage}" data-language-target="${isEnglishPage ? 'it' : 'en'}">${siteText.changeLanguage}</a>`;
+}
+
+function normalizeFooterLayout() {
+  const footer = document.querySelector('.site-footer-global, .site-footer');
+  if (!footer) {
+    return;
+  }
+
+  footer.classList.add('site-footer-global--compact');
+
+  if (footer.querySelector('.site-footer-global__meta-lines')) {
+    return;
+  }
+
+  const grid = footer.querySelector('.site-footer-global__grid, .footer-grid');
+  if (!grid) {
+    return;
+  }
+
+  const policyPrefix = getPolicyPrefix();
+  const contactHref = `${policyPrefix}${isEnglishPage ? 'contacts-en.html' : 'contatti.html'}`;
+  const phoneHref = 'tel:+390458013280';
+  const emailHref = 'mailto:shahmansouri@tiscali.it';
+  const copyrightNode = footer.querySelector('.footer-copyright');
+  const copyrightText = copyrightNode ? copyrightNode.textContent.trim() : '\u00A9 2026 Shahmansouri';
+
+  grid.innerHTML = `
+    <div class="site-footer-global__meta-lines">
+      <p class="site-footer-global__contact-line">
+        Stradone Arcidiacono Pacifico, 14 - Verona
+        <span aria-hidden="true">|</span>
+        <a href="${phoneHref}" data-track="click_phone">+39 045 801 3280</a>
+        <span aria-hidden="true">|</span>
+        <a href="${emailHref}" data-track="click_email">shahmansouri@tiscali.it</a>
+        <span aria-hidden="true">|</span>
+        <a href="${contactHref}" data-track="click_contact_page">${siteText.contactsInfo}</a>
+      </p>
+      <div class="site-footer-global__utility-line footer-utility-links" data-footer-utility-links>
+        ${getFooterLanguageControl(policyPrefix)}
+        <span aria-hidden="true">|</span>
+        <a href="${policyPrefix}${isEnglishPage ? 'cookie-policy-en.html' : 'cookie-policy.html'}">${siteText.cookieInfo}</a>
+        <span aria-hidden="true">|</span>
+        <a href="${policyPrefix}${isEnglishPage ? 'privacy-policy-en.html' : 'privacy-policy.html'}">${siteText.privacyInfo}</a>
+        <span aria-hidden="true">|</span>
+        <a href="${policyPrefix}${isEnglishPage ? 'returns-and-refunds.html' : 'resi-e-rimborsi.html'}">${siteText.returnsInfo}</a>
+        <span aria-hidden="true">|</span>
+        <button type="button" class="footer-link-button" data-manage-cookies>${siteText.manageCookies}</button>
+        <span aria-hidden="true">|</span>
+        <span class="footer-copyright">${copyrightText}</span>
+      </div>
+    </div>
+  `;
+}
+
 function setupContactForms() {
   document.querySelectorAll('.contact-form').forEach(function (form) {
     form.addEventListener('submit', function (event) {
@@ -355,6 +429,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupBackToTop();
   injectCookieBanner();
   injectFooterUtilityLinks();
+  normalizeFooterLayout();
   setupCookieButtons();
   setupContactForms();
   applyCookieConsent(getCookieConsent());

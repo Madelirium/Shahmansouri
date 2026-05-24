@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://shahmansouri.com/</loc>
@@ -47,14 +47,6 @@
   <url>
     <loc>https://shahmansouri.com/contacts-en.html</loc>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://shahmansouri.com/qr/</loc>
-    <priority>0.4</priority>
-  </url>
-  <url>
-    <loc>https://shahmansouri.com/qr/index-en.html</loc>
-    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://shahmansouri.com/lavaggio-restauro-tappeti-verona/</loc>
@@ -589,3 +581,4 @@
     <priority>0.7</priority>
   </url>
 </urlset>
+

@@ -1167,6 +1167,71 @@ img {
   text-decoration: underline;
 }
 
+.footer-language-trigger {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.footer-language-trigger:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.site-footer-global--compact {
+  padding-top: 18px;
+  padding-bottom: 16px;
+}
+
+.site-footer-global--compact .site-footer-global__grid,
+.site-footer-global--compact .footer-grid {
+  grid-template-columns: 1fr;
+  gap: 0;
+  text-align: center;
+}
+
+.site-footer-global--compact .site-footer-global__grid > div,
+.site-footer-global--compact .footer-grid > div {
+  min-height: 0;
+  display: block;
+}
+
+.site-footer-global--compact .site-footer-global__meta-lines {
+  display: grid;
+  gap: 4px;
+  justify-items: center;
+}
+
+.site-footer-global--compact .site-footer-global__contact-line,
+.site-footer-global--compact .site-footer-global__utility-line {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+
+.site-footer-global--compact .site-footer-global__utility-line.footer-utility-links {
+  margin-top: 0;
+}
+
+.site-footer-global--compact .site-footer-global__utility-line span[aria-hidden="true"],
+.site-footer-global--compact .site-footer-global__contact-line span[aria-hidden="true"] {
+  padding: 0 6px;
+}
+
+.site-footer-global--compact .footer-copyright {
+  padding-top: 0;
+  white-space: normal;
+}
+
 .contact-details {
   margin-bottom: 18px;
 }

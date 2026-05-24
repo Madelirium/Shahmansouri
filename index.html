@@ -365,23 +365,6 @@
       display: none;
     }
 
-    .footer-language-trigger {
-      appearance: none;
-      border: 0;
-      background: transparent;
-      color: inherit;
-      font: inherit;
-      padding: 0;
-      cursor: pointer;
-      text-decoration: underline;
-      text-underline-offset: 0.18em;
-    }
-
-    .footer-language-trigger:focus-visible {
-      outline: 2px solid currentColor;
-      outline-offset: 4px;
-    }
-
     @media (max-width: 768px) {
       .language-overlay {
         padding: 20px 16px;
@@ -1015,22 +998,21 @@
   </section>
   <footer class="site-footer-global">
    <div class="site-footer-global__grid">
-    <div>
-     <span class="site-footer-global__logo-badge">
-      <img class="site-footer-global__logo" src="images/logo-shahmansouri-tappeti-verona.webp" alt="Logo Shahmansouri Tappeti Persiani" width="280" height="160" loading="lazy" decoding="async">
-     </span>
-     <strong>Shahmansouri Tappeti Persiani</strong>
-     <p>Tappeti, artigianato persiano, lavaggi e restauri nel centro storico di Verona.</p>
-    </div>
-    <div>
-      <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
-      <p><a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a></p>
-      <p><a href="mailto:shahmansouri@tiscali.it" data-track="click_email">shahmansouri@tiscali.it</a></p>
-      <p><a href="contatti.html" data-track="click_contact_page">Contatti</a></p>
-    </div>
-    <div>
-     <p><button type="button" class="footer-language-trigger" data-open-language-overlay>Change language</button></p>
-     <p class="footer-copyright">&copy; 2026 Shahmansouri</p>
+    <div class="site-footer-global__meta-lines">
+      <p class="site-footer-global__contact-line">Stradone Arcidiacono Pacifico, 14 - Verona <span aria-hidden="true">|</span> <a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a> <span aria-hidden="true">|</span> <a href="mailto:shahmansouri@tiscali.it" data-track="click_email">shahmansouri@tiscali.it</a> <span aria-hidden="true">|</span> <a href="contatti.html" data-track="click_contact_page">Contatti</a></p>
+      <div class="site-footer-global__utility-line footer-utility-links" data-footer-utility-links>
+       <button type="button" class="footer-language-trigger" data-open-language-overlay>Change language</button>
+       <span aria-hidden="true">|</span>
+       <a href="cookie-policy.html">Informativa cookie</a>
+       <span aria-hidden="true">|</span>
+       <a href="privacy-policy.html">Privacy policy</a>
+       <span aria-hidden="true">|</span>
+       <a href="resi-e-rimborsi.html">Resi e rimborsi</a>
+       <span aria-hidden="true">|</span>
+       <button type="button" class="footer-link-button" data-manage-cookies>Gestisci cookie</button>
+       <span aria-hidden="true">|</span>
+       <span class="footer-copyright">&copy; 2026 Shahmansouri</span>
+      </div>
     </div>
    </div>
   </footer>

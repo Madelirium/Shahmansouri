@@ -18,10 +18,17 @@ const filtersOverlay = document.querySelector("[data-filters-overlay]");
 const categoryOptions = document.querySelector("[data-category-options]");
 const materialOptions = document.querySelector("[data-material-options]");
 const searchInput = catalogForm?.elements?.namedItem("search") || null;
+const viewToggle = document.querySelector("[data-view-toggle]");
+const viewButtons = Array.from(document.querySelectorAll("[data-view-columns]"));
+const mobileColumnsToggle = document.querySelector("[data-mobile-columns-toggle]");
 
 let catalogProducts = [];
 let maxWidth = 0;
 let maxLength = 0;
+
+const CATALOG_VIEW_KEY = "shahmansouri_catalog_columns_v1";
+const CATALOG_MOBILE_VIEW_KEY = "shahmansouri_catalog_mobile_columns_v1";
+const DEFAULT_CATALOG_COLUMNS = "2";
 
 const isEnglishCatalog = document.documentElement.lang.toLowerCase().startsWith("en");
 const catalogI18n = isEnglishCatalog
@@ -557,6 +564,74 @@ function renderCatalog() {
     emptyState.innerHTML = "";
 }
 
+function isValidColumnsValue(value) {
+    return value === "2" || value === "3";
+}
+
+function getSavedColumnsPreference() {
+    try {
+        const storedValue = window.localStorage.getItem(CATALOG_VIEW_KEY);
+        return isValidColumnsValue(storedValue) ? storedValue : DEFAULT_CATALOG_COLUMNS;
+    } catch (error) {
+        return DEFAULT_CATALOG_COLUMNS;
+    }
+}
+
+function saveColumnsPreference(value) {
+    if (!isValidColumnsValue(value)) {
+        return;
+    }
+
+    try {
+        window.localStorage.setItem(CATALOG_VIEW_KEY, value);
+    } catch (error) {
+        // ignore storage failures
+    }
+}
+
+function getSavedMobileColumnsPreference() {
+    try {
+        return window.localStorage.getItem(CATALOG_MOBILE_VIEW_KEY) === "2";
+    } catch (error) {
+        return false;
+    }
+}
+
+function saveMobileColumnsPreference(isTwoColumns) {
+    try {
+        window.localStorage.setItem(CATALOG_MOBILE_VIEW_KEY, isTwoColumns ? "2" : "1");
+    } catch (error) {
+        // ignore storage failures
+    }
+}
+
+function applyCatalogView(columns) {
+    if (!productGrid || !isValidColumnsValue(columns)) {
+        return;
+    }
+
+    productGrid.classList.toggle("product-grid--3cols", columns === "3");
+
+    viewButtons.forEach((button) => {
+        const isActive = button.getAttribute("data-view-columns") === columns;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+}
+
+function applyMobileCatalogView(isTwoColumns) {
+    if (!productGrid || !(mobileColumnsToggle instanceof HTMLButtonElement)) {
+        return;
+    }
+
+    productGrid.classList.toggle("product-grid--mobile-2cols", Boolean(isTwoColumns));
+    mobileColumnsToggle.classList.toggle("is-active", Boolean(isTwoColumns));
+    mobileColumnsToggle.setAttribute("aria-pressed", String(Boolean(isTwoColumns)));
+    mobileColumnsToggle.textContent = isTwoColumns
+        ? mobileColumnsToggle.dataset.labelActive || mobileColumnsToggle.textContent
+        : mobileColumnsToggle.dataset.labelDefault || mobileColumnsToggle.textContent;
+}
+
 function isMobileFiltersMode() {
     return window.matchMedia("(max-width: 759px)").matches;
 }
@@ -689,6 +764,35 @@ window.addEventListener("resize", () => {
         document.body.classList.remove("filters-open");
     }
 });
+
+if (viewToggle && viewButtons.length) {
+    applyCatalogView(getSavedColumnsPreference());
+
+    viewToggle.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLButtonElement)) {
+            return;
+        }
+
+        const columns = target.getAttribute("data-view-columns");
+        if (!isValidColumnsValue(columns)) {
+            return;
+        }
+
+        saveColumnsPreference(columns);
+        applyCatalogView(columns);
+    });
+}
+
+if (mobileColumnsToggle instanceof HTMLButtonElement) {
+    applyMobileCatalogView(getSavedMobileColumnsPreference());
+
+    mobileColumnsToggle.addEventListener("click", () => {
+        const shouldUseTwoColumns = !productGrid?.classList.contains("product-grid--mobile-2cols");
+        saveMobileColumnsPreference(shouldUseTwoColumns);
+        applyMobileCatalogView(shouldUseTwoColumns);
+    });
+}
 
 async function loadCatalogProducts() {
     const response = await fetch("products.json", {
