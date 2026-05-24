@@ -17,6 +17,7 @@ const filtersPanel = document.querySelector("[data-filters-panel]");
 const filtersOverlay = document.querySelector("[data-filters-overlay]");
 const categoryOptions = document.querySelector("[data-category-options]");
 const materialOptions = document.querySelector("[data-material-options]");
+const searchInput = catalogForm?.elements?.namedItem("search") || null;
 
 let catalogProducts = [];
 let maxWidth = 0;
@@ -96,6 +97,27 @@ const catalogI18n = isEnglishCatalog
 
 function normalizeText(value) {
     return value.toLowerCase().trim();
+}
+
+function getInitialSearchFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return String(
+        params.get("search")
+        || params.get("q")
+        || params.get("tag")
+        || ""
+    ).trim();
+}
+
+function applyInitialFiltersFromUrl() {
+    if (!(searchInput instanceof HTMLInputElement)) {
+        return;
+    }
+
+    const initialSearch = getInitialSearchFromUrl();
+    if (initialSearch) {
+        searchInput.value = initialSearch;
+    }
 }
 
 function translateCategory(value) {
@@ -683,6 +705,8 @@ async function loadCatalogProducts() {
     renderDynamicFilterOptions();
 
     if (catalogForm) {
+        applyInitialFiltersFromUrl();
+
         if (widthRange instanceof HTMLInputElement) {
             widthRange.max = String(maxWidth);
             widthRange.value = String(maxWidth);

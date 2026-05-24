@@ -2,6 +2,8 @@ const productPageRoot = document.querySelector(".product-page");
 const productHero = document.querySelector(".product-gallery__hero");
 const productHeroImage = productHero?.querySelector("img");
 const productThumbButtons = document.querySelectorAll("[data-product-thumb]");
+const productContactDialog = document.querySelector("[data-product-contact-dialog]");
+const productContactOpenButtons = document.querySelectorAll("[data-product-contact-open]");
 const isEnglishProduct = document.documentElement.lang.toLowerCase().startsWith("en");
 const productUiLabels = {
     closeImage: isEnglishProduct ? "Close image" : "Chiudi immagine"
@@ -104,6 +106,7 @@ function getProductTrackingPayload() {
         product_material: productPageRoot.dataset.productMaterial || "",
         product_material_label: productPageRoot.dataset.productMaterialLabel || "",
         product_price_status: productPageRoot.dataset.productPriceStatus || "",
+        product_language: productPageRoot.dataset.productLanguage || document.documentElement.lang || "",
         language: productPageRoot.dataset.productLanguage || document.documentElement.lang || "",
         page_path: productPageRoot.dataset.pagePath || window.location.pathname
     };
@@ -143,6 +146,85 @@ function sendProductTrackingEvent(eventName, extraPayload = {}) {
     }));
 }
 
+function openProductContactDialog(triggerElement) {
+    if (!(productContactDialog instanceof HTMLDialogElement) || typeof productContactDialog.showModal !== "function") {
+        return;
+    }
+
+    productContactDialog.dataset.lastTriggerId = "";
+
+    if (triggerElement instanceof HTMLElement) {
+        if (!triggerElement.id) {
+            triggerElement.id = `product-contact-trigger-${Math.random().toString(36).slice(2, 10)}`;
+        }
+
+        productContactDialog.dataset.lastTriggerId = triggerElement.id;
+    }
+
+    if (!productContactDialog.open) {
+        productContactDialog.showModal();
+    }
+
+    const closeButton = productContactDialog.querySelector("[data-product-contact-close]");
+    if (closeButton instanceof HTMLElement) {
+        closeButton.focus();
+    }
+}
+
+function closeProductContactDialog() {
+    if (
+        !(productContactDialog instanceof HTMLDialogElement)
+        || typeof productContactDialog.close !== "function"
+        || !productContactDialog.open
+    ) {
+        return;
+    }
+
+    const lastTriggerId = productContactDialog.dataset.lastTriggerId || "";
+    productContactDialog.close();
+
+    if (lastTriggerId) {
+        const triggerElement = document.getElementById(lastTriggerId);
+        if (triggerElement instanceof HTMLElement) {
+            triggerElement.focus();
+        }
+    }
+}
+
+function bindProductContactDialog() {
+    if (
+        !(productContactDialog instanceof HTMLDialogElement)
+        || typeof productContactDialog.showModal !== "function"
+        || productContactDialog.dataset.contactDialogBound === "true"
+    ) {
+        return;
+    }
+
+    productContactOpenButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            event.preventDefault();
+            openProductContactDialog(button);
+        });
+    });
+
+    productContactDialog.addEventListener("click", (event) => {
+        if (event.target === productContactDialog) {
+            closeProductContactDialog();
+        }
+    });
+
+    productContactDialog.querySelector("[data-product-contact-close]")?.addEventListener("click", () => {
+        closeProductContactDialog();
+    });
+
+    productContactDialog.addEventListener("cancel", (event) => {
+        event.preventDefault();
+        closeProductContactDialog();
+    });
+
+    productContactDialog.dataset.contactDialogBound = "true";
+}
+
 function bindProductTracking() {
     if (!(productPageRoot instanceof HTMLElement) || productPageRoot.dataset.productTrackingBound === "true") {
         return;
@@ -168,6 +250,7 @@ function initProductTracking() {
         return;
     }
 
+    bindProductContactDialog();
     bindProductTracking();
     sendProductTrackingEvent("view_product");
     productPageRoot.dataset.productViewTracked = "true";
