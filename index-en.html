@@ -439,10 +439,13 @@
       }
 
       .home-mobile-intro-card {
-        flex: 0 0 300px;
-        min-width: 300px;
-        max-width: 300px;
-        padding: 14px 16px 16px;
+          flex: 0 0 300px;
+          display: flex;
+          flex-direction: column;
+          min-height: 430px;
+          min-width: 300px;
+          max-width: 300px;
+          padding: 14px 16px 16px;
         border: 1px solid rgba(177, 145, 83, 0.22);
         background:
           linear-gradient(180deg, rgba(255, 251, 241, 0.72) 0%, rgba(244, 232, 201, 0.78) 100%),
@@ -467,10 +470,41 @@
       }
 
       .home-mobile-intro-card p {
-        margin: 0;
-        line-height: 1.68;
-        color: #7a2c0d;
-      }
+          margin: 0;
+          line-height: 1.68;
+          color: #7a2c0d;
+        }
+
+      .home-mobile-intro-card__cta {
+          margin-top: auto;
+          padding-top: 18px;
+          text-align: center;
+        }
+
+      .home-mobile-intro-card__cta-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 40px;
+          padding: 10px 16px;
+          border-radius: 999px;
+          border: 1px solid rgba(212, 177, 102, 0.46);
+          background: linear-gradient(180deg, rgba(226, 195, 122, 0.96) 0%, rgba(198, 159, 84, 0.96) 100%);
+          color: #5d220d;
+          text-decoration: none;
+          font-weight: 600;
+          letter-spacing: 0.01em;
+        }
+
+      .home-mobile-intro-cards .home-mobile-intro-card:last-child {
+          display: grid;
+          grid-template-rows: minmax(0, 1fr) auto;
+          align-content: start;
+        }
+
+      .home-mobile-intro-cards .home-mobile-intro-card:last-child .home-mobile-intro-card__cta {
+          margin-top: 16px;
+        }
 
       .home-mobile-intro-card__hint,
       .home-mobile-quicklink-card__hint {
@@ -495,13 +529,21 @@
         overflow-x: auto;
         overflow-y: visible;
         padding: 0 26px 8px 0;
+        scroll-snap-type: x proximity;
+        scroll-padding-inline: 16px;
+        overscroll-behavior-x: contain;
+        scroll-behavior: auto;
+        touch-action: pan-x;
+        -webkit-overflow-scrolling: touch;
       }
 
       .home-mobile-quicklink-card {
-        position: relative;
-        flex: 0 0 286px;
-        min-width: 286px;
-        max-width: 286px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+          flex: 0 0 286px;
+          min-width: 286px;
+          max-width: 286px;
         padding: 16px 16px 18px;
         border: 1px solid rgba(113, 32, 27, 0.26);
         border-radius: 16px;
@@ -510,15 +552,23 @@
           radial-gradient(circle at bottom right, rgba(255, 222, 179, 0.08) 0%, rgba(255, 222, 179, 0) 36%),
           linear-gradient(180deg, rgba(126, 39, 42, 0.98) 0%, rgba(101, 26, 31, 0.98) 52%, rgba(83, 20, 26, 0.98) 100%);
         box-shadow:
-          0 14px 28px rgba(49, 9, 0, 0.16),
-          0 5px 12px rgba(49, 9, 0, 0.12),
-          inset 0 1px 0 rgba(255, 248, 236, 0.12);
-      }
+            0 14px 28px rgba(49, 9, 0, 0.16),
+            0 5px 12px rgba(49, 9, 0, 0.12),
+            inset 0 1px 0 rgba(255, 248, 236, 0.12);
+        }
+
+        .home-mobile-quicklink-card:first-child {
+          justify-content: center;
+        }
 
       .home-mobile-quicklink-card:not(:first-child) {
-        border-color: rgba(176, 136, 52, 0.34);
-        background:
-          radial-gradient(circle at top left, rgba(246, 226, 173, 0.22) 0%, rgba(246, 226, 173, 0) 42%),
+            display: grid;
+          grid-template-rows: auto auto minmax(0, 1fr) auto;
+          align-content: start;
+          min-height: 430px;
+          border-color: rgba(176, 136, 52, 0.34);
+          background:
+            radial-gradient(circle at top left, rgba(246, 226, 173, 0.22) 0%, rgba(246, 226, 173, 0) 42%),
           radial-gradient(circle at bottom right, rgba(255, 242, 205, 0.16) 0%, rgba(255, 242, 205, 0) 38%),
           linear-gradient(180deg, rgba(231, 205, 136, 0.98) 0%, rgba(214, 181, 102, 0.98) 54%, rgba(193, 157, 79, 0.98) 100%);
       }
@@ -549,10 +599,15 @@
       }
 
       .home-mobile-quicklink-card p {
-        margin: 0 0 14px;
-        line-height: 1.62;
-        color: rgba(248, 241, 232, 0.94);
-      }
+          margin: 0 0 14px;
+          line-height: 1.62;
+          color: rgba(248, 241, 232, 0.94);
+        }
+
+      .home-mobile-quicklink-card__cta {
+          justify-self: center;
+          margin: 16px 0 0;
+        }
 
       .home-mobile-quicklink-card:not(:first-child) p {
         color: rgba(92, 47, 12, 0.92);
@@ -772,11 +827,12 @@
       <p>Shahmansouri Persian Carpets is not a simple rug shop. It is a place devoted to Persian art, carefully selected handmade pieces and a direct relationship with the customer. Each rug is considered through its origin, design, materials, colours and state of conservation, because a handmade carpet can never be understood only at first glance.</p>
       <p>The shop offers <a href="carpets.html">handmade Persian and Oriental rugs, fine and antique carpets, kilims, tribal pieces and older weavings</a>. The selection includes classic carpets, antique rugs, kilims, bags, saddlebags, korjin, jajim, javal and cushions, chosen for originality, quality and decorative value.</p>
     </div>
-    <div class="home-mobile-intro-card">
-      <p>Alongside sales, the shop also offers <a href="carpets.html#manutenzioni">carpet washing and restoration in Verona</a>, with attention to wool, colour behaviour, edges, fringes and the structural health of each piece. The relationship with the customer does not end with the purchase: a handmade carpet requires care, correct washing, maintenance and, when necessary, restoration carried out with attention.</p>
-      <p>The project also includes a selected range of <a href="crafts.html">Persian handicrafts</a>: ceramics, miniatures, inlay work, engraved metal objects, printed textiles, glass and decorative pieces chosen for workmanship and cultural value. In this way the shop brings together rugs, material culture and Persian decorative tradition in a single coherent experience.</p>
-    </div>
-    </div>
+      <div class="home-mobile-intro-card">
+        <p>Alongside sales, the shop also offers <a href="carpets.html#manutenzioni">carpet washing and restoration in Verona</a>, with attention to wool, colour behaviour, edges, fringes and the structural health of each piece. The relationship with the customer does not end with the purchase: a handmade carpet requires care, correct washing, maintenance and, when necessary, restoration carried out with attention.</p>
+        <p>The project also includes a selected range of <a href="crafts.html">Persian handicrafts</a>: ceramics, miniatures, inlay work, engraved metal objects, printed textiles, glass and decorative pieces chosen for workmanship and cultural value. In this way the shop brings together rugs, material culture and Persian decorative tradition in a single coherent experience.</p>
+        <p class="home-mobile-intro-card__cta"><a class="home-mobile-intro-card__cta-link" href="catalogo/index-en.html" data-track="click_catalog">View the catalog</a></p>
+      </div>
+      </div>
 
     <p class="home-mobile-section-kicker">Shortcuts</p>
     <section class="home-mobile-quicklinks" aria-label="Site shortcuts">
@@ -789,28 +845,28 @@
         </div>
       </article>
       <article class="home-mobile-quicklink-card">
+        <a class="home-mobile-quicklink-card__image" href="catalogo/index-en.html" data-track="click_catalog"><img src="images/tappeti-verona-shahmansouri-duomo-verona-360.webp" srcset="images/tappeti-verona-shahmansouri-duomo-verona-360.webp 360w, images/tappeti-verona-shahmansouri-duomo-verona-640.webp 640w, images/tappeti-verona-shahmansouri-duomo-verona.webp 1500w" sizes="286px" alt="Selection of Persian rugs at Shahmansouri in Verona" width="900" height="675" loading="lazy" decoding="async"></a>
+        <h2>Catalog</h2>
+        <p>An online selection of Persian and Oriental rugs, with images and useful details for a first orientation.</p>
+          <p class="home-mobile-quicklink-card__cta"><a href="catalogo/index-en.html" data-track="click_catalog">View the catalog</a></p>
+      </article>
+      <article class="home-mobile-quicklink-card">
         <a class="home-mobile-quicklink-card__image" href="contacts-en.html" data-track="click_contact_page"><img src="images/negozio-tappeti-verona-shahmansouri-lavaggio-restauro-360.webp" srcset="images/negozio-tappeti-verona-shahmansouri-lavaggio-restauro-360.webp 360w, images/negozio-tappeti-verona-shahmansouri-lavaggio-restauro-640.webp 640w, images/negozio-tappeti-verona-shahmansouri-lavaggio-restauro.webp 1500w" sizes="286px" alt="Entrance of the Shahmansouri shop in central Verona" width="900" height="675" loading="lazy" decoding="async"></a>
         <h2>Where we are</h2>
         <p>The showroom is in the historic centre of Verona, near the Cathedral, in an easy-to-reach position.</p>
-        <p><a href="contacts-en.html" data-track="click_contact_page">Go to contacts</a></p>
+          <p class="home-mobile-quicklink-card__cta"><a href="contacts-en.html" data-track="click_contact_page">Go to contacts</a></p>
       </article>
       <article class="home-mobile-quicklink-card">
         <a class="home-mobile-quicklink-card__image" href="carpets.html#manutenzioni"><img src="images/restauro-lavaggio-tappeti-verona-shahmansouri-360.webp" srcset="images/restauro-lavaggio-tappeti-verona-shahmansouri-360.webp 360w, images/restauro-lavaggio-tappeti-verona-shahmansouri-640.webp 640w, images/restauro-lavaggio-tappeti-verona-shahmansouri.webp 1000w" sizes="286px" alt="Carpet washing and restoration" width="900" height="675" loading="lazy" decoding="async"></a>
         <h2>Maintenance</h2>
         <p>Carpet washing and restoration with attention to materials, colours and the structure of each textile.</p>
-        <p><a href="carpets.html#manutenzioni">Care and maintenance</a></p>
-      </article>
-      <article class="home-mobile-quicklink-card">
-        <a class="home-mobile-quicklink-card__image" href="catalogo/index-en.html" data-track="click_catalog"><img src="images/tappeti-verona-shahmansouri-duomo-verona-360.webp" srcset="images/tappeti-verona-shahmansouri-duomo-verona-360.webp 360w, images/tappeti-verona-shahmansouri-duomo-verona-640.webp 640w, images/tappeti-verona-shahmansouri-duomo-verona.webp 1500w" sizes="286px" alt="Selection of Persian rugs at Shahmansouri in Verona" width="900" height="675" loading="lazy" decoding="async"></a>
-        <h2>Catalog</h2>
-        <p>An online selection of Persian and Oriental rugs, with images and useful details for a first orientation.</p>
-        <p><a href="catalogo/index-en.html" data-track="click_catalog">View the catalog</a></p>
+          <p class="home-mobile-quicklink-card__cta"><a href="carpets.html#manutenzioni">Care and maintenance</a></p>
       </article>
       <article class="home-mobile-quicklink-card">
         <a class="home-mobile-quicklink-card__image" href="useful-links.html"><img src="images/tappeti-verona-shahmansouri-duomo-mehdi-360.webp" srcset="images/tappeti-verona-shahmansouri-duomo-mehdi-360.webp 360w, images/tappeti-verona-shahmansouri-duomo-mehdi-640.webp 640w, images/tappeti-verona-shahmansouri-duomo-mehdi.webp 1000w" sizes="286px" alt="Shahmansouri shop in Verona historic centre" width="900" height="675" loading="lazy" decoding="async"></a>
         <h2>Useful links</h2>
         <p>A curated set of pages to explore Persian rugs, Persia and Persian material culture in more depth.</p>
-        <p><a href="useful-links.html">Open the links</a></p>
+          <p class="home-mobile-quicklink-card__cta"><a href="useful-links.html">Open the links</a></p>
       </article>
     </section>
 
