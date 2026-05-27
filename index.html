@@ -734,6 +734,22 @@
           inset 0 1px 0 rgba(255, 244, 212, 0.55);
       }
 
+      .home-mobile-quicklink-card:focus-within {
+        box-shadow:
+          0 0 0 3px rgba(166, 53, 0, 0.22),
+          0 16px 28px rgba(95, 67, 18, 0.12),
+          0 4px 10px rgba(95, 67, 18, 0.08),
+          inset 0 1px 0 rgba(255, 249, 232, 0.3);
+      }
+
+      .home-mobile-quicklink-card__image:focus-visible,
+      .home-mobile-quicklink-card__cta a:focus-visible {
+        outline: 3px solid rgba(166, 53, 0, 0.88);
+        outline-offset: 4px;
+        position: relative;
+        z-index: 2;
+      }
+
       .home-mobile-quicklink-card__hint {
         display: inline-flex;
         align-items: center;
