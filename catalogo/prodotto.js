@@ -6,7 +6,8 @@ const productContactDialog = document.querySelector("[data-product-contact-dialo
 const productContactOpenButtons = document.querySelectorAll("[data-product-contact-open]");
 const isEnglishProduct = document.documentElement.lang.toLowerCase().startsWith("en");
 const productUiLabels = {
-    closeImage: isEnglishProduct ? "Close image" : "Chiudi immagine"
+    closeImage: isEnglishProduct ? "Close image" : "Chiudi immagine",
+    openImage: isEnglishProduct ? "Open enlarged rug image" : "Apri immagine ingrandita del tappeto"
 };
 
 function setHeroImage(image) {
@@ -27,6 +28,10 @@ productThumbButtons.forEach((button) => {
 });
 
 if (productHero && productHeroImage) {
+    productHero.tabIndex = 0;
+    productHero.setAttribute("role", "button");
+    productHero.setAttribute("aria-label", productUiLabels.openImage);
+
     productHero.addEventListener("mousemove", (event) => {
         const rect = productHero.getBoundingClientRect();
         const x = ((event.clientX - rect.left) / rect.width) * 100;
@@ -41,7 +46,7 @@ if (productHero && productHeroImage) {
         productHero.classList.remove("is-zoomed");
     });
 
-    productHero.addEventListener("click", () => {
+    const openProductLightbox = () => {
         const overlay = document.createElement("dialog");
         overlay.className = "product-lightbox";
         overlay.innerHTML = `
@@ -60,7 +65,6 @@ if (productHero && productHeroImage) {
 
         const close = () => {
             overlay.close();
-            overlay.remove();
         };
 
         if (overlayViewport instanceof HTMLElement && overlayImage instanceof HTMLImageElement) {
@@ -85,8 +89,43 @@ if (productHero && productHeroImage) {
             }
         });
 
-        overlay.querySelector(".product-lightbox__close")?.addEventListener("click", close);
-        overlay.addEventListener("close", () => overlay.remove());
+        overlay.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape") {
+                return;
+            }
+
+            event.preventDefault();
+            close();
+        });
+
+        const closeButton = overlay.querySelector(".product-lightbox__close");
+        closeButton?.addEventListener("click", close);
+        closeButton?.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape") {
+                return;
+            }
+
+            event.preventDefault();
+            close();
+        });
+        overlay.addEventListener("cancel", (event) => {
+            event.preventDefault();
+            close();
+        });
+        overlay.addEventListener("close", () => {
+            overlay.remove();
+            productHero.focus();
+        });
+    };
+
+    productHero.addEventListener("click", openProductLightbox);
+    productHero.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") {
+            return;
+        }
+
+        event.preventDefault();
+        openProductLightbox();
     });
 }
 

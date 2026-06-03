@@ -380,14 +380,18 @@
   }
 
   .nav a.active,
-  .nav .dropdown:hover > .nav-parent {
+  .nav .dropdown:hover > .nav-parent,
+  .nav .dropdown.is-open > .nav-parent {
     color: #a63500;
     background: rgba(255, 250, 232, 0.22);
   }
 
   .nav .nav-parent {
-    cursor: default;
-    pointer-events: none;
+    cursor: pointer;
+    pointer-events: auto;
+    appearance: none;
+    text-align: left;
+    background: transparent;
   }
 
   .nav .dropdown:hover > .nav-parent,

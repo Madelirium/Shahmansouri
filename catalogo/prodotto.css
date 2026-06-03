@@ -280,6 +280,11 @@ img {
   --zoom-y: 50%;
 }
 
+.product-gallery__hero:focus-visible {
+  outline: 2px solid #a63500;
+  outline-offset: -2px;
+}
+
 .product-gallery__hero img,
 .product-gallery__thumbs img {
   width: 100%;

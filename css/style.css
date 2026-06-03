@@ -262,11 +262,18 @@ img {
   transition: color 0.2s ease;
   border-bottom: 2px solid transparent;
   display: inline-block;
+  background: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  font: inherit;
 }
 
 .nav a:hover,
 .nav a.active,
-.nav .dropdown:hover > .nav-parent {
+.nav .dropdown:hover > .nav-parent,
+.nav .dropdown.is-open > .nav-parent,
+.nav .dropdown:focus-within > .nav-parent {
   color: #a63500;
   border-color: #a63500;
 }
@@ -367,7 +374,9 @@ img {
   color: #a63500;
 }
 
-.nav li:hover > .submenu {
+.nav li:hover > .submenu,
+.nav li.is-open > .submenu,
+.nav li:focus-within > .submenu {
   display: block;
 }
 
