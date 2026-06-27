@@ -1,0 +1,5 @@
+.chrome-headless/
+.tmp-chrome-accessibility/
+.tmp-edge-accessibility/
+.codex/
+.agents/
