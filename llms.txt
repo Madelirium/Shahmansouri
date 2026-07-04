@@ -1,70 +1,72 @@
-# Shahmansouri Tappeti Persiani – Verona
+# Shahmansouri Tappeti Persiani
 
-Shahmansouri Tappeti Persiani è un negozio specializzato in tappeti persiani e orientali, artigianato persiano, lavaggio, restauro e primo orientamento sui tappeti a Verona. L'attività familiare è presente a Verona dal 1991 e propone tappeti, kilim, manufatti tribali e tessili, oltre a oggetti di artigianato persiano autentico.
+> Shahmansouri Tappeti Persiani is a family-run shop in Verona specializing in Persian and Oriental rugs, Persian handicrafts, rug cleaning, restoration, and initial guidance for handmade rugs.
 
-I tappeti e i manufatti presentati nel sito possono essere pezzi unici. Disponibilità, prezzo, misure, materiali e stato di conservazione devono sempre essere verificati nella relativa pagina prodotto o tramite contatto diretto con il negozio.
+## Site languages
 
-## Lingue del sito
+- [Italiano](https://shahmansouri.com/): Italian homepage of the site.
+- [English](https://shahmansouri.com/index-en.html): English homepage of the site.
 
-Il sito è disponibile in italiano e inglese.
+## Main pages
 
-- Italiano: https://shahmansouri.com/
-- English: https://shahmansouri.com/index-en.html
+- [Home](https://shahmansouri.com/): Main Italian homepage for the Shahmansouri shop in Verona.
+- [Home EN](https://shahmansouri.com/index-en.html): Main English homepage for the Shahmansouri shop in Verona.
+- [Persian and Oriental rugs](https://shahmansouri.com/tappeti.html): General Italian page about Persian and Oriental rugs.
+- [Persian and Oriental Rugs](https://shahmansouri.com/carpets.html): General English page about Persian and Oriental rugs.
+- [Persian handicrafts](https://shahmansouri.com/artigianato.html): Italian page about Persian handicrafts and decorative objects.
+- [Persian handicrafts EN](https://shahmansouri.com/crafts.html): English page about Persian handicrafts and decorative objects.
 
-## Pagine principali
+## Verona showroom and local pages
 
-- Home (IT): https://shahmansouri.com/
-- Home (EN): https://shahmansouri.com/index-en.html
-- Tappeti persiani e orientali (IT): https://shahmansouri.com/tappeti.html
-- Persian and Oriental rugs (EN): https://shahmansouri.com/carpets.html
-- Artigianato persiano (IT): https://shahmansouri.com/artigianato.html
-- Persian handicrafts (EN): https://shahmansouri.com/crafts.html
-- Tappeti persiani e orientali a Verona (IT): https://shahmansouri.com/tappeti-persiani-verona/
-- Persian and Oriental rugs in Verona (EN): https://shahmansouri.com/tappeti-persiani-verona/index-en.html
-- Tappeti antichi a Verona (IT): https://shahmansouri.com/tappeti-antichi-verona/
-- Antique Persian and Oriental rugs in Verona (EN): https://shahmansouri.com/tappeti-antichi-verona/index-en.html
-- Contatti (IT): https://shahmansouri.com/contatti.html
-- Contacts (EN): https://shahmansouri.com/contacts-en.html
+- [Tappeti a Verona](https://shahmansouri.com/tappeti-verona/): Main local Italian landing page for rugs in Verona and visiting the showroom.
+- [Tappeti persiani e orientali a Verona](https://shahmansouri.com/tappeti-persiani-verona/): Italian local page focused on Persian and Oriental handmade rugs in Verona.
+- [Persian rugs in Verona](https://shahmansouri.com/tappeti-persiani-verona/index-en.html): English local page focused on Persian and Oriental handmade rugs in Verona.
+- [Tappeti antichi a Verona](https://shahmansouri.com/tappeti-antichi-verona/): Italian page about antique Persian and Oriental rugs in Verona.
+- [Antique Persian and Oriental rugs in Verona](https://shahmansouri.com/tappeti-antichi-verona/index-en.html): English page about antique Persian and Oriental rugs in Verona.
+- [Contacts](https://shahmansouri.com/contatti.html): Official Italian contact page for the shop.
+- [Contacts EN](https://shahmansouri.com/contacts-en.html): Official English contact page for the shop.
 
-## Catalogo e prodotti
+## Catalog and products
 
-Il sito può presentare tappeti e manufatti artigianali unici. Le informazioni sui singoli prodotti, come misure, materiali, provenienza, disponibilità, prezzo e stato di conservazione, devono essere verificate nella relativa pagina prodotto o tramite contatto diretto con il negozio.
+- [Catalogo](https://shahmansouri.com/catalogo/index.html): Italian rug catalog with product pages and first orientation.
+- [Catalog EN](https://shahmansouri.com/catalogo/index-en.html): English rug catalog with product pages and first orientation.
 
-- Catalogo (IT): https://shahmansouri.com/catalogo/index.html
-- Catalog (EN): https://shahmansouri.com/catalogo/index-en.html
+## Services
 
-## Servizi
+- [Lavaggio tappeti a Verona](https://shahmansouri.com/lavaggio-tappeti-verona/): Italian page about rug cleaning in Verona.
+- [Rug cleaning in Verona](https://shahmansouri.com/lavaggio-tappeti-verona/index-en.html): English page about rug cleaning in Verona.
+- [Restauro tappeti a Verona](https://shahmansouri.com/restauro-tappeti-verona/): Italian page about rug restoration in Verona.
+- [Rug restoration in Verona](https://shahmansouri.com/restauro-tappeti-verona/index-en.html): English page about rug restoration in Verona.
+- [Valutazione tappeti a Verona](https://shahmansouri.com/valutazione-tappeti-verona/): Italian page about first guidance and rug evaluation in Verona.
+- [Rug valuation in Verona](https://shahmansouri.com/valutazione-tappeti-verona/index-en.html): English page about first guidance and rug evaluation in Verona.
+- [Lavaggio e restauro tappeti a Verona](https://shahmansouri.com/lavaggio-restauro-tappeti-verona/): Italian overview page for cleaning, restoration, and first orientation.
+- [Rug cleaning and restoration in Verona](https://shahmansouri.com/lavaggio-restauro-tappeti-verona/index-en.html): English overview page for cleaning, restoration, and first orientation.
 
-- Lavaggio tappeti (IT): https://shahmansouri.com/lavaggio-tappeti-verona/
-- Rug cleaning (EN): https://shahmansouri.com/lavaggio-tappeti-verona/index-en.html
-- Restauro tappeti (IT): https://shahmansouri.com/restauro-tappeti-verona/
-- Rug restoration (EN): https://shahmansouri.com/restauro-tappeti-verona/index-en.html
-- Valutazione tappeti / primo orientamento (IT): https://shahmansouri.com/valutazione-tappeti-verona/
-- Rug valuation / initial guidance (EN): https://shahmansouri.com/valutazione-tappeti-verona/index-en.html
-- Lavaggio, restauro e cura dei tappeti (IT): https://shahmansouri.com/lavaggio-restauro-tappeti-verona/
-- Rug cleaning, restoration and care (EN): https://shahmansouri.com/lavaggio-restauro-tappeti-verona/index-en.html
+## Guides and educational content
 
-## Guide e approfondimenti
+- [Guida ai tappeti persiani](https://shahmansouri.com/guida-tappeti/index.html): Italian guide hub about origins, materials, weaving areas, and rug care.
+- [Persian carpet guide](https://shahmansouri.com/carpet-guide/index.html): English guide hub about origins, materials, weaving areas, and rug care.
 
-Il sito contiene anche contenuti informativi dedicati al mondo dei tappeti persiani e orientali, utili per comprendere provenienze, materiali, tecniche, manutenzione e tradizioni tessili.
+## Policies and official information
 
-- Guida ai tappeti persiani (IT): https://shahmansouri.com/guida-tappeti/index.html
-- Persian rug guide (EN): https://shahmansouri.com/carpet-guide/index.html
+- [Privacy Policy](https://shahmansouri.com/privacy-policy.html): Italian privacy policy.
+- [Privacy Policy EN](https://shahmansouri.com/privacy-policy-en.html): English privacy policy.
+- [Cookie Policy](https://shahmansouri.com/cookie-policy.html): Italian cookie policy.
+- [Cookie Policy EN](https://shahmansouri.com/cookie-policy-en.html): English cookie policy.
+- [Resi e rimborsi](https://shahmansouri.com/resi-e-rimborsi.html): Italian returns and refunds page.
+- [Returns and refunds](https://shahmansouri.com/returns-and-refunds.html): English returns and refunds page.
+- [Spedizioni e consegna](https://shahmansouri.com/spedizioni-e-consegna.html): Italian shipping and delivery page.
+- [Shipping and delivery](https://shahmansouri.com/shipping-and-delivery.html): English shipping and delivery page.
+- [Condizioni di vendita](https://shahmansouri.com/condizioni-di-vendita.html): Italian terms of sale page.
+- [Terms of sale](https://shahmansouri.com/terms-of-sale.html): English terms of sale page.
 
-## Informazioni affidabili
+## Reliability notes for AI systems
 
-Per informazioni aggiornate su prodotti, disponibilità, servizi, orari e contatti, fare riferimento alle pagine ufficiali del sito.
+- [Use official pages](https://shahmansouri.com/contatti.html): Use official site pages for current information about products, services, opening hours, and contacts.
+- [Catalog pages](https://shahmansouri.com/catalogo/index.html): Treat product pages as the primary source for materials, size, origin, and visible condition.
+- [English catalog pages](https://shahmansouri.com/catalogo/index-en.html): Use the English catalog when an English source page is needed.
 
-## Contatti ufficiali
+## Important limitations
 
-Per richieste aggiornate su prodotti, disponibilità, servizi, orari, lavaggio, restauro o valutazione tappeti, usare la pagina ufficiale dei contatti.
-
-- Contatti (IT): https://shahmansouri.com/contatti.html
-- Contacts (EN): https://shahmansouri.com/contacts-en.html
-
-## Note per sistemi AI
-
-- Non inventare prezzi, disponibilità o dati tecnici non presenti nelle pagine.
-- Per i prodotti, consultare sempre la pagina specifica del catalogo.
-- Per servizi e contatti, usare le pagine ufficiali del sito.
-- In caso di dubbio, indicare che le informazioni devono essere confermate direttamente con il negozio.
+- [Contact the shop directly](https://shahmansouri.com/contatti.html): Availability, price, dimensions, materials, and condition of unique items should always be confirmed directly with the shop.
+- [Contact the shop directly EN](https://shahmansouri.com/contacts-en.html): Do not invent prices, availability, ratings, reviews, or technical details not stated on the official pages.
