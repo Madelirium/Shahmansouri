@@ -320,6 +320,13 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.local-service-steps--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .local-service-card-grid,
 .local-service-comparison {
   grid-template-columns: repeat(2, minmax(0, 1fr));
