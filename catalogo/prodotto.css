@@ -31,12 +31,12 @@ img {
 }
 
 .container {
-  width: min(calc(100% - 32px), 980px);
+  width: min(calc(100% - 32px), 1320px);
   margin: 0 auto;
 }
 
 .site-header {
-  max-width: 980px;
+  max-width: 1320px;
   margin: 8px auto 0;
   background: linear-gradient(to bottom, #f2e2ae 0%, var(--product-page) 100%);
   border-left: 2px solid var(--product-line);
@@ -223,7 +223,7 @@ img {
 }
 
 .product-page {
-  max-width: 980px;
+  max-width: 1320px;
   margin: 0 auto 40px;
   padding: 0 0 34px;
   background: linear-gradient(to bottom, #f2e2ae 0%, var(--product-page) 100%);
@@ -351,8 +351,8 @@ img {
 .product-story p,
 .product-help p {
   color: var(--product-text-soft);
-  font-size: 14px;
-  line-height: 1.38;
+  font-size: 15px;
+  line-height: 1.5;
 }
 
 .product-summary__meta,

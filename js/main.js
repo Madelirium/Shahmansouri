@@ -165,10 +165,12 @@ function injectCookieBanner() {
         <p class="cookie-banner__text">${siteText.cookieText}</p>
       </div>
       <div class="cookie-banner__actions">
-        <a class="cookie-banner__link" href="${policyPrefix}${isEnglishPage ? 'cookie-policy-en.html' : 'cookie-policy.html'}">${siteText.cookieInfo}</a>
-        <button type="button" class="cookie-banner__button cookie-banner__button--secondary" data-manage-cookies>${siteText.manageCookies}</button>
-        <button type="button" class="cookie-banner__button cookie-banner__button--secondary" data-reject-cookies>${siteText.cookieReject}</button>
-        <button type="button" class="cookie-banner__button" data-accept-cookies>${siteText.cookieAccept}</button>
+        <button type="button" class="cookie-banner__button cookie-banner__button--primary" data-accept-cookies>${siteText.cookieAccept}</button>
+        <div class="cookie-banner__secondary-actions">
+          <a class="cookie-banner__link" href="${policyPrefix}${isEnglishPage ? 'cookie-policy-en.html' : 'cookie-policy.html'}">${siteText.cookieInfo}</a>
+          <button type="button" class="cookie-banner__button cookie-banner__button--secondary" data-manage-cookies>${siteText.manageCookies}</button>
+          <button type="button" class="cookie-banner__button cookie-banner__button--secondary" data-reject-cookies>${siteText.cookieReject}</button>
+        </div>
       </div>
     </div>
   `;

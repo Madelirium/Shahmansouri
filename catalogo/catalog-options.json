@@ -1,6 +1,9 @@
 {
   "categories": [
+    "Categoria",
+    "Khatam",
     "Kilim",
+    "Papier-mâché",
     "Runner",
     "Senza categoria",
     "Tappeto",
@@ -8,7 +11,8 @@
     "Tappeto classico",
     "Tappeto contemporaneo",
     "Tappeto figurativo",
-    "Tappeto Fine"
+    "Tappeto Fine",
+    "Test"
   ],
   "materials": [
     "Ceramica",
@@ -16,6 +20,7 @@
     "Lana",
     "Legno",
     "Seta",
+    "Test",
     "Trama E Ordito Di Cotone",
     "Trama E Ordito Di Lana",
     "Trama E Ordito Di Seta",
@@ -24,7 +29,8 @@
   ],
   "origins": [
     "Caucaso",
-    "Iran"
+    "Iran",
+    "Test"
   ],
   "availabilities": [
     "Disponibile"
@@ -36,7 +42,10 @@
     "Tappeto Antico": "Antique rug",
     "Tappeto figurativo": "Figurative Rug",
     "Tappeto Fine": "Fine rug",
-    "Kilim": "Kilim"
+    "Kilim": "Kilim",
+    "Test": "Test",
+    "Khatam": "Khatam",
+    "Papier-mâché": "Papier-mâché"
   },
   "materialLabelsEn": {
     "Lana": "wool",
@@ -45,8 +54,11 @@
     "Vello In Lana": "wool pile",
     "Trama E Ordito Di Lana": "warp and weft wool",
     "Trama E Ordito Di Seta": "warp and weft silk",
-    "Vello Misto Lana E Seta": "wool and silk pile"
+    "Vello Misto Lana E Seta": "wool and silk pile",
+    "Test": "Test"
   },
-  "originLabelsEn": {},
+  "originLabelsEn": {
+    "Test": "Test"
+  },
   "availabilityLabelsEn": {}
 }

@@ -188,8 +188,45 @@
       display: none;
     }
 
+    @media (min-width: 769px) {
     .home-mobile-intro-cards {
+      display: block;
+      margin: 0;
+    }
+
+    .home-mobile-intro-card {
+      display: contents;
+    }
+
+    .home-mobile-intro-card__image {
+      float: left;
+      width: min(50%, 460px);
+      margin: 0 26px 12px 0;
+    }
+
+    .home-mobile-intro-card__image img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .home-mobile-intro-card > p:not(.home-mobile-intro-card__cta) {
+      margin: 0 0 16px;
+      line-height: 1.7;
+    }
+
+    .home-mobile-intro-card:first-child > p:first-of-type::first-letter {
+      float: left;
+      font-size: 3.6rem;
+      line-height: 0.82;
+      margin: 0.12em 0.08em 0 0;
+      color: #7a2c0d;
+    }
+
+    .home-mobile-intro-card__hint,
+    .home-mobile-intro-card__cta {
       display: none;
+    }
     }
 
     .home-mobile-section-kicker {
@@ -379,6 +416,15 @@
 
       .home-content__columns {
         display: block;
+        width: 100vw;
+        max-width: 100%;
+        min-width: 0;
+      }
+
+      .main-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
       }
 
       .main-content .intro-image {
@@ -476,6 +522,7 @@
         }
 
       .home-mobile-intro-card__cta {
+          display: block;
           margin-top: auto;
           padding-top: 18px;
           text-align: center;
@@ -774,29 +821,22 @@
     <main class="content home-content">
       <div class="home-content__columns">
       <div class="main-content">
-        <div class="home-intro-collapsible">
-          <div class="intro-text">
-            <div class="intro-image">
-              <img src="images/shahmansouri-tappeti-verona-isfahan-mehdi-640.webp" srcset="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp 360w, images/shahmansouri-tappeti-verona-isfahan-mehdi-640.webp 640w, images/shahmansouri-tappeti-verona-isfahan-mehdi.webp 1875w" sizes="(max-width: 767px) 298px, (max-width: 1199px) 420px, 520px" alt="Mehdi Shahmansouri in Isfahan" width="900" height="675" decoding="async" fetchpriority="high">
-            </div>
-            <p class="dropcap">
-              Mehdi Shahmansouri, originally from the province of <a href="persia-en.html">Isfahan in Iran</a>, comes from a family of carpet merchants active for generations. Since 1991 he has lived and worked in Verona, where he directly imports Persian and Oriental rugs and presents them in a distinctive space in the historic centre, opposite <a href="contacts-en.html">Verona Cathedral</a>.
-            </p>
-            <p>
-              Shahmansouri Persian Carpets is not a simple rug shop. It is a place devoted to Persian art, carefully selected handmade pieces and a direct relationship with the customer. Each rug is considered through its origin, design, materials, colours and state of conservation, because a handmade carpet can never be understood only at first glance.
-            </p>
-            <div class="home-intro-extra">
-              <p>
-                The shop offers <a href="carpets.html">handmade Persian and Oriental rugs, fine and antique carpets, kilims, tribal pieces and older weavings</a>. The selection includes classic carpets, antique rugs, kilims, bags, saddlebags, korjin, jajim, javal and cushions, chosen for originality, quality and decorative value.
-              </p>
-              <p>
-                Alongside sales, the shop also offers <a href="carpets.html#manutenzioni">carpet washing and restoration in Verona</a>, with attention to wool, colour behaviour, edges, fringes and the structural health of each piece. The relationship with the customer does not end with the purchase: a handmade carpet requires care, correct washing, maintenance and, when necessary, restoration carried out with attention.
-              </p>
-              <p>
-                The project also includes a selected range of <a href="crafts.html">Persian handicrafts</a>: ceramics, miniatures, inlay work, engraved metal objects, printed textiles, glass and decorative pieces chosen for workmanship and cultural value. In this way the shop brings together rugs, material culture and Persian decorative tradition in a single coherent experience.
-              </p>
-            </div>
-          </div>
+        <p class="home-mobile-section-kicker">Shahmansouri</p>
+        <div class="home-mobile-intro-cards">
+         <div class="home-mobile-intro-card">
+          <a class="home-mobile-intro-card__image" href="contacts-en.html" data-track="click_contact_page"><img src="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp" srcset="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp 360w, images/shahmansouri-tappeti-verona-isfahan-mehdi-640.webp 640w, images/shahmansouri-tappeti-verona-isfahan-mehdi.webp 1875w" sizes="(max-width: 767px) 298px, (max-width: 1199px) 420px, 520px" alt="Mehdi Shahmansouri in Isfahan" width="900" height="675" decoding="async" fetchpriority="high"></a>
+          <div class="home-mobile-intro-card__hint" aria-hidden="true"><span>Scroll</span><span class="home-mobile-quicklink-card__hint-arrow">&#8594;</span></div>
+          <p>Mehdi Shahmansouri, originally from the province of <a href="persia-en.html">Isfahan in Iran</a>, comes from a family of carpet merchants active for generations. Since 1991 he has lived and worked in Verona, where he directly imports Persian and Oriental rugs and presents them in a distinctive space in the historic centre, opposite <a href="contacts-en.html">Verona Cathedral</a>.</p>
+         </div>
+         <div class="home-mobile-intro-card">
+          <p>Shahmansouri Persian Carpets is not a simple rug shop. It is a place devoted to Persian art, carefully selected handmade pieces and a direct relationship with the customer. Each rug is considered through its origin, design, materials, colours and state of conservation, because a handmade carpet can never be understood only at first glance.</p>
+           <p>The shop offers <a href="tappeti-persiani-verona/index-en.html">handmade Persian and Oriental rugs in Verona</a>, including fine and antique carpets, kilims, tribal pieces and older weavings. The selection also includes bags, saddlebags, korjin, jajim, javal and cushions, chosen for originality, quality and decorative value.</p>
+         </div>
+         <div class="home-mobile-intro-card">
+          <p>Alongside sales, the shop also offers <a href="carpets.html#manutenzioni">carpet washing and restoration in Verona</a>, with attention to wool, colour behaviour, edges, fringes and the structural health of each piece. The relationship with the customer does not end with the purchase: a handmade carpet requires care, correct washing, maintenance and, when necessary, restoration carried out with attention.</p>
+          <p>The project also includes a selected range of <a href="crafts.html">Persian handicrafts</a>: ceramics, miniatures, inlay work, engraved metal objects, printed textiles, glass and decorative pieces chosen for workmanship and cultural value. In this way the shop brings together rugs, material culture and Persian decorative tradition in a single coherent experience.</p>
+          <p class="home-mobile-intro-card__cta"><a class="home-mobile-intro-card__cta-link" href="catalogo/index-en.html" data-track="click_catalog">View the catalog</a></p>
+         </div>
         </div>
       </div>
 
@@ -828,27 +868,6 @@
       </aside>
       </div>
     </main>
-
-    <p class="home-mobile-section-kicker">Shahmansouri</p>
-    <div class="home-mobile-intro-cards">
-    <div class="home-mobile-intro-card">
-      <a class="home-mobile-intro-card__image" href="contacts-en.html" data-track="click_contact_page"><img src="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp" srcset="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp 360w, images/shahmansouri-tappeti-verona-isfahan-mehdi-640.webp 640w, images/shahmansouri-tappeti-verona-isfahan-mehdi.webp 1875w" sizes="(max-width: 767px) 298px, 420px" alt="Mehdi Shahmansouri in Isfahan" width="900" height="675" loading="lazy" decoding="async"></a>
-      <div class="home-mobile-intro-card__hint" aria-hidden="true">
-        <span>Scroll</span>
-        <span class="home-mobile-quicklink-card__hint-arrow">&#8594;</span>
-      </div>
-      <p>Mehdi Shahmansouri, originally from the province of <a href="persia-en.html">Isfahan in Iran</a>, comes from a family of carpet merchants active for generations. Since 1991 he has lived and worked in Verona, where he directly imports Persian and Oriental rugs and presents them in a distinctive space in the historic centre, opposite <a href="contacts-en.html">Verona Cathedral</a>.</p>
-    </div>
-    <div class="home-mobile-intro-card">
-      <p>Shahmansouri Persian Carpets is not a simple rug shop. It is a place devoted to Persian art, carefully selected handmade pieces and a direct relationship with the customer. Each rug is considered through its origin, design, materials, colours and state of conservation, because a handmade carpet can never be understood only at first glance.</p>
-      <p>The shop offers <a href="carpets.html">handmade Persian and Oriental rugs, fine and antique carpets, kilims, tribal pieces and older weavings</a>. The selection includes classic carpets, antique rugs, kilims, bags, saddlebags, korjin, jajim, javal and cushions, chosen for originality, quality and decorative value.</p>
-    </div>
-      <div class="home-mobile-intro-card">
-        <p>Alongside sales, the shop also offers <a href="carpets.html#manutenzioni">carpet washing and restoration in Verona</a>, with attention to wool, colour behaviour, edges, fringes and the structural health of each piece. The relationship with the customer does not end with the purchase: a handmade carpet requires care, correct washing, maintenance and, when necessary, restoration carried out with attention.</p>
-        <p>The project also includes a selected range of <a href="crafts.html">Persian handicrafts</a>: ceramics, miniatures, inlay work, engraved metal objects, printed textiles, glass and decorative pieces chosen for workmanship and cultural value. In this way the shop brings together rugs, material culture and Persian decorative tradition in a single coherent experience.</p>
-        <p class="home-mobile-intro-card__cta"><a class="home-mobile-intro-card__cta-link" href="catalogo/index-en.html" data-track="click_catalog">View the catalog</a></p>
-      </div>
-      </div>
 
     <p class="home-mobile-section-kicker">Shortcuts</p>
     <section class="home-mobile-quicklinks" aria-label="Site shortcuts">

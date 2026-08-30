@@ -195,7 +195,6 @@
   }
 
   .map-consent-actions,
-  .cookie-banner__actions,
   .contact-direct-actions {
     flex-direction: column;
   }
@@ -205,6 +204,11 @@
   .cookie-banner__button,
   .cookie-banner__link {
     width: 100%;
+  }
+
+  .cookie-banner__actions,
+  .cookie-banner__secondary-actions {
+    align-items: stretch;
   }
 
   .cookie-banner__content {

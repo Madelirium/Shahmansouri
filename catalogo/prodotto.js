@@ -10,20 +10,35 @@ const productUiLabels = {
     openImage: isEnglishProduct ? "Open enlarged rug image" : "Apri immagine ingrandita del tappeto"
 };
 
-function setHeroImage(image) {
-    if (!productHeroImage || !(image instanceof HTMLImageElement)) {
+function setHeroImage(button) {
+    if (!productHeroImage || !(button instanceof HTMLButtonElement)) {
         return;
     }
 
-    productHeroImage.src = image.currentSrc || image.src;
+    const image = button.querySelector("img");
+    if (!(image instanceof HTMLImageElement)) {
+        return;
+    }
+
+    const fullSource = button.dataset.fullSource || image.currentSrc || image.src;
+    const responsiveSrcset = button.dataset.responsiveSrcset || image.getAttribute("srcset");
+
+    productHeroImage.src = fullSource;
+    if (responsiveSrcset) {
+        productHeroImage.srcset = responsiveSrcset;
+    } else {
+        productHeroImage.removeAttribute("srcset");
+    }
     productHeroImage.alt = image.alt;
-    productHeroImage.dataset.zoomSrc = image.currentSrc || image.src;
+    productHeroImage.dataset.zoomSrc = fullSource;
+    productHero?.classList.remove("is-zoomed");
 }
 
 productThumbButtons.forEach((button) => {
     button.addEventListener("click", () => {
-        const preview = button.querySelector("img");
-        setHeroImage(preview);
+        if (button instanceof HTMLButtonElement) {
+            setHeroImage(button);
+        }
     });
 });
 

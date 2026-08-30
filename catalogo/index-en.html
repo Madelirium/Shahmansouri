@@ -185,23 +185,86 @@
                     </form>
                 </aside>
 
-                <div class="catalog-mobile-overlay" data-filters-overlay hidden></div>
+        <div class="catalog-mobile-overlay" data-filters-overlay hidden></div>
 
-                <div class="catalog-results">
-                <div class="catalog-toolbar">
+        <div class="catalog-results">
+          <form class="catalog-quick-filters" data-quick-filters aria-label="Quick catalog filters">
+            <label class="catalog-quick-filters__field catalog-quick-filters__field--search">
+              <span>Search</span>
+              <input type="search" data-quick-search placeholder="Ex. Tabriz, runner, living room">
+            </label>
+            <div class="catalog-quick-filters__field catalog-quick-category">
+              <span>Type</span>
+              <button type="button" class="catalog-quick-category__toggle" data-quick-category-toggle aria-expanded="false" aria-controls="quick-category-panel">All types</button>
+              <div id="quick-category-panel" class="catalog-quick-category__panel" data-quick-category-panel role="listbox" aria-label="Type" hidden></div>
+              <select data-quick-category hidden aria-hidden="true" tabindex="-1">
+                <option value="">All types</option>
+                <option value="Tappeto classico">Classic rug</option>
+                <option value="Tappeto contemporaneo">Contemporary rug</option>
+                <option value="Runner">Runner</option>
+                <option value="Kilim">Kilim</option>
+                <option value="Oggetto decorativo">Decorative object</option>
+              </select>
+            </div>
+            <div class="catalog-quick-filters__field catalog-quick-measures__unit-selector">
+              <span>Unit</span>
+              <div class="catalog-quick-measures__unit-buttons" role="group" aria-label="Measurement unit">
+                <button type="button" class="is-active" data-quick-measure-unit="cm" aria-pressed="true">cm</button>
+                <button type="button" data-quick-measure-unit="in" aria-pressed="false">in</button>
+              </div>
+            </div>
+            <div class="catalog-quick-filters__field catalog-quick-measures">
+              <span>Size</span>
+              <button type="button" class="catalog-quick-measures__toggle" data-quick-measures-toggle aria-expanded="false" aria-controls="quick-measures-panel">Size</button>
+              <div id="quick-measures-panel" class="catalog-quick-measures__panel" data-quick-measures-panel hidden>
+                <div class="catalog-quick-measures__dimensions">
+                <div class="catalog-quick-measures__dimension">
+                <div class="catalog-quick-measures__row">
+                  <span>Length</span>
+                  <label>From <input type="number" min="0" step="0.1" inputmode="decimal" placeholder="min" aria-label="Minimum length" data-quick-length-min></label>
+                  <label>To <input type="number" min="0" step="0.1" inputmode="decimal" placeholder="max" aria-label="Maximum length" data-quick-length-max></label>
+                </div>
+                </div>
+                <div class="catalog-quick-measures__dimension">
+                <div class="catalog-quick-measures__row">
+                  <span>Width</span>
+                  <label>From <input type="number" min="0" step="0.1" inputmode="decimal" placeholder="min" aria-label="Minimum width" data-quick-width-min></label>
+                  <label>To <input type="number" min="0" step="0.1" inputmode="decimal" placeholder="max" aria-label="Maximum width" data-quick-width-max></label>
+                </div>
+                </div>
+                </div>
+                <button type="button" class="catalog-quick-measures__clear" data-quick-measures-clear>Clear sizes</button>
+              </div>
+            </div>
+            <div class="catalog-quick-filters__field catalog-quick-sort">
+              <button type="button" class="catalog-quick-sort__toggle" data-quick-sort-toggle aria-label="Sort products" aria-expanded="false" aria-controls="quick-sort-panel">Sort: Most recent</button>
+              <div id="quick-sort-panel" class="catalog-quick-sort__panel" data-quick-sort-panel role="listbox" aria-label="Sort order" hidden>
+                <button type="button" class="catalog-quick-sort__option" data-quick-sort-option="newest" role="option" aria-selected="true">Most recent</button>
+                <button type="button" class="catalog-quick-sort__option" data-quick-sort-option="oldest" role="option" aria-selected="false">Oldest</button>
+                <button type="button" class="catalog-quick-sort__option" data-quick-sort-option="size-desc" role="option" aria-selected="false">Largest</button>
+                <button type="button" class="catalog-quick-sort__option" data-quick-sort-option="size-asc" role="option" aria-selected="false">Smallest</button>
+                <button type="button" class="catalog-quick-sort__option" data-quick-sort-option="name-asc" role="option" aria-selected="false">A-Z</button>
+                <button type="button" class="catalog-quick-sort__option" data-quick-sort-option="name-desc" role="option" aria-selected="false">Z-A</button>
+              </div>
+              <select data-quick-sort hidden aria-hidden="true" tabindex="-1">
+                <option value="newest">Most recent</option>
+                <option value="oldest">Oldest</option>
+                <option value="size-desc">Largest</option>
+                <option value="size-asc">Smallest</option>
+                <option value="name-asc">A-Z</option>
+                <option value="name-desc">Z-A</option>
+              </select>
+            </div>
+            <button type="button" class="catalog-quick-filters__reset" data-quick-reset>Clear filters</button>
+            <p class="catalog-quick-filters__count" data-quick-results-count aria-live="polite"></p>
+          </form>
+          <div class="catalog-toolbar">
                     <div>
                         <p class="eyebrow">Catalog</p>
                         <h2>Current selection</h2>
                     </div>
                     <div class="catalog-toolbar__meta">
-                        <div class="catalog-view-toggle" data-view-toggle>
-                            <span class="catalog-view-toggle__label">View</span>
-                            <div class="catalog-view-toggle__buttons" role="group" aria-label="Choose the number of columns">
-                                <button type="button" class="catalog-view-toggle__button is-active" data-view-columns="2" aria-pressed="true">2 columns</button>
-                                <button type="button" class="catalog-view-toggle__button" data-view-columns="3" aria-pressed="false">3 columns</button>
-                            </div>
-                        </div>
-                        <div class="catalog-mobile-view" data-mobile-view>
+                      <div class="catalog-mobile-view" data-mobile-view>
                             <button type="button" class="catalog-mobile-view__button" data-mobile-columns-toggle data-label-default="2 columns" data-label-active="1 column" aria-pressed="false">2 columns</button>
                         </div>
                         <p class="catalog-toolbar__count" data-results-count></p>
@@ -209,7 +272,7 @@
                 </div>
 
                     <div class="active-filters" data-active-filters aria-live="polite"></div>
-                    <div class="product-grid product-grid--skeleton" data-product-grid aria-live="polite" aria-busy="true">
+                    <div class="product-grid product-grid--4cols product-grid--mobile-2cols product-grid--skeleton" data-product-grid aria-live="polite" aria-busy="true">
                         <article class="product-card product-card--skeleton" aria-hidden="true">
                             <div class="product-card__media"></div>
                             <div class="product-card__body">

@@ -21,14 +21,112 @@ const searchInput = catalogForm?.elements?.namedItem("search") || null;
 const viewToggle = document.querySelector("[data-view-toggle]");
 const viewButtons = Array.from(document.querySelectorAll("[data-view-columns]"));
 const mobileColumnsToggle = document.querySelector("[data-mobile-columns-toggle]");
+const catalogLayout = document.querySelector(".catalog-layout");
+const quickFilters = document.querySelector("[data-quick-filters]");
+const quickSearchInput = document.querySelector("[data-quick-search]");
+const quickCategorySelect = document.querySelector("[data-quick-category]");
+const quickCategoryToggle = document.querySelector("[data-quick-category-toggle]");
+const quickCategoryPanel = document.querySelector("[data-quick-category-panel]");
+const quickMaterialSelect = document.querySelector("[data-quick-material]");
+const quickSortSelect = document.querySelector("[data-quick-sort]");
+const quickSortToggle = document.querySelector("[data-quick-sort-toggle]");
+const quickSortPanel = document.querySelector("[data-quick-sort-panel]");
+const quickLengthMinInput = document.querySelector("[data-quick-length-min]");
+const quickLengthInput = document.querySelector("[data-quick-length-max]");
+const quickWidthMinInput = document.querySelector("[data-quick-width-min]");
+const quickWidthInput = document.querySelector("[data-quick-width-max]");
+const quickMeasuresToggle = document.querySelector("[data-quick-measures-toggle]");
+const quickMeasuresPanel = document.querySelector("[data-quick-measures-panel]");
+const quickMeasuresClearButton = document.querySelector("[data-quick-measures-clear]");
+const quickMeasureUnitButtons = Array.from(document.querySelectorAll("[data-quick-measure-unit]"));
+const quickResetButton = document.querySelector("[data-quick-reset]");
+const quickResultsCount = document.querySelector("[data-quick-results-count]");
 
 let catalogProducts = [];
 let maxWidth = 0;
 let maxLength = 0;
+let minimumWidth = null;
+let minimumLength = null;
+let quickMeasureUnit = "cm";
+let shouldScrollToCatalogResults = false;
 
-const CATALOG_VIEW_KEY = "shahmansouri_catalog_columns_v1";
+function placeQuickFiltersAboveCatalog() {
+    if (!quickFilters || !catalogLayout || !filtersPanel) {
+        return;
+    }
+
+    // Keep the desktop controls above both the sidebar and the product selection.
+    catalogLayout.insertBefore(quickFilters, filtersPanel);
+}
+
+function requestCatalogResultsScroll() {
+    shouldScrollToCatalogResults = true;
+}
+
+function scrollToCatalogResults() {
+    if (!shouldScrollToCatalogResults || !catalogLayout) {
+        return;
+    }
+
+    shouldScrollToCatalogResults = false;
+    // A sticky element reports its fixed viewport position, not its original page position.
+    const targetTop = window.scrollY + catalogLayout.getBoundingClientRect().top - 10;
+
+    window.requestAnimationFrame(() => {
+        window.scrollTo({ top: Math.max(targetTop, 0), behavior: "smooth" });
+    });
+}
+
+function setQuickMeasuresOpen(isOpen, shouldFocus = false) {
+    if (!quickMeasuresPanel || !(quickMeasuresToggle instanceof HTMLButtonElement)) {
+        return;
+    }
+
+    quickMeasuresPanel.hidden = !isOpen;
+    quickMeasuresToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen && shouldFocus && quickLengthMinInput instanceof HTMLInputElement) {
+        quickLengthMinInput.focus();
+    }
+}
+
+function setQuickCategoryOpen(isOpen, shouldFocus = false) {
+    if (!quickCategoryPanel || !(quickCategoryToggle instanceof HTMLButtonElement)) {
+        return;
+    }
+
+    quickCategoryPanel.hidden = !isOpen;
+    quickCategoryToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen) {
+        setQuickMeasuresOpen(false);
+        setQuickSortOpen(false);
+        if (shouldFocus) {
+            quickCategoryPanel.querySelector("button")?.focus();
+        }
+    }
+}
+
+function setQuickSortOpen(isOpen, shouldFocus = false) {
+    if (!quickSortPanel || !(quickSortToggle instanceof HTMLButtonElement)) {
+        return;
+    }
+
+    quickSortPanel.hidden = !isOpen;
+    quickSortToggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen) {
+        setQuickMeasuresOpen(false);
+        setQuickCategoryOpen(false);
+        if (shouldFocus) {
+            quickSortPanel.querySelector("button")?.focus();
+        }
+    }
+}
+
+const CATALOG_VIEW_KEY = "shahmansouri_catalog_columns_v2";
 const CATALOG_MOBILE_VIEW_KEY = "shahmansouri_catalog_mobile_columns_v1";
-const DEFAULT_CATALOG_COLUMNS = "2";
+const DEFAULT_CATALOG_COLUMNS = "4";
 
 const isEnglishCatalog = document.documentElement.lang.toLowerCase().startsWith("en");
 const CARD_IMAGE_SIZES = "(max-width: 759px) calc(100vw - 72px), (max-width: 1399px) 320px, 240px";
@@ -104,7 +202,13 @@ const catalogI18n = isEnglishCatalog
     };
 
 function normalizeText(value) {
-    return value.toLowerCase().trim();
+    return String(value || "")
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .replace(/[-_/]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
 }
 
 function getInitialSearchFromUrl() {
@@ -181,10 +285,6 @@ function getProductMaterialLabels(product) {
     return extractMaterialTokens(fallbackValue);
 }
 
-function translateAvailability(value) {
-    return catalogI18n.availability[value] || value;
-}
-
 function createFilterCheckbox(name, value, label) {
     return `
         <label class="filters-check">
@@ -236,6 +336,28 @@ function renderDynamicFilterOptions() {
             : "";
     }
 
+    if (quickCategorySelect) {
+        const allTypesLabel = isEnglishCatalog ? "All types" : "Tutte le tipologie";
+        const categories = getUniqueCategories(catalogProducts);
+        quickCategorySelect.innerHTML = [
+            `<option value="">${allTypesLabel}</option>`,
+            ...categories.map((category) => (
+                `<option value="${category}">${translateCategory(category)}</option>`
+            ))
+        ].join("");
+
+        if (quickCategoryPanel) {
+            quickCategoryPanel.innerHTML = [
+                { value: "", label: allTypesLabel },
+                ...categories.map((category) => ({ value: category, label: translateCategory(category) }))
+            ].map(({ value, label }) => (
+                `<button type="button" class="catalog-quick-category__option" data-quick-category-option="${value}" role="option" aria-selected="false">${label}</button>`
+            )).join("");
+        }
+
+        syncQuickCategoryControl(quickCategorySelect.value);
+    }
+
     if (materialOptions) {
         materialOptions.innerHTML = catalogProducts.length
             ? getUniqueMaterials(catalogProducts)
@@ -243,6 +365,45 @@ function renderDynamicFilterOptions() {
                 .join("")
             : "";
     }
+
+    if (quickMaterialSelect) {
+        const allMaterialsLabel = isEnglishCatalog ? "All materials" : "Tutti i materiali";
+        quickMaterialSelect.innerHTML = [
+            `<option value="">${allMaterialsLabel}</option>`,
+            ...getUniqueMaterials(catalogProducts).map((material) => (
+                `<option value="${material}">${translateMaterial(material)}</option>`
+            ))
+        ].join("");
+    }
+}
+
+function syncQuickCategoryControl(value) {
+    if (!(quickCategoryToggle instanceof HTMLButtonElement)) {
+        return;
+    }
+
+    const selectedValue = String(value || "");
+    const selectedOption = quickCategorySelect?.querySelector(`option[value="${CSS.escape(selectedValue)}"]`);
+    quickCategoryToggle.textContent = selectedOption?.textContent || (isEnglishCatalog ? "All types" : "Tutte le tipologie");
+
+    quickCategoryPanel?.querySelectorAll("[data-quick-category-option]").forEach((option) => {
+        option.setAttribute("aria-selected", String(option.dataset.quickCategoryOption === selectedValue));
+    });
+}
+
+function syncQuickSortControl() {
+    if (!(quickSortSelect instanceof HTMLSelectElement) || !(quickSortToggle instanceof HTMLButtonElement)) {
+        return;
+    }
+
+    const selectedValue = quickSortSelect.value;
+    const selectedOption = Array.from(quickSortSelect.options).find((option) => option.value === selectedValue);
+    const label = isEnglishCatalog ? "Sort" : "Ordina";
+    quickSortToggle.textContent = `${label}: ${selectedOption?.textContent || ""}`;
+
+    quickSortPanel?.querySelectorAll("[data-quick-sort-option]").forEach((option) => {
+        option.setAttribute("aria-selected", String(option.dataset.quickSortOption === selectedValue));
+    });
 }
 
 function parseOptionalDimension(value) {
@@ -255,12 +416,56 @@ function parseOptionalDimension(value) {
     return Number.isFinite(parsed) && parsed >= 0 ? parsed : null;
 }
 
+function convertQuickMeasureToCentimeters(value) {
+    const parsed = parseOptionalDimension(value);
+    if (parsed === null) {
+        return null;
+    }
+
+    return quickMeasureUnit === "in" ? Math.round(parsed * 2.54) : Math.round(parsed);
+}
+
+function formatQuickMeasure(value) {
+    if (value === null) {
+        return "";
+    }
+
+    if (quickMeasureUnit !== "in") {
+        return String(value);
+    }
+
+    return String(Math.round((value / 2.54) * 10) / 10);
+}
+
+function formatProductDimensions(product) {
+    if (!Number.isFinite(product.lengthCm) || !Number.isFinite(product.widthCm)) {
+        return product.dimensions;
+    }
+
+    const unit = quickMeasureUnit === "in" ? "in" : "cm";
+    return `${formatQuickMeasure(product.lengthCm)} x ${formatQuickMeasure(product.widthCm)} ${unit}`;
+}
+
+function setQuickMeasureUnit(unit) {
+    quickMeasureUnit = unit === "in" ? "in" : "cm";
+
+    quickMeasureUnitButtons.forEach((button) => {
+        const isActive = button.dataset.quickMeasureUnit === quickMeasureUnit;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    renderCatalog();
+}
+
 function getFormState() {
     if (!catalogForm) {
         return {
             search: "",
             categories: [],
             materials: [],
+            widthMinimum: null,
+            lengthMinimum: null,
             widthTarget: null,
             lengthTarget: null
         };
@@ -271,21 +476,29 @@ function getFormState() {
         search: normalizeText(String(formData.get("search") || "")),
         categories: formData.getAll("categories").map((value) => String(value)),
         materials: formData.getAll("materials").map((value) => normalizeText(String(value))),
+        widthMinimum: minimumWidth,
+        lengthMinimum: minimumLength,
         widthTarget: parseOptionalDimension(formData.get("widthTarget")),
         lengthTarget: parseOptionalDimension(formData.get("lengthTarget"))
     };
 }
 
+function matchesDimensionRange(value, minimum, maximum) {
+    if (minimum !== null && value < minimum) {
+        return false;
+    }
+
+    return maximum === null || value <= maximum + 15;
+}
+
 function matchesDimensions(product, filters) {
-    if (filters.widthTarget !== null && product.widthCm > filters.widthTarget + 15) {
-        return false;
-    }
+    const matchesAsEntered = matchesDimensionRange(product.widthCm, filters.widthMinimum, filters.widthTarget)
+        && matchesDimensionRange(product.lengthCm, filters.lengthMinimum, filters.lengthTarget);
 
-    if (filters.lengthTarget !== null && product.lengthCm > filters.lengthTarget + 15) {
-        return false;
-    }
+    const matchesWithSidesSwapped = matchesDimensionRange(product.lengthCm, filters.widthMinimum, filters.widthTarget)
+        && matchesDimensionRange(product.widthCm, filters.lengthMinimum, filters.lengthTarget);
 
-    return true;
+    return matchesAsEntered || matchesWithSidesSwapped;
 }
 
 function matchesSearch(product, query) {
@@ -307,9 +520,9 @@ function matchesSearch(product, query) {
         product.descriptionEn,
         ...(Array.isArray(product.materialsEn) ? product.materialsEn : []),
         ...(Array.isArray(product.tags) ? product.tags : [])
-    ].filter(Boolean).join(" ").toLowerCase();
+    ].filter(Boolean).join(" ");
 
-    return haystack.includes(query);
+    return normalizeText(haystack).includes(query);
 }
 
 function matchesMaterials(product, selectedMaterials) {
@@ -331,6 +544,40 @@ function filterProducts(filters) {
             && matchesMaterials(product, filters.materials)
             && matchesDimensions(product, filters);
     });
+}
+
+function getProductArea(product) {
+    return (Number(product.widthCm) || 0) * (Number(product.lengthCm) || 0);
+}
+
+function sortProducts(products) {
+    const sortOrder = quickSortSelect instanceof HTMLSelectElement ? quickSortSelect.value : "newest";
+    const sortedProducts = [...products];
+
+    if (sortOrder === "oldest") {
+        return sortedProducts;
+    }
+
+    if (sortOrder === "size-desc") {
+        return sortedProducts.sort((left, right) => getProductArea(right) - getProductArea(left));
+    }
+
+    if (sortOrder === "size-asc") {
+        return sortedProducts.sort((left, right) => getProductArea(left) - getProductArea(right));
+    }
+
+    if (sortOrder === "name-asc" || sortOrder === "name-desc") {
+        const direction = sortOrder === "name-desc" ? -1 : 1;
+        return sortedProducts.sort((left, right) => {
+            const leftTitle = isEnglishCatalog && left.titleEn ? left.titleEn : left.title;
+            const rightTitle = isEnglishCatalog && right.titleEn ? right.titleEn : right.title;
+            return direction * String(leftTitle || "").localeCompare(String(rightTitle || ""), catalogI18n.locale);
+        });
+    }
+
+    // The product generator appends new entries to products.json, so reversing
+    // the source sequence reliably presents the latest entries first.
+    return sortedProducts.reverse();
 }
 
 function getResponsiveCatalogImageSources(product) {
@@ -426,8 +673,7 @@ function createProductCard(product, index = 0) {
                     <h3 class="product-card__title"><a href="${productPage}" data-track="click_catalog_product" data-product-name="${productName}" data-track-label="${catalogI18n.labels.openCard}">${cardTitle}</a></h3>
                 </div>
                 <ul class="product-card__detail-list" aria-label="${catalogI18n.labels.productDetails}">
-                    <li><strong>${catalogI18n.labels.measures}:</strong> ${product.dimensions}</li>
-                    <li><strong>${catalogI18n.labels.availability}:</strong> ${translateAvailability(product.availability)}</li>
+                    <li><strong>${catalogI18n.labels.measures}:</strong> ${formatProductDimensions(product)}</li>
                 </ul>
                 <div class="product-card__actions">
                     <a class="button button-primary" href="${productPage}" data-track="click_catalog_product" data-product-name="${productName}" data-track-label="${catalogI18n.labels.openCard}">${catalogI18n.labels.openCard}</a>
@@ -460,8 +706,16 @@ function renderActiveFilters(filters) {
         chips.push(`${catalogI18n.labels.widthDesired}: ${filters.widthTarget} cm`);
     }
 
+    if (filters.widthMinimum !== null) {
+        chips.push(`${catalogI18n.labels.widthDesired} min: ${filters.widthMinimum} cm`);
+    }
+
     if (filters.lengthTarget !== null) {
         chips.push(`${catalogI18n.labels.lengthDesired}: ${filters.lengthTarget} cm`);
+    }
+
+    if (filters.lengthMinimum !== null) {
+        chips.push(`${catalogI18n.labels.lengthDesired} min: ${filters.lengthMinimum} cm`);
     }
 
     activeFilters.innerHTML = chips.map((chip) => `<span class="filter-chip">${chip}</span>`).join("");
@@ -475,6 +729,99 @@ function renderSliderValues(filters) {
     if (lengthValue) {
         lengthValue.textContent = filters.lengthTarget !== null ? `${filters.lengthTarget} cm` : "-";
     }
+}
+
+function syncQuickFilters(filters) {
+    if (!quickFilters) {
+        return;
+    }
+
+    if (quickSearchInput instanceof HTMLInputElement) {
+        quickSearchInput.value = filters.search;
+    }
+
+    if (quickCategorySelect instanceof HTMLSelectElement) {
+        quickCategorySelect.value = filters.categories.length === 1 ? filters.categories[0] : "";
+        syncQuickCategoryControl(quickCategorySelect.value);
+    }
+
+    if (quickMaterialSelect instanceof HTMLSelectElement) {
+        quickMaterialSelect.value = filters.materials.length === 1 ? filters.materials[0] : "";
+    }
+
+    // Keep the value being typed intact: converting inches on every keystroke
+    // would otherwise replace it with a rounded value before it can be edited.
+    if (quickLengthInput instanceof HTMLInputElement && document.activeElement !== quickLengthInput) {
+        quickLengthInput.value = formatQuickMeasure(filters.lengthTarget);
+    }
+
+    if (quickLengthMinInput instanceof HTMLInputElement && document.activeElement !== quickLengthMinInput) {
+        quickLengthMinInput.value = formatQuickMeasure(filters.lengthMinimum);
+    }
+
+    if (quickWidthInput instanceof HTMLInputElement && document.activeElement !== quickWidthInput) {
+        quickWidthInput.value = formatQuickMeasure(filters.widthTarget);
+    }
+
+    if (quickWidthMinInput instanceof HTMLInputElement && document.activeElement !== quickWidthMinInput) {
+        quickWidthMinInput.value = formatQuickMeasure(filters.widthMinimum);
+    }
+
+    if (quickMeasuresToggle instanceof HTMLButtonElement) {
+        const activeMeasures = [filters.lengthMinimum, filters.lengthTarget, filters.widthMinimum, filters.widthTarget]
+            .filter((value) => value !== null).length;
+        const label = isEnglishCatalog ? "Size" : "Misure";
+        quickMeasuresToggle.textContent = activeMeasures ? `${label} (${activeMeasures})` : label;
+    }
+}
+
+function setQuickCheckboxFilter(name, value) {
+    if (!catalogForm) {
+        return;
+    }
+
+    catalogForm.querySelectorAll(`input[name="${name}"]`).forEach((input) => {
+        if (input instanceof HTMLInputElement) {
+            input.checked = Boolean(value) && input.value === value;
+        }
+    });
+}
+
+function updateFromQuickFilters() {
+    if (!catalogForm) {
+        return;
+    }
+
+    if (searchInput instanceof HTMLInputElement && quickSearchInput instanceof HTMLInputElement) {
+        searchInput.value = quickSearchInput.value;
+    }
+
+    setQuickCheckboxFilter("categories", quickCategorySelect instanceof HTMLSelectElement ? quickCategorySelect.value : "");
+    if (quickMaterialSelect instanceof HTMLSelectElement) {
+        setQuickCheckboxFilter("materials", quickMaterialSelect.value);
+    }
+
+    if (lengthInput instanceof HTMLInputElement && quickLengthInput instanceof HTMLInputElement) {
+        const lengthMaximum = convertQuickMeasureToCentimeters(quickLengthInput.value);
+        lengthInput.value = lengthMaximum === null ? "" : String(lengthMaximum);
+        syncRangeFromInput(lengthInput, lengthRange, maxLength);
+    }
+
+    if (widthInput instanceof HTMLInputElement && quickWidthInput instanceof HTMLInputElement) {
+        const widthMaximum = convertQuickMeasureToCentimeters(quickWidthInput.value);
+        widthInput.value = widthMaximum === null ? "" : String(widthMaximum);
+        syncRangeFromInput(widthInput, widthRange, maxWidth);
+    }
+
+    minimumLength = quickLengthMinInput instanceof HTMLInputElement
+        ? convertQuickMeasureToCentimeters(quickLengthMinInput.value)
+        : null;
+    minimumWidth = quickWidthMinInput instanceof HTMLInputElement
+        ? convertQuickMeasureToCentimeters(quickWidthMinInput.value)
+        : null;
+
+    renderSliderValues(getFormState());
+    renderCatalog();
 }
 
 function getCatalogWhatsappUrl() {
@@ -506,7 +853,12 @@ function resetCatalogFilters() {
         }
     }
 
+    minimumWidth = null;
+    minimumLength = null;
+    setQuickMeasuresOpen(false);
+
     renderSliderValues(getFormState());
+    requestCatalogResultsScroll();
     renderCatalog();
     setFiltersOpen(false);
 }
@@ -578,14 +930,20 @@ function renderCatalog() {
     }
 
     const filters = getFormState();
-    const filteredProducts = filterProducts(filters);
+    const filteredProducts = sortProducts(filterProducts(filters));
     renderSliderValues(filters);
     renderActiveFilters(filters);
+    syncQuickFilters(filters);
+    syncQuickSortControl();
 
     resultsCount.textContent = catalogI18n.labels.results(filteredProducts.length, catalogProducts.length);
+    if (quickResultsCount) {
+        quickResultsCount.textContent = catalogI18n.labels.results(filteredProducts.length, catalogProducts.length);
+    }
     productGrid.innerHTML = filteredProducts.map((product, index) => createProductCard(product, index)).join("");
     productGrid.classList.remove("product-grid--skeleton");
     productGrid.setAttribute("aria-busy", "false");
+    scrollToCatalogResults();
 
     if (!catalogProducts.length) {
         emptyState.hidden = false;
@@ -604,7 +962,7 @@ function renderCatalog() {
 }
 
 function isValidColumnsValue(value) {
-    return value === "2" || value === "3";
+    return value === "2" || value === "3" || value === "4";
 }
 
 function getSavedColumnsPreference() {
@@ -630,9 +988,9 @@ function saveColumnsPreference(value) {
 
 function getSavedMobileColumnsPreference() {
     try {
-        return window.localStorage.getItem(CATALOG_MOBILE_VIEW_KEY) === "2";
+        return window.localStorage.getItem(CATALOG_MOBILE_VIEW_KEY) !== "1";
     } catch (error) {
-        return false;
+        return true;
     }
 }
 
@@ -650,6 +1008,7 @@ function applyCatalogView(columns) {
     }
 
     productGrid.classList.toggle("product-grid--3cols", columns === "3");
+    productGrid.classList.toggle("product-grid--4cols", columns === "4");
 
     viewButtons.forEach((button) => {
         const isActive = button.getAttribute("data-view-columns") === columns;
@@ -769,6 +1128,7 @@ function setFiltersOpen(isOpen) {
 
 if (catalogForm) {
     catalogForm.addEventListener("input", (event) => {
+        requestCatalogResultsScroll();
         const target = event.target;
 
         if (target instanceof HTMLInputElement && target.type === "range") {
@@ -802,7 +1162,113 @@ if (catalogForm) {
         renderCatalog();
     });
 
-    catalogForm.addEventListener("change", renderCatalog);
+    catalogForm.addEventListener("change", () => {
+        requestCatalogResultsScroll();
+        renderCatalog();
+    });
+}
+
+if (quickFilters) {
+    quickFilters.addEventListener("submit", (event) => {
+        event.preventDefault();
+    });
+
+    quickFilters.addEventListener("input", () => {
+        requestCatalogResultsScroll();
+        updateFromQuickFilters();
+    });
+    quickFilters.addEventListener("change", () => {
+        requestCatalogResultsScroll();
+        updateFromQuickFilters();
+    });
+}
+
+quickMeasureUnitButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        setQuickMeasureUnit(button.dataset.quickMeasureUnit || "cm");
+    });
+});
+
+if (quickResetButton) {
+    quickResetButton.addEventListener("click", resetCatalogFilters);
+}
+
+if (quickMeasuresToggle) {
+    quickMeasuresToggle.addEventListener("click", () => {
+        const isOpen = quickMeasuresToggle.getAttribute("aria-expanded") === "true";
+        setQuickMeasuresOpen(!isOpen, !isOpen);
+        if (!isOpen) {
+            setQuickCategoryOpen(false);
+            setQuickSortOpen(false);
+        }
+    });
+}
+
+if (quickCategoryToggle) {
+    quickCategoryToggle.addEventListener("click", () => {
+        const isOpen = quickCategoryToggle.getAttribute("aria-expanded") === "true";
+        setQuickCategoryOpen(!isOpen, !isOpen);
+    });
+}
+
+if (quickSortToggle) {
+    quickSortToggle.addEventListener("click", () => {
+        const isOpen = quickSortToggle.getAttribute("aria-expanded") === "true";
+        setQuickSortOpen(!isOpen, !isOpen);
+    });
+}
+
+if (quickCategoryPanel) {
+    quickCategoryPanel.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) {
+            return;
+        }
+
+        const option = target.closest("[data-quick-category-option]");
+        if (!(option instanceof HTMLButtonElement) || !(quickCategorySelect instanceof HTMLSelectElement)) {
+            return;
+        }
+
+        quickCategorySelect.value = option.dataset.quickCategoryOption || "";
+        requestCatalogResultsScroll();
+        updateFromQuickFilters();
+        setQuickCategoryOpen(false);
+        quickCategoryToggle?.focus();
+    });
+}
+
+if (quickSortPanel) {
+    quickSortPanel.addEventListener("click", (event) => {
+        const target = event.target;
+        if (!(target instanceof HTMLElement)) {
+            return;
+        }
+
+        const option = target.closest("[data-quick-sort-option]");
+        if (!(option instanceof HTMLButtonElement) || !(quickSortSelect instanceof HTMLSelectElement)) {
+            return;
+        }
+
+        quickSortSelect.value = option.dataset.quickSortOption || "newest";
+        requestCatalogResultsScroll();
+        renderCatalog();
+        setQuickSortOpen(false);
+        quickSortToggle?.focus();
+    });
+}
+
+if (quickMeasuresClearButton) {
+    quickMeasuresClearButton.addEventListener("click", () => {
+        [quickLengthMinInput, quickLengthInput, quickWidthMinInput, quickWidthInput].forEach((input) => {
+            if (input instanceof HTMLInputElement) {
+                input.value = "";
+            }
+        });
+
+        requestCatalogResultsScroll();
+        updateFromQuickFilters();
+    });
 }
 
 if (resetButton) {
@@ -865,9 +1331,51 @@ document.addEventListener("click", (event) => {
     }
 });
 
+document.addEventListener("click", (event) => {
+    if (!quickSortPanel || !quickSortToggle || !(event.target instanceof Node)) {
+        return;
+    }
+
+    if (!quickSortPanel.parentElement?.contains(event.target)) {
+        setQuickSortOpen(false);
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if (!quickMeasuresPanel || !quickFilters || !(event.target instanceof Node)) {
+        return;
+    }
+
+    if (!quickFilters.contains(event.target)) {
+        setQuickMeasuresOpen(false);
+    }
+});
+
+document.addEventListener("click", (event) => {
+    if (!quickCategoryPanel || !quickFilters || !(event.target instanceof Node)) {
+        return;
+    }
+
+    if (!quickFilters.contains(event.target)) {
+        setQuickCategoryOpen(false);
+    }
+});
+
 window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         setFiltersOpen(false);
+        if (quickMeasuresToggle?.getAttribute("aria-expanded") === "true") {
+            setQuickMeasuresOpen(false);
+            quickMeasuresToggle.focus();
+        }
+        if (quickCategoryToggle?.getAttribute("aria-expanded") === "true") {
+            setQuickCategoryOpen(false);
+            quickCategoryToggle.focus();
+        }
+        if (quickSortToggle?.getAttribute("aria-expanded") === "true") {
+            setQuickSortOpen(false);
+            quickSortToggle.focus();
+        }
     }
 });
 
@@ -886,6 +1394,7 @@ window.addEventListener("resize", () => {
 });
 
 syncFiltersAccessibility(Boolean(filtersPanel && filtersPanel.classList.contains("is-open")));
+placeQuickFiltersAboveCatalog();
 window.requestAnimationFrame(() => {
     syncFiltersAccessibility(Boolean(filtersPanel && filtersPanel.classList.contains("is-open")));
 });
