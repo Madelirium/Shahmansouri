@@ -276,6 +276,36 @@ img {
   cursor: pointer;
 }
 
+.filters-dimension-row {
+  display: grid;
+  grid-template-columns: minmax(84px, 0.8fr) repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: 8px;
+  margin-top: 10px;
+  color: var(--catalog-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.filters-dimension-row label {
+  display: grid;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.filters-dimension-row input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 7px;
+  border: 1px solid #d5b96a;
+  border-radius: 0;
+  background: #f7f0d5;
+  color: var(--catalog-text-soft);
+  font: inherit;
+  font-size: 13px;
+}
+
 .filters-accordion {
   border: 1px solid #d5b96a;
   border-radius: 0;
@@ -1306,10 +1336,10 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 8px;
     row-gap: 30px;
-    width: calc(100vw - 16px);
+    width: calc(100% + 28px);
     max-width: none;
-    margin-left: calc(50% - 50vw + 8px);
-    margin-right: 0;
+    margin-left: -14px;
+    margin-right: -14px;
   }
 
   .product-grid.product-grid--mobile-2cols .product-card {

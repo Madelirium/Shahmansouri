@@ -134,52 +134,18 @@
 
             <div class="filters-field filters-field--split">
               <span>Dimensioni desiderate in cm</span>
-              <div class="filters-slider">
-                <label for="lengthRange">Lunghezza desiderata</label>
-                <div class="filters-slider__topline">
-                  <span>Valore</span>
-                  <strong data-length-value>-</strong>
-                </div>
-                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 200" aria-label="Lunghezza massima in centimetri" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget">
-                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range data-track="click_catalog_filter" data-filter-name="lengthTarget">
+              <div class="filters-dimension-row">
+                <strong>Lunghezza</strong>
+                <label>Min <input type="number" name="lengthMinimum" min="0" step="1" inputmode="numeric" placeholder="min" aria-label="Lunghezza minima in centimetri" data-length-min-input></label>
+                <label>Max <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="max" aria-label="Lunghezza massima in centimetri" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget"></label>
               </div>
-              <div class="filters-slider">
-                <label for="widthRange">Larghezza desiderata</label>
-                <div class="filters-slider__topline">
-                  <span>Valore</span>
-                  <strong data-width-value>-</strong>
-                </div>
-                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 120" aria-label="Larghezza massima in centimetri" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget">
-                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range data-track="click_catalog_filter" data-filter-name="widthTarget">
+              <div class="filters-dimension-row">
+                <strong>Larghezza</strong>
+                <label>Min <input type="number" name="widthMinimum" min="0" step="1" inputmode="numeric" placeholder="min" aria-label="Larghezza minima in centimetri" data-width-min-input></label>
+                <label>Max <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="max" aria-label="Larghezza massima in centimetri" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget"></label>
               </div>
               <p class="filters-field__note">Tolleranza automatica fino a 15 cm in più rispetto alla misura inserita.</p>
             </div>
-
-            <details class="filters-accordion" open>
-              <summary>Materiali</summary>
-              <div class="filters-accordion__content" data-material-options>
-                <label class="filters-check">
-                  <input type="checkbox" name="materials" value="lana">
-                  <span>Lana</span>
-                </label>
-                <label class="filters-check">
-                  <input type="checkbox" name="materials" value="seta">
-                  <span>Set</span>
-                </label>
-                <label class="filters-check">
-                  <input type="checkbox" name="materials" value="cotone">
-                  <span>Cotone</span>
-                </label>
-                <label class="filters-check">
-                  <input type="checkbox" name="materials" value="ceramica">
-                  <span>Ceramica</span>
-                </label>
-                <label class="filters-check">
-                  <input type="checkbox" name="materials" value="legno">
-                  <span>Legno</span>
-                </label>
-              </div>
-            </details>
 
           </form>
         </aside>

@@ -9,6 +9,8 @@ const widthValue = document.querySelector("[data-width-value]");
 const lengthValue = document.querySelector("[data-length-value]");
 const widthInput = document.querySelector("[data-width-input]");
 const lengthInput = document.querySelector("[data-length-input]");
+const widthMinimumInput = document.querySelector("[data-width-min-input]");
+const lengthMinimumInput = document.querySelector("[data-length-min-input]");
 const widthRange = document.querySelector("[data-width-range]");
 const lengthRange = document.querySelector("[data-length-range]");
 const openFiltersButton = document.querySelector("[data-open-filters]");
@@ -1155,6 +1157,18 @@ if (catalogForm) {
         if (target === lengthInput) {
             syncRangeFromInput(lengthInput, lengthRange, maxLength);
             renderSliderValues(getFormState());
+            renderCatalog();
+            return;
+        }
+
+        if (target === widthMinimumInput) {
+            minimumWidth = parseOptionalDimension(widthMinimumInput.value);
+            renderCatalog();
+            return;
+        }
+
+        if (target === lengthMinimumInput) {
+            minimumLength = parseOptionalDimension(lengthMinimumInput.value);
             renderCatalog();
             return;
         }
