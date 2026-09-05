@@ -315,3 +315,21 @@ if (document.readyState === "loading") {
 } else {
     initProductTracking();
 }
+
+
+/* Product Studio responsive gallery */
+document.querySelectorAll("[data-product-thumb]").forEach((button) => {
+    button.addEventListener("click", () => {
+        const heroImage = document.querySelector(".product-gallery__hero img");
+        const fullSource = button.dataset.fullSource || "";
+
+        if (!(heroImage instanceof HTMLImageElement) || !fullSource) {
+            return;
+        }
+
+        heroImage.src = fullSource;
+        heroImage.srcset = button.dataset.responsiveSrcset || "";
+        heroImage.sizes = "(max-width: 768px) 100vw, 60vw";
+        heroImage.dataset.zoomSrc = fullSource;
+    });
+});

@@ -39,7 +39,7 @@
   <link rel="stylesheet" href="../css/responsive.css">  <link rel="stylesheet" href="catalogo.css">
   <script src="../js/analytics.js" defer></script>
   <script src="../js/main.js" defer></script>
-  <script src="catalogo.js" defer></script>
+  <script src="catalogo.js?v=2" defer></script>
 </head>
 <body>
   <div class="page">
@@ -72,7 +72,18 @@
   <ul>
     <li><a href="/">home</a></li>
     <li><a href="index.html" class="active">catalogo</a></li>
-    <li><a href="../tappeti.html">tappeti</a></li>
+    <li class="dropdown"><a href="../tappeti.html" class="nav-parent">tappeti</a>
+      <ul class="submenu">
+        <li><a href="index.html?search=Tappeti">tutti i tappeti</a></li>
+        <li><a href="index.html?subcategory=Classico">classici</a></li>
+        <li><a href="index.html?subcategory=Antico">antichi</a></li>
+        <li><a href="index.html?subcategory=Fine">fini</a></li>
+        <li><a href="index.html?subcategory=Contemporaneo">contemporanei</a></li>
+        <li><a href="index.html?subcategory=Figurativo">figurativi</a></li>
+        <li><a href="index.html?subcategory=Kilim">kilim</a></li>
+        <li><a href="index.html?subcategory=Runner">runner</a></li>
+      </ul>
+    </li>
     <li><a href="../artigianato.html">artigianato</a></li>
     <li class="dropdown"><span class="nav-parent">iran</span>
      <ul class="submenu">
@@ -134,18 +145,31 @@
 
             <div class="filters-field filters-field--split">
               <span>Dimensioni desiderate in cm</span>
-              <div class="filters-dimension-row">
-                <strong>Lunghezza</strong>
-                <label>Min <input type="number" name="lengthMinimum" min="0" step="1" inputmode="numeric" placeholder="min" aria-label="Lunghezza minima in centimetri" data-length-min-input></label>
-                <label>Max <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="max" aria-label="Lunghezza massima in centimetri" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget"></label>
+              <div class="filters-slider">
+                <label for="lengthRange">Lunghezza desiderata</label>
+                <div class="filters-slider__topline">
+                  <span>Valore</span>
+                  <strong data-length-value>-</strong>
+                </div>
+                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 200" aria-label="Lunghezza massima in centimetri" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget">
+                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range data-track="click_catalog_filter" data-filter-name="lengthTarget">
               </div>
-              <div class="filters-dimension-row">
-                <strong>Larghezza</strong>
-                <label>Min <input type="number" name="widthMinimum" min="0" step="1" inputmode="numeric" placeholder="min" aria-label="Larghezza minima in centimetri" data-width-min-input></label>
-                <label>Max <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="max" aria-label="Larghezza massima in centimetri" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget"></label>
+              <div class="filters-slider">
+                <label for="widthRange">Larghezza desiderata</label>
+                <div class="filters-slider__topline">
+                  <span>Valore</span>
+                  <strong data-width-value>-</strong>
+                </div>
+                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Es. 120" aria-label="Larghezza massima in centimetri" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget">
+                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range data-track="click_catalog_filter" data-filter-name="widthTarget">
               </div>
               <p class="filters-field__note">Tolleranza automatica fino a 15 cm in più rispetto alla misura inserita.</p>
             </div>
+
+            <details class="filters-accordion" open>
+              <summary>Sottocategorie</summary>
+              <div class="filters-accordion__content" data-subcategory-options></div>
+            </details>
 
           </form>
         </aside>

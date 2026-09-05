@@ -1,26 +1,47 @@
 {
   "categories": [
-    "Categoria",
+    "Ceramiche",
     "Khatam",
-    "Kilim",
     "Papier-mâché",
-    "Runner",
     "Senza categoria",
-    "Tappeto",
-    "Tappeto Antico",
-    "Tappeto classico",
-    "Tappeto contemporaneo",
-    "Tappeto figurativo",
-    "Tappeto Fine",
-    "Test"
+    "Tappeti"
   ],
+  "subcategoriesByCategory": {
+    "Ceramiche": [
+      "Altri oggetti",
+      "Ciotole",
+      "Piatti",
+      "Vasi"
+    ],
+    "Khatam": [
+      "Altri oggetti",
+      "Astucci",
+      "Cofanetti",
+      "Scatole"
+    ],
+    "Papier-mâché": [
+      "Astucci",
+      "Oggetti decorativi",
+      "Scatole"
+    ],
+    "Senza categoria": [],
+    "Tappeti": [
+      "100% Lana",
+      "Antico",
+      "Classico",
+      "Contemporaneo",
+      "Figurativo",
+      "Fine",
+      "Kilim",
+      "Runner"
+    ]
+  },
   "materials": [
     "Ceramica",
     "Cotone",
     "Lana",
     "Legno",
     "Seta",
-    "Test",
     "Trama E Ordito Di Cotone",
     "Trama E Ordito Di Lana",
     "Trama E Ordito Di Seta",
@@ -29,23 +50,35 @@
   ],
   "origins": [
     "Caucaso",
-    "Iran",
-    "Test"
+    "Iran"
   ],
   "availabilities": [
     "Disponibile"
   ],
   "fallbackCategory": "Senza categoria",
   "categoryLabelsEn": {
-    "Tappeto": "Rug",
-    "Tappeto classico": "Classic rug",
-    "Tappeto Antico": "Antique rug",
-    "Tappeto figurativo": "Figurative Rug",
-    "Tappeto Fine": "Fine rug",
-    "Kilim": "Kilim",
-    "Test": "Test",
+    "Tappeti": "Rugs",
     "Khatam": "Khatam",
-    "Papier-mâché": "Papier-mâché"
+    "Papier-mâché": "Papier-mâché",
+    "Ceramiche": "Ceramics",
+    "Senza categoria": "Uncategorized"
+  },
+  "subcategoryLabelsEn": {
+    "Classico": "Classic",
+    "Antico": "Antique",
+    "Fine": "Fine",
+    "Contemporaneo": "Contemporary",
+    "Figurativo": "Figurative",
+    "Kilim": "Kilim",
+    "Runner": "Runner",
+    "Astucci": "Cases",
+    "Scatole": "Boxes",
+    "Cofanetti": "Caskets",
+    "Altri oggetti": "Other objects",
+    "Oggetti decorativi": "Decorative objects",
+    "Vasi": "Vases",
+    "Piatti": "Plates",
+    "Ciotole": "Bowls"
   },
   "materialLabelsEn": {
     "Lana": "wool",
@@ -54,11 +87,8 @@
     "Vello In Lana": "wool pile",
     "Trama E Ordito Di Lana": "warp and weft wool",
     "Trama E Ordito Di Seta": "warp and weft silk",
-    "Vello Misto Lana E Seta": "wool and silk pile",
-    "Test": "Test"
+    "Vello Misto Lana E Seta": "wool and silk pile"
   },
-  "originLabelsEn": {
-    "Test": "Test"
-  },
+  "originLabelsEn": {},
   "availabilityLabelsEn": {}
 }

@@ -9,8 +9,6 @@ const widthValue = document.querySelector("[data-width-value]");
 const lengthValue = document.querySelector("[data-length-value]");
 const widthInput = document.querySelector("[data-width-input]");
 const lengthInput = document.querySelector("[data-length-input]");
-const widthMinimumInput = document.querySelector("[data-width-min-input]");
-const lengthMinimumInput = document.querySelector("[data-length-min-input]");
 const widthRange = document.querySelector("[data-width-range]");
 const lengthRange = document.querySelector("[data-length-range]");
 const openFiltersButton = document.querySelector("[data-open-filters]");
@@ -18,7 +16,7 @@ const closeFiltersButton = document.querySelector("[data-close-filters]");
 const filtersPanel = document.querySelector("[data-filters-panel]");
 const filtersOverlay = document.querySelector("[data-filters-overlay]");
 const categoryOptions = document.querySelector("[data-category-options]");
-const materialOptions = document.querySelector("[data-material-options]");
+const subcategoryOptions = document.querySelector("[data-subcategory-options]");
 const searchInput = catalogForm?.elements?.namedItem("search") || null;
 const viewToggle = document.querySelector("[data-view-toggle]");
 const viewButtons = Array.from(document.querySelectorAll("[data-view-columns]"));
@@ -232,6 +230,12 @@ function applyInitialFiltersFromUrl() {
     if (initialSearch) {
         searchInput.value = initialSearch;
     }
+    const requestedSubcategory = new URLSearchParams(window.location.search).get("subcategory");
+    if (requestedSubcategory && subcategoryOptions) {
+        const checkbox = Array.from(subcategoryOptions.querySelectorAll("input[name='subcategories']"))
+            .find((input) => normalizeText(input.value) === normalizeText(requestedSubcategory));
+        if (checkbox instanceof HTMLInputElement) checkbox.checked = true;
+    }
 }
 
 function translateCategory(value) {
@@ -302,6 +306,18 @@ function getUniqueCategories(products) {
     )).sort((left, right) => left.localeCompare(right, catalogI18n.locale));
 }
 
+function getProductSubcategories(product) {
+    const values = isEnglishCatalog && Array.isArray(product.subcategoriesEn) && product.subcategoriesEn.length
+        ? product.subcategoriesEn
+        : product.subcategories;
+    return (Array.isArray(values) ? values : []).map((item) => String(item || "").trim()).filter(Boolean);
+}
+
+function getUniqueSubcategories(products) {
+    return Array.from(new Set(products.flatMap(getProductSubcategories)))
+        .sort((left, right) => left.localeCompare(right, catalogI18n.locale));
+}
+
 function extractMaterialTokens(materialValue) {
     return String(materialValue || "")
         .split(/,|\/|&|\band\b/gi)
@@ -360,10 +376,10 @@ function renderDynamicFilterOptions() {
         syncQuickCategoryControl(quickCategorySelect.value);
     }
 
-    if (materialOptions) {
-        materialOptions.innerHTML = catalogProducts.length
-            ? getUniqueMaterials(catalogProducts)
-                .map((material) => createFilterCheckbox("materials", material, translateMaterial(material)))
+    if (subcategoryOptions) {
+        subcategoryOptions.innerHTML = catalogProducts.length
+            ? getUniqueSubcategories(catalogProducts)
+                .map((subcategory) => createFilterCheckbox("subcategories", subcategory, subcategory))
                 .join("")
             : "";
     }
@@ -465,6 +481,7 @@ function getFormState() {
         return {
             search: "",
             categories: [],
+            subcategories: [],
             materials: [],
             widthMinimum: null,
             lengthMinimum: null,
@@ -477,7 +494,8 @@ function getFormState() {
     return {
         search: normalizeText(String(formData.get("search") || "")),
         categories: formData.getAll("categories").map((value) => String(value)),
-        materials: formData.getAll("materials").map((value) => normalizeText(String(value))),
+        subcategories: formData.getAll("subcategories").map((value) => String(value)),
+        materials: [],
         widthMinimum: minimumWidth,
         lengthMinimum: minimumLength,
         widthTarget: parseOptionalDimension(formData.get("widthTarget")),
@@ -515,6 +533,8 @@ function matchesSearch(product, query) {
         product.categoryEn,
         ...(Array.isArray(product.categories) ? product.categories : []),
         ...(Array.isArray(product.categoriesEn) ? product.categoriesEn : []),
+        ...(Array.isArray(product.subcategories) ? product.subcategories : []),
+        ...(Array.isArray(product.subcategoriesEn) ? product.subcategoriesEn : []),
         product.material,
         product.materialEn,
         product.origin,
@@ -543,7 +563,7 @@ function filterProducts(filters) {
         return languageMatch
             && matchesSearch(product, filters.search)
             && (!filters.categories.length || filters.categories.some((category) => productCategories.includes(category)))
-            && matchesMaterials(product, filters.materials)
+            && (!filters.subcategories.length || filters.subcategories.some((subcategory) => getProductSubcategories(product).includes(subcategory)))
             && matchesDimensions(product, filters);
     });
 }
@@ -700,8 +720,8 @@ function renderActiveFilters(filters) {
         chips.push(translateCategory(category));
     });
 
-    filters.materials.forEach((material) => {
-        chips.push(`${catalogI18n.labels.material}: ${translateMaterial(material)}`);
+    filters.subcategories.forEach((subcategory) => {
+        chips.push(subcategory);
     });
 
     if (filters.widthTarget !== null) {
@@ -1157,18 +1177,6 @@ if (catalogForm) {
         if (target === lengthInput) {
             syncRangeFromInput(lengthInput, lengthRange, maxLength);
             renderSliderValues(getFormState());
-            renderCatalog();
-            return;
-        }
-
-        if (target === widthMinimumInput) {
-            minimumWidth = parseOptionalDimension(widthMinimumInput.value);
-            renderCatalog();
-            return;
-        }
-
-        if (target === lengthMinimumInput) {
-            minimumLength = parseOptionalDimension(lengthMinimumInput.value);
             renderCatalog();
             return;
         }

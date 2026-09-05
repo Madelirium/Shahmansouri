@@ -7,13 +7,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bakhtiari-rug-medallion",
     "titleEn": "Baktiari",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -84,13 +90,19 @@
     "hasEnglish": true,
     "slugEn": "persian-burujerd-rug-all-over",
     "titleEn": "Burujerd",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -161,13 +173,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bakhtiari-rug-garden-design",
     "titleEn": "Baktiari",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -238,13 +256,19 @@
     "hasEnglish": true,
     "slugEn": "persian-qashqai-rug-medallion",
     "titleEn": "Qashqai",
-    "category": "Tappeto Antico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Antico"
+      "Tappeti"
     ],
-    "categoryEn": "Antique rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Antique rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Antico"
+    ],
+    "subcategoriesEn": [
+      "Antique"
     ],
     "materials": [
       "Trama E Ordito Di Lana",
@@ -315,13 +339,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bakhtiari-rug-decorated-garden",
     "titleEn": "Baktiari",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -392,13 +422,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bakhtiari-rug-classic-floral",
     "titleEn": "Baktiari",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -469,13 +505,19 @@
     "hasEnglish": true,
     "slugEn": "persian-malayer-rug-tribal-medallion",
     "titleEn": "Malayer",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -546,13 +588,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bakhtiari-rug-double-medallion",
     "titleEn": "Baktiari",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -623,13 +671,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bijar-rug-medallion",
     "titleEn": "Bijar",
-    "category": "Tappeto Antico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Antico"
+      "Tappeti"
     ],
-    "categoryEn": "Antique rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Antique rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Antico"
+    ],
+    "subcategoriesEn": [
+      "Antique"
     ],
     "materials": [
       "Trama E Ordito Di Lana",
@@ -700,13 +754,19 @@
     "hasEnglish": true,
     "slugEn": "persian-armanibaf-rug-tribal",
     "titleEn": "ArmaniBaf",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -777,13 +837,19 @@
     "hasEnglish": true,
     "slugEn": "persian-hosseinabad-rug-medallion",
     "titleEn": "Hosseinabad",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -854,13 +920,19 @@
     "hasEnglish": true,
     "slugEn": "persian-tafresh-rug-medallion",
     "titleEn": "Tafresh",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -931,13 +1003,19 @@
     "hasEnglish": true,
     "slugEn": "persian-senneh-rug-geometric",
     "titleEn": "Senneh",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1008,13 +1086,19 @@
     "hasEnglish": true,
     "slugEn": "persian-senneh-rug-compact-medallion",
     "titleEn": "Senneh",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1085,13 +1169,19 @@
     "hasEnglish": true,
     "slugEn": "persian-senneh-rug-contrast-medallion",
     "titleEn": "Senneh",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1162,13 +1252,19 @@
     "hasEnglish": true,
     "slugEn": "persian-tabriz-rug-birds-figurative",
     "titleEn": "Tabriz",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1239,13 +1335,19 @@
     "hasEnglish": true,
     "slugEn": "persian-tabriz-rug-black-medallion",
     "titleEn": "Tabriz",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1310,13 +1412,19 @@
     "hasEnglish": true,
     "slugEn": "persian-tabriz-rug-red-medallion",
     "titleEn": "Tabriz",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1387,13 +1495,19 @@
     "hasEnglish": true,
     "slugEn": "persian-abadeh-rug-mosque-figurative",
     "titleEn": "Abadeh",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1464,13 +1578,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bakhtiari-rug-couple-figurative",
     "titleEn": "Baktiari",
-    "category": "Tappeto figurativo",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto figurativo"
+      "Tappeti"
     ],
-    "categoryEn": "Figurative Rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Figurative Rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Figurativo"
+    ],
+    "subcategoriesEn": [
+      "Figurative"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1541,13 +1661,19 @@
     "hasEnglish": true,
     "slugEn": "persian-bakhtiari-rug-garden-panel",
     "titleEn": "Baktiari",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -1618,13 +1744,19 @@
     "hasEnglish": true,
     "slugEn": "white-turkmen-persian-rug-121x98",
     "titleEn": "Turkmen",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Lana",
@@ -1695,13 +1827,19 @@
     "hasEnglish": true,
     "slugEn": "sirdjand-persian-rug-136x76",
     "titleEn": "Sirdjand",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Lana",
@@ -1772,13 +1910,19 @@
     "hasEnglish": true,
     "slugEn": "caucasian-baku-rug-210x146",
     "titleEn": "Baku",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Lana",
@@ -1849,13 +1993,19 @@
     "hasEnglish": true,
     "slugEn": "antique-caucasian-daghistan-rug-264x106",
     "titleEn": "Daghistan",
-    "category": "Tappeto Antico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Antico"
+      "Tappeti"
     ],
-    "categoryEn": "Antique rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Antique rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Antico"
+    ],
+    "subcategoriesEn": [
+      "Antique"
     ],
     "materials": [
       "Lana",
@@ -1926,13 +2076,19 @@
     "hasEnglish": true,
     "slugEn": "antique-caucasian-derbend-rug-190x123",
     "titleEn": "Derbend",
-    "category": "Tappeto Antico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Antico"
+      "Tappeti"
     ],
-    "categoryEn": "Antique rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Antique rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Antico"
+    ],
+    "subcategoriesEn": [
+      "Antique"
     ],
     "materials": [
       "Lana",
@@ -2003,13 +2159,19 @@
     "hasEnglish": true,
     "slugEn": "isfahan-silk-persian-rug-163x105",
     "titleEn": "Isfahan",
-    "category": "Tappeto Fine",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Fine"
+      "Tappeti"
     ],
-    "categoryEn": "Fine rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Fine rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Fine"
+    ],
+    "subcategoriesEn": [
+      "Fine"
     ],
     "materials": [
       "Trama E Ordito Di Seta",
@@ -2082,13 +2244,19 @@
     "hasEnglish": true,
     "slugEn": "nain-6la-persian-rug-92x63",
     "titleEn": "Nain 6La",
-    "category": "Tappeto Fine",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Fine"
+      "Tappeti"
     ],
-    "categoryEn": "Fine rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Fine rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Fine"
+    ],
+    "subcategoriesEn": [
+      "Fine"
     ],
     "materials": [
       "Trama E Ordito Di Cotone",
@@ -2159,13 +2327,19 @@
     "hasEnglish": true,
     "slugEn": "qom-persian-rug-141x71",
     "titleEn": "Qom",
-    "category": "Tappeto classico",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto classico"
+      "Tappeti"
     ],
-    "categoryEn": "Classic rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Classic rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [
       "Lana",
@@ -2236,12 +2410,18 @@
     "hasEnglish": true,
     "slugEn": "vintage-bakhtiari-sumak-khorjin",
     "titleEn": "Khorjin",
-    "category": "Kilim",
+    "category": "Tappeti",
     "categories": [
+      "Tappeti"
+    ],
+    "categoryEn": "Rugs",
+    "categoriesEn": [
+      "Rugs"
+    ],
+    "subcategories": [
       "Kilim"
     ],
-    "categoryEn": "Kilim",
-    "categoriesEn": [
+    "subcategoriesEn": [
       "Kilim"
     ],
     "materials": [
@@ -2311,13 +2491,19 @@
     "hasEnglish": true,
     "slugEn": "signed-persian-isfahan-silk-rug-105x75",
     "titleEn": "Isfahan",
-    "category": "Tappeto Fine",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Fine"
+      "Tappeti"
     ],
-    "categoryEn": "Fine rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Fine rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Fine"
+    ],
+    "subcategoriesEn": [
+      "Fine"
     ],
     "materials": [
       "Trama E Ordito Di Seta",
@@ -2391,13 +2577,19 @@
     "hasEnglish": true,
     "slugEn": "signed-persian-isfahan-silk-rug-130x85",
     "titleEn": "Isfahan",
-    "category": "Tappeto Fine",
+    "category": "Tappeti",
     "categories": [
-      "Tappeto Fine"
+      "Tappeti"
     ],
-    "categoryEn": "Fine rug",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Fine rug"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Fine"
+    ],
+    "subcategoriesEn": [
+      "Fine"
     ],
     "materials": [
       "Trama E Ordito Di Seta",
@@ -2471,13 +2663,19 @@
     "hasEnglish": true,
     "slugEn": "baluc-turkmeno-80x37-en-1",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2530,13 +2728,19 @@
     "hasEnglish": true,
     "slugEn": "beluci-turkmeno-73x54-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2589,13 +2793,19 @@
     "hasEnglish": true,
     "slugEn": "baluc-turkmeno-56x51-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2648,13 +2858,19 @@
     "hasEnglish": true,
     "slugEn": "turkmeno-67x65-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2707,13 +2923,19 @@
     "hasEnglish": true,
     "slugEn": "turkmeno-67x61-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2766,13 +2988,19 @@
     "hasEnglish": true,
     "slugEn": "turkmeno-78x70-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2825,13 +3053,19 @@
     "hasEnglish": true,
     "slugEn": "turkmeno-73x68-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2884,13 +3118,19 @@
     "hasEnglish": true,
     "slugEn": "turkmeno-102x53-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -2943,13 +3183,19 @@
     "hasEnglish": true,
     "slugEn": "kilim-74x57-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Kilim"
+    ],
+    "subcategoriesEn": [
+      "Kilim"
     ],
     "materials": [],
     "material": "",
@@ -3002,13 +3248,19 @@
     "hasEnglish": true,
     "slugEn": "saruk-75x54-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3061,13 +3313,19 @@
     "hasEnglish": true,
     "slugEn": "goltok-100x87-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3120,13 +3378,19 @@
     "hasEnglish": true,
     "slugEn": "karabag-227x93-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3179,13 +3443,19 @@
     "hasEnglish": true,
     "slugEn": "saruk-75x59-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3238,13 +3508,19 @@
     "hasEnglish": true,
     "slugEn": "saruk-75x60-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3297,13 +3573,19 @@
     "hasEnglish": true,
     "slugEn": "shirwan-132x100-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Antico"
+    ],
+    "subcategoriesEn": [
+      "Antique"
     ],
     "materials": [],
     "material": "",
@@ -3314,8 +3596,8 @@
     "widthCm": 100,
     "lengthCm": 132,
     "dimensions": "132 x 100 cm",
-    "origin": "",
-    "originEn": "",
+    "origin": "Caucaso",
+    "originEn": "Caucasus",
     "description": "",
     "longDescription": "",
     "descriptionEn": "",
@@ -3356,13 +3638,19 @@
     "hasEnglish": true,
     "slugEn": "senneh-95x70-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3415,13 +3703,19 @@
     "hasEnglish": true,
     "slugEn": "karabag-antico-170x115-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3474,13 +3768,19 @@
     "hasEnglish": true,
     "slugEn": "esfahan-117x63-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3533,13 +3833,19 @@
     "hasEnglish": true,
     "slugEn": "zigler-89x59-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3592,13 +3898,19 @@
     "hasEnglish": true,
     "slugEn": "saruk-67x63-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3651,13 +3963,19 @@
     "hasEnglish": true,
     "slugEn": "shirwan-149x109-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Antico"
+    ],
+    "subcategoriesEn": [
+      "Antique"
     ],
     "materials": [],
     "material": "",
@@ -3668,8 +3986,8 @@
     "widthCm": 109,
     "lengthCm": 149,
     "dimensions": "149 x 109 cm",
-    "origin": "",
-    "originEn": "",
+    "origin": "Caucaso",
+    "originEn": "Caucasus",
     "description": "",
     "longDescription": "",
     "descriptionEn": "",
@@ -3712,13 +4030,17 @@
     "titleEn": "",
     "category": "Khatam",
     "categories": [
-      "Khatam",
-      "Senza categoria"
+      "Khatam"
     ],
     "categoryEn": "Khatam",
     "categoriesEn": [
-      "Khatam",
-      "Senza categoria"
+      "Khatam"
+    ],
+    "subcategories": [
+      "Astucci"
+    ],
+    "subcategoriesEn": [
+      "Cases"
     ],
     "materials": [],
     "material": "",
@@ -3729,7 +4051,7 @@
     "widthCm": 5,
     "lengthCm": 20,
     "dimensions": "20 x 5 cm",
-    "origin": "",
+    "origin": "Iran",
     "originEn": "",
     "description": "",
     "longDescription": "",
@@ -3775,13 +4097,17 @@
     "titleEn": "",
     "category": "Khatam",
     "categories": [
-      "Khatam",
-      "Senza categoria"
+      "Khatam"
     ],
     "categoryEn": "Khatam",
     "categoriesEn": [
-      "Khatam",
-      "Senza categoria"
+      "Khatam"
+    ],
+    "subcategories": [
+      "Astucci"
+    ],
+    "subcategoriesEn": [
+      "Cases"
     ],
     "materials": [],
     "material": "",
@@ -3792,7 +4118,7 @@
     "widthCm": 5,
     "lengthCm": 21,
     "dimensions": "21 x 5 cm",
-    "origin": "",
+    "origin": "Iran",
     "originEn": "",
     "description": "",
     "longDescription": "",
@@ -3836,13 +4162,19 @@
     "hasEnglish": true,
     "slugEn": "gabbeh-146x105-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -3853,7 +4185,7 @@
     "widthCm": 105,
     "lengthCm": 146,
     "dimensions": "146 x 105 cm",
-    "origin": "",
+    "origin": "Iran",
     "originEn": "",
     "description": "",
     "longDescription": "",
@@ -3897,13 +4229,17 @@
     "titleEn": "",
     "category": "Khatam",
     "categories": [
-      "Khatam",
-      "Senza categoria"
+      "Khatam"
     ],
     "categoryEn": "Khatam",
     "categoriesEn": [
-      "Khatam",
-      "Senza categoria"
+      "Khatam"
+    ],
+    "subcategories": [
+      "Scatole"
+    ],
+    "subcategoriesEn": [
+      "Boxes"
     ],
     "materials": [],
     "material": "",
@@ -3914,7 +4250,7 @@
     "widthCm": 11,
     "lengthCm": 17,
     "dimensions": "17 x 11 cm",
-    "origin": "",
+    "origin": "Iran",
     "originEn": "",
     "description": "",
     "longDescription": "",
@@ -3959,13 +4295,19 @@
     "hasEnglish": true,
     "slugEn": "saruk-antico-192x126-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Antico"
+    ],
+    "subcategoriesEn": [
+      "Antique"
     ],
     "materials": [],
     "material": "",
@@ -3976,7 +4318,7 @@
     "widthCm": 126,
     "lengthCm": 192,
     "dimensions": "192 x 126 cm",
-    "origin": "",
+    "origin": "Iran",
     "originEn": "",
     "description": "",
     "longDescription": "",
@@ -4018,13 +4360,19 @@
     "hasEnglish": true,
     "slugEn": "malayer-130x107-en",
     "titleEn": "",
-    "category": "Senza categoria",
+    "category": "Tappeti",
     "categories": [
-      "Senza categoria"
+      "Tappeti"
     ],
-    "categoryEn": "Senza categoria",
+    "categoryEn": "Rugs",
     "categoriesEn": [
-      "Senza categoria"
+      "Rugs"
+    ],
+    "subcategories": [
+      "Classico"
+    ],
+    "subcategoriesEn": [
+      "Classic"
     ],
     "materials": [],
     "material": "",
@@ -4035,7 +4383,7 @@
     "widthCm": 107,
     "lengthCm": 130,
     "dimensions": "130 x 107 cm",
-    "origin": "",
+    "origin": "Iran",
     "originEn": "",
     "description": "",
     "longDescription": "",
@@ -4085,6 +4433,8 @@
     "categoriesEn": [
       "Papier-mâché"
     ],
+    "subcategories": [],
+    "subcategoriesEn": [],
     "materials": [],
     "material": "",
     "materialsEn": [],
@@ -4145,6 +4495,12 @@
     "categoryEn": "Khatam",
     "categoriesEn": [
       "Khatam"
+    ],
+    "subcategories": [
+      "Scatole"
+    ],
+    "subcategoriesEn": [
+      "Boxes"
     ],
     "materials": [],
     "material": "",
@@ -4208,6 +4564,8 @@
     "categoriesEn": [
       "Papier-mâché"
     ],
+    "subcategories": [],
+    "subcategoriesEn": [],
     "materials": [],
     "material": "",
     "materialsEn": [],
@@ -4240,6 +4598,207 @@
     "seoTitle": "Papier-mâché | Shahmansouri",
     "seoDescription": "",
     "seoTitleEn": "Papier-mâché | Shahmansouri",
+    "seoDescriptionEn": "",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": ""
+  },
+  {
+    "id": "nain-6la-221x51",
+    "slug": "nain-6la-221x51",
+    "title": "Nain 6la",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "nain-6la-221x51-en",
+    "titleEn": "",
+    "category": "Tappeti",
+    "categories": [
+      "Tappeti"
+    ],
+    "categoryEn": "Rugs",
+    "categoriesEn": [
+      "Rugs"
+    ],
+    "subcategories": [
+      "Fine"
+    ],
+    "subcategoriesEn": [
+      "Fine"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 51,
+    "lengthCm": 221,
+    "dimensions": "221 x 51 cm",
+    "origin": "Iran",
+    "originEn": "",
+    "description": "",
+    "longDescription": "",
+    "descriptionEn": "",
+    "longDescriptionEn": "",
+    "alt": "Nain 6la",
+    "altEn": "",
+    "tags": [],
+    "tagsEn": [],
+    "coverImage": "/catalogo/products/media/nain-6la-221x51-01.webp",
+    "coverImage360": "/catalogo/products/media/nain-6la-221x51-01-360.webp",
+    "coverImage640": "",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/nain-6la-221x51-01.webp",
+      "/catalogo/products/media/nain-6la-221x51-02.webp",
+      "/catalogo/products/media/nain-6la-221x51-03.webp"
+    ],
+    "seoTitle": "Nain 6la | Shahmansouri",
+    "seoDescription": "",
+    "seoTitleEn": "Nain 6la | Shahmansouri",
+    "seoDescriptionEn": "",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "TAP-002"
+  },
+  {
+    "id": "kashkuli-115x81",
+    "slug": "kashkuli-115x81",
+    "title": "Kashkuli",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "kashkuli-115x81-en",
+    "titleEn": "",
+    "category": "Tappeti",
+    "categories": [
+      "Tappeti"
+    ],
+    "categoryEn": "Rugs",
+    "categoriesEn": [
+      "Rugs"
+    ],
+    "subcategories": [
+      "100% Lana"
+    ],
+    "subcategoriesEn": [
+      "100% Lana"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 81,
+    "lengthCm": 115,
+    "dimensions": "115 x 81 cm",
+    "origin": "Iran",
+    "originEn": "",
+    "description": "",
+    "longDescription": "",
+    "descriptionEn": "",
+    "longDescriptionEn": "",
+    "alt": "Kashkuli",
+    "altEn": "",
+    "tags": [],
+    "tagsEn": [],
+    "coverImage": "/catalogo/products/media/kashkuli-115x81-01.webp",
+    "coverImage360": "/catalogo/products/media/kashkuli-115x81-01-360.webp",
+    "coverImage640": "/catalogo/products/media/kashkuli-115x81-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/kashkuli-115x81-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/kashkuli-115x81-01.webp",
+      "/catalogo/products/media/kashkuli-115x81-02.webp",
+      "/catalogo/products/media/kashkuli-115x81-03.webp"
+    ],
+    "seoTitle": "Kashkuli | Shahmansouri",
+    "seoDescription": "",
+    "seoTitleEn": "Kashkuli | Shahmansouri",
+    "seoDescriptionEn": "",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "TAP-001"
+  },
+  {
+    "id": "tabriz-197x82",
+    "slug": "tabriz-197x82",
+    "title": "Tabriz",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "tabriz-197x82-en",
+    "titleEn": "",
+    "category": "Tappeti",
+    "categories": [
+      "Tappeti"
+    ],
+    "categoryEn": "Rugs",
+    "categoriesEn": [
+      "Rugs"
+    ],
+    "subcategories": [
+      "Fine"
+    ],
+    "subcategoriesEn": [
+      "Fine"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 82,
+    "lengthCm": 197,
+    "dimensions": "197 x 82 cm",
+    "origin": "Iran",
+    "originEn": "",
+    "description": "",
+    "longDescription": "",
+    "descriptionEn": "",
+    "longDescriptionEn": "",
+    "alt": "Tabriz",
+    "altEn": "",
+    "tags": [],
+    "tagsEn": [],
+    "coverImage": "/catalogo/products/media/tabriz-197x82-01.webp",
+    "coverImage360": "/catalogo/products/media/tabriz-197x82-01-360.webp",
+    "coverImage640": "/catalogo/products/media/tabriz-197x82-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/tabriz-197x82-01.webp",
+      "/catalogo/products/media/tabriz-197x82-02.webp",
+      "/catalogo/products/media/tabriz-197x82-03.webp"
+    ],
+    "seoTitle": "Tabriz | Shahmansouri",
+    "seoDescription": "",
+    "seoTitleEn": "Tabriz | Shahmansouri",
     "seoDescriptionEn": "",
     "priceOnRequest": true,
     "priceValue": null,
