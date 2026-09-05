@@ -4812,5 +4812,70 @@
     "brand": "Shahmansouri",
     "gtin": "",
     "mpn": ""
+  },
+  {
+    "id": "saruk-155x105",
+    "slug": "saruk-155x105",
+    "title": "Saruk",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "saruk-155x105-en",
+    "titleEn": "",
+    "category": "Tappeti",
+    "categories": [
+      "Tappeti"
+    ],
+    "categoryEn": "Rugs",
+    "categoriesEn": [
+      "Rugs"
+    ],
+    "subcategories": [
+      "Fine"
+    ],
+    "subcategoriesEn": [
+      "Fine"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 105,
+    "lengthCm": 155,
+    "dimensions": "155 x 105 cm",
+    "origin": "Iran",
+    "originEn": "",
+    "description": "",
+    "longDescription": "",
+    "descriptionEn": "",
+    "longDescriptionEn": "",
+    "alt": "Saruk",
+    "altEn": "",
+    "tags": [],
+    "tagsEn": [],
+    "coverImage": "/catalogo/products/media/saruk-155x105-01.webp",
+    "coverImage360": "/catalogo/products/media/saruk-155x105-01-360.webp",
+    "coverImage640": "/catalogo/products/media/saruk-155x105-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/saruk-155x105-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/saruk-155x105-01.webp"
+    ],
+    "seoTitle": "Saruk | Shahmansouri",
+    "seoDescription": "",
+    "seoTitleEn": "Saruk | Shahmansouri",
+    "seoDescriptionEn": "",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "TAP-004"
   }
 ]
