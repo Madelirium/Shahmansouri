@@ -384,6 +384,20 @@ function renderDynamicFilterOptions() {
             : "";
     }
 
+    buildTypeTree(quickCategoryPanel, false);
+    if (categoryOptions) {
+        categoryOptions.hidden = true;
+        let tree = document.querySelector("[data-mobile-type-tree]");
+        if (!tree) {
+            tree = document.createElement("div");
+            tree.dataset.mobileTypeTree = "";
+            categoryOptions.after(tree);
+            categoryOptions.closest("details").open = false;
+        }
+        buildTypeTree(tree, true);
+    }
+    if (subcategoryOptions) subcategoryOptions.closest("details").hidden = true;
+
     if (quickMaterialSelect) {
         const allMaterialsLabel = isEnglishCatalog ? "All materials" : "Tutti i materiali";
         quickMaterialSelect.innerHTML = [
@@ -393,6 +407,73 @@ function renderDynamicFilterOptions() {
             ))
         ].join("");
     }
+}
+
+function buildTypeTree(host, mobile) {
+    if (!host) return;
+    host.replaceChildren();
+    host.setAttribute("role", "group");
+    getUniqueCategories(catalogProducts).forEach((category, index) => {
+        const row = document.createElement("div");
+        row.className = "type-tree-row";
+        const choose = (subtype = "") => {
+            setQuickCheckboxFilter("categories", category);
+            setQuickCheckboxFilter("subcategories", subtype);
+            if (quickCategorySelect) quickCategorySelect.value = category;
+            renderCatalog();
+            if (!mobile) setQuickCategoryOpen(false);
+        };
+        const name = document.createElement("button");
+        let openSubtypes;
+        name.type = "button";
+        name.textContent = translateCategory(category);
+        name.addEventListener("click", () => {
+            choose();
+            if (mobile) openSubtypes?.();
+        });
+        row.append(name);
+        const subtypes = getUniqueSubcategories(catalogProducts.filter((product) => getProductCategoryValues(product).includes(category)));
+        if (subtypes.length) {
+            const arrow = document.createElement("button");
+            arrow.type = "button";
+            arrow.className = "type-tree-arrow";
+            arrow.textContent = "▸";
+            arrow.setAttribute("aria-label", `${isEnglishCatalog ? "Subtypes" : "Sottotipologie"}: ${category}`);
+            arrow.setAttribute("aria-expanded", "false");
+            const panel = document.createElement("div");
+            panel.className = "type-tree-children";
+            panel.id = `type-tree-${mobile ? "mobile" : "desktop"}-${index}`;
+            panel.hidden = true;
+            arrow.setAttribute("aria-controls", panel.id);
+            const expand = (open) => {
+                host.querySelectorAll(".type-tree-children").forEach((item) => { item.hidden = true; });
+                host.querySelectorAll("[aria-expanded]").forEach((item) => item.setAttribute("aria-expanded", "false"));
+                host.querySelectorAll(".type-tree-arrow").forEach((item) => { item.textContent = "▸"; });
+                panel.hidden = !open;
+                arrow.setAttribute("aria-expanded", String(open));
+                arrow.textContent = open ? "▾" : "▸";
+                if (mobile) name.setAttribute("aria-expanded", String(open));
+            };
+            if (mobile) {
+                name.setAttribute("aria-controls", panel.id);
+                name.setAttribute("aria-expanded", "false");
+                openSubtypes = () => expand(panel.hidden);
+            }
+            arrow.addEventListener("click", () => expand(panel.hidden));
+            row.addEventListener("mouseenter", () => { if (!mobile && matchMedia("(hover: hover)").matches) expand(true); });
+            row.addEventListener("mouseleave", () => { if (!mobile && !row.contains(document.activeElement)) expand(false); });
+            row.addEventListener("keydown", (event) => { if (event.key === "Escape" && !panel.hidden) { event.stopPropagation(); expand(false); arrow.focus(); } });
+            subtypes.forEach((subtype) => {
+                const child = document.createElement("button");
+                child.type = "button";
+                child.textContent = subtype;
+                child.addEventListener("click", () => choose(subtype));
+                panel.append(child);
+            });
+            row.append(arrow, panel);
+        }
+        host.append(row);
+    });
 }
 
 function syncQuickCategoryControl(value) {
@@ -475,6 +556,13 @@ function setQuickMeasureUnit(unit) {
 
     renderCatalog();
 }
+
+document.querySelectorAll("[data-mobile-minimum]").forEach((input) => {
+    input.addEventListener("input", () => {
+        if (input.dataset.mobileMinimum === "length") minimumLength = parseOptionalDimension(input.value);
+        else minimumWidth = parseOptionalDimension(input.value);
+    });
+});
 
 function getFormState() {
     if (!catalogForm) {
@@ -947,6 +1035,9 @@ function syncInputFromRange(range, input) {
 }
 
 function renderCatalog() {
+    document.querySelectorAll("[data-mobile-minimum]").forEach((input) => {
+        if (input !== document.activeElement) input.value = (input.dataset.mobileMinimum === "length" ? minimumLength : minimumWidth) ?? "";
+    });
     if (!productGrid || !resultsCount || !emptyState) {
         return;
     }
@@ -1216,6 +1307,21 @@ if (quickResetButton) {
 }
 
 if (quickMeasuresToggle) {
+    const measuresControl = quickMeasuresToggle.closest(".catalog-quick-measures");
+    let closeMeasuresTimer;
+    measuresControl?.addEventListener("mouseenter", () => {
+        clearTimeout(closeMeasuresTimer);
+        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+            setQuickMeasuresOpen(true);
+            setQuickCategoryOpen(false);
+            setQuickSortOpen(false);
+        }
+    });
+    measuresControl?.addEventListener("mouseleave", () => {
+        closeMeasuresTimer = setTimeout(() => {
+            if (!measuresControl.contains(document.activeElement)) setQuickMeasuresOpen(false);
+        }, 200);
+    });
     quickMeasuresToggle.addEventListener("click", () => {
         const isOpen = quickMeasuresToggle.getAttribute("aria-expanded") === "true";
         setQuickMeasuresOpen(!isOpen, !isOpen);
@@ -1227,6 +1333,19 @@ if (quickMeasuresToggle) {
 }
 
 if (quickCategoryToggle) {
+    const categoryControl = quickCategoryToggle.closest(".catalog-quick-category");
+    let closeCategoryTimer;
+    categoryControl?.addEventListener("mouseenter", () => {
+        clearTimeout(closeCategoryTimer);
+        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+            setQuickCategoryOpen(true);
+        }
+    });
+    categoryControl?.addEventListener("mouseleave", () => {
+        closeCategoryTimer = setTimeout(() => {
+            if (!categoryControl.contains(document.activeElement)) setQuickCategoryOpen(false);
+        }, 200);
+    });
     quickCategoryToggle.addEventListener("click", () => {
         const isOpen = quickCategoryToggle.getAttribute("aria-expanded") === "true";
         setQuickCategoryOpen(!isOpen, !isOpen);
@@ -1234,6 +1353,19 @@ if (quickCategoryToggle) {
 }
 
 if (quickSortToggle) {
+    const sortControl = quickSortToggle.closest(".catalog-quick-sort");
+    let closeSortTimer;
+    sortControl?.addEventListener("mouseenter", () => {
+        clearTimeout(closeSortTimer);
+        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+            setQuickSortOpen(true);
+        }
+    });
+    sortControl?.addEventListener("mouseleave", () => {
+        closeSortTimer = setTimeout(() => {
+            if (!sortControl.contains(document.activeElement)) setQuickSortOpen(false);
+        }, 200);
+    });
     quickSortToggle.addEventListener("click", () => {
         const isOpen = quickSortToggle.getAttribute("aria-expanded") === "true";
         setQuickSortOpen(!isOpen, !isOpen);
@@ -1443,15 +1575,7 @@ if (viewToggle && viewButtons.length) {
     });
 }
 
-if (mobileColumnsToggle instanceof HTMLButtonElement) {
-    applyMobileCatalogView(getSavedMobileColumnsPreference());
-
-    mobileColumnsToggle.addEventListener("click", () => {
-        const shouldUseTwoColumns = !productGrid?.classList.contains("product-grid--mobile-2cols");
-        saveMobileColumnsPreference(shouldUseTwoColumns);
-        applyMobileCatalogView(shouldUseTwoColumns);
-    });
-}
+productGrid?.classList.add("product-grid--mobile-2cols");
 
 async function loadCatalogProducts() {
     const response = await fetch("products.json", {

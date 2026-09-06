@@ -146,24 +146,16 @@
 
                         <div class="filters-field filters-field--split">
                             <span>Desired dimensions in cm</span>
-                            <div class="filters-slider">
-                                <label for="lengthRange">Desired length</label>
-                                <div class="filters-slider__topline">
-                                    <span>Value</span>
-                                    <strong data-length-value>-</strong>
-                                </div>
-                                <input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 200" aria-label="Maximum length in centimeters" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget">
-                                <input id="lengthRange" type="range" min="0" max="350" step="1" value="350" data-length-range data-track="click_catalog_filter" data-filter-name="lengthTarget">
-                            </div>
-                            <div class="filters-slider">
-                                <label for="widthRange">Desired width</label>
-                                <div class="filters-slider__topline">
-                                    <span>Value</span>
-                                    <strong data-width-value>-</strong>
-                                </div>
-                                <input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Ex. 120" aria-label="Maximum width in centimeters" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget">
-                                <input id="widthRange" type="range" min="0" max="350" step="1" value="350" data-width-range data-track="click_catalog_filter" data-filter-name="widthTarget">
-                            </div>
+<div class="filters-dimension-row">
+<span>Length</span>
+<label>Min<input type="number" min="0" step="1" inputmode="numeric" placeholder="Min" aria-label="Length min (cm)" data-mobile-minimum="length"></label>
+<label>Max<input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Max" aria-label="Maximum length in centimeters" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget"></label>
+</div>
+<div class="filters-dimension-row">
+<span>Width</span>
+<label>Min<input type="number" min="0" step="1" inputmode="numeric" placeholder="Min" aria-label="Width min (cm)" data-mobile-minimum="width"></label>
+<label>Max<input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Max" aria-label="Maximum width in centimeters" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget"></label>
+</div>
                             <p class="filters-field__note">Automatic tolerance up to 15 cm above the selected measurement.</p>
                         </div>
 
@@ -254,9 +246,6 @@
                         <h2>Current selection</h2>
                     </div>
                     <div class="catalog-toolbar__meta">
-                      <div class="catalog-mobile-view" data-mobile-view>
-                            <button type="button" class="catalog-mobile-view__button" data-mobile-columns-toggle data-label-default="2 columns" data-label-active="1 column" aria-pressed="false">2 columns</button>
-                        </div>
                         <p class="catalog-toolbar__count" data-results-count></p>
                     </div>
                 </div>
