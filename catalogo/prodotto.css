@@ -1,3 +1,13 @@
+@media (max-width: 768px) {
+  .product-gallery__hero {
+    touch-action: pan-y pinch-zoom;
+  }
+  .product-gallery__thumb-button[aria-pressed="true"] {
+    outline: 2px solid #7b1f16;
+    outline-offset: -2px;
+  }
+}
+
 :root {
   --product-bg: #650808;
   --product-page: #eedca1;
@@ -314,6 +324,67 @@ img {
   gap: 10px;
   padding: 12px;
   justify-content: start;
+}
+
+.product-gallery__dots {
+  display: none;
+}
+
+.product-back-to-catalog {
+  display: inline-block;
+  color: var(--product-text);
+  font-size: 13px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(123, 31, 22, 0.24);
+}
+
+.product-page-utility {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: -8px 0 16px;
+}
+
+.product-page-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  margin: 16px 0 0;
+}
+
+.product-page-tools__link,
+.product-page-tools__copy {
+  padding: 2px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(123, 31, 22, 0.24);
+  background: transparent;
+  color: var(--product-text);
+  font: inherit;
+  font-size: 12px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.product-page-tools__link {
+  display: flex;
+  align-items: center;
+}
+
+.product-page-tools__link--previous {
+  justify-self: start;
+}
+
+.product-page-tools__link--next {
+  justify-self: end;
+  text-align: right;
+}
+
+.product-page-tools__link:focus-visible,
+.product-page-tools__copy:focus-visible {
+  outline: 2px solid #a63500;
+  outline-offset: 2px;
 }
 
 .product-gallery__thumb {
@@ -716,6 +787,50 @@ a.product-badge:focus-visible {
   pointer-events: auto;
 }
 
+.product-lightbox__nav {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  padding: 0 0 4px;
+  border: 1px solid #b98f3d;
+  border-radius: 999px;
+  place-items: center;
+  transform: translateY(-50%);
+  background: rgba(255, 247, 228, 0.92);
+  color: #5b1712;
+  font: 34px/1 Georgia, "Times New Roman", serif;
+  cursor: pointer;
+}
+
+.product-lightbox__nav--previous {
+  left: 14px;
+}
+
+.product-lightbox__nav--next {
+  right: 14px;
+}
+
+.product-lightbox__nav:focus-visible {
+  outline: 2px solid #fff4db;
+  outline-offset: 2px;
+}
+
+.product-lightbox__counter {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  z-index: 3;
+  padding: 5px 9px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: rgba(35, 22, 16, 0.78);
+  color: #fff4db;
+  font-size: 12px;
+}
+
 @media (max-width: 979px) {
   .product-layout {
     grid-template-columns: 1fr;
@@ -726,6 +841,10 @@ a.product-badge:focus-visible {
   .site-header,
   .product-page {
     width: auto;
+  }
+
+  .site-header {
+    margin-top: 0;
   }
 
   .header-bar {
@@ -773,6 +892,20 @@ a.product-badge:focus-visible {
     padding: 20px 14px 0;
   }
 
+  .product-page-tools {
+    gap: 6px;
+  }
+
+  .product-page-tools__link,
+  .product-page-tools__copy {
+    padding: 7px 8px;
+    font-size: 11px;
+  }
+
+  .product-page-tools__copy {
+    padding: 2px 0;
+  }
+
   .product-summary,
   .product-story,
   .product-help {
@@ -787,8 +920,86 @@ a.product-badge:focus-visible {
     transform: none;
   }
 
+  .product-lightbox__viewport {
+    touch-action: pan-y pinch-zoom;
+    user-select: none;
+  }
+
+  .product-lightbox__nav {
+    display: none;
+  }
+
   .product-gallery__hero {
-    min-height: 420px;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    padding: 8px;
+    user-select: none;
+  }
+
+  .product-gallery__hero img {
+    box-sizing: border-box;
+  }
+
+  .product-gallery__thumbs {
+    display: none;
+  }
+
+  .product-gallery__dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 7px 8px 9px;
+  }
+
+  .product-gallery__counter {
+    margin-right: 6px;
+    color: #6e350e;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .product-gallery__swipe-hint {
+    flex-basis: 100%;
+    margin-top: -2px;
+    color: #6e350e;
+    font-size: 11px;
+    text-align: center;
+    transition: opacity 180ms ease;
+  }
+
+  .product-gallery__swipe-hint.is-hidden {
+    opacity: 0;
+  }
+
+  .product-gallery__dot {
+    display: grid;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border: 0;
+    place-items: center;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .product-gallery__dot::before {
+    width: 7px;
+    height: 7px;
+    border: 1px solid #7b1f16;
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+  }
+
+  .product-gallery__dot.is-active::before {
+    background: #7b1f16;
+  }
+
+  .product-gallery__dot:focus-visible {
+    outline: 2px solid #a63500;
+    outline-offset: -2px;
   }
 
   .product-summary__details div {

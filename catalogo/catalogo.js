@@ -221,6 +221,28 @@ function getInitialSearchFromUrl() {
     ).trim();
 }
 
+document.addEventListener("click", (event) => {
+    const productLink = event.target.closest('a[data-track="click_catalog_product"]');
+    if (!(productLink instanceof HTMLAnchorElement)) return;
+
+    try {
+        const products = Array.from(document.querySelectorAll(".product-card"))
+            .map((card) => card.querySelector('a[data-track="click_catalog_product"]'))
+            .filter((link, index, links) => link instanceof HTMLAnchorElement && links.findIndex((candidate) => candidate.href === link.href) === index)
+            .map((link) => ({
+                url: link.href,
+                name: link.dataset.productName || link.textContent.trim()
+            }));
+        window.sessionStorage.setItem("shahmansouri_catalog_return", JSON.stringify({
+            url: window.location.href,
+            scrollY: Math.round(window.scrollY),
+            products
+        }));
+    } catch (_error) {
+        // Browser history still preserves the catalog state when storage is unavailable.
+    }
+});
+
 function applyInitialFiltersFromUrl() {
     if (!(searchInput instanceof HTMLInputElement)) {
         return;
