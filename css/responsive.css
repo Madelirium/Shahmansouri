@@ -264,6 +264,18 @@
     transition: transform 0.24s ease, opacity 0.24s ease;
   }
 
+  body.nav-side-left .nav {
+    right: auto;
+    left: 0;
+    transform: translateX(-108%);
+  }
+
+  body.nav-side-right .nav {
+    right: 0;
+    left: auto;
+    transform: translateX(108%);
+  }
+
   .nav-mobile-brand {
     display: block;
     width: fit-content;

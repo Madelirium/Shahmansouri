@@ -670,6 +670,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function setupMobileNav() {
+  const MOBILE_NAV_SIDE_KEY = 'shahmansouri_mobile_nav_side';
   const toggle = document.querySelector('.nav-mobile-toggle');
   const nav = document.querySelector('.nav');
   if (!toggle || !nav) {
@@ -733,6 +734,26 @@ function setupMobileNav() {
 
   toggle.setAttribute('aria-label', mobileNavLabel.open);
 
+  function getPreferredNavSide() {
+    try {
+      return window.localStorage.getItem(MOBILE_NAV_SIDE_KEY) === 'left' ? 'left' : 'right';
+    } catch (error) {
+      return 'right';
+    }
+  }
+
+  function setNavSide(side) {
+    const normalizedSide = side === 'left' ? 'left' : 'right';
+    document.body.classList.toggle('nav-side-left', normalizedSide === 'left');
+    document.body.classList.toggle('nav-side-right', normalizedSide === 'right');
+
+    try {
+      window.localStorage.setItem(MOBILE_NAV_SIDE_KEY, normalizedSide);
+    } catch (error) {
+      // The menu remains usable when browser storage is unavailable.
+    }
+  }
+
   function syncNavAccessibility(isOpen) {
     if (window.innerWidth > 768) {
       setElementInertState(nav, false);
@@ -749,21 +770,29 @@ function setupMobileNav() {
     syncNavAccessibility(false);
   }
 
-  function openNav() {
+  function openNav(side) {
+    setNavSide(side || getPreferredNavSide());
     document.body.classList.add('nav-open');
     toggle.setAttribute('aria-expanded', 'true');
     toggle.setAttribute('aria-label', mobileNavLabel.close);
     syncNavAccessibility(true);
   }
 
-  toggle.addEventListener('click', function () {
+  toggle.addEventListener('click', function (event) {
     const isOpen = document.body.classList.contains('nav-open');
     if (isOpen) {
       closeNav();
       return;
     }
 
-    openNav();
+    if (event.detail === 0) {
+      openNav(getPreferredNavSide());
+      return;
+    }
+
+    const toggleBounds = toggle.getBoundingClientRect();
+    const clickedOnLeftHalf = event.clientX < toggleBounds.left + (toggleBounds.width / 2);
+    openNav(clickedOnLeftHalf ? 'right' : 'left');
   });
 
   document.addEventListener('click', function (event) {
