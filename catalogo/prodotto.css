@@ -949,7 +949,7 @@ a.product-badge:focus-visible {
   }
 
   .product-lightbox__viewport {
-    touch-action: none;
+    touch-action: pinch-zoom;
     user-select: none;
   }
 
