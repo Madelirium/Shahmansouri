@@ -256,7 +256,7 @@ if (productHero && productHeroImage) {
                 if (lightboxTouchStartY === null || event.changedTouches.length !== 1) return;
                 const dy = event.changedTouches[0].clientY - lightboxTouchStartY;
                 lightboxTouchStartY = null;
-                if (dy > 70) close();
+                if (Math.abs(dy) > 70) close();
             }, { passive: true });
             overlayViewport.addEventListener("touchcancel", () => { lightboxTouchStartY = null; }, { passive: true });
         }
