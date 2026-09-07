@@ -89,6 +89,10 @@ img {
   align-items: start;
 }
 
+.catalog-results {
+  min-width: 0;
+}
+
 .catalog-mobile-filter-button,
 .catalog-mobile-overlay {
   display: none;
@@ -1369,10 +1373,10 @@ img {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 8px;
     row-gap: 30px;
-    width: calc(100vw - 16px);
-    max-width: none;
-    margin-left: calc(50% - 50vw + 8px);
-    margin-right: 0;
+    width: calc(100% + 44px);
+    max-width: calc(100% + 44px);
+    margin-left: -22px;
+    margin-right: -22px;
   }
 
   .product-grid.product-grid--mobile-2cols .product-card {
