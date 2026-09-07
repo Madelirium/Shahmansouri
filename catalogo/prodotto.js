@@ -78,6 +78,7 @@ productThumbButtons.forEach((button) => {
 
 if (productHero && productHeroImage) {
     let swipeStart = null;
+    productHeroImage.draggable = false;
     productThumbButtons.forEach((thumb, index) => thumb.setAttribute("aria-pressed", String(index === 0)));
 
     if (productThumbButtons.length > 1) {
@@ -114,20 +115,31 @@ if (productHero && productHeroImage) {
         suppressHeroClickUntil = 0;
         if (!event.isPrimary || window.innerWidth > 768 || productThumbButtons.length < 2 || (event.pointerType === "mouse" && event.button !== 0)) return;
         swipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
-        productHero.setPointerCapture(event.pointerId);
+        try {
+            productHero.setPointerCapture(event.pointerId);
+        } catch (_error) {
+            // Pointer capture may be unavailable during an interrupted Safari gesture.
+        }
+    });
+    productHero.addEventListener("pointermove", (event) => {
+        if (!swipeStart || event.pointerId !== swipeStart.id) return;
+        const dx = event.clientX - swipeStart.x;
+        const dy = event.clientY - swipeStart.y;
+        if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) event.preventDefault();
     });
     productHero.addEventListener("pointerup", (event) => {
         if (!swipeStart || event.pointerId !== swipeStart.id) return;
         const dx = event.clientX - swipeStart.x;
         const dy = event.clientY - swipeStart.y;
         swipeStart = null;
-        if (Math.abs(dx) < 40 || Math.abs(dx) <= Math.abs(dy) * 1.3) return;
+        if (Math.abs(dx) < 28 || Math.abs(dx) <= Math.abs(dy)) return;
         suppressHeroClickUntil = Date.now() + 500;
         const next = (activeProductImage + (dx < 0 ? 1 : -1) + productThumbButtons.length) % productThumbButtons.length;
         setHeroImage(productThumbButtons[next]);
         productHero.parentElement?.querySelector(".product-gallery__swipe-hint")?.classList.add("is-hidden");
     });
     productHero.addEventListener("pointercancel", () => { swipeStart = null; });
+    productHero.addEventListener("lostpointercapture", () => { swipeStart = null; });
     productHero.tabIndex = 0;
     productHero.setAttribute("role", "button");
     productHero.setAttribute("aria-label", productUiLabels.openImage);
@@ -176,6 +188,8 @@ if (productHero && productHeroImage) {
             overlay.close();
         };
 
+        if (overlayImage instanceof HTMLImageElement) overlayImage.draggable = false;
+
         const showLightboxImage = (direction) => {
             if (!(overlayImage instanceof HTMLImageElement) || productThumbButtons.length < 2) {
                 return;
@@ -211,17 +225,28 @@ if (productHero && productHeroImage) {
             overlayViewport.addEventListener("pointerdown", (event) => {
                 if (!event.isPrimary || window.innerWidth > 768 || productThumbButtons.length < 2 || (event.pointerType === "mouse" && event.button !== 0)) return;
                 lightboxSwipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
-                overlayViewport.setPointerCapture(event.pointerId);
+                try {
+                    overlayViewport.setPointerCapture(event.pointerId);
+                } catch (_error) {
+                    // Keep the gesture usable when pointer capture is unavailable.
+                }
+            });
+            overlayViewport.addEventListener("pointermove", (event) => {
+                if (!lightboxSwipeStart || event.pointerId !== lightboxSwipeStart.id) return;
+                const dx = event.clientX - lightboxSwipeStart.x;
+                const dy = event.clientY - lightboxSwipeStart.y;
+                if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) event.preventDefault();
             });
             overlayViewport.addEventListener("pointerup", (event) => {
                 if (!lightboxSwipeStart || event.pointerId !== lightboxSwipeStart.id) return;
                 const dx = event.clientX - lightboxSwipeStart.x;
                 const dy = event.clientY - lightboxSwipeStart.y;
                 lightboxSwipeStart = null;
-                if (Math.abs(dx) < 40 || Math.abs(dx) <= Math.abs(dy) * 1.3) return;
+                if (Math.abs(dx) < 28 || Math.abs(dx) <= Math.abs(dy)) return;
                 showLightboxImage(dx < 0 ? 1 : -1);
             });
             overlayViewport.addEventListener("pointercancel", () => { lightboxSwipeStart = null; });
+            overlayViewport.addEventListener("lostpointercapture", () => { lightboxSwipeStart = null; });
         }
 
         previousButton?.addEventListener("click", () => showLightboxImage(-1));

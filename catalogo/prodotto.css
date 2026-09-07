@@ -925,6 +925,10 @@ a.product-badge:focus-visible {
     user-select: none;
   }
 
+  .product-lightbox__viewport img {
+    -webkit-user-drag: none;
+  }
+
   .product-lightbox__nav {
     display: none;
   }
@@ -938,6 +942,7 @@ a.product-badge:focus-visible {
 
   .product-gallery__hero img {
     box-sizing: border-box;
+    -webkit-user-drag: none;
   }
 
   .product-gallery__thumbs {
