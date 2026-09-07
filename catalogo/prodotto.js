@@ -223,9 +223,8 @@ if (productHero && productHeroImage) {
             });
 
             let lightboxSwipeStart = null;
-            let lightboxTouchStartY = null;
             overlayViewport.addEventListener("pointerdown", (event) => {
-                if (!event.isPrimary || window.innerWidth > 768 || productThumbButtons.length < 2 || (event.pointerType === "mouse" && event.button !== 0)) return;
+                if (!event.isPrimary || window.innerWidth > 768 || (event.pointerType === "mouse" && event.button !== 0)) return;
                 lightboxSwipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
                 try {
                     overlayViewport.setPointerCapture(event.pointerId);
@@ -237,28 +236,23 @@ if (productHero && productHeroImage) {
                 if (!lightboxSwipeStart || event.pointerId !== lightboxSwipeStart.id) return;
                 const dx = event.clientX - lightboxSwipeStart.x;
                 const dy = event.clientY - lightboxSwipeStart.y;
-                if (Math.abs(dx) > 8 && Math.abs(dx) > Math.abs(dy)) event.preventDefault();
+                if (Math.abs(dx) > 8 || Math.abs(dy) > 8) event.preventDefault();
             });
             overlayViewport.addEventListener("pointerup", (event) => {
                 if (!lightboxSwipeStart || event.pointerId !== lightboxSwipeStart.id) return;
                 const dx = event.clientX - lightboxSwipeStart.x;
                 const dy = event.clientY - lightboxSwipeStart.y;
                 lightboxSwipeStart = null;
+                if (Math.abs(dy) > 70 && Math.abs(dy) > Math.abs(dx)) {
+                    close();
+                    return;
+                }
+                if (productThumbButtons.length < 2) return;
                 if (Math.abs(dx) < 28 || Math.abs(dx) <= Math.abs(dy)) return;
                 showLightboxImage(dx < 0 ? 1 : -1);
             });
             overlayViewport.addEventListener("pointercancel", () => { lightboxSwipeStart = null; });
             overlayViewport.addEventListener("lostpointercapture", () => { lightboxSwipeStart = null; });
-            overlayViewport.addEventListener("touchstart", (event) => {
-                if (event.touches.length === 1) lightboxTouchStartY = event.touches[0].clientY;
-            }, { passive: true });
-            overlayViewport.addEventListener("touchend", (event) => {
-                if (lightboxTouchStartY === null || event.changedTouches.length !== 1) return;
-                const dy = event.changedTouches[0].clientY - lightboxTouchStartY;
-                lightboxTouchStartY = null;
-                if (Math.abs(dy) > 70) close();
-            }, { passive: true });
-            overlayViewport.addEventListener("touchcancel", () => { lightboxTouchStartY = null; }, { passive: true });
         }
 
         previousButton?.addEventListener("click", () => showLightboxImage(-1));
