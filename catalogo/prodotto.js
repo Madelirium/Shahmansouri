@@ -177,6 +177,7 @@ if (productHero && productHeroImage) {
         `;
 
         document.body.appendChild(overlay);
+        document.body.classList.add("product-lightbox-open");
         overlay.showModal();
         const overlayViewport = overlay.querySelector(".product-lightbox__viewport");
         const overlayImage = overlay.querySelector("img");
@@ -222,6 +223,7 @@ if (productHero && productHeroImage) {
             });
 
             let lightboxSwipeStart = null;
+            let lightboxTouchStartY = null;
             overlayViewport.addEventListener("pointerdown", (event) => {
                 if (!event.isPrimary || window.innerWidth > 768 || productThumbButtons.length < 2 || (event.pointerType === "mouse" && event.button !== 0)) return;
                 lightboxSwipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
@@ -247,6 +249,16 @@ if (productHero && productHeroImage) {
             });
             overlayViewport.addEventListener("pointercancel", () => { lightboxSwipeStart = null; });
             overlayViewport.addEventListener("lostpointercapture", () => { lightboxSwipeStart = null; });
+            overlayViewport.addEventListener("touchstart", (event) => {
+                if (event.touches.length === 1) lightboxTouchStartY = event.touches[0].clientY;
+            }, { passive: true });
+            overlayViewport.addEventListener("touchend", (event) => {
+                if (lightboxTouchStartY === null || event.changedTouches.length !== 1) return;
+                const dy = event.changedTouches[0].clientY - lightboxTouchStartY;
+                lightboxTouchStartY = null;
+                if (dy > 70) close();
+            }, { passive: true });
+            overlayViewport.addEventListener("touchcancel", () => { lightboxTouchStartY = null; }, { passive: true });
         }
 
         previousButton?.addEventListener("click", () => showLightboxImage(-1));
@@ -286,12 +298,17 @@ if (productHero && productHeroImage) {
             close();
         });
         overlay.addEventListener("close", () => {
+            document.body.classList.remove("product-lightbox-open");
             overlay.remove();
             productHero.focus();
         });
     };
 
     productHero.addEventListener("click", (event) => {
+        if (document.body.classList.contains("nav-open")) {
+            event.preventDefault();
+            return;
+        }
         if (event.detail !== 0 && Date.now() < suppressHeroClickUntil) {
             event.preventDefault();
             return;
