@@ -676,6 +676,51 @@ function setupMobileNav() {
     return;
   }
 
+  if (!nav.querySelector('.nav-mobile-brand')) {
+    const headerLogoLink = document.querySelector('.site-header .logo-area');
+    const headerLogoImage = headerLogoLink && headerLogoLink.querySelector('img');
+    const navList = nav.querySelector('ul');
+
+    if (headerLogoLink && headerLogoImage && navList) {
+      const mobileBrand = document.createElement('div');
+      const mobileBrandLink = document.createElement('a');
+      const mobileBrandImage = headerLogoImage.cloneNode(true);
+
+      mobileBrand.className = 'nav-mobile-brand';
+      mobileBrandLink.className = 'nav-mobile-brand__link';
+      mobileBrandLink.href = headerLogoLink.href;
+      mobileBrandLink.setAttribute('aria-label', headerLogoLink.getAttribute('aria-label') || 'Shahmansouri Home');
+      mobileBrandLink.appendChild(mobileBrandImage);
+      mobileBrand.appendChild(mobileBrandLink);
+      nav.insertBefore(mobileBrand, navList);
+    }
+  }
+
+  const navList = nav.querySelector('ul');
+  if (navList && !navList.querySelector('.nav-language-switch')) {
+    const italianAlternate = document.querySelector('link[rel="alternate"][hreflang="it"]');
+    const englishAlternate = document.querySelector('link[rel="alternate"][hreflang="en"]');
+
+    if (italianAlternate && englishAlternate) {
+      const languageSwitch = document.createElement('li');
+      const italianLink = document.createElement('a');
+      const separator = document.createElement('span');
+      const englishLink = document.createElement('a');
+
+      languageSwitch.className = 'nav-language-switch';
+      italianLink.className = `lang-it${isEnglishPage ? '' : ' is-active'}`;
+      italianLink.href = italianAlternate.href;
+      italianLink.textContent = 'IT';
+      englishLink.className = `lang-en${isEnglishPage ? ' is-active' : ''}`;
+      englishLink.href = englishAlternate.href;
+      englishLink.textContent = 'EN';
+      separator.textContent = '/';
+
+      languageSwitch.append(italianLink, separator, englishLink);
+      navList.appendChild(languageSwitch);
+    }
+  }
+
   const mobileNavLabel = isEnglishPage
     ? {
         open: 'Open main menu',
@@ -730,8 +775,10 @@ function setupMobileNav() {
       return;
     }
 
+    event.preventDefault();
+    event.stopPropagation();
     closeNav();
-  });
+  }, true);
 
   document.addEventListener('keydown', function (event) {
     if (event.key === 'Escape' && document.body.classList.contains('nav-open')) {
