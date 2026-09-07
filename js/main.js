@@ -757,10 +757,16 @@ function setupMobileNav() {
   function syncNavAccessibility(isOpen) {
     if (window.innerWidth > 768) {
       setElementInertState(nav, false);
+      document.querySelectorAll('main, footer').forEach(function (element) {
+        setElementInertState(element, false);
+      });
       return;
     }
 
     setElementInertState(nav, !isOpen);
+    document.querySelectorAll('main, footer').forEach(function (element) {
+      setElementInertState(element, isOpen);
+    });
   }
 
   function closeNav() {
