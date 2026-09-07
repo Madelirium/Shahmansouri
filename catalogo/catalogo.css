@@ -14,9 +14,11 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
+  overflow-x: clip;
   background:
     radial-gradient(circle at center, rgba(255, 234, 168, 0.18) 0%, rgba(255, 234, 168, 0.08) 38%, rgba(255, 234, 168, 0) 54%),
     var(--catalog-bg);
