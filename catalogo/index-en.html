@@ -134,16 +134,22 @@
                         </details>
 
                         <div class="filters-field filters-field--split">
-                            <span>Desired dimensions in cm</span>
+                            <div class="mobile-measure-heading">
+                                <span>Desired dimensions</span>
+                                <div class="mobile-measure-unit catalog-quick-measures__unit-buttons" role="group" aria-label="Measurement unit">
+                                    <button type="button" class="is-active" data-quick-measure-unit="cm" aria-pressed="true">cm</button>
+                                    <button type="button" data-quick-measure-unit="in" aria-pressed="false">in</button>
+                                </div>
+                            </div>
 <div class="filters-dimension-row">
 <span>Length</span>
-<label>Min<input type="number" min="0" step="1" inputmode="numeric" placeholder="Min" aria-label="Length min (cm)" data-mobile-minimum="length"></label>
-<label>Max<input id="lengthInput" type="number" name="lengthTarget" min="0" step="1" inputmode="numeric" placeholder="Max" aria-label="Maximum length in centimeters" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget"></label>
+<label>Min<input type="number" min="0" step="0.1" inputmode="decimal" placeholder="Min" aria-label="Minimum length" data-mobile-minimum="length"></label>
+<label>Max<input id="lengthInput" type="number" name="lengthTarget" min="0" step="0.1" inputmode="decimal" placeholder="Max" aria-label="Maximum length" data-length-input data-track="click_catalog_filter" data-filter-name="lengthTarget"></label>
 </div>
 <div class="filters-dimension-row">
 <span>Width</span>
-<label>Min<input type="number" min="0" step="1" inputmode="numeric" placeholder="Min" aria-label="Width min (cm)" data-mobile-minimum="width"></label>
-<label>Max<input id="widthInput" type="number" name="widthTarget" min="0" step="1" inputmode="numeric" placeholder="Max" aria-label="Maximum width in centimeters" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget"></label>
+<label>Min<input type="number" min="0" step="0.1" inputmode="decimal" placeholder="Min" aria-label="Minimum width" data-mobile-minimum="width"></label>
+<label>Max<input id="widthInput" type="number" name="widthTarget" min="0" step="0.1" inputmode="decimal" placeholder="Max" aria-label="Maximum width" data-width-input data-track="click_catalog_filter" data-filter-name="widthTarget"></label>
 </div>
                             <p class="filters-field__note">Automatic tolerance up to 15 cm above the selected measurement.</p>
                         </div>

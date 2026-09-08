@@ -216,8 +216,7 @@
   }
 
   .floating-actions {
-    right: 12px;
-    bottom: 12px;
+    display: none;
   }
 
   .floating-action {
@@ -355,6 +354,65 @@
     display: inline-block;
   }
 
+  .nav .nav-quick-contacts {
+    display: block;
+    padding: 13px 16px 15px;
+  }
+
+  .nav-quick-contacts__links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .nav .nav-quick-contacts .nav-quick-contact {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7px;
+    width: auto;
+    min-height: 42px;
+    padding: 8px 7px;
+    border: 1px solid rgba(123, 31, 22, 0.24);
+    background: rgba(255, 248, 220, 0.42);
+    color: #6f2b00;
+    font-size: 13px;
+    line-height: 1.15;
+    text-align: center;
+  }
+
+  .nav-quick-contact svg {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    border-radius: 50%;
+    color: #fff;
+  }
+
+  .nav-quick-contact--phone svg {
+    background: #8f1c16;
+  }
+
+  .nav-quick-contact--whatsapp svg {
+    background: #18b965;
+  }
+
+  .nav-quick-contact--instagram svg {
+    background: linear-gradient(135deg, #f7a42b, #d62976 52%, #6b3cc9);
+  }
+
+  .nav-quick-contact--maps svg {
+    background: #c69216;
+  }
+
+  .nav .nav-quick-contacts .nav-quick-contact:hover,
+  .nav .nav-quick-contacts .nav-quick-contact:focus-visible {
+    border-color: #a63500;
+    background: rgba(255, 250, 232, 0.75);
+    color: #a63500;
+  }
+
   .nav li:first-child {
     border-top: none;
   }
@@ -371,13 +429,21 @@
   }
 
   .nav .submenu {
-    display: block;
+    display: none;
     position: static;
     border: none;
     box-shadow: none;
     background: rgba(255, 255, 255, 0.12);
     padding: 0 0 4px;
     min-width: 0;
+  }
+
+  .nav .dropdown:not(.is-open) > .submenu {
+    display: none;
+  }
+
+  .nav .dropdown.is-open > .submenu {
+    display: block;
   }
 
   .nav .submenu li a {
@@ -403,11 +469,26 @@
   }
 
   .nav .nav-parent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     cursor: pointer;
     pointer-events: auto;
     appearance: none;
     text-align: left;
     background: transparent;
+  }
+
+  .nav .nav-parent::after {
+    content: "▾";
+    margin-left: 12px;
+    font-size: 16px;
+    line-height: 1;
+    transition: transform 0.18s ease;
+  }
+
+  .nav .nav-parent[aria-expanded="true"]::after {
+    transform: rotate(180deg);
   }
 
   .nav .dropdown:hover > .nav-parent,

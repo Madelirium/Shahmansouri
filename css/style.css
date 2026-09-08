@@ -189,6 +189,10 @@ img {
   margin: 0 auto;
 }
 
+.nav-quick-contacts {
+  display: none;
+}
+
 .home-hero-heading {
   position: absolute;
   width: 1px;

@@ -329,12 +329,34 @@ img {
 
 .filters-dimension-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) repeat(2, minmax(0, 1fr));
+  grid-template-columns: 98px repeat(2, minmax(0, 1fr));
   gap: 8px;
   align-items: end;
 }
 .filters-dimension-row label { display: grid; gap: 4px; }
 .filters-dimension-row input { min-width: 0; box-sizing: border-box; }
+
+.mobile-measure-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mobile-measure-heading > span {
+  font-weight: 700;
+}
+
+.mobile-measure-unit {
+  flex: 0 0 auto;
+  width: auto;
+  min-height: 38px;
+}
+
+.mobile-measure-unit button {
+  min-width: 52px;
+  min-height: 38px;
+}
 
 .button {
   display: inline-flex;
@@ -470,6 +492,7 @@ img {
 .type-tree-row button:hover, .type-tree-row button:focus-visible { background: #b77c26; color: white; }
 .type-tree-children { position: absolute; left: 100%; top: 0; width: 200px; padding: 4px; border: 1px solid #8d5714; background: #fff8df; z-index: 2; }
 .type-tree-children button { display: block; width: 100%; }
+.type-tree-children .type-tree-all { font-weight: 700; border-bottom: 1px solid #d5b96a; }
 .type-tree-children[hidden] { display: none; }
 [data-mobile-type-tree] .type-tree-children { position: static; grid-column: 1 / -1; width: auto; margin-left: 10px; }
 
@@ -783,9 +806,35 @@ img {
 
 .active-filters {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   gap: 8px;
   margin-bottom: 18px;
+}
+
+.active-filters__reset {
+  min-height: 34px;
+  padding: 6px 11px;
+  border: 1px solid #8d5714;
+  background: #fff8df;
+  color: #7b1f16;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+}
+
+.active-filters__reset:hover,
+.active-filters__reset:focus-visible {
+  background: #7b1f16;
+  color: #fff8df;
+}
+
+.active-filters__reset:focus-visible {
+  outline: 3px solid #7b1f16;
+  outline-offset: 2px;
 }
 
 .filter-chip {
@@ -950,6 +999,31 @@ img {
 
 .product-card__actions .button {
   width: 100%;
+}
+
+.catalog-load-more {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  margin: 34px 0 6px;
+  text-align: center;
+}
+
+.catalog-load-more[hidden],
+.catalog-load-more__button[hidden] {
+  display: none;
+}
+
+.catalog-load-more__status {
+  margin: 0;
+  color: var(--catalog-text-soft);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.catalog-load-more__button {
+  min-width: 190px;
+  min-height: 44px;
 }
 
 @media (min-width: 760px) {

@@ -49,6 +49,7 @@ let minimumWidth = null;
 let minimumLength = null;
 let quickMeasureUnit = "cm";
 let shouldScrollToCatalogResults = false;
+let visibleProductCount = 24;
 
 function placeQuickFiltersAboveCatalog() {
     if (!quickFilters || !catalogLayout || !filtersPanel) {
@@ -127,6 +128,7 @@ function setQuickSortOpen(isOpen, shouldFocus = false) {
 const CATALOG_VIEW_KEY = "shahmansouri_catalog_columns_v2";
 const CATALOG_MOBILE_VIEW_KEY = "shahmansouri_catalog_mobile_columns_v1";
 const DEFAULT_CATALOG_COLUMNS = "4";
+const CATALOG_PAGE_SIZE = 24;
 
 const isEnglishCatalog = document.documentElement.lang.toLowerCase().startsWith("en");
 const CARD_IMAGE_SIZES = "(max-width: 759px) calc(100vw - 72px), (max-width: 1399px) 320px, 240px";
@@ -150,7 +152,9 @@ const catalogI18n = isEnglishCatalog
             noResultsTitle: "No rugs match the selected filters",
             noResultsText: "Try clearing the filters or contact us: we have more rugs available in our store in Verona.",
             clearFilters: "Clear filters",
-            whatsappCta: "Contact us on WhatsApp"
+            whatsappCta: "Contact us on WhatsApp",
+            loadMore: "Load 24 more",
+            productsShown: (shown, total) => `${shown} products shown out of ${total}`
         },
         categories: {
             "Tappeto Antico": "Antique rug",
@@ -194,7 +198,9 @@ const catalogI18n = isEnglishCatalog
             noResultsTitle: "Nessun tappeto corrisponde ai filtri selezionati",
             noResultsText: "Prova a rimuovere i filtri oppure contattaci: abbiamo altri tappeti disponibili in negozio a Verona.",
             clearFilters: "Rimuovi filtri",
-            whatsappCta: "Contattaci su WhatsApp"
+            whatsappCta: "Contattaci su WhatsApp",
+            loadMore: "Carica altri 24",
+            productsShown: (shown, total) => `${shown} prodotti mostrati su ${total}`
         },
         categories: {},
         materials: {},
@@ -485,6 +491,12 @@ function buildTypeTree(host, mobile) {
             row.addEventListener("mouseenter", () => { if (!mobile && matchMedia("(hover: hover)").matches) expand(true); });
             row.addEventListener("mouseleave", () => { if (!mobile && !row.contains(document.activeElement)) expand(false); });
             row.addEventListener("keydown", (event) => { if (event.key === "Escape" && !panel.hidden) { event.stopPropagation(); expand(false); arrow.focus(); } });
+            const allSubtypes = document.createElement("button");
+            allSubtypes.type = "button";
+            allSubtypes.className = "type-tree-all";
+            allSubtypes.textContent = isEnglishCatalog ? "All" : "Tutti";
+            allSubtypes.addEventListener("click", () => choose());
+            panel.append(allSubtypes);
             subtypes.forEach((subtype) => {
                 const child = document.createElement("button");
                 child.type = "button";
@@ -568,7 +580,21 @@ function formatProductDimensions(product) {
 }
 
 function setQuickMeasureUnit(unit) {
+    const filtersBeforeChange = getFormState();
     quickMeasureUnit = unit === "in" ? "in" : "cm";
+
+    if (isMobileFiltersMode()) {
+        minimumLength = filtersBeforeChange.lengthMinimum;
+        minimumWidth = filtersBeforeChange.widthMinimum;
+
+        if (lengthInput instanceof HTMLInputElement) {
+            lengthInput.value = formatQuickMeasure(filtersBeforeChange.lengthTarget);
+        }
+
+        if (widthInput instanceof HTMLInputElement) {
+            widthInput.value = formatQuickMeasure(filtersBeforeChange.widthTarget);
+        }
+    }
 
     quickMeasureUnitButtons.forEach((button) => {
         const isActive = button.dataset.quickMeasureUnit === quickMeasureUnit;
@@ -581,8 +607,8 @@ function setQuickMeasureUnit(unit) {
 
 document.querySelectorAll("[data-mobile-minimum]").forEach((input) => {
     input.addEventListener("input", () => {
-        if (input.dataset.mobileMinimum === "length") minimumLength = parseOptionalDimension(input.value);
-        else minimumWidth = parseOptionalDimension(input.value);
+        if (input.dataset.mobileMinimum === "length") minimumLength = convertQuickMeasureToCentimeters(input.value);
+        else minimumWidth = convertQuickMeasureToCentimeters(input.value);
     });
 });
 
@@ -608,8 +634,12 @@ function getFormState() {
         materials: [],
         widthMinimum: minimumWidth,
         lengthMinimum: minimumLength,
-        widthTarget: parseOptionalDimension(formData.get("widthTarget")),
-        lengthTarget: parseOptionalDimension(formData.get("lengthTarget"))
+        widthTarget: isMobileFiltersMode()
+            ? convertQuickMeasureToCentimeters(formData.get("widthTarget"))
+            : parseOptionalDimension(formData.get("widthTarget")),
+        lengthTarget: isMobileFiltersMode()
+            ? convertQuickMeasureToCentimeters(formData.get("lengthTarget"))
+            : parseOptionalDimension(formData.get("lengthTarget"))
     };
 }
 
@@ -821,6 +851,8 @@ function renderActiveFilters(filters) {
     }
 
     const chips = [];
+    const measureUnit = quickMeasureUnit === "in" ? "in" : "cm";
+    const displayMeasure = (value) => `${formatQuickMeasure(value)} ${measureUnit}`;
 
     if (filters.search) {
         chips.push(`${catalogI18n.labels.search}: ${filters.search}`);
@@ -835,22 +867,25 @@ function renderActiveFilters(filters) {
     });
 
     if (filters.widthTarget !== null) {
-        chips.push(`${catalogI18n.labels.widthDesired}: ${filters.widthTarget} cm`);
+        chips.push(`${catalogI18n.labels.widthDesired}: ${displayMeasure(filters.widthTarget)}`);
     }
 
     if (filters.widthMinimum !== null) {
-        chips.push(`${catalogI18n.labels.widthDesired} min: ${filters.widthMinimum} cm`);
+        chips.push(`${catalogI18n.labels.widthDesired} min: ${displayMeasure(filters.widthMinimum)}`);
     }
 
     if (filters.lengthTarget !== null) {
-        chips.push(`${catalogI18n.labels.lengthDesired}: ${filters.lengthTarget} cm`);
+        chips.push(`${catalogI18n.labels.lengthDesired}: ${displayMeasure(filters.lengthTarget)}`);
     }
 
     if (filters.lengthMinimum !== null) {
-        chips.push(`${catalogI18n.labels.lengthDesired} min: ${filters.lengthMinimum} cm`);
+        chips.push(`${catalogI18n.labels.lengthDesired} min: ${displayMeasure(filters.lengthMinimum)}`);
     }
 
-    activeFilters.innerHTML = chips.map((chip) => `<span class="filter-chip">${chip}</span>`).join("");
+    activeFilters.innerHTML = chips.length
+        ? `${chips.map((chip) => `<span class="filter-chip">${chip}</span>`).join("")}
+           <button type="button" class="active-filters__reset" data-active-reset-filters data-track="click_clear_filters">${catalogI18n.labels.clearFilters}</button>`
+        : "";
 }
 
 function renderSliderValues(filters) {
@@ -1056,9 +1091,45 @@ function syncInputFromRange(range, input) {
     input.value = String(clamped);
 }
 
-function renderCatalog() {
+function updateCatalogLoadMore(shownCount, totalCount) {
+    if (!productGrid) {
+        return;
+    }
+
+    let controls = document.querySelector("[data-catalog-load-more]");
+    if (!controls) {
+        controls = document.createElement("div");
+        controls.className = "catalog-load-more";
+        controls.dataset.catalogLoadMore = "";
+        controls.innerHTML = `
+            <p class="catalog-load-more__status" data-catalog-shown-count aria-live="polite"></p>
+            <button type="button" class="button button-primary catalog-load-more__button" data-load-more-products>${catalogI18n.labels.loadMore}</button>
+        `;
+        productGrid.insertAdjacentElement("afterend", controls);
+
+        controls.querySelector("[data-load-more-products]")?.addEventListener("click", () => {
+            visibleProductCount += CATALOG_PAGE_SIZE;
+            renderCatalog(true);
+        });
+    }
+
+    const status = controls.querySelector("[data-catalog-shown-count]");
+    const button = controls.querySelector("[data-load-more-products]");
+    controls.hidden = totalCount <= CATALOG_PAGE_SIZE;
+    if (status) {
+        status.textContent = catalogI18n.labels.productsShown(shownCount, totalCount);
+    }
+    if (button instanceof HTMLButtonElement) {
+        button.hidden = shownCount >= totalCount;
+    }
+}
+
+function renderCatalog(preserveVisibleCount = false) {
     document.querySelectorAll("[data-mobile-minimum]").forEach((input) => {
-        if (input !== document.activeElement) input.value = (input.dataset.mobileMinimum === "length" ? minimumLength : minimumWidth) ?? "";
+        if (input !== document.activeElement) {
+            const value = input.dataset.mobileMinimum === "length" ? minimumLength : minimumWidth;
+            input.value = formatQuickMeasure(value);
+        }
     });
     if (!productGrid || !resultsCount || !emptyState) {
         return;
@@ -1066,6 +1137,10 @@ function renderCatalog() {
 
     const filters = getFormState();
     const filteredProducts = sortProducts(filterProducts(filters));
+    if (!preserveVisibleCount) {
+        visibleProductCount = CATALOG_PAGE_SIZE;
+    }
+    const visibleProducts = filteredProducts.slice(0, visibleProductCount);
     renderSliderValues(filters);
     renderActiveFilters(filters);
     syncQuickFilters(filters);
@@ -1075,9 +1150,10 @@ function renderCatalog() {
     if (quickResultsCount) {
         quickResultsCount.textContent = catalogI18n.labels.results(filteredProducts.length, catalogProducts.length);
     }
-    productGrid.innerHTML = filteredProducts.map((product, index) => createProductCard(product, index)).join("");
+    productGrid.innerHTML = visibleProducts.map((product, index) => createProductCard(product, index)).join("");
     productGrid.classList.remove("product-grid--skeleton");
     productGrid.setAttribute("aria-busy", "false");
+    updateCatalogLoadMore(visibleProducts.length, filteredProducts.length);
     scrollToCatalogResults();
 
     if (!catalogProducts.length) {
@@ -1344,7 +1420,14 @@ if (quickMeasuresToggle) {
             if (!measuresControl.contains(document.activeElement)) setQuickMeasuresOpen(false);
         }, 200);
     });
-    quickMeasuresToggle.addEventListener("click", () => {
+    quickMeasuresToggle.addEventListener("click", (event) => {
+        if (event.detail > 0 && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+            setQuickMeasuresOpen(true);
+            setQuickCategoryOpen(false);
+            setQuickSortOpen(false);
+            return;
+        }
+
         const isOpen = quickMeasuresToggle.getAttribute("aria-expanded") === "true";
         setQuickMeasuresOpen(!isOpen, !isOpen);
         if (!isOpen) {
@@ -1461,6 +1544,15 @@ if (emptyState) {
         }
 
         if (target.closest("[data-empty-reset-filters]")) {
+            resetCatalogFilters();
+        }
+    });
+}
+
+if (activeFilters) {
+    activeFilters.addEventListener("click", (event) => {
+        const target = event.target;
+        if (target instanceof HTMLElement && target.closest("[data-active-reset-filters]")) {
             resetCatalogFilters();
         }
     });
