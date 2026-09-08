@@ -223,6 +223,10 @@
     display: flex;
   }
 
+  .home-page .site-back-to-top {
+    right: 18px;
+  }
+
   .floating-action {
     width: 50px;
     height: 50px;
