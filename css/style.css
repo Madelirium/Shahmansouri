@@ -193,6 +193,10 @@ img {
   display: none;
 }
 
+.home-mobile-primary-actions {
+  display: none;
+}
+
 .home-hero-heading {
   position: absolute;
   width: 1px;
@@ -767,6 +771,12 @@ img {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
+}
+
+.contact-mobile-collapsible__toggle,
+.contact-gallery-dots,
+.contact-quick-bar {
+  display: none;
 }
 
 .article-inline-media {

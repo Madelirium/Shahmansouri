@@ -521,6 +521,28 @@
           color: #7a2c0d;
         }
 
+      .home-mobile-intro-card:first-child {
+        min-height: 0;
+        padding-bottom: 14px;
+      }
+
+      .home-mobile-intro-card:first-child .home-mobile-intro-card__image {
+        margin-bottom: 10px;
+      }
+
+      .home-mobile-intro-card:first-child .home-mobile-intro-card__image img {
+        height: 152px;
+      }
+
+      .home-mobile-intro-card:first-child > p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .home-mobile-intro-card:first-child .home-mobile-intro-card__hint {
+        margin-bottom: 8px;
+      }
+
       .home-mobile-intro-card__cta {
           display: block;
           margin-top: auto;
@@ -604,11 +626,7 @@
             inset 0 1px 0 rgba(255, 248, 236, 0.12);
         }
 
-        .home-mobile-quicklink-card:first-child {
-          justify-content: center;
-        }
-
-      .home-mobile-quicklink-card:not(:first-child) {
+      .home-mobile-quicklink-card {
             display: grid;
           grid-template-rows: auto auto minmax(0, 1fr) auto;
           align-content: start;
@@ -628,7 +646,7 @@
         color: #faf4ea;
       }
 
-      .home-mobile-quicklink-card:not(:first-child) h2 {
+      .home-mobile-quicklink-card h2 {
         color: #6f2b00;
       }
 
@@ -656,7 +674,7 @@
           margin: 16px 0 0;
         }
 
-      .home-mobile-quicklink-card:not(:first-child) p {
+      .home-mobile-quicklink-card p {
         color: rgba(92, 47, 12, 0.92);
       }
 
@@ -822,7 +840,7 @@
       <div class="home-content__columns">
       <div class="main-content">
         <p class="home-mobile-section-kicker">Shahmansouri</p>
-        <div class="home-mobile-intro-cards">
+      <div class="home-mobile-intro-cards" data-home-mobile-slider>
          <div class="home-mobile-intro-card">
           <a class="home-mobile-intro-card__image" href="contacts-en.html" data-track="click_contact_page"><img src="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp" srcset="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp 360w, images/shahmansouri-tappeti-verona-isfahan-mehdi-640.webp 640w, images/shahmansouri-tappeti-verona-isfahan-mehdi.webp 1875w" sizes="(max-width: 767px) 298px, (max-width: 1199px) 420px, 520px" alt="Mehdi Shahmansouri in Isfahan" width="900" height="675" decoding="async" fetchpriority="high"></a>
           <div class="home-mobile-intro-card__hint" aria-hidden="true"><span>Scroll</span><span class="home-mobile-quicklink-card__hint-arrow">&#8594;</span></div>
@@ -869,16 +887,14 @@
       </div>
     </main>
 
+    <nav class="home-mobile-primary-actions" aria-label="Main actions">
+      <a class="home-mobile-primary-actions__main" href="catalogo/index-en.html" data-track="click_catalog">Catalog</a>
+      <a href="lavaggio-restauro-tappeti-verona/index-en.html">Cleaning and restoration</a>
+      <a href="contacts-en.html" data-track="click_contact_page">Where we are</a>
+    </nav>
+
     <p class="home-mobile-section-kicker">Shortcuts</p>
-    <section class="home-mobile-quicklinks" aria-label="Site shortcuts">
-      <article class="home-mobile-quicklink-card">
-        <h2>Discover the site</h2>
-        <p>A quick path through the main Shahmansouri sections, to move between rugs, services and deeper reading.</p>
-        <div class="home-mobile-quicklink-card__hint" aria-hidden="true">
-          <span>Scroll</span>
-          <span class="home-mobile-quicklink-card__hint-arrow">&#8594;</span>
-        </div>
-      </article>
+    <section class="home-mobile-quicklinks" aria-label="Site shortcuts" data-home-mobile-slider>
       <article class="home-mobile-quicklink-card">
         <a class="home-mobile-quicklink-card__image" href="catalogo/index-en.html" data-track="click_catalog"><img src="images/tappeti-verona-shahmansouri-duomo-verona-360.webp" srcset="images/tappeti-verona-shahmansouri-duomo-verona-360.webp 360w, images/tappeti-verona-shahmansouri-duomo-verona-640.webp 640w, images/tappeti-verona-shahmansouri-duomo-verona.webp 1500w" sizes="286px" alt="Selection of Persian rugs at Shahmansouri in Verona" width="900" height="675" loading="lazy" decoding="async"></a>
         <h2>Catalog</h2>

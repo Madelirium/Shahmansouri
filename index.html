@@ -563,6 +563,28 @@
           text-wrap: pretty;
         }
 
+      .home-mobile-intro-card:first-child {
+        min-height: 0;
+        padding-bottom: 14px;
+      }
+
+      .home-mobile-intro-card:first-child .home-mobile-intro-card__image {
+        margin-bottom: 10px;
+      }
+
+      .home-mobile-intro-card:first-child .home-mobile-intro-card__image img {
+        height: 152px;
+      }
+
+      .home-mobile-intro-card:first-child > p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .home-mobile-intro-card:first-child .home-mobile-intro-card__hint {
+        margin-bottom: 8px;
+      }
+
       .home-mobile-intro-card__cta {
           display: block;
           margin-top: auto;
@@ -687,15 +709,7 @@
         scroll-snap-align: start;
       }
 
-      .home-mobile-quicklink-card:first-child {
-          justify-content: center;
-          box-shadow:
-            0 18px 32px rgba(49, 9, 0, 0.16),
-            0 6px 14px rgba(49, 9, 0, 0.1),
-            inset 0 1px 0 rgba(255, 248, 236, 0.12);
-        }
-
-      .home-mobile-quicklink-card:not(:first-child) {
+      .home-mobile-quicklink-card {
           display: grid;
           grid-template-rows: auto auto minmax(0, 1fr) auto;
           align-content: start;
@@ -730,7 +744,7 @@
         color: #faf4ea;
       }
 
-      .home-mobile-quicklink-card:not(:first-child) h2 {
+      .home-mobile-quicklink-card h2 {
         color: #6f2b00;
       }
 
@@ -759,7 +773,7 @@
           margin: 16px 0 0;
         }
 
-      .home-mobile-quicklink-card:not(:first-child) p {
+      .home-mobile-quicklink-card p {
         color: rgba(92, 47, 12, 0.92);
       }
 
@@ -1009,7 +1023,7 @@
    <div class="home-content__columns">
    <div class="main-content">
     <p class="home-mobile-section-kicker">Shahmansouri</p>
-    <div class="home-mobile-intro-cards">
+    <div class="home-mobile-intro-cards" data-home-mobile-slider>
      <div class="home-mobile-intro-card">
       <a class="home-mobile-intro-card__image" href="contatti.html" data-track="click_contact_page"><img src="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp" srcset="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp 360w, images/shahmansouri-tappeti-verona-isfahan-mehdi-640.webp 640w, images/shahmansouri-tappeti-verona-isfahan-mehdi.webp 1875w" sizes="(max-width: 767px) 298px, (max-width: 1199px) 420px, 520px" alt="Mehdi Shahmansouri a Isfahan" width="900" height="675" decoding="async" fetchpriority="high"></a>
       <div class="home-mobile-intro-card__hint" aria-hidden="true"><span>Scorri</span><span class="home-mobile-quicklink-card__hint-arrow">&#8594;</span></div>
@@ -1059,16 +1073,14 @@
    </div>
   </main>
 
+  <nav class="home-mobile-primary-actions" aria-label="Azioni principali">
+   <a class="home-mobile-primary-actions__main" href="catalogo/index.html" data-track="click_catalog">Catalogo</a>
+   <a href="lavaggio-restauro-tappeti-verona/">Lavaggio e restauro</a>
+   <a href="contatti.html" data-track="click_contact_page">Dove siamo</a>
+  </nav>
+
   <p class="home-mobile-section-kicker">Scorciatoie</p>
-  <section class="home-mobile-quicklinks" aria-label="Scorciatoie del sito">
-   <article class="home-mobile-quicklink-card">
-    <h2>Scopri il nostro sito</h2>
-    <p>Un accesso rapido alle sezioni principali di Shahmansouri, per orientarsi tra tappeti, servizi e approfondimenti.</p>
-    <div class="home-mobile-quicklink-card__hint" aria-hidden="true">
-     <span>Scorri</span>
-     <span class="home-mobile-quicklink-card__hint-arrow">&#8594;</span>
-    </div>
-   </article>
+  <section class="home-mobile-quicklinks" aria-label="Scorciatoie del sito" data-home-mobile-slider>
     <article class="home-mobile-quicklink-card">
      <a class="home-mobile-quicklink-card__image" href="catalogo/index.html" data-track="click_catalog"><img src="images/tappeti-verona-shahmansouri-duomo-verona-360.webp" srcset="images/tappeti-verona-shahmansouri-duomo-verona-360.webp 360w, images/tappeti-verona-shahmansouri-duomo-verona-640.webp 640w, images/tappeti-verona-shahmansouri-duomo-verona.webp 1500w" sizes="286px" alt="Selezione di tappeti persiani Shahmansouri a Verona" width="900" height="675" loading="lazy" decoding="async"></a>
      <h2>Catalogo</h2>
@@ -1097,7 +1109,7 @@
   <footer class="site-footer-global">
    <div class="site-footer-global__grid">
     <div class="site-footer-global__meta-lines">
-      <p class="site-footer-global__contact-line">Stradone Arcidiacono Pacifico, 14 - Verona <span aria-hidden="true">|</span> <a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a> <span aria-hidden="true">|</span> <a href="mailto:shahmansouri@tiscali.it" data-track="click_email">shahmansouri@tiscali.it</a> <span aria-hidden="true">|</span> <a href="contatti.html" data-track="click_contact_page">Contatti</a></p>
+      <p class="site-footer-global__contact-line"><span class="site-footer-global__address">Stradone Arcidiacono Pacifico, 14 - Verona</span> <span aria-hidden="true">|</span> <a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a> <span aria-hidden="true">|</span> <a href="mailto:shahmansouri@tiscali.it" data-track="click_email">shahmansouri@tiscali.it</a> <span aria-hidden="true">|</span> <a href="contatti.html" data-track="click_contact_page">Contatti</a></p>
       <div class="site-footer-global__utility-line footer-utility-links" data-footer-utility-links>
         <button type="button" class="footer-language-trigger" data-open-language-overlay>Change language</button>
         <span aria-hidden="true">|</span>

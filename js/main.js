@@ -9,6 +9,8 @@ const siteText = isEnglishPage
       cookieInfo: 'Cookie policy',
       privacyInfo: 'Privacy policy',
       returnsInfo: 'Returns and refunds',
+      shippingInfo: 'Shipping and delivery',
+      termsInfo: 'Terms of sale',
       contactsInfo: 'Contacts',
       changeLanguage: 'Change language',
       manageCookies: 'Manage cookies',
@@ -27,6 +29,8 @@ const siteText = isEnglishPage
       cookieInfo: 'Informativa cookie',
       privacyInfo: 'Privacy policy',
       returnsInfo: 'Resi e rimborsi',
+      shippingInfo: 'Spedizioni e consegna',
+      termsInfo: 'Condizioni di vendita',
       contactsInfo: 'Contatti',
       changeLanguage: 'Change language',
       manageCookies: 'Gestisci cookie',
@@ -41,15 +45,11 @@ const siteText = isEnglishPage
     };
 
 function getPolicyPrefix() {
-  if (window.location.pathname.includes('/catalogo/products/')) {
-    return '../../';
+  const pathParts = window.location.pathname.split('/').filter(Boolean);
+  if (pathParts.length && pathParts[pathParts.length - 1].includes('.')) {
+    pathParts.pop();
   }
-
-  if (window.location.pathname.includes('/catalogo/')) {
-    return '../';
-  }
-
-  return '';
+  return '../'.repeat(pathParts.length);
 }
 
 function getCookieConsent() {
@@ -490,6 +490,8 @@ function injectFooterUtilityLinks() {
     <p><a href="${policyPrefix}${isEnglishPage ? 'cookie-policy-en.html' : 'cookie-policy.html'}">${siteText.cookieInfo}</a></p>
     <p><a href="${policyPrefix}${isEnglishPage ? 'privacy-policy-en.html' : 'privacy-policy.html'}">${siteText.privacyInfo}</a></p>
     <p><a href="${policyPrefix}${isEnglishPage ? 'returns-and-refunds.html' : 'resi-e-rimborsi.html'}">${siteText.returnsInfo}</a></p>
+    <p><a href="${policyPrefix}${isEnglishPage ? 'shipping-and-delivery.html' : 'spedizioni-e-consegna.html'}">${siteText.shippingInfo}</a></p>
+    <p><a href="${policyPrefix}${isEnglishPage ? 'terms-of-sale.html' : 'condizioni-di-vendita.html'}">${siteText.termsInfo}</a></p>
     <p><button type="button" class="footer-link-button" data-manage-cookies>${siteText.manageCookies}</button></p>
   `;
 
@@ -546,7 +548,7 @@ function normalizeFooterLayout() {
   grid.innerHTML = `
     <div class="site-footer-global__meta-lines">
       <p class="site-footer-global__contact-line">
-        Stradone Arcidiacono Pacifico, 14 - Verona
+        <span class="site-footer-global__address">Stradone Arcidiacono Pacifico, 14 - Verona</span>
         <span aria-hidden="true">|</span>
         <a href="${phoneHref}" data-track="click_phone">+39 045 801 3280</a>
         <span aria-hidden="true">|</span>
@@ -562,6 +564,10 @@ function normalizeFooterLayout() {
         <a href="${policyPrefix}${isEnglishPage ? 'privacy-policy-en.html' : 'privacy-policy.html'}">${siteText.privacyInfo}</a>
         <span aria-hidden="true">|</span>
         <a href="${policyPrefix}${isEnglishPage ? 'returns-and-refunds.html' : 'resi-e-rimborsi.html'}">${siteText.returnsInfo}</a>
+        <span aria-hidden="true">|</span>
+        <a href="${policyPrefix}${isEnglishPage ? 'shipping-and-delivery.html' : 'spedizioni-e-consegna.html'}">${siteText.shippingInfo}</a>
+        <span aria-hidden="true">|</span>
+        <a href="${policyPrefix}${isEnglishPage ? 'terms-of-sale.html' : 'condizioni-di-vendita.html'}">${siteText.termsInfo}</a>
         <span aria-hidden="true">|</span>
         <button type="button" class="footer-link-button" data-manage-cookies>${siteText.manageCookies}</button>
         <span aria-hidden="true">|</span>
@@ -648,6 +654,587 @@ function initClickableGuideCards() {
   });
 }
 
+function setupHomeMobileSliderIndicators() {
+  const tracks = Array.from(document.querySelectorAll('[data-home-mobile-slider]'));
+  const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
+
+  tracks.forEach(function (track) {
+    const cards = Array.from(track.children);
+    if (cards.length < 2 || track.nextElementSibling?.classList.contains('home-mobile-slider-dots')) {
+      return;
+    }
+
+    const dots = document.createElement('div');
+    dots.className = 'home-mobile-slider-dots';
+    dots.setAttribute('role', 'group');
+    dots.setAttribute('aria-label', isEnglish ? 'Slider position' : 'Posizione nello scorrimento');
+
+    const buttons = cards.map(function (card, index) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('aria-label', (isEnglish ? 'Show item ' : 'Mostra elemento ') + (index + 1));
+      button.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+      button.addEventListener('click', function () {
+        track.scrollTo({
+          left: card.offsetLeft - track.offsetLeft,
+          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+        });
+      });
+      dots.appendChild(button);
+      return button;
+    });
+
+    let updatePending = false;
+    function updateIndicator() {
+      updatePending = false;
+      const activeIndex = cards.reduce(function (closestIndex, card, index) {
+        const currentDistance = Math.abs(card.offsetLeft - track.offsetLeft - track.scrollLeft);
+        const closestCard = cards[closestIndex];
+        const closestDistance = Math.abs(closestCard.offsetLeft - track.offsetLeft - track.scrollLeft);
+        return currentDistance < closestDistance ? index : closestIndex;
+      }, 0);
+
+      buttons.forEach(function (button, index) {
+        button.setAttribute('aria-current', index === activeIndex ? 'true' : 'false');
+      });
+    }
+
+    track.addEventListener('scroll', function () {
+      if (!updatePending) {
+        updatePending = true;
+        window.requestAnimationFrame(updateIndicator);
+      }
+    }, { passive: true });
+
+    track.after(dots);
+  });
+}
+
+function setupMobileContactPage() {
+  const article = document.querySelector('.contatti-content .article');
+  if (!article) {
+    return;
+  }
+
+  const mobileQuery = window.matchMedia('(max-width: 768px)');
+  const quickBar = document.createElement('nav');
+  quickBar.className = 'contact-quick-bar';
+  quickBar.setAttribute('aria-label', siteText.quickContactsLabel);
+  quickBar.innerHTML = `
+    <a class="contact-quick-bar__link contact-quick-bar__link--phone" href="tel:+390458013280" data-track="click_phone" aria-label="${siteText.phoneLabel}">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.06 15.06 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24 11.4 11.4 0 0 0 3.57.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.49a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .57 3.57 1 1 0 0 1-.24 1.02Z" fill="currentColor"></path></svg>
+      <span>${siteText.phoneLabel}</span>
+    </a>
+    <a class="contact-quick-bar__link contact-quick-bar__link--whatsapp" href="https://wa.me/393392668950" target="_blank" rel="noopener" data-track="click_whatsapp" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.94A9.84 9.84 0 0 0 12.02 2a9.94 9.94 0 0 0-8.6 14.94L2 22l5.22-1.36A9.93 9.93 0 0 0 12.02 22h.01a9.99 9.99 0 0 0 7.02-17.06Zm-7.03 15.37h-.01a8.22 8.22 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.29 8.29 0 1 1 6.96 3.84Zm4.54-6.2c-.25-.13-1.48-.73-1.72-.81-.23-.08-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.56.06-.25-.13-1.07-.39-2.04-1.24-.75-.67-1.26-1.49-1.41-1.74-.15-.25-.02-.39.11-.52.12-.12.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.02 2.61.13.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.17.21-.58.21-1.07.15-1.17-.06-.1-.23-.15-.48-.27Z" fill="currentColor"></path></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a class="contact-quick-bar__link contact-quick-bar__link--instagram" href="https://www.instagram.com/shahmansouri_tappeti_persiani/" target="_blank" rel="noopener" data-track="click_social_instagram" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm10.4 1.7a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.2A2.8 2.8 0 1 0 12 14.8 2.8 2.8 0 0 0 12 9.2Z" fill="currentColor"></path></svg>
+      <span>Instagram</span>
+    </a>
+    <a class="contact-quick-bar__link contact-quick-bar__link--maps" href="${STORE_MAP_URL}" target="_blank" rel="noopener" data-track="click_google_maps" aria-label="Google Maps">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c4.14 0 7.5 3.23 7.5 7.22 0 4.72-5.3 10.36-7.5 12.5-2.2-2.14-7.5-7.78-7.5-12.5C4.5 5.23 7.86 2 12 2Zm0 4.2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" fill="currentColor"></path></svg>
+      <span>Maps</span>
+    </a>
+  `;
+  article.appendChild(quickBar);
+  const collapsibles = Array.from(article.querySelectorAll('.contact-mobile-collapsible'));
+
+  collapsibles.forEach(function (content, index) {
+    const button = document.createElement('button');
+    const contentId = 'contact-mobile-section-' + (index + 1);
+    content.id = contentId;
+    button.type = 'button';
+    button.className = 'contact-mobile-collapsible__toggle';
+    button.setAttribute('aria-controls', contentId);
+    button.innerHTML = `<span>${content.dataset.contactMobileLabel}</span><span class="contact-mobile-collapsible__icon" aria-hidden="true">+</span>`;
+    content.before(button);
+
+    function setExpanded(expanded) {
+      button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      content.hidden = !expanded;
+      content.classList.toggle('is-open', expanded);
+      const icon = button.querySelector('.contact-mobile-collapsible__icon');
+      if (icon) {
+        icon.textContent = expanded ? '\u2212' : '+';
+      }
+    }
+
+    button.addEventListener('click', function () {
+      setExpanded(button.getAttribute('aria-expanded') !== 'true');
+    });
+
+    function syncCollapsible() {
+      button.hidden = !mobileQuery.matches;
+      setExpanded(!mobileQuery.matches);
+    }
+
+    syncCollapsible();
+    mobileQuery.addEventListener('change', syncCollapsible);
+  });
+
+  const directSection = article.querySelector('.contact-direct-section');
+  const contactDetails = article.querySelector('.contact-details');
+  const mapSection = article.querySelector('.contact-map-section');
+  const servicesSection = article.querySelector('.contact-services-section');
+  const servicesToggle = servicesSection ? servicesSection.previousElementSibling : null;
+  if (directSection && contactDetails && mapSection && servicesSection && servicesToggle) {
+    const directOriginalPosition = document.createComment('contact-direct-section-position');
+    const mapOriginalPosition = document.createComment('contact-map-section-position');
+    const servicesOriginalPosition = document.createComment('contact-services-section-position');
+    directSection.before(directOriginalPosition);
+    mapSection.before(mapOriginalPosition);
+    servicesToggle.before(servicesOriginalPosition);
+
+    function syncDirectSectionPosition() {
+      if (mobileQuery.matches) {
+        contactDetails.after(quickBar);
+        quickBar.after(mapSection);
+        mapSection.after(directSection);
+        directSection.after(servicesToggle);
+        servicesToggle.after(servicesSection);
+      } else {
+        article.appendChild(quickBar);
+        servicesOriginalPosition.after(servicesToggle);
+        servicesToggle.after(servicesSection);
+        mapOriginalPosition.after(mapSection);
+        directOriginalPosition.after(directSection);
+      }
+    }
+
+    syncDirectSectionPosition();
+    mobileQuery.addEventListener('change', syncDirectSectionPosition);
+  }
+
+  const gallery = article.querySelector('[data-contact-gallery-slider]');
+  if (!gallery || gallery.children.length < 2) {
+    return;
+  }
+
+  const figures = Array.from(gallery.children);
+  const dots = document.createElement('div');
+  dots.className = 'contact-gallery-dots';
+  dots.setAttribute('role', 'group');
+  dots.setAttribute('aria-label', isEnglishPage ? 'Photo gallery position' : 'Posizione nella galleria fotografica');
+
+  const buttons = figures.map(function (figure, index) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', (isEnglishPage ? 'Show photo ' : 'Mostra foto ') + (index + 1));
+    button.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+    button.addEventListener('click', function () {
+      gallery.scrollTo({
+        left: figure.offsetLeft - gallery.offsetLeft,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      });
+    });
+    dots.appendChild(button);
+    return button;
+  });
+
+  let updatePending = false;
+  gallery.addEventListener('scroll', function () {
+    if (updatePending) {
+      return;
+    }
+    updatePending = true;
+    window.requestAnimationFrame(function () {
+      updatePending = false;
+      const activeIndex = figures.reduce(function (closestIndex, figure, index) {
+        const distance = Math.abs(figure.offsetLeft - gallery.offsetLeft - gallery.scrollLeft);
+        const closest = figures[closestIndex];
+        const closestDistance = Math.abs(closest.offsetLeft - gallery.offsetLeft - gallery.scrollLeft);
+        return distance < closestDistance ? index : closestIndex;
+      }, 0);
+      buttons.forEach(function (button, index) {
+        button.setAttribute('aria-current', index === activeIndex ? 'true' : 'false');
+      });
+    });
+  }, { passive: true });
+
+  gallery.after(dots);
+}
+
+function setupLocalHubMobilePage() {
+  const page = document.querySelector('.local-hub-page');
+  if (!page || page.dataset.mobileHubReady === 'true') {
+    return;
+  }
+  page.dataset.mobileHubReady = 'true';
+
+  const mobileQuery = window.matchMedia('(max-width: 768px)');
+  const heroGrid = page.querySelector('.local-hero__grid');
+  const heroCopy = heroGrid && heroGrid.firstElementChild;
+  const heroMedia = heroGrid && heroGrid.querySelector('.local-hero__media');
+  const heroCta = heroCopy && heroCopy.querySelector('.local-cta');
+  if (heroCopy && heroMedia && heroCta) {
+    const mediaPosition = document.createComment('local-hub-media-position');
+    const ctaPosition = document.createComment('local-hub-cta-position');
+    heroMedia.before(mediaPosition);
+    heroCta.before(ctaPosition);
+
+    function syncHeroOrder() {
+      if (mobileQuery.matches) {
+        const firstParagraph = heroCopy.querySelector('p');
+        firstParagraph.after(heroMedia);
+        heroMedia.after(heroCta);
+      } else {
+        ctaPosition.after(heroCta);
+        mediaPosition.after(heroMedia);
+      }
+    }
+    syncHeroOrder();
+    mobileQuery.addEventListener('change', syncHeroOrder);
+  }
+
+  const overview = page.querySelector('.local-overview__grid');
+  if (overview) {
+    overview.setAttribute('data-home-mobile-slider', '');
+    setupHomeMobileSliderIndicators();
+  }
+
+  const sectionIds = ['lavaggio-tappeti', 'restauro-tappeti', 'primo-orientamento', 'manutenzione-tappeti', 'rug-cleaning', 'rug-restoration', 'initial-guidance', 'rug-maintenance'];
+  const sections = sectionIds.map(function (id) { return document.getElementById(id); }).filter(Boolean);
+  const observationSection = page.querySelector('.local-section--editorial:not([id])');
+  if (observationSection) {
+    observationSection.id = 'rug-observation';
+    sections.push(observationSection);
+  }
+  const sectionExpanders = new Map();
+  const sectionControls = [];
+  const shortSectionTitles = isEnglishPage
+    ? {
+        'rug-cleaning': 'Rug cleaning',
+        'rug-restoration': 'Rug restoration',
+        'initial-guidance': 'Initial guidance',
+        'rug-maintenance': 'Maintenance and conservation',
+        'rug-observation': 'Look at the rug first'
+      }
+    : {
+        'lavaggio-tappeti': 'Lavaggio tappeti',
+        'restauro-tappeti': 'Restauro tappeti',
+        'primo-orientamento': 'Primo orientamento',
+        'manutenzione-tappeti': 'Manutenzione e conservazione',
+        'rug-observation': 'Prima si osserva il tappeto'
+      };
+  sections.forEach(function (section, index) {
+    const heading = section.querySelector(':scope > h2');
+    if (!heading) {
+      return;
+    }
+    const body = document.createElement('div');
+    body.className = 'local-hub-collapsible__body';
+    body.id = 'local-hub-section-' + (index + 1);
+    while (heading.nextSibling) {
+      body.appendChild(heading.nextSibling);
+    }
+    section.appendChild(body);
+
+    const toggle = document.createElement('button');
+    const sectionTitle = heading.textContent.trim();
+    section.classList.add('local-hub-collapsible');
+    heading.classList.add('local-hub-collapsible__heading');
+    toggle.type = 'button';
+    toggle.className = 'local-hub-collapsible__toggle';
+    toggle.setAttribute('aria-controls', body.id);
+    toggle.innerHTML = `<span>${shortSectionTitles[section.id] || sectionTitle}</span><span aria-hidden="true">+</span>`;
+    heading.after(toggle);
+
+    function setExpanded(expanded) {
+      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      toggle.setAttribute('aria-label', `${expanded ? (isEnglishPage ? 'Close' : 'Chiudi') : (isEnglishPage ? 'Open' : 'Apri')} ${sectionTitle}`);
+      toggle.lastElementChild.textContent = expanded ? '\u2212' : '+';
+      body.hidden = !expanded;
+    }
+    sectionControls.push({ section: section, setExpanded: setExpanded });
+    sectionExpanders.set('#' + section.id, function () {
+      if (mobileQuery.matches) {
+        sectionControls.forEach(function (control) {
+          if (control.section !== section) control.setExpanded(false);
+        });
+      }
+      setExpanded(true);
+    });
+    toggle.addEventListener('click', function () {
+      const shouldExpand = toggle.getAttribute('aria-expanded') !== 'true';
+      if (shouldExpand && mobileQuery.matches) {
+        sectionControls.forEach(function (control) {
+          if (control.section !== section) control.setExpanded(false);
+        });
+      }
+      setExpanded(shouldExpand);
+    });
+    function syncSection() {
+      toggle.hidden = !mobileQuery.matches;
+      setExpanded(!mobileQuery.matches);
+    }
+    syncSection();
+    mobileQuery.addEventListener('change', syncSection);
+  });
+
+  if (sections.length > 1) {
+    const sectionGrid = document.createElement('div');
+    sectionGrid.className = 'local-hub-mobile-section-grid';
+    sections[0].before(sectionGrid);
+    sections.forEach(function (section) {
+      sectionGrid.appendChild(section);
+    });
+  }
+
+  if (overview) {
+    overview.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        if (mobileQuery.matches) {
+          sectionExpanders.get(link.getAttribute('href'))?.();
+        }
+      });
+    });
+  }
+
+  const floatingActions = document.querySelector('.floating-actions');
+  const overviewSection = page.querySelector('.local-overview');
+  if (floatingActions && overviewSection) {
+    const quickBar = document.createElement('nav');
+    quickBar.className = 'local-hub-quick-bar';
+    quickBar.setAttribute('aria-label', siteText.quickContactsLabel);
+    Array.from(floatingActions.querySelectorAll('a')).forEach(function (link) {
+      const quickLink = link.cloneNode(true);
+      quickLink.className = 'local-hub-quick-bar__link';
+      quickBar.appendChild(quickLink);
+    });
+    overviewSection.before(quickBar);
+  }
+
+  const hero = page.querySelector('.local-hero');
+  if (hero && !page.querySelector('.local-hub-mobile-chooser')) {
+    const chooser = document.createElement('section');
+    chooser.className = 'local-hub-mobile-chooser';
+    chooser.setAttribute('aria-labelledby', 'local-hub-mobile-chooser-title');
+    chooser.innerHTML = isEnglishPage ? `
+      <p class="eyebrow">Choose the right path</p>
+      <h2 id="local-hub-mobile-chooser-title">What does your rug need?</h2>
+      <div class="local-hub-mobile-chooser__grid">
+        <a href="../lavaggio-tappeti-verona/index-en.html" data-track="click_service_lavaggio"><strong>Rug cleaning</strong><span>For dust, stains, odours and a dull pile.</span></a>
+        <a href="../restauro-tappeti-verona/index-en.html" data-track="click_service_restauro"><strong>Rug restoration</strong><span>For worn fringes, edges, tears or weakened areas.</span></a>
+      </div>
+      <a class="local-hub-mobile-chooser__guidance" href="../valutazione-tappeti-verona/index-en.html" data-track="click_service_valutazione"><strong>Not sure where to begin?</strong><span>Start with initial guidance on the rug.</span></a>
+    ` : `
+      <p class="eyebrow">Scegli il percorso</p>
+      <h2 id="local-hub-mobile-chooser-title">Di cosa ha bisogno il tappeto?</h2>
+      <div class="local-hub-mobile-chooser__grid">
+        <a href="../lavaggio-tappeti-verona/" data-track="click_service_lavaggio"><strong>Lavaggio tappeti</strong><span>Per polvere, macchie, odori e vello spento.</span></a>
+        <a href="../restauro-tappeti-verona/" data-track="click_service_restauro"><strong>Restauro tappeti</strong><span>Per frange, bordi, tagli o parti indebolite.</span></a>
+      </div>
+      <a class="local-hub-mobile-chooser__guidance" href="../valutazione-tappeti-verona/" data-track="click_service_valutazione"><strong>Non sai da dove partire?</strong><span>Inizia da un primo orientamento sul tappeto.</span></a>
+    `;
+    hero.after(chooser);
+
+    const chooserPosition = document.createComment('local-hub-chooser-position');
+    chooser.before(chooserPosition);
+    function syncChooserPosition() {
+      if (mobileQuery.matches && heroCopy) {
+        heroCopy.querySelector('p')?.after(chooser);
+      } else {
+        chooserPosition.after(chooser);
+      }
+    }
+    syncChooserPosition();
+    mobileQuery.addEventListener('change', syncChooserPosition);
+  }
+
+  const serviceChoiceTrack = page.querySelector('.local-section--service:not([id]) > .local-hub-service-grid');
+  if (serviceChoiceTrack) {
+    serviceChoiceTrack.setAttribute('data-home-mobile-slider', '');
+    setupHomeMobileSliderIndicators();
+  }
+
+  const figures = Array.from(page.querySelectorAll('.local-hero__media, .local-inline-figure'));
+  if (figures.length) {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'local-hub-lightbox';
+    lightbox.hidden = true;
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', isEnglishPage ? 'Enlarged image' : 'Immagine ingrandita');
+    lightbox.innerHTML = `<button type="button" class="local-hub-lightbox__close" aria-label="${isEnglishPage ? 'Close image' : 'Chiudi immagine'}">&times;</button><img alt="">`;
+    document.body.appendChild(lightbox);
+    const lightboxImage = lightbox.querySelector('img');
+    const closeButton = lightbox.querySelector('button');
+    let opener = null;
+
+    function closeLightbox() {
+      lightbox.hidden = true;
+      page.inert = false;
+      document.body.classList.remove('local-hub-lightbox-open');
+      if (opener) opener.focus();
+    }
+    figures.forEach(function (figure) {
+      const image = figure.querySelector('img');
+      if (!image) return;
+      function syncFigureInteraction() {
+        if (mobileQuery.matches) {
+          figure.tabIndex = 0;
+          figure.setAttribute('role', 'button');
+          figure.setAttribute('aria-label', (isEnglishPage ? 'Enlarge: ' : 'Ingrandisci: ') + image.alt);
+        } else {
+          figure.removeAttribute('tabindex');
+          figure.removeAttribute('role');
+          figure.removeAttribute('aria-label');
+        }
+      }
+      function openLightbox() {
+        if (!mobileQuery.matches) return;
+        opener = figure;
+        lightboxImage.src = image.currentSrc || image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.hidden = false;
+        page.inert = true;
+        document.body.classList.add('local-hub-lightbox-open');
+        closeButton.focus();
+      }
+      figure.addEventListener('click', openLightbox);
+      figure.addEventListener('keydown', function (event) {
+        if (mobileQuery.matches && (event.key === 'Enter' || event.key === ' ')) {
+          event.preventDefault();
+          openLightbox();
+        }
+      });
+      syncFigureInteraction();
+      mobileQuery.addEventListener('change', syncFigureInteraction);
+    });
+    closeButton.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (event) {
+      if (event.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+      if (event.key === 'Tab' && !lightbox.hidden) {
+        event.preventDefault();
+        closeButton.focus();
+      }
+    });
+  }
+}
+
+function setupWashingServiceMobilePage() {
+  const page = document.querySelector('.local-washing-page');
+  if (!page || page.dataset.mobileWashingReady === 'true') return;
+  page.dataset.mobileWashingReady = 'true';
+
+  const mobileQuery = window.matchMedia('(max-width: 768px)');
+  const isRestorationPage = page.classList.contains('local-restoration-mobile-page');
+  const isValuationPage = page.classList.contains('local-valuation-mobile-page');
+  const heroGrid = page.querySelector('.local-hero__grid');
+  const heroCopy = heroGrid && heroGrid.firstElementChild;
+  const heroMedia = heroGrid && heroGrid.querySelector('.local-hero__media');
+  const heroCta = heroCopy && heroCopy.querySelector('.local-cta');
+  if (heroCopy && heroMedia && heroCta) {
+    const mediaPosition = document.createComment('washing-media-position');
+    const ctaPosition = document.createComment('washing-cta-position');
+    heroMedia.before(mediaPosition);
+    heroCta.before(ctaPosition);
+    function syncHero() {
+      if (mobileQuery.matches) {
+        const firstParagraph = heroCopy.querySelector('p');
+        firstParagraph.after(heroCta);
+        heroCta.after(heroMedia);
+      } else {
+        ctaPosition.after(heroCta);
+        mediaPosition.after(heroMedia);
+      }
+    }
+    syncHero();
+    mobileQuery.addEventListener('change', syncHero);
+  }
+
+  const sections = Array.from(page.querySelectorAll('main > .local-section'));
+  const shortTitlesIt = ['Osservare il tappeto', 'Battitura e lavaggio', 'Quando serve il lavaggio', 'Polvere, tarme e umidit\u00e0', 'Inviare una fotografia', 'Quando il lavaggio non basta'];
+  const shortTitlesEn = ['Look at the rug first', 'Dust removal and washing', 'When cleaning is needed', 'Dust, moths and humidity', 'Send a photograph', 'When cleaning is not enough'];
+  const restorationTitlesIt = ['Fermare il danno', 'Frange, bordi e tagli', 'Buchi e parti indebolite', 'Conservare il manufatto', 'Restauro o lavaggio?', 'Inviare una fotografia'];
+  const restorationTitlesEn = ['Stop damage early', 'Fringes, edges and tears', 'Holes and weakened areas', 'Preserve the piece', 'Restoration or cleaning?', 'Send a photograph'];
+  const valuationTitlesIt = ['Primo orientamento', 'Cosa osserviamo', 'Fotografie utili', 'Tappeti antichi e vecchi', 'Possibili indicazioni', 'Vedere il tappeto dal vivo'];
+  const valuationTitlesEn = ['Initial guidance', 'What we observe', 'Useful photographs', 'Antique and old rugs', 'Possible guidance', 'See the rug in person'];
+  const visibleTitles = isValuationPage
+    ? (isEnglishPage ? valuationTitlesEn : valuationTitlesIt)
+    : isRestorationPage
+      ? (isEnglishPage ? restorationTitlesEn : restorationTitlesIt)
+      : (isEnglishPage ? shortTitlesEn : shortTitlesIt);
+  const controls = [];
+
+  sections.forEach(function (section, index) {
+    const heading = section.querySelector(':scope > h2');
+    if (!heading) return;
+    const fullTitle = heading.textContent.trim();
+    const body = document.createElement('div');
+    body.className = 'washing-mobile-accordion__body';
+    body.id = 'washing-mobile-section-' + (index + 1);
+    while (heading.nextSibling) body.appendChild(heading.nextSibling);
+    section.appendChild(body);
+    section.classList.add('washing-mobile-accordion');
+    heading.classList.add('washing-mobile-accordion__heading');
+
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'washing-mobile-accordion__toggle';
+    toggle.setAttribute('aria-controls', body.id);
+    toggle.innerHTML = `<span>${visibleTitles[index] || fullTitle}</span><span aria-hidden="true">+</span>`;
+    heading.after(toggle);
+
+    function setExpanded(expanded) {
+      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      toggle.setAttribute('aria-label', `${expanded ? (isEnglishPage ? 'Close' : 'Chiudi') : (isEnglishPage ? 'Open' : 'Apri')} ${fullTitle}`);
+      toggle.lastElementChild.textContent = expanded ? '\u2212' : '+';
+      body.hidden = !expanded;
+    }
+    controls.push({ section: section, setExpanded: setExpanded });
+    toggle.addEventListener('click', function () {
+      const expand = toggle.getAttribute('aria-expanded') !== 'true';
+      if (expand && mobileQuery.matches) {
+        controls.forEach(function (control) {
+          if (control.section !== section) control.setExpanded(false);
+        });
+      }
+      setExpanded(expand);
+      if (expand && mobileQuery.matches) {
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            section.scrollIntoView({
+              behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
+              block: 'start'
+            });
+          });
+        });
+      }
+    });
+    function syncSection() {
+      toggle.hidden = !mobileQuery.matches;
+      setExpanded(!mobileQuery.matches || index === 0);
+    }
+    syncSection();
+    mobileQuery.addEventListener('change', syncSection);
+  });
+
+  page.querySelectorAll('.local-service-steps, .local-service-card-grid, .local-card-grid, .local-service-comparison').forEach(function (track) {
+    if (track.children.length > 1) track.setAttribute('data-home-mobile-slider', '');
+  });
+  if (isRestorationPage || isValuationPage) {
+    const overview = page.querySelector('.local-overview__grid');
+    if (overview) overview.setAttribute('data-home-mobile-slider', '');
+    page.querySelectorAll('.local-restauro-card-grid, .local-restauro-comparison, .local-valuation-card-grid, .local-valuation-checklist').forEach(function (track) {
+      if (track.children.length > 1) track.setAttribute('data-home-mobile-slider', '');
+    });
+  }
+  setupHomeMobileSliderIndicators();
+}
+
+function enhanceWhatsAppButtons() {
+  document.querySelectorAll('.local-button[href*="wa.me"]').forEach(function (button) {
+    if (button.querySelector('.local-button__whatsapp-icon')) return;
+    button.insertAdjacentHTML('afterbegin', '<svg class="local-button__whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.94A9.84 9.84 0 0 0 12.02 2a9.94 9.94 0 0 0-8.6 14.94L2 22l5.22-1.36A9.93 9.93 0 0 0 12.02 22h.01a9.99 9.99 0 0 0 7.02-17.06Zm-7.03 15.37h-.01a8.22 8.22 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.29 8.29 0 1 1 6.96 3.84Zm4.54-6.2c-.25-.13-1.48-.73-1.72-.81-.23-.08-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.56.06-.25-.13-1.07-.39-2.04-1.24-.75-.67-1.26-1.49-1.41-1.74-.15-.25-.02-.39.11-.52.12-.12.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.02 2.61.13.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.17.21-.58.21-1.07.15-1.17-.06-.1-.23-.15-.48-.27Z" fill="currentColor"></path></svg>');
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const path = window.location.pathname;
   const page = path.split('/').pop();
@@ -671,6 +1258,11 @@ document.addEventListener('DOMContentLoaded', function () {
   setupDesktopDropdowns();
   setupMobileNav();
   initClickableGuideCards();
+  setupHomeMobileSliderIndicators();
+  setupMobileContactPage();
+  setupLocalHubMobilePage();
+  setupWashingServiceMobilePage();
+  enhanceWhatsAppButtons();
 });
 
 function setupMobileNav() {
