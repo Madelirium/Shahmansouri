@@ -25,9 +25,14 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
   background:
     radial-gradient(circle at center, rgba(255, 234, 168, 0.18) 0%, rgba(255, 234, 168, 0.08) 38%, rgba(255, 234, 168, 0) 54%),
     var(--product-bg);
