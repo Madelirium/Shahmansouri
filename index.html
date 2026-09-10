@@ -666,8 +666,8 @@
         overflow-x: auto;
         overflow-y: visible;
         padding: 0 26px 8px 0;
-          scroll-snap-type: x proximity;
-          scroll-padding-inline: 16px;
+          scroll-snap-type: x mandatory;
+          scroll-padding-inline: 0;
           overscroll-behavior-x: contain;
           scroll-behavior: auto;
           touch-action: auto;
@@ -707,6 +707,7 @@
           0 4px 10px rgba(49, 9, 0, 0.08),
           inset 0 1px 0 rgba(255, 248, 236, 0.12);
         scroll-snap-align: start;
+        scroll-snap-stop: always;
       }
 
       .home-mobile-quicklink-card {
@@ -1028,6 +1029,11 @@
       <a class="home-mobile-intro-card__image" href="contatti.html" data-track="click_contact_page"><img src="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp" srcset="images/shahmansouri-tappeti-verona-isfahan-mehdi-360.webp 360w, images/shahmansouri-tappeti-verona-isfahan-mehdi-640.webp 640w, images/shahmansouri-tappeti-verona-isfahan-mehdi.webp 1875w" sizes="(max-width: 767px) 298px, (max-width: 1199px) 420px, 520px" alt="Mehdi Shahmansouri a Isfahan" width="900" height="675" decoding="async" fetchpriority="high"></a>
       <div class="home-mobile-intro-card__hint" aria-hidden="true"><span>Scorri</span><span class="home-mobile-quicklink-card__hint-arrow">&#8594;</span></div>
       <p>Mehdi Shahmansouri originario della provincia di <a href="persia.html">Isfahan (Iran)</a> appartiene ad una famiglia di commercianti all&rsquo;ingrosso da diverse generazioni e vive e lavora a Verona dove dal 1991 importatore diretto si propone anche al dettaglio con una sede esclusiva e prestigiosa all&rsquo;interno della citt&agrave; antica di fronte al <a href="contatti.html">Duomo di Verona</a>.</p>
+      <nav class="home-mobile-primary-actions" aria-label="Azioni principali">
+       <a class="home-mobile-primary-actions__main" href="catalogo/index.html" data-track="click_catalog">Catalogo</a>
+       <a href="lavaggio-restauro-tappeti-verona/">Lavaggio e restauro</a>
+       <a href="contatti.html" data-track="click_contact_page">Dove siamo</a>
+      </nav>
      </div>
      <div class="home-mobile-intro-card">
        <p>Shahmansouri non &egrave; il classico <a href="tappeti-verona/">negozio di tappeti a Verona</a>, ma si distingue per originalit&agrave; e stile. Propone molteplici aspetti dell&rsquo;arte persiana: <a href="tappeti.html">tappeti fini e antichi, moderni e di vecchia lavorazione</a>. Pezzi unici per qualit&agrave; e originalit&agrave; si accompagnano a manufatti tribali, Kilim, Sacche, Bisacce, Korjin, Jajim, Javal, Cuscini.</p>
@@ -1072,12 +1078,6 @@
    </aside>
    </div>
   </main>
-
-  <nav class="home-mobile-primary-actions" aria-label="Azioni principali">
-   <a class="home-mobile-primary-actions__main" href="catalogo/index.html" data-track="click_catalog">Catalogo</a>
-   <a href="lavaggio-restauro-tappeti-verona/">Lavaggio e restauro</a>
-   <a href="contatti.html" data-track="click_contact_page">Dove siamo</a>
-  </nav>
 
   <p class="home-mobile-section-kicker">Scorciatoie</p>
   <section class="home-mobile-quicklinks" aria-label="Scorciatoie del sito" data-home-mobile-slider>

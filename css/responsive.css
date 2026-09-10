@@ -692,6 +692,12 @@
     outline-offset: 2px;
   }
 
+  .home-mobile-intro-card .home-mobile-primary-actions {
+    width: 100%;
+    max-width: none;
+    margin: 14px 0 0;
+  }
+
   .home-page .home-mobile-intro-cards,
   .home-page .home-mobile-quicklinks {
     align-items: flex-start;

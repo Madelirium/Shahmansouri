@@ -675,8 +675,17 @@ function setupHomeMobileSliderIndicators() {
       button.setAttribute('aria-label', (isEnglish ? 'Show item ' : 'Mostra elemento ') + (index + 1));
       button.setAttribute('aria-current', index === 0 ? 'true' : 'false');
       button.addEventListener('click', function () {
+        const trackRect = track.getBoundingClientRect();
+        const cardRect = card.getBoundingClientRect();
+        const targetLeft = Math.max(0, Math.min(
+          track.scrollLeft + cardRect.left - trackRect.left,
+          track.scrollWidth - track.clientWidth
+        ));
+        buttons.forEach(function (dot, dotIndex) {
+          dot.setAttribute('aria-current', dotIndex === index ? 'true' : 'false');
+        });
         track.scrollTo({
-          left: card.offsetLeft - track.offsetLeft,
+          left: targetLeft,
           behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
         });
       });
@@ -687,10 +696,11 @@ function setupHomeMobileSliderIndicators() {
     let updatePending = false;
     function updateIndicator() {
       updatePending = false;
+      const trackLeft = track.getBoundingClientRect().left;
       const activeIndex = cards.reduce(function (closestIndex, card, index) {
-        const currentDistance = Math.abs(card.offsetLeft - track.offsetLeft - track.scrollLeft);
+        const currentDistance = Math.abs(card.getBoundingClientRect().left - trackLeft);
         const closestCard = cards[closestIndex];
-        const closestDistance = Math.abs(closestCard.offsetLeft - track.offsetLeft - track.scrollLeft);
+        const closestDistance = Math.abs(closestCard.getBoundingClientRect().left - trackLeft);
         return currentDistance < closestDistance ? index : closestIndex;
       }, 0);
 
