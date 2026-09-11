@@ -306,10 +306,11 @@
       const prevButton = document.querySelector("[data-featured-products-prev]");
       const nextButton = document.querySelector("[data-featured-products-next]");
       const reduceMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const mobileCarouselQuery = window.matchMedia("(max-width: 768px)");
       let autoScrollId = null;
       let resumeTimeoutId = null;
       let loopWidth = 0;
-      let autoScrollEnabled = !reduceMotionQuery.matches;
+      let autoScrollEnabled = !reduceMotionQuery.matches && !mobileCarouselQuery.matches;
       let currentSpeed = 0;
       let targetSpeed = 0;
       let virtualScrollLeft = 0;
@@ -370,6 +371,44 @@
         if (nextButton) {
           nextButton.disabled = !hasContent;
         }
+      }
+
+      function setupMobileDots(products) {
+        if (!mobileCarouselQuery.matches) return;
+        const carousel = track.closest(".carpet-products-carousel");
+        const dots = document.createElement("div");
+        let updatePending = false;
+        dots.className = "carpet-products-carousel__dots";
+        dots.setAttribute("role", "group");
+        dots.setAttribute("aria-label", "Choose rug");
+
+        products.forEach(function (product, index) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.setAttribute("aria-label", "Show rug " + (index + 1));
+          button.setAttribute("aria-current", index === 0 ? "true" : "false");
+          button.addEventListener("click", function () {
+            const card = track.children[index];
+            if (card) track.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+          });
+          dots.appendChild(button);
+        });
+
+        track.addEventListener("scroll", function () {
+          if (updatePending) return;
+          updatePending = true;
+          window.requestAnimationFrame(function () {
+            const firstCard = track.firstElementChild;
+            const gap = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+            const step = firstCard ? firstCard.getBoundingClientRect().width + gap : 1;
+            const activeIndex = Math.max(0, Math.min(products.length - 1, Math.round(track.scrollLeft / step)));
+            Array.from(dots.children).forEach(function (dot, index) {
+              dot.setAttribute("aria-current", index === activeIndex ? "true" : "false");
+            });
+            updatePending = false;
+          });
+        }, { passive: true });
+        carousel.appendChild(dots);
       }
 
       function clearResumeTimeout() {
@@ -655,13 +694,16 @@
             return;
           }
 
-          const repeatedProducts = featuredProducts.concat(featuredProducts, featuredProducts);
+          const repeatedProducts = mobileCarouselQuery.matches
+            ? featuredProducts
+            : featuredProducts.concat(featuredProducts, featuredProducts);
           track.innerHTML = repeatedProducts.map(renderProduct).join("");
-          rebuildLoopWidth();
-          virtualScrollLeft = loopWidth;
+          loopWidth = mobileCarouselQuery.matches ? 0 : track.scrollWidth / 3;
+          virtualScrollLeft = mobileCarouselQuery.matches ? 0 : loopWidth;
           track.scrollLeft = virtualScrollLeft;
           status.textContent = "";
           updateButtons();
+          setupMobileDots(featuredProducts);
           resumeAutoScroll();
           startAutoScroll();
         })

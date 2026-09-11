@@ -1305,6 +1305,75 @@ function setupCarpetMobileToc() {
   });
 }
 
+function setupCultureMobileLayout() {
+  const article = document.querySelector('.culture-content .article, .persia-content .article');
+  if (!article || !window.matchMedia('(max-width: 768px)').matches) return;
+
+  const headings = Array.from(article.querySelectorAll(':scope > h2'));
+  if (!headings.length) return;
+
+  const nav = document.createElement('nav');
+  const isEnglish = document.documentElement.lang === 'en';
+  const isPersia = article.closest('.persia-content') !== null;
+  const persiaSubheadings = isPersia ? Array.from(article.querySelectorAll(':scope > h3')) : [];
+  const isItalianPersia = isPersia && !isEnglish;
+  const navHeadings = isItalianPersia
+    ? [headings[0]].concat(persiaSubheadings)
+    : headings;
+  const navLabels = isPersia
+    ? (isEnglish
+      ? ['People', 'Tehran', 'Isfahan', 'Shiraz', 'Rugs and crafts', 'Verona']
+      : ['La gente', 'Golestan', 'Torre Azadi', 'Ali Qapu', 'Ponte Khaju', 'Ponte Si O Se', 'Moschea Emam', 'Chehel Sotoun', 'Cattedrale di Vank', 'Persepoli'])
+    : (isEnglish
+      ? ['Nowruz', 'Traditions', 'Cuisine', 'Religions', 'Decorative arts', 'Useful words', 'Verona']
+      : ['Nowruz', 'Tradizioni', 'Cucina persiana', 'Religione', 'Parole utili', 'Giorni', 'Numeri', 'Colori']);
+  nav.className = 'culture-mobile-nav';
+  nav.setAttribute('aria-label', isEnglish ? 'Culture page sections' : 'Sezioni della pagina Cultura');
+
+  navHeadings.forEach(function (heading, index) {
+    const slug = heading.textContent
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-|-$/g, '');
+    const id = heading.id || ('cultura-' + (slug || index + 1));
+    const link = document.createElement('a');
+
+    heading.id = id;
+    link.href = '#' + id;
+    link.textContent = navLabels[index] || heading.textContent;
+    nav.appendChild(link);
+  });
+
+  const sectionHeadings = isItalianPersia
+    ? [headings[0]].concat(persiaSubheadings)
+    : headings;
+
+  sectionHeadings.forEach(function (heading, index) {
+    const nextHeading = isItalianPersia && index === 0
+      ? headings[1]
+      : (sectionHeadings[index + 1] || null);
+    const section = document.createElement('section');
+    section.className = 'culture-mobile-section';
+    heading.before(section);
+    while (section.nextSibling && section.nextSibling !== nextHeading) {
+      section.appendChild(section.nextSibling);
+    }
+  });
+
+  article.querySelector('h1').insertAdjacentElement('afterend', nav);
+  nav.addEventListener('click', function (event) {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    event.preventDefault();
+    const top = target.getBoundingClientRect().top + window.scrollY - 84;
+    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  });
+}
+
 function setupRandomProductGalleries() {
   const galleries = document.querySelectorAll('[data-random-product-gallery]');
   if (!galleries.length) return;
@@ -1498,6 +1567,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupMobileNav();
   initClickableGuideCards();
   setupCarpetMobileToc();
+  setupCultureMobileLayout();
   setupRandomProductGalleries();
   setupCraftsMobilePage();
   setupHomeMobileSliderIndicators();
