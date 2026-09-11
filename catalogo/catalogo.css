@@ -1339,8 +1339,12 @@ img {
     padding: 22px 14px 24px;
   }
 
+  .site-header {
+    padding: 0;
+  }
+
   .header-bar {
-    padding: 20px 16px 16px;
+    padding: 4px 16px 16px;
     min-height: auto;
   }
 

@@ -872,6 +872,9 @@ function setupLocalHubMobilePage() {
     return;
   }
   page.dataset.mobileHubReady = 'true';
+  if (page.classList.contains('local-hub-redesign')) {
+    return;
+  }
 
   const mobileQuery = window.matchMedia('(max-width: 768px)');
   const heroGrid = page.querySelector('.local-hero__grid');
@@ -1002,20 +1005,6 @@ function setupLocalHubMobilePage() {
     });
   }
 
-  const floatingActions = document.querySelector('.floating-actions');
-  const overviewSection = page.querySelector('.local-overview');
-  if (floatingActions && overviewSection) {
-    const quickBar = document.createElement('nav');
-    quickBar.className = 'local-hub-quick-bar';
-    quickBar.setAttribute('aria-label', siteText.quickContactsLabel);
-    Array.from(floatingActions.querySelectorAll('a')).forEach(function (link) {
-      const quickLink = link.cloneNode(true);
-      quickLink.className = 'local-hub-quick-bar__link';
-      quickBar.appendChild(quickLink);
-    });
-    overviewSection.before(quickBar);
-  }
-
   const hero = page.querySelector('.local-hero');
   if (hero && !page.querySelector('.local-hub-mobile-chooser')) {
     const chooser = document.createElement('section');
@@ -1028,7 +1017,7 @@ function setupLocalHubMobilePage() {
         <a href="../lavaggio-tappeti-verona/index-en.html" data-track="click_service_lavaggio"><strong>Rug cleaning</strong><span>For dust, stains, odours and a dull pile.</span></a>
         <a href="../restauro-tappeti-verona/index-en.html" data-track="click_service_restauro"><strong>Rug restoration</strong><span>For worn fringes, edges, tears or weakened areas.</span></a>
       </div>
-      <a class="local-hub-mobile-chooser__guidance" href="../valutazione-tappeti-verona/index-en.html" data-track="click_service_valutazione"><strong>Not sure where to begin?</strong><span>Start with initial guidance on the rug.</span></a>
+      <a class="local-hub-mobile-chooser__guidance" href="../valutazione-tappeti-verona/index-en.html" data-track="click_service_valutazione"><strong>Let us look at the rug</strong><span>Send a few photographs for an initial indication.</span></a>
     ` : `
       <p class="eyebrow">Scegli il percorso</p>
       <h2 id="local-hub-mobile-chooser-title">Di cosa ha bisogno il tappeto?</h2>
@@ -1036,7 +1025,7 @@ function setupLocalHubMobilePage() {
         <a href="../lavaggio-tappeti-verona/" data-track="click_service_lavaggio"><strong>Lavaggio tappeti</strong><span>Per polvere, macchie, odori e vello spento.</span></a>
         <a href="../restauro-tappeti-verona/" data-track="click_service_restauro"><strong>Restauro tappeti</strong><span>Per frange, bordi, tagli o parti indebolite.</span></a>
       </div>
-      <a class="local-hub-mobile-chooser__guidance" href="../valutazione-tappeti-verona/" data-track="click_service_valutazione"><strong>Non sai da dove partire?</strong><span>Inizia da un primo orientamento sul tappeto.</span></a>
+      <a class="local-hub-mobile-chooser__guidance" href="../valutazione-tappeti-verona/" data-track="click_service_valutazione"><strong>Osserviamo il tappeto</strong><span>Invia alcune fotografie per una prima indicazione.</span></a>
     `;
     hero.after(chooser);
 
@@ -1055,8 +1044,43 @@ function setupLocalHubMobilePage() {
 
   const serviceChoiceTrack = page.querySelector('.local-section--service:not([id]) > .local-hub-service-grid');
   if (serviceChoiceTrack) {
-    serviceChoiceTrack.setAttribute('data-home-mobile-slider', '');
-    setupHomeMobileSliderIndicators();
+    serviceChoiceTrack.classList.add('local-hub-choice-grid');
+  }
+
+  const finalCta = page.querySelector('.local-hub-final-cta');
+  if (finalCta && !page.querySelector('.local-hub-mobile-steps')) {
+    const steps = document.createElement('section');
+    steps.className = 'local-hub-mobile-steps';
+    steps.setAttribute('aria-labelledby', 'local-hub-mobile-steps-title');
+    steps.innerHTML = isEnglishPage ? `
+      <p class="eyebrow">How to begin</p>
+      <h2 id="local-hub-mobile-steps-title">Three simple steps</h2>
+      <ol>
+        <li><span class="local-hub-mobile-steps__number" aria-hidden="true">1</span><strong>Send a few photographs</strong><span>Whole rug, back and the area that concerns you.</span></li>
+        <li><span class="local-hub-mobile-steps__number" aria-hidden="true">2</span><strong>We look at them together</strong><span>The details help us understand the condition of the piece.</span></li>
+        <li><span class="local-hub-mobile-steps__number" aria-hidden="true">3</span><strong>We suggest the right attention</strong><span>Cleaning, restoration or a closer examination.</span></li>
+      </ol>
+    ` : `
+      <p class="eyebrow">Come iniziare</p>
+      <h2 id="local-hub-mobile-steps-title">Tre passaggi semplici</h2>
+      <ol>
+        <li><span class="local-hub-mobile-steps__number" aria-hidden="true">1</span><strong>Invia alcune fotografie</strong><span>Tappeto intero, rovescio e parte che ti preoccupa.</span></li>
+        <li><span class="local-hub-mobile-steps__number" aria-hidden="true">2</span><strong>Le osserviamo insieme</strong><span>I dettagli aiutano a comprendere lo stato del manufatto.</span></li>
+        <li><span class="local-hub-mobile-steps__number" aria-hidden="true">3</span><strong>Indichiamo l'attenzione adatta</strong><span>Lavaggio, restauro oppure un esame pi&ugrave; attento.</span></li>
+      </ol>
+    `;
+    finalCta.before(steps);
+  }
+
+  const floatingActions = document.querySelector('.floating-actions');
+  const whatsappLink = floatingActions && floatingActions.querySelector('a[href*="wa.me"], a[href*="whatsapp"]');
+  const finalButtons = finalCta && finalCta.querySelector('.local-cta');
+  if (whatsappLink && finalButtons && !finalButtons.querySelector('.local-hub-whatsapp')) {
+    const mobileWhatsapp = whatsappLink.cloneNode(true);
+    mobileWhatsapp.className = 'local-button local-button--primary local-hub-whatsapp';
+    mobileWhatsapp.setAttribute('aria-label', isEnglishPage ? 'Send photos on WhatsApp' : 'Invia fotografie su WhatsApp');
+    mobileWhatsapp.innerHTML = `<span>${isEnglishPage ? 'Send photos on WhatsApp' : 'Invia fotografie su WhatsApp'}</span>`;
+    finalButtons.prepend(mobileWhatsapp);
   }
 
   const figures = Array.from(page.querySelectorAll('.local-hero__media, .local-inline-figure'));
@@ -1240,9 +1264,214 @@ function setupWashingServiceMobilePage() {
 
 function enhanceWhatsAppButtons() {
   document.querySelectorAll('.local-button[href*="wa.me"]').forEach(function (button) {
-    if (button.querySelector('.local-button__whatsapp-icon')) return;
+    if (button.querySelector('svg')) return;
     button.insertAdjacentHTML('afterbegin', '<svg class="local-button__whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.05 4.94A9.84 9.84 0 0 0 12.02 2a9.94 9.94 0 0 0-8.6 14.94L2 22l5.22-1.36A9.93 9.93 0 0 0 12.02 22h.01a9.99 9.99 0 0 0 7.02-17.06Zm-7.03 15.37h-.01a8.22 8.22 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.29 8.29 0 1 1 6.96 3.84Zm4.54-6.2c-.25-.13-1.48-.73-1.72-.81-.23-.08-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.56.06-.25-.13-1.07-.39-2.04-1.24-.75-.67-1.26-1.49-1.41-1.74-.15-.25-.02-.39.11-.52.12-.12.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.02 2.61.13.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.17.21-.58.21-1.07.15-1.17-.06-.1-.23-.15-.48-.27Z" fill="currentColor"></path></svg>');
   });
+}
+
+function setupCarpetMobileToc() {
+  const toc = document.querySelector('.tappeti-content .carpet-mobile-toc');
+  if (!toc) return;
+
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    const article = toc.closest('.article');
+    const headings = article ? Array.from(article.querySelectorAll(':scope > h2')) : [];
+    toc.open = true;
+
+    headings.forEach(function (heading, index) {
+      const nextHeading = headings[index + 1] || null;
+      const section = document.createElement('section');
+      section.className = 'carpet-mobile-section';
+      heading.before(section);
+      while (section.nextSibling && section.nextSibling !== nextHeading) {
+        section.appendChild(section.nextSibling);
+      }
+    });
+  }
+
+  toc.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      window.history.replaceState(null, '', link.getAttribute('href'));
+
+      window.setTimeout(function () {
+        const offset = 84;
+        const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+      }, 50);
+    });
+  });
+}
+
+function setupRandomProductGalleries() {
+  const galleries = document.querySelectorAll('[data-random-product-gallery]');
+  if (!galleries.length) return;
+
+  const isEnglish = document.documentElement.lang === 'en';
+
+  function normalizeAssetPath(path) {
+    return String(path || '').replace(/^\//, '');
+  }
+
+  function shuffle(items) {
+    const shuffled = items.slice();
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      const randomIndex = Math.floor(Math.random() * (index + 1));
+      const current = shuffled[index];
+      shuffled[index] = shuffled[randomIndex];
+      shuffled[randomIndex] = current;
+    }
+    return shuffled;
+  }
+
+  function createProductFigure(product) {
+    const slug = isEnglish ? (product.slugEn || product.slug) : product.slug;
+    const title = isEnglish ? (product.titleEn || product.title || 'Khatam') : (product.title || 'Khatam');
+    const alt = isEnglish ? (product.altEn || product.alt || title) : (product.alt || title);
+    const image = normalizeAssetPath(product.coverImage);
+    const image360 = normalizeAssetPath(product.coverImage360);
+    const image640 = normalizeAssetPath(product.coverImage640);
+    const figure = document.createElement('figure');
+    const link = document.createElement('a');
+    const img = document.createElement('img');
+    const caption = document.createElement('figcaption');
+
+    figure.className = 'article-image-row__figure';
+    link.href = 'catalogo/products/' + slug + '.html';
+    link.setAttribute('aria-label', (isEnglish ? 'View ' : 'Vedi ') + title);
+    img.src = image;
+    if (image360 && image640) {
+      img.srcset = image360 + ' 360w, ' + image640 + ' 640w, ' + image + ' 1200w';
+      img.sizes = '(max-width: 768px) 84vw, 30vw';
+    }
+    img.alt = alt;
+    img.width = 900;
+    img.height = 675;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    caption.textContent = title;
+    link.appendChild(img);
+    figure.appendChild(link);
+    figure.appendChild(caption);
+    return figure;
+  }
+
+  fetch('catalogo/products.json', { cache: 'no-store' })
+    .then(function (response) {
+      if (!response.ok) throw new Error('Catalog unavailable');
+      return response.json();
+    })
+    .then(function (products) {
+      galleries.forEach(function (gallery) {
+        const requestedCategory = gallery.dataset.productCategory;
+        const categoryProducts = products.filter(function (product) {
+          const categories = Array.isArray(product.categories) ? product.categories : [];
+          const categoriesEn = Array.isArray(product.categoriesEn) ? product.categoriesEn : [];
+          const validLanguage = !isEnglish || (product.hasEnglish && product.slugEn);
+          const matchesCategory = product.category === requestedCategory ||
+            product.categoryEn === requestedCategory || categories.includes(requestedCategory) ||
+            categoriesEn.includes(requestedCategory);
+          return validLanguage && matchesCategory && product.coverImage && product.slug;
+        });
+        const selectedProducts = shuffle(categoryProducts).slice(0, 3);
+        if (selectedProducts.length < 3) return;
+
+        gallery.replaceChildren.apply(gallery, selectedProducts.map(createProductFigure));
+      });
+    })
+    .catch(function () {
+      // Keep the editorial images already present in the HTML as a fallback.
+    });
+}
+
+function setupCraftsMobilePage() {
+  const article = document.querySelector('.artigianato-content .article');
+  if (!article || !window.matchMedia('(max-width: 768px)').matches) return;
+
+  const isEnglish = document.documentElement.lang === 'en';
+  const intro = article.querySelector(':scope > h1 + p');
+  const headings = Array.from(article.querySelectorAll(':scope > h2'));
+  if (!headings.length) return;
+
+  if (intro) {
+    const introToggle = document.createElement('button');
+    intro.classList.add('craft-mobile-intro', 'is-collapsed');
+    introToggle.type = 'button';
+    introToggle.className = 'craft-mobile-intro-toggle';
+    introToggle.textContent = isEnglish ? 'Read more' : 'Leggi tutto';
+    introToggle.setAttribute('aria-expanded', 'false');
+    intro.after(introToggle);
+    introToggle.addEventListener('click', function () {
+      const expanded = introToggle.getAttribute('aria-expanded') === 'true';
+      intro.classList.toggle('is-collapsed', expanded);
+      introToggle.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      introToggle.textContent = expanded ? (isEnglish ? 'Read more' : 'Leggi tutto') :
+        (isEnglish ? 'Show less' : 'Mostra meno');
+    });
+  }
+
+  const sectionNav = document.createElement('nav');
+  sectionNav.className = 'crafts-mobile-nav';
+  sectionNav.setAttribute('aria-label', isEnglish ? 'Handicraft sections' : 'Sezioni artigianato');
+  (intro ? intro.nextElementSibling : article.querySelector('h1')).after(sectionNav);
+
+  headings.forEach(function (heading, index) {
+    const nextHeading = headings[index + 1] || null;
+    const section = document.createElement('section');
+    const label = heading.textContent.trim();
+    const navLink = document.createElement('a');
+
+    section.id = 'craft-section-' + (index + 1);
+    section.className = 'craft-mobile-section';
+    heading.before(section);
+    while (section.nextSibling && section.nextSibling !== nextHeading) {
+      section.appendChild(section.nextSibling);
+    }
+
+    navLink.href = '#' + section.id;
+    navLink.textContent = label.replace(/\s+-.*$/, '');
+    navLink.addEventListener('click', function (event) {
+      event.preventDefault();
+      window.setTimeout(function () {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 20);
+    });
+    sectionNav.appendChild(navLink);
+
+    const gallery = section.querySelector('.article-image-row');
+    if (gallery && gallery.children.length > 1) {
+      const dots = document.createElement('div');
+      dots.className = 'craft-mobile-gallery-dots';
+      dots.setAttribute('aria-hidden', 'true');
+      Array.from(gallery.children).forEach(function (_, dotIndex) {
+        const dot = document.createElement('span');
+        if (dotIndex === 0) dot.classList.add('is-active');
+        dots.appendChild(dot);
+      });
+      gallery.after(dots);
+      gallery.addEventListener('scroll', function () {
+        const firstCard = gallery.firstElementChild;
+        if (!firstCard) return;
+        const gap = parseFloat(window.getComputedStyle(gallery).columnGap) || 0;
+        const activeIndex = Math.min(
+          dots.children.length - 1,
+          Math.max(0, Math.round(gallery.scrollLeft / (firstCard.getBoundingClientRect().width + gap)))
+        );
+        Array.from(dots.children).forEach(function (dot, dotIndex) {
+          dot.classList.toggle('is-active', dotIndex === activeIndex);
+        });
+      }, { passive: true });
+    }
+  });
+
+  const finalCta = document.createElement('a');
+  finalCta.className = 'craft-mobile-final-cta';
+  finalCta.href = isEnglish ? 'contacts-en.html' : 'contatti.html';
+  finalCta.dataset.track = 'click_contact_page';
+  finalCta.textContent = isEnglish ? 'Discover handicrafts in the shop' : 'Scopri l’artigianato in negozio';
+  article.appendChild(finalCta);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -1268,6 +1497,9 @@ document.addEventListener('DOMContentLoaded', function () {
   setupDesktopDropdowns();
   setupMobileNav();
   initClickableGuideCards();
+  setupCarpetMobileToc();
+  setupRandomProductGalleries();
+  setupCraftsMobilePage();
   setupHomeMobileSliderIndicators();
   setupMobileContactPage();
   setupLocalHubMobilePage();

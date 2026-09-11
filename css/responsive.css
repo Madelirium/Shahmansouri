@@ -53,7 +53,7 @@
 
   .header {
     min-height: 0;
-    padding: 10px 18px 0;
+    padding: 4px 18px 0;
   }
   .header .logo-area {
     display: none;
@@ -78,10 +78,30 @@
     padding-inline: 16px;
   }
 
+  .contatti-content .contact-intro-text {
+    display: none;
+  }
+
   .contatti-content .article > h1 {
     margin-bottom: 12px;
     font-size: clamp(1.65rem, 7.4vw, 2rem);
     line-height: 1.08;
+  }
+
+  .contatti-content .contact-page-title {
+    font-size: clamp(1.65rem, 7.4vw, 2rem);
+  }
+
+  .contatti-content .contact-page-title__full {
+    display: none;
+  }
+
+  .contatti-content .contact-page-title__mobile {
+    display: inline;
+  }
+
+  .contatti-content .contact-page-title__mobile::before {
+    content: attr(data-label);
   }
 
   .contact-details {
@@ -416,6 +436,11 @@
       overflow-x: hidden;
       min-width: 0;
     }
+  .artigianato-content .article {
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
   .artigianato-content .article-image-row {
       display: flex;
       box-sizing: border-box;
@@ -457,16 +482,367 @@
   .artigianato-content .article-image-row__figure figcaption {
       margin-top: 8px;
     }
-  .tappeti-content .article-image-row--two {
-      gap: 10px;
-      max-width: 100%;
+  .artigianato-content .craft-mobile-intro.is-collapsed {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
     }
-  .tappeti-content .article-image-row--two .article-image-row__figure {
+  .artigianato-content .craft-mobile-intro,
+  .artigianato-content .craft-mobile-section > p {
+      text-align: left;
+    }
+  .artigianato-content .craft-mobile-intro-toggle {
+      display: inline-flex;
+      min-height: 40px;
+      align-items: center;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #7a2c0d;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 0.2em;
+    }
+  .artigianato-content .crafts-mobile-nav {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin: 12px 0 20px;
+      padding: 0;
+    }
+  .artigianato-content .crafts-mobile-nav a {
+      min-height: 39px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 13px;
+      border: 1px solid rgba(122, 44, 13, 0.2);
+      border-radius: 999px;
+      background: rgba(255, 249, 232, 0.72);
+      color: #6f2b00;
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+    }
+  .artigianato-content .craft-mobile-section {
+      margin: 0 0 10px;
+      padding: 0 13px;
+      border: 1px solid rgba(176, 136, 52, 0.28);
+      border-radius: 13px;
+      background: rgba(255, 249, 232, 0.56);
+      scroll-margin-top: 84px;
+    }
+  .artigianato-content .craft-mobile-section > h2 {
+      margin: 0;
+      padding: 15px 0 8px;
+      font-size: 1.08rem;
+    }
+  .artigianato-content .craft-mobile-section > p {
+      margin: 2px 0 13px;
+      line-height: 1.58;
+    }
+  .artigianato-content .craft-mobile-section .article-image-row {
+      inline-size: 100%;
+      max-inline-size: 100%;
+      margin: 8px 0 5px;
+      scrollbar-width: none;
+    }
+  .artigianato-content .craft-mobile-section .article-image-row::-webkit-scrollbar {
+      display: none;
+    }
+  .artigianato-content .craft-mobile-gallery-dots {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      margin: 7px 0 14px;
+    }
+  .artigianato-content .craft-mobile-gallery-dots span {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(122, 44, 13, 0.22);
+    }
+  .artigianato-content .craft-mobile-gallery-dots span.is-active {
+      width: 18px;
+      border-radius: 999px;
+      background: #8a211a;
+    }
+  .artigianato-content .craft-mobile-final-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 49px;
+      box-sizing: border-box;
+      margin: 18px 0 4px;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #90251d, #701712);
+      color: #fff8e7;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 7px 15px rgba(87, 22, 16, 0.2);
+    }
+  .tappeti-content .carpet-shop-introduction {
+      display: none;
+    }
+
+  .tappeti-content,
+  .tappeti-content .article {
+      box-sizing: border-box;
+      width: 100%;
       max-width: 100%;
+      min-width: 0;
+      overflow-x: clip;
+    }
+
+  .tappeti-content .carpet-mobile-toc {
+      display: block;
+      position: relative;
+      top: auto;
+      z-index: 1;
+      margin: 16px 0 24px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      overflow: visible;
+    }
+
+  .tappeti-content .article > h1 + .article-image-row--two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 12px 0 14px;
+    }
+
+  .tappeti-content .article > h1 + .article-image-row--two .article-image-row__figure {
+      min-width: 0;
+      margin: 0;
+    }
+
+  .tappeti-content .article > h1 + .article-image-row--two img {
+      width: 100%;
+      height: 122px;
+      object-fit: cover;
+    }
+
+  .tappeti-content .article > h1 + .article-image-row--two figcaption {
+      margin-top: 6px;
+      font-size: 0.76rem;
+      line-height: 1.3;
+    }
+
+  .tappeti-content .carpet-mobile-toc summary {
+      display: none;
+    }
+
+  .tappeti-content .carpet-mobile-toc summary::-webkit-details-marker {
+      display: none;
+    }
+
+  .tappeti-content .carpet-mobile-toc summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      color: #7b1f16;
+      font-size: 1.15rem;
+    }
+
+  .tappeti-content .carpet-mobile-toc[open] summary::after {
+      content: "−";
+    }
+
+  .tappeti-content .carpet-mobile-toc nav {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding: 0;
+    }
+
+  .tappeti-content .carpet-mobile-toc a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 1px solid rgba(176, 136, 52, 0.28);
+      border-radius: 999px;
+      background: rgba(255, 249, 232, 0.72);
+      color: #6f2b00;
+      line-height: 1.2;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+    }
+
+  .tappeti-content .carpet-mobile-section {
+      margin: 0 0 10px;
+      padding: 0 13px 14px;
+      border: 1px solid rgba(176, 136, 52, 0.28);
+      border-radius: 13px;
+      background: rgba(255, 249, 232, 0.56);
+    }
+
+  .tappeti-content .article .carpet-mobile-section > h2 {
+      margin: 0;
+      padding: 15px 0 8px;
+      border-top: 0;
+      scroll-margin-top: 84px;
+    }
+
+  .tappeti-content .article .carpet-mobile-section > h2 + p {
+      margin-top: 2px;
+      padding: 0;
+      border-left: 0;
+      border-radius: 0;
+      background: transparent;
+    }
+
+  .tappeti-content .carpet-mobile-section .article-image-row--two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+  .tappeti-content .carpet-mobile-section .article-image-row--two img {
+      height: 170px;
+      object-fit: cover;
+    }
+
+  .tappeti-content .article h2 {
+      margin-top: 28px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(156, 122, 61, 0.28);
+      scroll-margin-top: 82px;
+    }
+
+  .tappeti-content .article h2 + p {
+      margin-top: 10px;
+      padding: 14px;
+      border-left: 3px solid rgba(123, 31, 22, 0.55);
+      border-radius: 0 12px 12px 0;
+      background: rgba(255, 249, 232, 0.48);
+      text-align: left;
+    }
+
+  .tappeti-content .carpet-terminology-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin: 12px 0 20px;
+    }
+
+  .tappeti-content .carpet-terminology-list > p {
+      display: grid;
+      align-content: start;
+      gap: 4px;
+      margin: 0;
+      padding: 11px;
+      border: 1px solid rgba(176, 136, 52, 0.3);
+      border-radius: 11px;
+      background: rgba(255, 249, 232, 0.5);
+      font-size: 0.88rem;
+      line-height: 1.3;
+    }
+
+  .tappeti-content .carpet-terminology-list > p > span:first-child {
+      color: #6f2b00;
+      font-weight: 700;
+    }
+
+  .tappeti-content .carpet-terminology-list > p > span:first-child::after {
+      content: none;
+    }
+
+  .tappeti-content .carpet-knot-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin: 14px 0 20px;
+    }
+
+  .tappeti-content .carpet-knot-details figure {
+      margin: 0;
+    }
+
+  .tappeti-content .carpet-knot-details img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+  .tappeti-content .article p,
+  .tappeti-content .article li {
+      line-height: 1.58;
+      text-align: left;
+    }
+
+  .tappeti-content .article .carpet-care-tips {
+      display: grid;
+      box-sizing: border-box;
+      width: 100%;
+      gap: 10px;
+      margin: 16px 0 6px;
+      padding: 0;
+      list-style: none;
+    }
+
+  .tappeti-content .article .carpet-care-tips > li {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 14px 15px;
+      border: 1px solid rgba(176, 136, 52, 0.34);
+      border-radius: 12px;
+      background: linear-gradient(180deg, rgba(255, 250, 235, 0.82), rgba(237, 218, 166, 0.72));
+      box-shadow: 0 5px 12px rgba(95, 67, 18, 0.08);
+      line-height: 1.5;
+      list-style: none;
+    }
+
+  .tappeti-content .article .carpet-mobile-final-cta {
+      display: block;
+      margin: 18px 0 4px;
+      padding: 0;
+      border: 0;
+      background: none;
+      text-align: center;
+    }
+
+  .tappeti-content .carpet-mobile-final-cta a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 48px;
+      padding: 11px 16px;
+      border: 1px solid rgba(104, 22, 17, 0.72);
+      border-radius: 12px;
+      background: linear-gradient(180deg, #90251d, #701712);
+      color: #fff8e7;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 7px 15px rgba(87, 22, 16, 0.2);
     }
   .home-featured-products {
       margin: 14px 20px 0;
       padding: 16px 16px 20px;
+    }
+  .carpet-products-carousel {
+      margin-right: 14px;
+      margin-left: 14px;
+      padding: 14px 0 8px;
+    }
+  .carpet-products-carousel .home-featured-products__track {
+      grid-auto-columns: minmax(210px, 74%);
+      gap: 12px;
+      padding-right: 34px;
+      padding-left: 34px;
     }
   .home-featured-products__track {
       grid-auto-columns: minmax(240px, 82%);
@@ -906,7 +1282,8 @@
   .nav-mobile-toggle {
     display: block;
     position: sticky;
-    top: calc(12px + env(safe-area-inset-top, 0px));
+    top: calc(6px + env(safe-area-inset-top, 0px));
+    margin-top: 6px;
     z-index: 95;
   }
 
