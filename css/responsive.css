@@ -749,6 +749,10 @@
       overflow-x: clip;
     }
 
+  .tappeti-content .article > h1 {
+      display: none;
+    }
+
   .tappeti-content .article > *,
   .tappeti-content .carpet-mobile-section,
   .tappeti-content .carpet-mobile-toc,
