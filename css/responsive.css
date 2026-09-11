@@ -505,64 +505,13 @@
       text-decoration: underline;
       text-underline-offset: 0.2em;
     }
-  .artigianato-content .crafts-mobile-nav-shell {
-      display: block;
-      position: fixed;
-      top: 78px;
-      left: 50%;
-      z-index: 12;
-      width: min(calc(100% - 48px), 365px);
-      margin: 0;
-      border: 1px solid rgba(122, 44, 13, 0.22);
-      border-radius: 12px;
-      background: rgba(250, 235, 190, 0.97);
-      box-shadow: 0 7px 16px rgba(86, 45, 14, 0.14);
-      transform: translateX(-50%);
-    }
-
-  .artigianato-content .article {
-      padding-top: 58px;
-    }
-
-  .artigianato-content .crafts-mobile-nav-toggle {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      min-height: 46px;
-      padding: 10px 14px;
-      border: 0;
-      border-radius: 11px;
-      background: linear-gradient(180deg, #f5dda0, #e6c56e);
-      color: #6f2b00;
-      font: inherit;
-      font-weight: 700;
-      text-align: left;
-    }
-
-  .artigianato-content .crafts-mobile-nav-toggle::after {
-      content: "+";
-      font-size: 1.15rem;
-      line-height: 1;
-    }
-
-  .artigianato-content .crafts-mobile-nav-shell.is-open .crafts-mobile-nav-toggle::after {
-      content: "−";
-    }
-
   .artigianato-content .crafts-mobile-nav {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
-      max-height: 54vh;
-      margin: 0;
-      padding: 10px;
-      overflow-y: auto;
-      overscroll-behavior: contain;
-    }
-
-  .artigianato-content .crafts-mobile-nav-shell:not(.is-open) .crafts-mobile-nav {
-      display: none;
+      width: 100%;
+      margin: 16px 0 24px;
+      padding: 0;
     }
   .artigianato-content .crafts-mobile-nav a {
       min-height: 39px;
@@ -586,7 +535,7 @@
       border: 1px solid rgba(176, 136, 52, 0.28);
       border-radius: 13px;
       background: rgba(255, 249, 232, 0.56);
-      scroll-margin-top: 140px;
+      scroll-margin-top: 84px;
     }
   .artigianato-content .craft-mobile-section > h2 {
       margin: 0;
@@ -811,22 +760,14 @@
 
   .tappeti-content .carpet-mobile-toc {
       display: block;
-      position: fixed;
-      top: 78px;
-      left: 50%;
-      z-index: 12;
-      width: min(calc(100% - 48px), 365px);
-      margin: 0;
-      border: 1px solid rgba(122, 44, 13, 0.22);
-      border-radius: 12px;
-      background: rgba(250, 235, 190, 0.97);
-      box-shadow: 0 7px 16px rgba(86, 45, 14, 0.14);
-      transform: translateX(-50%);
+      position: relative;
+      top: auto;
+      z-index: 1;
+      margin: 16px 0 24px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
       overflow: visible;
-    }
-
-  .tappeti-content .article {
-      padding-top: 58px;
     }
 
   .tappeti-content .article > h1 + .article-image-row--two {
@@ -851,22 +792,7 @@
     }
 
   .tappeti-content .carpet-mobile-toc summary {
-      display: flex;
-      position: relative;
-      box-sizing: border-box;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      min-height: 46px;
-      padding: 9px 42px 9px 16px;
-      border: 0;
-      border-radius: 11px;
-      background: linear-gradient(180deg, #f3d879 0%, #d9ae43 100%);
-      color: #70220f;
-      cursor: pointer;
-      font-weight: 700;
-      list-style: none;
-      text-align: center;
+      display: none;
     }
 
   .tappeti-content .carpet-mobile-toc summary::-webkit-details-marker {
@@ -893,10 +819,7 @@
       gap: 8px;
       width: 100%;
       max-width: 100%;
-      max-height: 54vh;
-      padding: 10px;
-      overflow-y: auto;
-      overscroll-behavior: contain;
+      padding: 0;
     }
 
   .tappeti-content .carpet-mobile-toc a {
@@ -935,7 +858,7 @@
       margin: 0;
       padding: 15px 0 8px;
       border-top: 0;
-      scroll-margin-top: 140px;
+      scroll-margin-top: 84px;
     }
 
   .tappeti-content .article .carpet-mobile-section > h2 + p {

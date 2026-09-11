@@ -1295,10 +1295,9 @@ function setupCarpetMobileToc() {
       if (!target) return;
       event.preventDefault();
       window.history.replaceState(null, '', link.getAttribute('href'));
-      toc.open = false;
 
       window.setTimeout(function () {
-        const offset = 140;
+        const offset = 84;
         const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
       }, 50);
@@ -1542,33 +1541,11 @@ function setupCraftsMobilePage() {
     });
   }
 
-  const sectionNavShell = document.createElement('div');
-  const sectionNavToggle = document.createElement('button');
   const sectionNav = document.createElement('nav');
-  sectionNavShell.className = 'crafts-mobile-nav-shell is-open';
-  sectionNavToggle.type = 'button';
-  sectionNavToggle.className = 'crafts-mobile-nav-toggle';
-  sectionNavToggle.textContent = isEnglish ? 'Go to section' : 'Vai alla sezione';
-  sectionNavToggle.setAttribute('aria-expanded', 'true');
-  sectionNavToggle.setAttribute('aria-controls', 'crafts-mobile-section-nav');
   sectionNav.className = 'crafts-mobile-nav';
   sectionNav.id = 'crafts-mobile-section-nav';
   sectionNav.setAttribute('aria-label', isEnglish ? 'Handicraft sections' : 'Sezioni artigianato');
-  sectionNavShell.append(sectionNavToggle, sectionNav);
-  (intro ? intro.nextElementSibling : article.querySelector('h1')).after(sectionNavShell);
-
-  function setSectionNavOpen(open) {
-    sectionNavShell.classList.toggle('is-open', open);
-    sectionNavToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  }
-
-  sectionNavToggle.addEventListener('click', function () {
-    setSectionNavOpen(!sectionNavShell.classList.contains('is-open'));
-  });
-
-  document.addEventListener('click', function (event) {
-    if (!sectionNavShell.contains(event.target)) setSectionNavOpen(false);
-  });
+  (intro ? intro.nextElementSibling : article.querySelector('h1')).after(sectionNav);
 
   headings.forEach(function (heading, index) {
     const nextHeading = headings[index + 1] || null;
@@ -1587,7 +1564,6 @@ function setupCraftsMobilePage() {
     navLink.textContent = label.replace(/\s+-.*$/, '');
     navLink.addEventListener('click', function (event) {
       event.preventDefault();
-      setSectionNavOpen(false);
       window.setTimeout(function () {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 20);
