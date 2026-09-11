@@ -1295,9 +1295,10 @@ function setupCarpetMobileToc() {
       if (!target) return;
       event.preventDefault();
       window.history.replaceState(null, '', link.getAttribute('href'));
+      toc.open = false;
 
       window.setTimeout(function () {
-        const offset = 84;
+        const offset = 140;
         const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
         window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
       }, 50);
@@ -1371,6 +1372,66 @@ function setupCultureMobileLayout() {
     event.preventDefault();
     const top = target.getBoundingClientRect().top + window.scrollY - 84;
     window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+  });
+}
+
+function setupCarpetMobileEditorialImages() {
+  if (!window.matchMedia('(max-width: 768px)').matches) return;
+
+  const heading = document.querySelector('#manufatto-unico, #unique-handcrafted-rug');
+  const section = heading ? heading.closest('.carpet-mobile-section') : null;
+  const imageRow = section ? section.querySelector('.article-image-row--two') : null;
+  if (!section || !imageRow) return;
+
+  const paragraphs = Array.from(section.querySelectorAll(':scope > p'));
+  const figures = Array.from(imageRow.querySelectorAll(':scope > figure'));
+  if (paragraphs.length < 4 || figures.length < 2) return;
+
+  const introImageRow = document.querySelector('.tappeti-content .article > h1 + .article-image-row--two');
+  const entranceSource = introImageRow ? introImageRow.querySelector(':scope > figure:nth-child(2)') : null;
+  const entranceFigure = entranceSource ? entranceSource.cloneNode(true) : null;
+
+  figures.forEach(function (figure, index) {
+    figure.classList.add('carpet-mobile-inline-figure');
+    figure.classList.add(index === 0 ? 'carpet-mobile-inline-figure--right' : 'carpet-mobile-inline-figure--left');
+  });
+  figures[1].classList.add('carpet-mobile-inline-figure--landscape');
+  if (entranceFigure) {
+    entranceFigure.classList.add('carpet-mobile-inline-figure', 'carpet-mobile-inline-figure--left', 'carpet-mobile-inline-figure--landscape');
+    heading.insertAdjacentElement('afterend', entranceFigure);
+  }
+  paragraphs[1].insertAdjacentElement('afterend', figures[0]);
+  paragraphs[3].insertAdjacentElement('afterend', figures[1]);
+  imageRow.remove();
+
+  const loomHeading = document.querySelector('#telaio-tappeti, #rug-loom');
+  const loomSection = loomHeading ? loomHeading.closest('.carpet-mobile-section') : null;
+  const loomFigure = loomSection ? loomSection.querySelector('.carpet-loom-figure') : null;
+  if (loomHeading && loomFigure) {
+    loomFigure.classList.add('carpet-mobile-loom-figure');
+    loomHeading.insertAdjacentElement('afterend', loomFigure);
+  }
+
+  const knotHeading = document.querySelector('#annodatura-tappeti, #rug-knotting');
+  const knotSection = knotHeading ? knotHeading.closest('.carpet-mobile-section') : null;
+  const knotGallery = knotSection ? knotSection.querySelector('.carpet-knot-details') : null;
+  if (knotHeading && knotSection && knotGallery) {
+    const knotParagraphs = Array.from(knotSection.querySelectorAll(':scope > p'));
+    const knotFigures = Array.from(knotGallery.querySelectorAll(':scope > figure'));
+    if (knotParagraphs.length >= 2 && knotFigures.length >= 2) {
+      knotFigures[0].classList.add('carpet-mobile-knot-figure', 'carpet-mobile-knot-figure--left');
+      knotFigures[1].classList.add('carpet-mobile-knot-figure', 'carpet-mobile-knot-figure--right');
+      knotHeading.insertAdjacentElement('afterend', knotFigures[0]);
+      knotParagraphs[0].insertAdjacentElement('afterend', knotFigures[1]);
+      knotGallery.remove();
+    }
+  }
+}
+
+function setupMobilePageTitles() {
+  if (!window.matchMedia('(max-width: 768px)').matches) return;
+  document.querySelectorAll('[data-mobile-title]').forEach(function (heading) {
+    heading.textContent = heading.dataset.mobileTitle;
   });
 }
 
@@ -1481,10 +1542,33 @@ function setupCraftsMobilePage() {
     });
   }
 
+  const sectionNavShell = document.createElement('div');
+  const sectionNavToggle = document.createElement('button');
   const sectionNav = document.createElement('nav');
+  sectionNavShell.className = 'crafts-mobile-nav-shell is-open';
+  sectionNavToggle.type = 'button';
+  sectionNavToggle.className = 'crafts-mobile-nav-toggle';
+  sectionNavToggle.textContent = isEnglish ? 'Go to section' : 'Vai alla sezione';
+  sectionNavToggle.setAttribute('aria-expanded', 'true');
+  sectionNavToggle.setAttribute('aria-controls', 'crafts-mobile-section-nav');
   sectionNav.className = 'crafts-mobile-nav';
+  sectionNav.id = 'crafts-mobile-section-nav';
   sectionNav.setAttribute('aria-label', isEnglish ? 'Handicraft sections' : 'Sezioni artigianato');
-  (intro ? intro.nextElementSibling : article.querySelector('h1')).after(sectionNav);
+  sectionNavShell.append(sectionNavToggle, sectionNav);
+  (intro ? intro.nextElementSibling : article.querySelector('h1')).after(sectionNavShell);
+
+  function setSectionNavOpen(open) {
+    sectionNavShell.classList.toggle('is-open', open);
+    sectionNavToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  sectionNavToggle.addEventListener('click', function () {
+    setSectionNavOpen(!sectionNavShell.classList.contains('is-open'));
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!sectionNavShell.contains(event.target)) setSectionNavOpen(false);
+  });
 
   headings.forEach(function (heading, index) {
     const nextHeading = headings[index + 1] || null;
@@ -1503,6 +1587,7 @@ function setupCraftsMobilePage() {
     navLink.textContent = label.replace(/\s+-.*$/, '');
     navLink.addEventListener('click', function (event) {
       event.preventDefault();
+      setSectionNavOpen(false);
       window.setTimeout(function () {
         section.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 20);
@@ -1567,6 +1652,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setupMobileNav();
   initClickableGuideCards();
   setupCarpetMobileToc();
+  setupCarpetMobileEditorialImages();
+  setupMobilePageTitles();
   setupCultureMobileLayout();
   setupRandomProductGalleries();
   setupCraftsMobilePage();

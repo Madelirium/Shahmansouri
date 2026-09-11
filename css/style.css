@@ -9,6 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(91, 47, 17, 0.14);
 }
 
 html {
@@ -945,6 +946,8 @@ img {
 }
 
 .crafts-mobile-nav,
+.crafts-mobile-nav-shell,
+.crafts-mobile-nav-toggle,
 .craft-mobile-intro-toggle,
 .craft-mobile-gallery-dots,
 .craft-mobile-final-cta {
