@@ -2,6 +2,7 @@
   "categories": [
     "Ceramiche",
     "Khatam",
+    "Maiolica",
     "Miniatura",
     "Papier-mâché",
     "Senza categoria",
@@ -21,6 +22,7 @@
       "Miniatura",
       "Scatole"
     ],
+    "Maiolica": [],
     "Miniatura": [],
     "Papier-mâché": [
       "Astucci",
@@ -94,5 +96,7 @@
     "Vello Misto Lana E Seta": "wool and silk pile"
   },
   "originLabelsEn": {},
-  "availabilityLabelsEn": {}
+  "availabilityLabelsEn": {},
+  "aiKnowledgeByCategory": {},
+  "aiKnowledgeBySubcategory": {}
 }
