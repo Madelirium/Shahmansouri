@@ -618,9 +618,36 @@ function initProductTracking() {
     productPageRoot.dataset.productViewTracked = "true";
 }
 
+function setupProductStoryPlacement() {
+    const story = document.querySelector(".product-story--accordion");
+    const summary = document.querySelector(".product-summary");
+    if (!(story instanceof HTMLDetailsElement) || !(summary instanceof HTMLElement)) {
+        return;
+    }
+
+    const originalPosition = document.createComment("product-story-position");
+    const desktopQuery = window.matchMedia("(min-width: 769px)");
+    story.before(originalPosition);
+
+    const updatePlacement = () => {
+        if (desktopQuery.matches) {
+            summary.appendChild(story);
+        } else if (originalPosition.parentNode) {
+            originalPosition.parentNode.insertBefore(story, originalPosition.nextSibling);
+        }
+    };
+
+    updatePlacement();
+    desktopQuery.addEventListener("change", updatePlacement);
+}
+
 if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initProductTracking, { once: true });
+    document.addEventListener("DOMContentLoaded", () => {
+        setupProductStoryPlacement();
+        initProductTracking();
+    }, { once: true });
 } else {
+    setupProductStoryPlacement();
     initProductTracking();
 }
 
