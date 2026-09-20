@@ -254,16 +254,86 @@ function applyInitialFiltersFromUrl() {
         return;
     }
 
+    const params = new URLSearchParams(window.location.search);
     const initialSearch = getInitialSearchFromUrl();
     if (initialSearch) {
         searchInput.value = initialSearch;
     }
-    const requestedSubcategory = new URLSearchParams(window.location.search).get("subcategory");
-    if (requestedSubcategory && subcategoryOptions) {
-        const checkbox = Array.from(subcategoryOptions.querySelectorAll("input[name='subcategories']"))
-            .find((input) => normalizeText(input.value) === normalizeText(requestedSubcategory));
-        if (checkbox instanceof HTMLInputElement) checkbox.checked = true;
+
+    const checkRequestedValues = (container, inputName, values) => {
+        if (!container || !values.length) return;
+        const requestedValues = values.map(normalizeText);
+        container.querySelectorAll(`input[name='${inputName}']`).forEach((input) => {
+            if (input instanceof HTMLInputElement) {
+                input.checked = requestedValues.includes(normalizeText(input.value));
+            }
+        });
+    };
+
+    checkRequestedValues(categoryOptions, "categories", [
+        ...params.getAll("category"),
+        ...params.getAll("categories")
+    ]);
+    checkRequestedValues(subcategoryOptions, "subcategories", [
+        ...params.getAll("subcategory"),
+        ...params.getAll("subcategories")
+    ]);
+
+    quickMeasureUnit = params.get("unit") === "in" ? "in" : "cm";
+    quickMeasureUnitButtons.forEach((button) => {
+        const isActive = button.dataset.quickMeasureUnit === quickMeasureUnit;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", String(isActive));
+    });
+
+    const readStoredMeasure = (name) => {
+        const storedValue = params.get(name);
+        if (storedValue === null || storedValue.trim() === "") return null;
+        const value = Number(storedValue);
+        return Number.isFinite(value) && value >= 0 ? value : null;
+    };
+    minimumLength = readStoredMeasure("lengthMin");
+    minimumWidth = readStoredMeasure("widthMin");
+    const maximumLength = readStoredMeasure("lengthMax");
+    const maximumWidth = readStoredMeasure("widthMax");
+
+    if (lengthInput instanceof HTMLInputElement && maximumLength !== null) {
+        lengthInput.value = isMobileFiltersMode() ? formatQuickMeasure(maximumLength) : String(maximumLength);
     }
+    if (widthInput instanceof HTMLInputElement && maximumWidth !== null) {
+        widthInput.value = isMobileFiltersMode() ? formatQuickMeasure(maximumWidth) : String(maximumWidth);
+    }
+
+    const requestedSort = params.get("sort");
+    if (quickSortSelect instanceof HTMLSelectElement
+        && requestedSort
+        && Array.from(quickSortSelect.options).some((option) => option.value === requestedSort)) {
+        quickSortSelect.value = requestedSort;
+    }
+}
+
+function syncCatalogUrl(filters) {
+    if (!window.history?.replaceState) return;
+
+    const url = new URL(window.location.href);
+    [
+        "search", "q", "tag", "category", "categories", "subcategory", "subcategories",
+        "lengthMin", "lengthMax", "widthMin", "widthMax", "unit", "sort"
+    ].forEach((name) => url.searchParams.delete(name));
+
+    if (filters.search) url.searchParams.set("search", filters.search);
+    filters.categories.forEach((value) => url.searchParams.append("category", value));
+    filters.subcategories.forEach((value) => url.searchParams.append("subcategory", value));
+    if (filters.lengthMinimum !== null) url.searchParams.set("lengthMin", String(filters.lengthMinimum));
+    if (filters.lengthTarget !== null) url.searchParams.set("lengthMax", String(filters.lengthTarget));
+    if (filters.widthMinimum !== null) url.searchParams.set("widthMin", String(filters.widthMinimum));
+    if (filters.widthTarget !== null) url.searchParams.set("widthMax", String(filters.widthTarget));
+    if (quickMeasureUnit === "in") url.searchParams.set("unit", "in");
+
+    const sortOrder = quickSortSelect instanceof HTMLSelectElement ? quickSortSelect.value : "newest";
+    if (sortOrder !== "newest") url.searchParams.set("sort", sortOrder);
+
+    window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}${url.hash}`);
 }
 
 function translateCategory(value) {
@@ -1136,6 +1206,7 @@ function renderCatalog(preserveVisibleCount = false) {
     }
 
     const filters = getFormState();
+    syncCatalogUrl(filters);
     const filteredProducts = sortProducts(filterProducts(filters));
     if (!preserveVisibleCount) {
         visibleProductCount = CATALOG_PAGE_SIZE;
