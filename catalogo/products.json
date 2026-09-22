@@ -58,12 +58,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-bakthiari-190x128-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Baktiari Fatto a Mano in Lana – Medaglione Geometrico Autentico",
     "seoDescription": "Tappeto persiano Baktiari fatto a mano in lana, con medaglione centrale e motivi geometrici. Robusto, autentico e ricco di tradizione, ideale per ogni ambiente.",
@@ -80,7 +80,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-burujerd-all-over",
@@ -141,12 +143,12 @@
       "all-over rug",
       "geometric rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-burujerd-198x130-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Burujerd Fatto a Mano – Disegno All-Over su Fondo Scuro",
     "seoDescription": "Tappeto persiano Burujerd fatto a mano con disegno all-over e motivi geometrici su fondo scuro. Elegante, resistente e ricco di tradizione artigianale.",
@@ -163,7 +165,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-bakhtiari-giardino",
@@ -224,12 +228,12 @@
       "wool rug",
       "decorative rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-bakthiari-200x148-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Baktiari a Giardino Fatto a Mano – Disegno a Riquadri",
     "seoDescription": "Tappeto persiano Baktiari fatto a mano con disegno a giardino e motivi floreali e animali. Colori vivaci, resistente e ricco di tradizione.",
@@ -246,7 +250,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-qashqai-medaglione",
@@ -307,12 +313,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-kashkai-201x160-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Qashqai Antico Fatto a Mano – Medaglione su Fondo Arancione",
     "seoDescription": "Tappeto persiano Qashqai antico fatto a mano con medaglione centrale e motivi geometrici. Pezzo unico, ricco di storia e grande valore decorativo.",
@@ -329,7 +335,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-bakhtiari-giardino-decorato",
@@ -390,12 +398,12 @@
       "wool rug",
       "decorative rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-bakthiari-210x135-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Baktiari a Giardino Fatto a Mano – Fondo Chiaro Decorato",
     "seoDescription": "Tappeto persiano Baktiari fatto a mano a giardino con motivi floreali e animali. Colori vivaci, fondo chiaro e grande valore decorativo.",
@@ -412,7 +420,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-bakhtiari-classico-floreale",
@@ -473,12 +483,12 @@
       "floral rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-bakthiari-211x155-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Baktiari Fatto a Mano – Medaglione e Motivi Floreali",
     "seoDescription": "Tappeto persiano Baktiari fatto a mano con medaglione centrale e ricchi motivi floreali. Elegante, resistente e perfetto per ambienti raffinati.",
@@ -495,7 +505,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-malayer-medaglione-tribale",
@@ -556,12 +568,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo.webp"
+      "/catalogo/products/media/tappeto-persiano-malayer-216x119-catalogo-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Malayer Fatto a Mano – Medaglione su Fondo Rosso",
     "seoDescription": "Tappeto persiano Malayer fatto a mano con medaglione centrale e motivi geometrici. Elegante, resistente e perfetto per ogni ambiente.",
@@ -578,7 +590,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-bakhtiari-doppio-medaglione",
@@ -639,12 +653,12 @@
       "floral rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-bakthiari-218x165-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Baktiari Fatto a Mano – Doppio Medaglione",
     "seoDescription": "Tappeto persiano Baktiari fatto a mano con doppio medaglione e motivi floreali. Elegante, luminoso e ricco di tradizione.",
@@ -661,7 +675,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-bijar-medaglione",
@@ -722,12 +738,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-bijar-227x124-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Bijar Fatto a Mano – Medaglione su Fondo Rosso",
     "seoDescription": "Tappeto persiano Bijar fatto a mano con medaglione e motivi geometrici. Estremamente resistente, autentico e ricco di carattere.",
@@ -744,7 +760,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-armanibaf-tribale",
@@ -805,12 +823,12 @@
       "tribal rug",
       "geometric rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-armanibaf-230x143-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano ArmaniBaf Fatto a Mano – Stile Tribale",
     "seoDescription": "Tappeto persiano ArmaniBaf fatto a mano con motivi tribali e colori naturali. Autentico, resistente e ricco di carattere.",
@@ -827,7 +845,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-hosseinabad-medaglione",
@@ -888,12 +908,12 @@
       "floral rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144.webp"
+      "/catalogo/products/media/tappeto-persiano-hosseinabad-238x144-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Hosseinabad Fatto a Mano – Medaglione Floreale",
     "seoDescription": "Tappeto persiano Hosseinabad fatto a mano con medaglione e motivi floreali. Elegante, resistente e ricco di tradizione.",
@@ -910,7 +930,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-tafresh-medaglione",
@@ -971,12 +993,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-tafresh-204x136-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Tafresh Fatto a Mano – Medaglione Classico",
     "seoDescription": "Tappeto persiano Tafresh fatto a mano con medaglione e motivi geometrici. Elegante, resistente e ricco di tradizione.",
@@ -993,7 +1015,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-senneh-geometrico",
@@ -1054,12 +1078,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/senneh-107x70-01.webp",
-    "coverImage360": "/catalogo/products/media/senneh-107x70-01-360.webp",
-    "coverImage640": "/catalogo/products/media/senneh-107x70-01-640.webp",
+    "coverImage": "/catalogo/products/media/senneh-107x70-01-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/senneh-107x70-01-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/senneh-107x70-01-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/senneh-107x70-01.webp"
+      "/catalogo/products/media/senneh-107x70-01-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Senneh Fatto a Mano – Geometrico Elegante",
     "seoDescription": "Tappeto persiano Senneh fatto a mano con motivi geometrici e medaglioni. Raffinato, compatto e ricco di tradizione.",
@@ -1076,7 +1100,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-senneh-medaglione-compatto",
@@ -1137,12 +1163,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-senneh-110x70-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Senneh Fatto a Mano – Medaglione Compatto",
     "seoDescription": "Tappeto persiano Senneh fatto a mano con medaglione geometrico. Raffinato, compatto e ricco di tradizione.",
@@ -1159,7 +1185,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-senneh-medaglione-contrasto",
@@ -1220,12 +1248,12 @@
       "geometric rug",
       "medallion rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-senneh-120x63.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-senneh-120x63-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-senneh-120x63-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-senneh-120x63-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-senneh-120x63-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-senneh-120x63-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-senneh-120x63.webp"
+      "/catalogo/products/media/tappeto-persiano-senneh-120x63-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Senneh Fatto a Mano – Medaglione a Contrasto",
     "seoDescription": "Tappeto persiano Senneh fatto a mano con medaglione e forte contrasto cromatico. Raffinato, compatto e ricco di tradizione.",
@@ -1242,7 +1270,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-tabriz-figurativo-uccelli",
@@ -1303,12 +1333,12 @@
       "decorative rug",
       "bird design rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-tabriz-77x60.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-tabriz-77x60-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-tabriz-77x60-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-tabriz-77x60-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-tabriz-77x60-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-tabriz-77x60-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-tabriz-77x60.webp"
+      "/catalogo/products/media/tappeto-persiano-tabriz-77x60-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Tabriz Figurativo – Disegno con Uccelli",
     "seoDescription": "Tappeto persiano Tabriz fatto a mano con scena figurativa di uccelli e motivi floreali. Elegante e ricco di dettagli.",
@@ -1325,7 +1355,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-tabriz-fondo-nero-medaglione",
@@ -1380,12 +1412,12 @@
       "classic rug",
       "elegant rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-tabriz-88x64-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Tabriz Fondo Nero – Elegante e Raffinato",
     "seoDescription": "Tappeto persiano Tabriz fatto a mano con fondo nero e medaglione floreale. Alta qualità e design elegante.",
@@ -1402,7 +1434,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-tabriz-rosso-medaglione",
@@ -1463,12 +1497,12 @@
       "classic rug",
       "elegant rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-tabriz-90x62-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Tabriz Rosso – Classico ed Elegante",
     "seoDescription": "Tappeto persiano Tabriz fatto a mano con fondo rosso e medaglione floreale. Raffinato e decorativo.",
@@ -1485,7 +1519,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-abadeh-figurativo-moschea",
@@ -1546,12 +1582,12 @@
       "handmade rug",
       "decorative rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-abadeh-91x65-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Abadeh Figurativo – Disegno Moschea",
     "seoDescription": "Tappeto persiano Abadeh fatto a mano con scena figurativa di moschea. Decorativo e ricco di dettagli.",
@@ -1568,7 +1604,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-bakhtiari-figurativo-coppia",
@@ -1629,12 +1667,12 @@
       "handmade rug",
       "decorative rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-61x61.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-61x61-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-61x61-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-61x61-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-61x61-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-61x61-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bakthiari-61x61.webp"
+      "/catalogo/products/media/tappeto-persiano-bakthiari-61x61-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Baktiari Figurativo – Scena Romantica",
     "seoDescription": "Tappeto persiano Baktiari fatto a mano con scena figurativa di coppia. Decorativo e ricco di dettagli.",
@@ -1651,7 +1689,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-bakhtiari-giardino-riquadri",
@@ -1712,12 +1752,12 @@
       "handmade rug",
       "floral rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata.webp"
+      "/catalogo/products/media/tappeto-persiano-bakthiari-98x63-raddrizzata-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Baktiari a Giardino – Disegno a Riquadri",
     "seoDescription": "Tappeto persiano Baktiari fatto a mano con disegno a riquadri floreali. Colorato e decorativo.",
@@ -1734,7 +1774,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-turkmeno-bianco",
@@ -1795,12 +1837,12 @@
       "nomadic rug",
       "handmade rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-turkmeno-121x98.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-turkmeno-121x98-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-turkmeno-121x98-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-turkmeno-121x98-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-turkmeno-121x98-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-turkmeno-121x98-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-turkmeno-121x98.webp"
+      "/catalogo/products/media/tappeto-persiano-turkmeno-121x98-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Turkmeno Bianco – Geometrico Fatto a Mano",
     "seoDescription": "Tappeto persiano turkmeno fatto a mano con fondo avorio e motivi geometrici rossi tradizionali.",
@@ -1817,7 +1859,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-sirdjand-136x76",
@@ -1878,12 +1922,12 @@
       "nomadic Persian rug",
       "handmade rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-sirdjand-136x76.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-sirdjand-136x76-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-sirdjand-136x76-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-sirdjand-136x76-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-sirdjand-136x76-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-sirdjand-136x76-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-sirdjand-136x76.webp"
+      "/catalogo/products/media/tappeto-persiano-sirdjand-136x76-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Sirdjand – Tappeto Geometrico Fatto a Mano",
     "seoDescription": "Tappeto persiano Sirdjand fatto a mano con medaglioni geometrici e motivi tribali tradizionali.",
@@ -1900,7 +1944,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-caucasico-baku-210x146",
@@ -1961,12 +2007,12 @@
       "tribal rug",
       "handmade rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-caucasico-baku-210x146.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-caucasico-baku-210x146-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-caucasico-baku-210x146-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-caucasico-baku-210x146-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-caucasico-baku-210x146-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-caucasico-baku-210x146-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-caucasico-baku-210x146.webp"
+      "/catalogo/products/media/tappeto-caucasico-baku-210x146-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Caucasico Baku – Tappeto Geometrico Fatto a Mano",
     "seoDescription": "Tappeto caucasico Baku fatto a mano con motivi geometrici tribali e colori tradizionali del Caucaso.",
@@ -1983,7 +2029,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-caucasico-daghistan-antico-264x106",
@@ -2044,12 +2092,12 @@
       "tribal Caucasian rug",
       "handmade rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-caucasico-daghistan-264x106.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-caucasico-daghistan-264x106-360.webp",
+    "coverImage": "/catalogo/products/media/tappeto-caucasico-daghistan-264x106-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-caucasico-daghistan-264x106-watermark-v2-360.webp",
     "coverImage640": "",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-caucasico-daghistan-264x106.webp"
+      "/catalogo/products/media/tappeto-caucasico-daghistan-264x106-watermark-v2.webp"
     ],
     "seoTitle": "Antico Tappeto Caucasico Daghistan – Tappeto Tribale Fatto a Mano",
     "seoDescription": "Antico tappeto caucasico Daghistan fatto a mano con motivi geometrici tribali e colori tradizionali del Caucaso.",
@@ -2066,7 +2114,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-caucasico-derbend-antico-190x123",
@@ -2127,12 +2177,12 @@
       "antique tribal rug",
       "handmade rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-caucasico-derbend-190x123.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-caucasico-derbend-190x123-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-caucasico-derbend-190x123-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-caucasico-derbend-190x123-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-caucasico-derbend-190x123-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-caucasico-derbend-190x123-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-caucasico-derbend-190x123.webp"
+      "/catalogo/products/media/tappeto-caucasico-derbend-190x123-watermark-v2.webp"
     ],
     "seoTitle": "Antico Tappeto Caucasico Derbend – Tappeto Tribale Fatto a Mano",
     "seoDescription": "Antico tappeto caucasico Derbend fatto a mano con motivi geometrici tribali e colori tradizionali del Caucaso.",
@@ -2149,7 +2199,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-isfahan-seta-163x105",
@@ -2210,12 +2262,12 @@
       "fine Persian rug",
       "handmade rug"
     ],
-    "coverImage": "/catalogo/products/media/tappeto-persiano-isfahan-163x105.webp",
-    "coverImage360": "/catalogo/products/media/tappeto-persiano-isfahan-163x105-360.webp",
-    "coverImage640": "/catalogo/products/media/tappeto-persiano-isfahan-163x105-640.webp",
+    "coverImage": "/catalogo/products/media/tappeto-persiano-isfahan-163x105-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/tappeto-persiano-isfahan-163x105-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/tappeto-persiano-isfahan-163x105-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tappeto-persiano-isfahan-163x105.webp"
+      "/catalogo/products/media/tappeto-persiano-isfahan-163x105-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Isfahan in Seta – Pregiato Tappeto Fatto a Mano",
     "seoDescription": "Pregiato tappeto persiano Isfahan con ordito e trama in seta, motivi floreali raffinati e lavorazione artigianale fine.",
@@ -2234,7 +2286,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-nain-6la-92x63",
@@ -2295,12 +2349,12 @@
       "fine Persian rug",
       "handmade rug"
     ],
-    "coverImage": "/catalogo/products/media/nain-6la-92x63-01.webp",
-    "coverImage360": "/catalogo/products/media/nain-6la-92x63-01-360.webp",
-    "coverImage640": "/catalogo/products/media/nain-6la-92x63-01-640.webp",
+    "coverImage": "/catalogo/products/media/nain-6la-92x63-01-watermark-v5.webp",
+    "coverImage360": "/catalogo/products/media/nain-6la-92x63-01-watermark-v5-360.webp",
+    "coverImage640": "/catalogo/products/media/nain-6la-92x63-01-watermark-v5-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/nain-6la-92x63-01.webp"
+      "/catalogo/products/media/nain-6la-92x63-01-watermark-v5.webp"
     ],
     "seoTitle": "Tappeto Persiano Nain 6La – Elegante Tappeto Floreale Fatto a Mano",
     "seoDescription": "Pregiato tappeto persiano Nain 6La con raffinati motivi floreali, colori azzurro avorio e lavorazione artigianale fine.",
@@ -2317,7 +2371,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-kum-141x71",
@@ -2378,12 +2434,12 @@
       "blue Persian rug",
       "handmade Persian rug"
     ],
-    "coverImage": "/catalogo/products/media/qom-141x71-01.webp",
-    "coverImage360": "/catalogo/products/media/qom-141x71-01-360.webp",
-    "coverImage640": "/catalogo/products/media/qom-141x71-01-640.webp",
+    "coverImage": "/catalogo/products/media/qom-141x71-01-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/qom-141x71-01-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/qom-141x71-01-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/qom-141x71-01.webp"
+      "/catalogo/products/media/qom-141x71-01-watermark-v2.webp"
     ],
     "seoTitle": "Tappeto Persiano Kum Blu – Elegante Tappeto Floreale Fatto a Mano",
     "seoDescription": "Pregiato tappeto persiano Kum con fondo blu notte, raffinati motivi floreali e lavorazione artigianale fatta a mano.",
@@ -2400,7 +2456,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khorjin-bakhtiari-vecchio-sumak",
@@ -2459,12 +2517,12 @@
       "tribal textile",
       "Persian handicraft"
     ],
-    "coverImage": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak.webp",
-    "coverImage360": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-360.webp",
-    "coverImage640": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-640.webp",
+    "coverImage": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak.webp"
+      "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2.webp"
     ],
     "seoTitle": "Khorjin Baktiari vecchio in sumak | Bisaccia persiana",
     "seoDescription": "Khorjin persiano Baktiari di vecchia lavorazione in sumak, con doppia bisaccia, motivi geometrici e colori profondi.",
@@ -2481,7 +2539,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "262351"
+    "mpn": "262351",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-isfahan-firmato-seta-105x75",
@@ -2567,7 +2627,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tappeto-persiano-isfahan-firmato-seta-130x85",
@@ -2653,7 +2715,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "baluc-turkmeno-80x37-1",
@@ -2696,12 +2760,12 @@
     "altEn": "",
     "tags": [],
     "tagsEn": [],
-    "coverImage": "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2.webp",
-    "coverImage360": "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2-360.webp",
-    "coverImage640": "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2-640.webp",
+    "coverImage": "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2.webp"
+      "/catalogo/products/media/01-baluc-turkmeno-1-senza-sfondo-raddrizzata-2-watermark-v2.webp"
     ],
     "seoTitle": "Baluc Turkmeno | Shahmansouri",
     "seoDescription": "",
@@ -2718,7 +2782,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "beluci-turkmeno-73x54",
@@ -2783,7 +2849,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "baluc-turkmeno-56x51",
@@ -2848,7 +2916,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "turkmeno-67x65",
@@ -2913,7 +2983,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "turkmeno-67x61",
@@ -2978,7 +3050,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "turkmeno-78x70",
@@ -3043,7 +3117,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "turkmeno-73x68",
@@ -3108,7 +3184,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "turkmeno-102x53",
@@ -3173,7 +3251,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "kilim-74x57",
@@ -3238,7 +3318,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "saruk-75x54",
@@ -3303,7 +3385,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "goltok-100x87",
@@ -3368,7 +3452,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "karabag-227x93",
@@ -3411,12 +3497,12 @@
     "altEn": "",
     "tags": [],
     "tagsEn": [],
-    "coverImage": "/catalogo/products/media/karabag-227x93-01.webp",
-    "coverImage360": "/catalogo/products/media/karabag-227x93-01-360.webp",
-    "coverImage640": "/catalogo/products/media/karabag-227x93-01-640.webp",
+    "coverImage": "/catalogo/products/media/karabag-227x93-01-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/karabag-227x93-01-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/karabag-227x93-01-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/karabag-227x93-01.webp"
+      "/catalogo/products/media/karabag-227x93-01-watermark-v2.webp"
     ],
     "seoTitle": "Karabag | Shahmansouri",
     "seoDescription": "",
@@ -3433,7 +3519,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "saruk-75x59",
@@ -3498,7 +3586,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "saruk-75x60",
@@ -3563,7 +3653,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "shirwan-132x100",
@@ -3628,7 +3720,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "senneh-95x70",
@@ -3693,7 +3787,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "karabag-antico-170x115",
@@ -3758,7 +3854,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "esfahan-117x63",
@@ -3801,12 +3899,12 @@
     "altEn": "",
     "tags": [],
     "tagsEn": [],
-    "coverImage": "/catalogo/products/media/esfahan-117x63-01.webp",
-    "coverImage360": "/catalogo/products/media/esfahan-117x63-01-360.webp",
-    "coverImage640": "/catalogo/products/media/esfahan-117x63-01-640.webp",
+    "coverImage": "/catalogo/products/media/esfahan-117x63-01-watermark-v2.webp",
+    "coverImage360": "/catalogo/products/media/esfahan-117x63-01-watermark-v2-360.webp",
+    "coverImage640": "/catalogo/products/media/esfahan-117x63-01-watermark-v2-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/esfahan-117x63-01.webp"
+      "/catalogo/products/media/esfahan-117x63-01-watermark-v2.webp"
     ],
     "seoTitle": "Esfahan | Shahmansouri",
     "seoDescription": "",
@@ -3823,7 +3921,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "zigler-89x59",
@@ -3888,7 +3988,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "saruk-67x63",
@@ -3953,7 +4055,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "shirwan-149x109",
@@ -4018,7 +4122,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "astuccio-khatam-20x5",
@@ -4027,7 +4133,7 @@
     "language": "it",
     "hasEnglish": true,
     "slugEn": "astuccio-khatam-20x5-en",
-    "titleEn": "",
+    "titleEn": "Khatam Box with Floral Miniature",
     "category": "Khatam",
     "categories": [
       "Khatam"
@@ -4055,14 +4161,26 @@
     "dimensions": "20 x 5 cm",
     "origin": "Iran",
     "originEn": "",
-    "description": "",
-    "longDescription": "",
-    "descriptionEn": "",
-    "longDescriptionEn": "",
-    "alt": "Astuccio Khatam",
-    "altEn": "",
-    "tags": [],
-    "tagsEn": [],
+    "description": "Astuccio Khatam allungato con miniatura floreale nei toni del turchese, profilo arrotondato, intarsio geometrico sui lati e apertura a scorrimento.",
+    "longDescription": "Astuccio Khatam proveniente dall'Iran, dalla forma allungata e con estremità arrotondate. Il coperchio scorrevole è decorato da una miniatura floreale su fondo turchese, con racemi dorati, piccoli fiori policromi e un medaglione centrale. I lati mostrano un fitto intarsio geometrico Khatam nei toni del crema e del bruno. Da vicino emerge la precisione dei motivi minuti e ripetuti. L'apertura rivela un vano interno rettangolare, in una tonalità bruna con venature visibili.",
+    "descriptionEn": "Elongated Khatam box with a turquoise floral miniature, rounded profile, geometric inlay along the sides, and a sliding lid.",
+    "longDescriptionEn": "Khatam box from Iran, with an elongated shape and rounded ends. The sliding lid bears a floral miniature on a turquoise field, with golden scrolls, small multicoloured flowers, and a central medallion. The sides feature dense geometric Khatam inlay in cream and brown tones. Viewed closely, the precision of the minute repeating patterns becomes clear. The opening reveals a rectangular inner compartment in a brown tone with visible grain-like markings.",
+    "alt": "Astuccio Khatam di 20 × 5 cm con miniatura floreale turchese, lati geometrici e coperchio scorrevole.",
+    "altEn": "20 × 5 cm Khatam box with a turquoise floral miniature, geometric sides, and a sliding lid.",
+    "tags": [
+      "astuccio Khatam",
+      "miniatura floreale",
+      "intarsio geometrico",
+      "coperchio scorrevole",
+      "decorazione persiana"
+    ],
+    "tagsEn": [
+      "Khatam box",
+      "floral miniature",
+      "geometric inlay",
+      "sliding lid",
+      "Persian decoration"
+    ],
     "coverImage": "/catalogo/products/media/astuccio-khatam-collage-khatam.webp",
     "coverImage360": "/catalogo/products/media/astuccio-khatam-collage-khatam-360.webp",
     "coverImage640": "/catalogo/products/media/astuccio-khatam-collage-khatam-640.webp",
@@ -4072,10 +4190,14 @@
       "/catalogo/products/media/astuccio-khatam-20x5-02.webp",
       "/catalogo/products/media/astuccio-khatam-20x5-03.webp"
     ],
-    "seoTitle": "Astuccio Khatam | Shahmansouri",
-    "seoDescription": "",
-    "seoTitleEn": "Astuccio Khatam | Shahmansouri",
-    "seoDescriptionEn": "",
+    "seoTitle": "Astuccio Khatam con miniatura floreale persiana da Isfahan",
+    "seoDescription": "Astuccio Khatam dall'Iran con coperchio scorrevole, miniatura floreale turchese, profilo arrotondato e fitto intarsio geometrico.",
+    "seoTitleEn": "Khatam Box with Persian Floral Miniature from Isfahan",
+    "seoDescriptionEn": "Khatam box from Iran with a sliding lid, turquoise floral miniature, rounded profile, and dense geometric inlay along the sides.",
+    "seoTitleSource": "manual",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "manual",
+    "seoDescriptionEnSource": "ai",
     "priceOnRequest": true,
     "priceValue": null,
     "salePriceValue": null,
@@ -4087,7 +4209,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "astuccio-khatam-21x5",
@@ -4096,7 +4220,7 @@
     "language": "it",
     "hasEnglish": true,
     "slugEn": "astuccio-khatam-21x5-en",
-    "titleEn": "",
+    "titleEn": "Khatam Box with Camel Caravan Miniature",
     "category": "Khatam",
     "categories": [
       "Khatam"
@@ -4124,14 +4248,26 @@
     "dimensions": "21 x 5 cm",
     "origin": "Iran",
     "originEn": "",
-    "description": "",
-    "longDescription": "",
-    "descriptionEn": "",
-    "longDescriptionEn": "",
+    "description": "Astuccio Khatam allungato con miniatura di una carovana di cammelli sul coperchio, fitto intarsio geometrico sui lati e apertura a scorrimento.",
+    "longDescription": "Astuccio Khatam proveniente dall'Iran, dalla forma allungata e con estremità arrotondate. Il coperchio scorrevole reca una miniatura con una carovana di cammelli e figure in viaggio, dipinta nei toni dell'ocra, del verde, del rosso e del blu. I lati sono definiti da un fitto intarsio geometrico con motivi minuti e ripetuti. L'apertura parziale mostra un vano interno scuro, accompagnato lungo il bordo da una decorazione geometrica coordinata.",
+    "descriptionEn": "Elongated Khatam box with a camel caravan miniature on the lid, dense geometric inlay along the sides, and a sliding opening.",
+    "longDescriptionEn": "Khatam box from Iran, with an elongated shape and rounded ends. The sliding lid carries a miniature of a travelling camel caravan with figures, painted in shades of ochre, green, red, and blue. The sides are defined by dense geometric inlay composed of small repeating motifs. When partially opened, the box reveals a dark inner compartment, bordered by a coordinated geometric decoration that continues the detailed pattern of the exterior.",
     "alt": "Astuccio Khatam",
-    "altEn": "",
-    "tags": [],
-    "tagsEn": [],
+    "altEn": "Elongated Khatam box with sliding lid, camel caravan miniature, rounded ends, and geometric inlay along the sides.",
+    "tags": [
+      "astuccio Khatam",
+      "miniatura persiana",
+      "carovana di cammelli",
+      "intarsio geometrico",
+      "coperchio scorrevole"
+    ],
+    "tagsEn": [
+      "Khatam box",
+      "Persian miniature",
+      "camel caravan",
+      "geometric inlay",
+      "sliding lid"
+    ],
     "coverImage": "/catalogo/products/media/astuccio-khatam-collage-khatam-2.webp",
     "coverImage360": "/catalogo/products/media/astuccio-khatam-collage-khatam-2-360.webp",
     "coverImage640": "/catalogo/products/media/astuccio-khatam-collage-khatam-2-640.webp",
@@ -4141,10 +4277,14 @@
       "/catalogo/products/media/astuccio-khatam-21x5-02.webp",
       "/catalogo/products/media/astuccio-khatam-21x5-03.webp"
     ],
-    "seoTitle": "Astuccio Khatam | Shahmansouri",
-    "seoDescription": "",
-    "seoTitleEn": "Astuccio Khatam | Shahmansouri",
-    "seoDescriptionEn": "",
+    "seoTitle": "Astuccio Khatam con miniatura di carovana persiana",
+    "seoDescription": "Astuccio Khatam proveniente dall'Iran, con coperchio scorrevole, miniatura di una carovana di cammelli e fitto intarsio geometrico.",
+    "seoTitleEn": "Khatam Box with Persian Camel Caravan Miniature",
+    "seoDescriptionEn": "Khatam box from Iran with a sliding lid, Persian camel caravan miniature, rounded ends, and dense geometric inlay along the sides.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
     "priceOnRequest": true,
     "priceValue": null,
     "salePriceValue": null,
@@ -4156,7 +4296,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "gabbeh-146x105",
@@ -4221,7 +4363,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "scatola-khatam-17x11",
@@ -4230,7 +4374,7 @@
     "language": "it",
     "hasEnglish": true,
     "slugEn": "scatola-khatam-17x11-en",
-    "titleEn": "",
+    "titleEn": "Persian Khatam Box with Geometric Decoration",
     "category": "Khatam",
     "categories": [
       "Khatam"
@@ -4256,14 +4400,26 @@
     "dimensions": "17 x 11 cm",
     "origin": "Iran",
     "originEn": "",
-    "description": "",
-    "longDescription": "",
-    "descriptionEn": "",
-    "longDescriptionEn": "",
-    "alt": "Scatola khatam",
-    "altEn": "",
-    "tags": [],
-    "tagsEn": [],
+    "description": "Scatola Khatam rettangolare con coperchio incernierato, profilo sagomato e fitto intarsio geometrico nei toni del verde, crema e bruno.",
+    "longDescription": "Scatola Khatam proveniente dall'Iran, di forma rettangolare e sostenuta da quattro piccoli piedi. Il coperchio incernierato è definito da una cornice bruna e da una trama minuta di motivi geometrici ripetuti. Fasce decorative con stelle e rosette nei toni del verde, crema e bruno percorrono i lati e il bordo superiore. All'apertura è visibile un vano rivestito in verde, dalla linea semplice e regolare.",
+    "descriptionEn": "Rectangular Khatam Box with a hinged lid, shaped profile, and dense geometric inlay in green, cream, and brown tones.",
+    "longDescriptionEn": "Khatam Box from Iran, rectangular in shape and raised on four small feet. The hinged lid is framed in brown and filled with a fine pattern of repeated geometric motifs. Decorative bands of stars and rosettes in green, cream, and brown extend across the sides and upper edge. When opened, the Box reveals a green-lined compartment with a simple, regular outline.",
+    "alt": "Scatola Khatam rettangolare con coperchio incernierato, motivi geometrici verdi, crema e bruni e interno verde.",
+    "altEn": "Rectangular Khatam Box with a hinged lid, green, cream, and brown geometric motifs, and a green-lined interior.",
+    "tags": [
+      "scatola Khatam",
+      "intarsio geometrico",
+      "motivi a stella",
+      "coperchio incernierato",
+      "decorazione persiana"
+    ],
+    "tagsEn": [
+      "Khatam Box",
+      "geometric inlay",
+      "star motifs",
+      "hinged lid",
+      "Persian decoration"
+    ],
     "coverImage": "/catalogo/products/media/scatola-khatam-collage-3-viste.webp",
     "coverImage360": "/catalogo/products/media/scatola-khatam-collage-3-viste-360.webp",
     "coverImage640": "/catalogo/products/media/scatola-khatam-collage-3-viste-640.webp",
@@ -4274,10 +4430,14 @@
       "/catalogo/products/media/scatola-khatam-17x11-03.webp",
       "/catalogo/products/media/scatola-khatam-17x11-04.webp"
     ],
-    "seoTitle": "Scatola khatam | Shahmansouri",
-    "seoDescription": "",
-    "seoTitleEn": "Scatola khatam | Shahmansouri",
-    "seoDescriptionEn": "",
+    "seoTitle": "Scatola Khatam persiana con intarsio geometrico",
+    "seoDescription": "Scatola Khatam proveniente dall'Iran, con coperchio incernierato, profilo sagomato e motivi geometrici verdi, crema e bruni.",
+    "seoTitleEn": "Persian Khatam Box with Geometric Inlay",
+    "seoDescriptionEn": "Khatam Box from Iran with a hinged lid, shaped profile, and geometric motifs in green, cream, and brown.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
     "priceOnRequest": true,
     "priceValue": null,
     "salePriceValue": null,
@@ -4289,7 +4449,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "saruk-antico-192x126",
@@ -4354,7 +4516,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "malayer-130x107",
@@ -4419,7 +4583,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "papier-mache-18x3-5",
@@ -4482,7 +4648,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "scatola-khatam-11x8",
@@ -4550,7 +4718,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "papier-mache-11x7",
@@ -4614,7 +4784,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "nain-6la-221x51",
@@ -4657,12 +4829,12 @@
     "altEn": "",
     "tags": [],
     "tagsEn": [],
-    "coverImage": "/catalogo/products/media/nain-6la-221x51-01.webp",
-    "coverImage360": "/catalogo/products/media/nain-6la-221x51-01-360.webp",
+    "coverImage": "/catalogo/products/media/nain-6la-221x51-01-watermark-v5.webp",
+    "coverImage360": "/catalogo/products/media/nain-6la-221x51-01-watermark-v5-360.webp",
     "coverImage640": "",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/nain-6la-221x51-01.webp",
+      "/catalogo/products/media/nain-6la-221x51-01-watermark-v5.webp",
       "/catalogo/products/media/nain-6la-221x51-02.webp",
       "/catalogo/products/media/nain-6la-221x51-03.webp"
     ],
@@ -4681,7 +4853,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "TAP-002"
+    "mpn": "TAP-002",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "kashkuli-115x81",
@@ -4748,7 +4922,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "TAP-001"
+    "mpn": "TAP-001",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tabriz-197x82",
@@ -4791,12 +4967,12 @@
     "altEn": "",
     "tags": [],
     "tagsEn": [],
-    "coverImage": "/catalogo/products/media/tabriz-197x82-01.webp",
-    "coverImage360": "/catalogo/products/media/tabriz-197x82-01-360.webp",
-    "coverImage640": "/catalogo/products/media/tabriz-197x82-01-640.webp",
+    "coverImage": "/catalogo/products/media/tabriz-197x82-01-watermark-v5.webp",
+    "coverImage360": "/catalogo/products/media/tabriz-197x82-01-watermark-v5-360.webp",
+    "coverImage640": "/catalogo/products/media/tabriz-197x82-01-watermark-v5-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tabriz-197x82-01.webp",
+      "/catalogo/products/media/tabriz-197x82-01-watermark-v5.webp",
       "/catalogo/products/media/tabriz-197x82-02.webp",
       "/catalogo/products/media/tabriz-197x82-03.webp"
     ],
@@ -4815,7 +4991,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": ""
+    "mpn": "",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "saruk-155x105",
@@ -4880,7 +5058,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "TAP-004"
+    "mpn": "TAP-004",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-11x8",
@@ -4889,7 +5069,7 @@
     "language": "it",
     "hasEnglish": true,
     "slugEn": "khatam-11x8-en",
-    "titleEn": "",
+    "titleEn": "Khatam Box with Male Figure",
     "category": "Khatam",
     "categories": [
       "Khatam"
@@ -4911,14 +5091,26 @@
     "dimensions": "11 x 8 cm",
     "origin": "Iran",
     "originEn": "",
-    "description": "",
-    "longDescription": "",
-    "descriptionEn": "",
-    "longDescriptionEn": "",
+    "description": "Scatola Khatam rettangolare con angoli arrotondati, figura maschile su fondo arancio, fasce geometriche laterali e apertura a scorrimento.",
+    "longDescription": "Scatola Khatam proveniente dall'Iran, di forma rettangolare con angoli arrotondati e apertura a scorrimento. Il coperchio, nei toni caldi dell'arancio, raffigura un uomo barbuto con turbante e bastone, accompagnato da una seconda figura sulle spalle e da minuti elementi vegetali. I lati sono scanditi da un fitto intarsio geometrico a stelle e rosette nei toni del crema, bruno e nero. La tradizione decorativa Khatam si riconosce nella precisione dei motivi minuti e ripetuti.",
+    "descriptionEn": "Rectangular Khatam box with rounded corners, a male figure on an orange field, geometric side bands and a sliding opening.",
+    "longDescriptionEn": "Khatam box from Iran, with a rectangular form, rounded corners and a sliding opening. The lid, rendered in warm orange tones, depicts a bearded man wearing a turban and holding a staff, with a second figure on his shoulders and small botanical details. The sides are arranged in dense geometric inlay with stars and rosettes in cream, brown and black. The Khatam decorative tradition is evident in the precision of its minute, repeated patterns.",
     "alt": "Khatam",
-    "altEn": "",
-    "tags": [],
-    "tagsEn": [],
+    "altEn": "Rectangular Khatam box with a male figure on an orange lid and geometric star patterns along the sides.",
+    "tags": [
+      "scatola Khatam",
+      "figura maschile",
+      "intarsio geometrico",
+      "motivi a stella",
+      "apertura a scorrimento"
+    ],
+    "tagsEn": [
+      "Khatam box",
+      "male figure",
+      "geometric inlay",
+      "star patterns",
+      "sliding opening"
+    ],
     "coverImage": "/catalogo/products/media/khatam-collage-3-viste.webp",
     "coverImage360": "/catalogo/products/media/khatam-collage-3-viste-360.webp",
     "coverImage640": "/catalogo/products/media/khatam-collage-3-viste-640.webp",
@@ -4929,10 +5121,14 @@
       "/catalogo/products/media/khatam-11x8-03.webp",
       "/catalogo/products/media/khatam-11x8-04.webp"
     ],
-    "seoTitle": "Khatam | Shahmansouri",
-    "seoDescription": "",
-    "seoTitleEn": "Khatam | Shahmansouri",
-    "seoDescriptionEn": "",
+    "seoTitle": "Scatola Khatam con figura maschile",
+    "seoDescription": "Scatola Khatam proveniente dall'Iran, con figura maschile su fondo arancio, intarsio geometrico sui lati e apertura a scorrimento.",
+    "seoTitleEn": "Khatam Box with Male Figure",
+    "seoDescriptionEn": "Khatam box from Iran with a male figure on an orange lid, geometric inlay along the sides and a sliding opening.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
     "priceOnRequest": true,
     "priceValue": null,
     "salePriceValue": null,
@@ -4944,7 +5140,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-001"
+    "mpn": "KHA-001",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-10-5x8",
@@ -4953,7 +5151,7 @@
     "language": "it",
     "hasEnglish": true,
     "slugEn": "khatam-10-5x8-en",
-    "titleEn": "",
+    "titleEn": "Khatam Miniature with Seated Male Figure",
     "category": "Khatam",
     "categories": [
       "Khatam"
@@ -4979,14 +5177,26 @@
     "dimensions": "10,5 x 8 cm",
     "origin": "Iran",
     "originEn": "",
-    "description": "",
-    "longDescription": "",
-    "descriptionEn": "",
-    "longDescriptionEn": "",
+    "description": "Miniatura Khatam rettangolare e apribile, con figura maschile seduta sul fronte e fitti motivi geometrici a stella lungo i bordi.",
+    "longDescription": "Miniatura Khatam proveniente dall'Iran, con struttura rettangolare apribile e angoli arrotondati. Il pannello frontale raffigura un uomo barbuto seduto, con copricapo alto e veste drappeggiata, delineato in toni bruni e delicati accenti rossastri su un campo crema. I bordi laterali sono scanditi da un fitto motivo geometrico a stelle nei toni del crema, nero, bruno e arancio. La composizione accosta la figura raccolta a una decorazione regolare e minuta.",
+    "descriptionEn": "Rectangular opening Khatam miniature with a seated male figure on the front and dense geometric star motifs along the borders.",
+    "longDescriptionEn": "Khatam miniature from Iran, with an opening rectangular structure and rounded corners. The front panel depicts a seated bearded man wearing a tall cap and draped robes, outlined in brown with subtle reddish accents against a cream field. The side borders are arranged in a dense geometric star pattern in cream, black, brown, and orange. The composition pairs the quietly posed figure with a regular, finely scaled decoration.",
     "alt": "Khatam",
-    "altEn": "",
-    "tags": [],
-    "tagsEn": [],
+    "altEn": "Rectangular Khatam miniature with a seated bearded man and geometric star-patterned borders.",
+    "tags": [
+      "miniatura Khatam",
+      "figura maschile",
+      "motivi geometrici",
+      "struttura apribile",
+      "angoli arrotondati"
+    ],
+    "tagsEn": [
+      "Khatam miniature",
+      "male figure",
+      "geometric motifs",
+      "opening structure",
+      "rounded corners"
+    ],
     "coverImage": "/catalogo/products/media/khatam-collage-3-viste-2.webp",
     "coverImage360": "/catalogo/products/media/khatam-collage-3-viste-2-360.webp",
     "coverImage640": "/catalogo/products/media/khatam-collage-3-viste-2-640.webp",
@@ -4997,10 +5207,14 @@
       "/catalogo/products/media/khatam-10-5x8-03.webp",
       "/catalogo/products/media/khatam-10-5x8-04.webp"
     ],
-    "seoTitle": "Khatam | Shahmansouri",
-    "seoDescription": "",
-    "seoTitleEn": "Khatam | Shahmansouri",
-    "seoDescriptionEn": "",
+    "seoTitle": "Miniatura Khatam con figura maschile dall'Iran",
+    "seoDescription": "Miniatura Khatam apribile con uomo seduto, angoli arrotondati e motivi geometrici a stella nei toni del crema, bruno, nero e arancio.",
+    "seoTitleEn": "Khatam Miniature with Male Figure from Iran",
+    "seoDescriptionEn": "Opening Khatam miniature with a seated man, rounded corners, and geometric star motifs in cream, brown, black, and orange.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
     "priceOnRequest": true,
     "priceValue": null,
     "salePriceValue": null,
@@ -5012,7 +5226,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-002"
+    "mpn": "KHA-002",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "isfahan-167x115",
@@ -5082,7 +5298,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "TAP-008"
+    "mpn": "TAP-008",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "saruk-200x76",
@@ -5125,12 +5343,12 @@
     "altEn": "",
     "tags": [],
     "tagsEn": [],
-    "coverImage": "/catalogo/products/media/saruk-200x76-01.webp",
-    "coverImage360": "/catalogo/products/media/saruk-200x76-01-360.webp",
-    "coverImage640": "/catalogo/products/media/saruk-200x76-01-640.webp",
+    "coverImage": "/catalogo/products/media/saruk-200x76-01-watermark-v5.webp",
+    "coverImage360": "/catalogo/products/media/saruk-200x76-01-watermark-v5-360.webp",
+    "coverImage640": "/catalogo/products/media/saruk-200x76-01-watermark-v5-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/saruk-200x76-01.webp",
+      "/catalogo/products/media/saruk-200x76-01-watermark-v5.webp",
       "/catalogo/products/media/saruk-200x76-02.webp",
       "/catalogo/products/media/saruk-200x76-03.webp"
     ],
@@ -5149,7 +5367,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "TAP-005"
+    "mpn": "TAP-005",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "isfahan-165x110",
@@ -5217,7 +5437,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "TAP-007"
+    "mpn": "TAP-007",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "tabriz-119x71",
@@ -5226,7 +5448,7 @@
     "language": "it",
     "hasEnglish": true,
     "slugEn": "tabriz-119x71-en",
-    "titleEn": "",
+    "titleEn": "Fine Tabriz Rug",
     "category": "Tappeti",
     "categories": [
       "Tappeti"
@@ -5252,27 +5474,43 @@
     "dimensions": "119 x 71 cm",
     "origin": "Iran",
     "originEn": "",
-    "description": "",
-    "longDescription": "",
-    "descriptionEn": "",
-    "longDescriptionEn": "",
+    "description": "Tappeto fine Tabriz di provenienza Iran, con campo blu scuro, medaglione corallo e articolata decorazione floreale. Bordura multipla e frange chiare.",
+    "longDescription": "Tappeto fine Tabriz di provenienza Iran, caratterizzato da un formato rettangolare e da una composizione simmetrica. Il campo blu scuro accoglie un ampio medaglione centrale sagomato nei toni del corallo, avorio e verde, circondato da tralci, fiori e motivi vegetali. La bordura multipla riprende la palette con fasce floreali e piccoli elementi figurativi disposti agli angoli. Frange chiare sono visibili lungo entrambe le estremità corte.",
+    "descriptionEn": "Fine Tabriz rug originating from Iran, with a dark blue field, coral medallion and detailed floral design. Layered border and light fringes.",
+    "longDescriptionEn": "Fine Tabriz rug originating from Iran, with a rectangular format and a balanced, symmetrical composition. Its dark blue field centres on a large shaped medallion in coral, ivory and green, surrounded by curving stems, flowers and leafy motifs. The layered border repeats the palette through floral bands and small figurative details arranged at the corners. Light-coloured fringes are visible along both short ends.",
     "alt": "Tabriz",
-    "altEn": "",
-    "tags": [],
-    "tagsEn": [],
-    "coverImage": "/catalogo/products/media/tabriz-119x71-01.webp",
-    "coverImage360": "/catalogo/products/media/tabriz-119x71-01-360.webp",
-    "coverImage640": "/catalogo/products/media/tabriz-119x71-01-640.webp",
+    "altEn": "Fine Tabriz rug, 119 × 71 cm, with dark blue field, coral floral medallion, layered border and light fringes.",
+    "tags": [
+      "tappeto Tabriz",
+      "tappeto fine",
+      "medaglione floreale",
+      "campo blu scuro",
+      "bordura floreale"
+    ],
+    "tagsEn": [
+      "Tabriz rug",
+      "fine rug",
+      "floral medallion",
+      "dark blue field",
+      "floral border"
+    ],
+    "coverImage": "/catalogo/products/media/tabriz-119x71-01-watermark-v5.webp",
+    "coverImage360": "/catalogo/products/media/tabriz-119x71-01-watermark-v5-360.webp",
+    "coverImage640": "/catalogo/products/media/tabriz-119x71-01-watermark-v5-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/tabriz-119x71-01.webp",
+      "/catalogo/products/media/tabriz-119x71-01-watermark-v5.webp",
       "/catalogo/products/media/tabriz-119x71-02.webp",
       "/catalogo/products/media/tabriz-119x71-03.webp"
     ],
-    "seoTitle": "Tabriz | Shahmansouri",
-    "seoDescription": "",
-    "seoTitleEn": "Tabriz | Shahmansouri",
-    "seoDescriptionEn": "",
+    "seoTitle": "Tappeto fine Tabriz con medaglione floreale",
+    "seoDescription": "Tappeto fine Tabriz proveniente dall’Iran, con campo blu scuro, medaglione corallo, motivi floreali, bordura multipla e frange chiare.",
+    "seoTitleEn": "Fine Tabriz Rug with Floral Medallion",
+    "seoDescriptionEn": "Fine Tabriz rug from Iran with a dark blue field, coral medallion, floral motifs, layered border and light-coloured fringes.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
     "priceOnRequest": true,
     "priceValue": null,
     "salePriceValue": null,
@@ -5284,7 +5522,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "TAP-006"
+    "mpn": "TAP-006",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20x5",
@@ -5370,7 +5610,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-003"
+    "mpn": "KHA-003",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-21x5",
@@ -5440,7 +5682,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-004"
+    "mpn": "KHA-004",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20-1x5",
@@ -5525,7 +5769,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-008"
+    "mpn": "KHA-008",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20-2x5",
@@ -5534,7 +5780,7 @@
     "language": "it",
     "hasEnglish": true,
     "slugEn": "khatam-20-2x5-en",
-    "titleEn": "",
+    "titleEn": "Khatam Box with Floral Miniature",
     "category": "Khatam",
     "categories": [
       "Khatam"
@@ -5562,14 +5808,26 @@
     "dimensions": "20,2 x 5 cm",
     "origin": "Iran",
     "originEn": "",
-    "description": "",
-    "longDescription": "",
-    "descriptionEn": "",
-    "longDescriptionEn": "",
+    "description": "Astuccio Khatam allungato con miniatura floreale dorata su fondo turchese, fitto intarsio geometrico sui lati e apertura a scorrimento.",
+    "longDescription": "Astuccio Khatam proveniente dall'Iran, dalla forma allungata e con estremità arrotondate. Il coperchio è decorato da una miniatura floreale dorata su fondo turchese, arricchita da figure di uccelli tra foglie e corolle. I lati mostrano un fitto intarsio geometrico nei toni del crema e del bruno, scandito da sottili fasce. L'apertura a scorrimento rivela un vano interno con minuti motivi geometrici policromi.",
+    "descriptionEn": "Elongated Khatam box with a golden floral miniature on turquoise, dense geometric inlay along the sides, and a sliding opening.",
+    "longDescriptionEn": "A Khatam box from Iran, with an elongated shape and rounded ends. The lid features a golden floral miniature on a turquoise field, with birds set among leaves and blossoms. The sides carry dense geometric inlay in cream and brown tones, framed by narrow bands. Its sliding opening reveals an inner compartment decorated with small polychrome geometric motifs, continuing the detailed pattern on a more intimate scale.",
     "alt": "Khatam",
-    "altEn": "",
-    "tags": [],
-    "tagsEn": [],
+    "altEn": "Elongated Khatam box with turquoise floral lid, rounded ends, geometric sides, and partially open sliding compartment.",
+    "tags": [
+      "astuccio Khatam",
+      "miniatura floreale",
+      "intarsio geometrico",
+      "apertura a scorrimento",
+      "decorazione persiana"
+    ],
+    "tagsEn": [
+      "Khatam box",
+      "floral miniature",
+      "geometric inlay",
+      "sliding opening",
+      "Persian decoration"
+    ],
     "coverImage": "/catalogo/products/media/khatam-collage-khatam-2.webp",
     "coverImage360": "/catalogo/products/media/khatam-collage-khatam-2-360.webp",
     "coverImage640": "/catalogo/products/media/khatam-collage-khatam-2-640.webp",
@@ -5579,10 +5837,14 @@
       "/catalogo/products/media/khatam-20-2x5-02.webp",
       "/catalogo/products/media/khatam-20-2x5-03.webp"
     ],
-    "seoTitle": "Khatam | Shahmansouri",
-    "seoDescription": "",
-    "seoTitleEn": "Khatam | Shahmansouri",
-    "seoDescriptionEn": "",
+    "seoTitle": "Astuccio Khatam con miniatura floreale persiana di Isfahan",
+    "seoDescription": "Scopri l'astuccio persiano Khatam con estremità arrotondate, figure di uccelli e un vano interno ornato da motivi geometrici policromi.",
+    "seoTitleEn": "Khatam Box with Persian Floral Miniature di Isfahan",
+    "seoDescriptionEn": "Discover this Persian Khatam box with rounded ends, bird figures, and an inner compartment adorned with small polychrome geometric motifs.",
+    "seoTitleSource": "manual",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "manual",
+    "seoDescriptionEnSource": "ai",
     "priceOnRequest": true,
     "priceValue": null,
     "salePriceValue": null,
@@ -5594,7 +5856,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-009"
+    "mpn": "KHA-009",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20x5-1",
@@ -5663,7 +5927,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-010"
+    "mpn": "KHA-010",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-21-2x5",
@@ -5732,7 +5998,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-011"
+    "mpn": "KHA-011",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20x4",
@@ -5801,7 +6069,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-012"
+    "mpn": "KHA-012",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20x5-3",
@@ -5871,7 +6141,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-013"
+    "mpn": "KHA-013",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-12x8",
@@ -5955,7 +6227,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-014"
+    "mpn": "KHA-014",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20x5-astuccio",
@@ -6041,7 +6315,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-015"
+    "mpn": "KHA-015",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-20x8-astuccio",
@@ -6110,7 +6386,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-016"
+    "mpn": "KHA-016",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "papier-mache-22x5-astuccio",
@@ -6178,7 +6456,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-004"
+    "mpn": "ART-004",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "papier-mache-miniatura-21x4",
@@ -6247,7 +6527,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-006"
+    "mpn": "ART-006",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-miniatura-12x8",
@@ -6315,7 +6597,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-017"
+    "mpn": "KHA-017",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "khatam-miniatura-20x5",
@@ -6384,7 +6668,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "KHA-018"
+    "mpn": "KHA-018",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-uccello-18x11",
@@ -6460,7 +6746,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-007"
+    "mpn": "ART-007",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-cavallo-18x18",
@@ -6536,7 +6824,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-008"
+    "mpn": "ART-008",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-23x16",
@@ -6612,7 +6902,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-009"
+    "mpn": "ART-009",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-floreale-15x10",
@@ -6688,7 +6980,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-010"
+    "mpn": "ART-010",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-gatto-21x31",
@@ -6764,7 +7058,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-011"
+    "mpn": "ART-011",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-23x15",
@@ -6840,7 +7136,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-012"
+    "mpn": "ART-012",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-13x8",
@@ -6916,7 +7214,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-013"
+    "mpn": "ART-013",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-21x12",
@@ -6992,7 +7292,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-014"
+    "mpn": "ART-014",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-9x9",
@@ -7068,7 +7370,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-015"
+    "mpn": "ART-015",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-13x9",
@@ -7144,7 +7448,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-016"
+    "mpn": "ART-016",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-floreale-21x9",
@@ -7220,7 +7526,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-020"
+    "mpn": "ART-020",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-14x9",
@@ -7296,7 +7604,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-017"
+    "mpn": "ART-017",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-14x12",
@@ -7372,7 +7682,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-019"
+    "mpn": "ART-019",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-13x10",
@@ -7448,7 +7760,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-018"
+    "mpn": "ART-018",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-gatto-35x16",
@@ -7528,7 +7842,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-021"
+    "mpn": "ART-021",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-gatto-35x17",
@@ -7608,7 +7924,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-022"
+    "mpn": "ART-022",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-22x16",
@@ -7688,7 +8006,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-023"
+    "mpn": "ART-023",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-21x17",
@@ -7768,7 +8088,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-024"
+    "mpn": "ART-024",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "papier-mache-miniatura-14x9",
@@ -7852,7 +8174,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-025"
+    "mpn": "ART-025",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-31x17",
@@ -7932,7 +8256,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-026"
+    "mpn": "ART-026",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "papier-mache-15x8",
@@ -8012,7 +8338,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-027"
+    "mpn": "ART-027",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "papier-mache-30x5",
@@ -8092,7 +8420,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-028"
+    "mpn": "ART-028",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-14x8",
@@ -8102,13 +8432,13 @@
     "hasEnglish": true,
     "slugEn": "maiolica-14x8-en",
     "titleEn": "Maiolica",
-    "category": "Senza categoria",
+    "category": "Maiolica",
     "categories": [
-      "Senza categoria"
+      "Maiolica"
     ],
-    "categoryEn": "Uncategorized",
+    "categoryEn": "Maiolica",
     "categoriesEn": [
-      "Uncategorized"
+      "Maiolica"
     ],
     "subcategories": [],
     "subcategoriesEn": [],
@@ -8172,7 +8502,9 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-029"
+    "mpn": "ART-029",
+    "watermarkOpacity": 1,
+    "watermarkPositions": []
   },
   {
     "id": "maiolica-11x7",
@@ -8223,12 +8555,12 @@
       "angled opening",
       "polychrome design"
     ],
-    "coverImage": "/catalogo/products/media/maiolica-collage-3-viste-21.webp",
-    "coverImage360": "/catalogo/products/media/maiolica-collage-3-viste-21-360.webp",
-    "coverImage640": "/catalogo/products/media/maiolica-collage-3-viste-21-640.webp",
-    "coverImage1200": "/catalogo/products/media/maiolica-collage-3-viste-21-1200.webp",
+    "coverImage": "/catalogo/products/media/maiolica-11x7-01.webp",
+    "coverImage360": "/catalogo/products/media/maiolica-11x7-01-360.webp",
+    "coverImage640": "/catalogo/products/media/maiolica-11x7-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/maiolica-11x7-01-1200.webp",
     "gallery": [
-      "/catalogo/products/media/maiolica-collage-3-viste-21.webp",
+      "/catalogo/products/media/maiolica-11x7-01.webp",
       "/catalogo/products/media/maiolica-11x7-02.webp",
       "/catalogo/products/media/maiolica-11x7-03.webp",
       "/catalogo/products/media/maiolica-11x7-04.webp"
@@ -8252,7 +8584,19 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-030"
+    "mpn": "ART-030",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.5263888888888889,
+          "y": 0.4986111111111111
+        }
+      ],
+      [],
+      [],
+      []
+    ]
   },
   {
     "id": "maiolica-15x8",
@@ -8303,12 +8647,12 @@
       "floral decoration",
       "polychrome maiolica"
     ],
-    "coverImage": "/catalogo/products/media/maiolica-collage-3-viste-22.webp",
-    "coverImage360": "/catalogo/products/media/maiolica-collage-3-viste-22-360.webp",
-    "coverImage640": "/catalogo/products/media/maiolica-collage-3-viste-22-640.webp",
-    "coverImage1200": "/catalogo/products/media/maiolica-collage-3-viste-22-1200.webp",
+    "coverImage": "/catalogo/products/media/maiolica-15x8-01.webp",
+    "coverImage360": "/catalogo/products/media/maiolica-15x8-01-360.webp",
+    "coverImage640": "/catalogo/products/media/maiolica-15x8-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/maiolica-15x8-01-1200.webp",
     "gallery": [
-      "/catalogo/products/media/maiolica-collage-3-viste-22.webp",
+      "/catalogo/products/media/maiolica-15x8-01.webp",
       "/catalogo/products/media/maiolica-15x8-02.webp",
       "/catalogo/products/media/maiolica-15x8-03.webp",
       "/catalogo/products/media/maiolica-15x8-04.webp"
@@ -8332,6 +8676,18 @@
     "condition": "new",
     "brand": "Shahmansouri",
     "gtin": "",
-    "mpn": "ART-031"
+    "mpn": "ART-031",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.5222222222222223,
+          "y": 0.4986111111111111
+        }
+      ],
+      [],
+      [],
+      []
+    ]
   }
 ]

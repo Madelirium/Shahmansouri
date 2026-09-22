@@ -826,11 +826,12 @@ function getResponsiveCatalogImageSources(product) {
     }
 
     const srcsetParts = [];
-    if (image360) {
-        srcsetParts.push(`${image360} 360w`);
-    }
     if (image640) {
         srcsetParts.push(`${image640} 640w`);
+    } else if (image360) {
+        // La variante da 360 px rende poco leggibili le linee sottili del
+        // watermark nelle schede del catalogo. Usala solo come ripiego.
+        srcsetParts.push(`${image360} 360w`);
     }
     if (srcsetParts.length) {
         srcsetParts.push(`${imagePath} 1080w`);
