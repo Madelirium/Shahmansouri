@@ -334,6 +334,7 @@
       let autoScrollId = null;
       let resumeTimeoutId = null;
       let loopWidth = 0;
+      let loopItemCount = 0;
       let autoScrollEnabled = !reduceMotionQuery.matches && !mobileCarouselQuery.matches;
       let currentSpeed = 0;
       let targetSpeed = 0;
@@ -522,7 +523,16 @@
       }
 
       function rebuildLoopWidth() {
-        loopWidth = track.scrollWidth / 3;
+        if (mobileCarouselQuery.matches || !loopItemCount) {
+          loopWidth = 0;
+          return;
+        }
+
+        const firstCard = track.children[0];
+        const repeatedFirstCard = track.children[loopItemCount];
+        loopWidth = firstCard && repeatedFirstCard
+          ? repeatedFirstCard.offsetLeft - firstCard.offsetLeft
+          : 0;
       }
 
       function shuffleProducts(products) {
@@ -731,14 +741,17 @@
             ? featuredProducts
             : featuredProducts.concat(featuredProducts, featuredProducts);
           track.innerHTML = repeatedProducts.map(renderProduct).join("");
-          loopWidth = mobileCarouselQuery.matches ? 0 : track.scrollWidth / 3;
-          virtualScrollLeft = mobileCarouselQuery.matches ? 0 : loopWidth;
-          track.scrollLeft = virtualScrollLeft;
+          loopItemCount = featuredProducts.length;
           status.textContent = "";
           updateButtons();
           setupMobileDots(featuredProducts);
-          resumeAutoScroll();
-          startAutoScroll();
+          window.requestAnimationFrame(function () {
+            rebuildLoopWidth();
+            virtualScrollLeft = mobileCarouselQuery.matches ? 0 : loopWidth;
+            track.scrollLeft = virtualScrollLeft;
+            resumeAutoScroll();
+            startAutoScroll();
+          });
         })
         .catch(function () {
           status.textContent = "La selezione dal catalogo non e disponibile in questo momento.";

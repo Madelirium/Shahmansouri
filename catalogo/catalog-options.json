@@ -4,6 +4,7 @@
     "Khatam",
     "Maiolica",
     "Miniatura",
+    "Nomadici",
     "Papier-mâché",
     "Senza categoria",
     "Tappeti"
@@ -24,6 +25,7 @@
     ],
     "Maiolica": [],
     "Miniatura": [],
+    "Nomadici": [],
     "Papier-mâché": [
       "Astucci",
       "Miniatura",
@@ -56,7 +58,7 @@
   ],
   "origins": [
     "Caucaso",
-    "Iran"
+    "Persia"
   ],
   "availabilities": [
     "Disponibile"
@@ -95,7 +97,9 @@
     "Trama E Ordito Di Seta": "warp and weft silk",
     "Vello Misto Lana E Seta": "wool and silk pile"
   },
-  "originLabelsEn": {},
+  "originLabelsEn": {
+    "Persia": "Persia"
+  },
   "availabilityLabelsEn": {},
   "aiKnowledgeByCategory": {},
   "aiKnowledgeBySubcategory": {}

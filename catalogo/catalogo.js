@@ -50,6 +50,7 @@ let minimumLength = null;
 let quickMeasureUnit = "cm";
 let shouldScrollToCatalogResults = false;
 let visibleProductCount = 24;
+let catalogImageRecoveryTimers = [];
 
 function placeQuickFiltersAboveCatalog() {
     if (!quickFilters || !catalogLayout || !filtersPanel) {
@@ -821,7 +822,8 @@ function getResponsiveCatalogImageSources(product) {
         return {
             src: imagePath,
             srcset: "",
-            sizes: ""
+            sizes: "",
+            fallbackSrc: imagePath
         };
     }
 
@@ -840,8 +842,65 @@ function getResponsiveCatalogImageSources(product) {
     return {
         src: image640 || image360 || imagePath,
         srcset: srcsetParts.join(", "),
-        sizes: srcsetParts.length ? CARD_IMAGE_SIZES : ""
+        sizes: srcsetParts.length ? CARD_IMAGE_SIZES : "",
+        fallbackSrc: imagePath
     };
+}
+
+function retryCatalogImage(event) {
+    const image = event.target;
+    if (!(image instanceof HTMLImageElement) || !image.matches(".product-card__media img")) {
+        return;
+    }
+
+    const fallbackSource = String(image.dataset.fallbackSrc || "").trim();
+    const attempt = Number(image.dataset.imageRetry || 0);
+    if (!fallbackSource || attempt >= 2) {
+        image.classList.add("is-load-error");
+        return;
+    }
+
+    image.dataset.imageRetry = String(attempt + 1);
+    image.removeAttribute("srcset");
+    image.removeAttribute("sizes");
+
+    if (attempt === 0) {
+        image.src = fallbackSource;
+        return;
+    }
+
+    const retryUrl = new URL(fallbackSource, document.baseURI);
+    retryUrl.searchParams.set("catalog-retry", String(Date.now()));
+    image.src = retryUrl.href;
+}
+
+productGrid?.addEventListener("error", retryCatalogImage, true);
+
+function ensureCatalogImageRendered(image) {
+    if (!(image instanceof HTMLImageElement)) return;
+
+    if (!image.complete || image.naturalWidth === 0) {
+        retryCatalogImage({ target: image });
+        return;
+    }
+
+    // Dopo un hard refresh Chrome può avere già letto il file senza averlo
+    // ancora decodificato e disegnato. decode() sincronizza questa fase ed
+    // evita che una scheda visibile rimanga temporaneamente bianca.
+    if (typeof image.decode === "function") {
+        image.decode().catch(() => retryCatalogImage({ target: image }));
+    }
+}
+
+function scheduleCatalogImageRecovery() {
+    catalogImageRecoveryTimers.forEach((timer) => window.clearTimeout(timer));
+    catalogImageRecoveryTimers = [1200, 4000, 10000].map((delay) => window.setTimeout(() => {
+        productGrid?.querySelectorAll(".product-card__media img").forEach((image) => {
+            const bounds = image.getBoundingClientRect();
+            const isNearViewport = bounds.bottom >= -400 && bounds.top <= window.innerHeight + 800;
+            if (image.loading === "eager" || isNearViewport) ensureCatalogImageRendered(image);
+        });
+    }, delay));
 }
 
 function createProductCard(product, index = 0) {
@@ -889,7 +948,8 @@ function createProductCard(product, index = 0) {
     }
 
     const image = getResponsiveCatalogImageSources(product);
-    const imageLoading = index < 4 ? "eager" : "lazy";
+    const imageLoading = index < 8 ? "eager" : "lazy";
+    const imageDecoding = index < 8 ? "sync" : "async";
     const imageFetchPriority = index === 0 ? ' fetchpriority="high"' : "";
     const imageSrcset = image.srcset ? ` srcset="${image.srcset}" sizes="${image.sizes}"` : "";
 
@@ -897,7 +957,7 @@ function createProductCard(product, index = 0) {
         <article class="product-card">
             <div class="product-card__media">
                 <a href="${productPage}" data-track="click_catalog_product" data-product-name="${productName}" data-track-label="${catalogI18n.labels.openCard}">
-                    <img src="${image.src}"${imageSrcset} alt="${cardAlt}" loading="${imageLoading}" decoding="async" width="800" height="600"${imageFetchPriority}>
+                    <img src="${image.src}"${imageSrcset} data-fallback-src="${image.fallbackSrc}" data-image-retry="0" alt="${cardAlt}" loading="${imageLoading}" decoding="${imageDecoding}" width="800" height="600"${imageFetchPriority}>
                 </a>
             </div>
             <div class="product-card__body">
@@ -1223,6 +1283,7 @@ function renderCatalog(preserveVisibleCount = false) {
         quickResultsCount.textContent = catalogI18n.labels.results(filteredProducts.length, catalogProducts.length);
     }
     productGrid.innerHTML = visibleProducts.map((product, index) => createProductCard(product, index)).join("");
+    scheduleCatalogImageRecovery();
     productGrid.classList.remove("product-grid--skeleton");
     productGrid.setAttribute("aria-busy", "false");
     updateCatalogLoadMore(visibleProducts.length, filteredProducts.length);
