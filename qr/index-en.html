@@ -3,6 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="../site.webmanifest">
+  <link rel="apple-touch-icon" href="../images/site-icon-192.png">
+  <link rel="stylesheet" href="install.css">
+  <script src="install.js" defer></script>
   <link rel="icon" href="../favicon-tappeti-verona-shahmansouri.svg" type="image/svg+xml">
   <link rel="icon" href="../tappeti-verona-favicon-shahmansouri.ico" sizes="any">
   <link rel="icon" href="../tappeti-verona-favicon-64.png" type="image/png" sizes="64x64">
@@ -420,12 +424,22 @@
       <h1 class="qr-title">Quick contacts</h1>
       <nav class="actions" aria-label="Quick contacts">
         <a class="action-link action-link--primary" href="https://shahmansouri.com/index-en.html" data-qr-button="home" data-qr-action="website" data-track="click_qr_button">Visit the website</a>
+        <button class="action-link install-button" type="button" data-install-site aria-controls="install-help" aria-expanded="false" hidden>Add to your phone</button>
         <a class="action-link action-link--primary action-link--whatsapp" href="https://wa.me/393392668950" data-qr-button="whatsapp" data-qr-action="whatsapp" data-track="click_qr_button">WhatsApp</a>
         <a class="action-link" href="tel:+390458013280" data-qr-button="telefono" data-qr-action="phone" data-track="click_qr_button">Call the shop</a>
         <a class="action-link action-link--maps" href="https://maps.app.goo.gl/zpeoCrwWZPhkYZ7K6" data-qr-button="google_maps" data-qr-action="maps" data-track="click_qr_button">Google Maps</a>
         <a class="action-link action-link--instagram" href="https://www.instagram.com/shahmansouri_tappeti_persiani/" data-qr-button="instagram" data-qr-action="instagram" data-track="click_qr_button" data-track-secondary="click_social_instagram">Instagram</a>
         <a class="action-link action-link--facebook" href="https://www.facebook.com/profile.php?id=100047379565616" data-qr-button="facebook" data-qr-action="facebook" data-track="click_qr_button" data-track-secondary="click_social_facebook">Facebook</a>
       </nav>
+      <section id="install-help" class="install-help" aria-labelledby="install-help-title" hidden>
+        <h2 id="install-help-title">Keep Shahmansouri close at hand</h2>
+        <p>The icon opens the live website: an internet connection is required.</p>
+        <p data-install-message role="status"></p>
+        <p><strong>iPhone:</strong> open the site in Safari, tap Share and choose Add to Home Screen. If Share is not visible, look in the browser menu.</p>
+        <p><strong>Android:</strong> look for Install app or Add to Home screen in your browser menu.</p>
+        <p>If the QR opened inside another app, choose Open in browser first. On a computer, look for Install in Chrome or Edge, or Add to Dock in Safari on a compatible Mac.</p>
+        <button type="button" class="install-close" data-install-close>Close instructions</button>
+      </section>
     </main>
 
     <footer class="footer">

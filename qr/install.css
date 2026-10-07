@@ -1,0 +1,48 @@
+.install-button {
+  width: 100%;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.install-button[hidden],
+.install-help[hidden] {
+  display: none;
+}
+
+.install-button:focus-visible,
+.install-close:focus-visible {
+  outline: 2px solid #a63500;
+  outline-offset: 3px;
+}
+
+.install-help {
+  padding: 18px;
+  border: 1px solid rgba(108, 41, 33, 0.2);
+  border-radius: 14px;
+  background: #fbf2d7;
+  overflow-wrap: anywhere;
+}
+
+.install-help h2 {
+  margin: 0 0 12px;
+  font-size: 1.15rem;
+}
+
+.install-help p {
+  margin: 0 0 14px;
+}
+
+.install-help [data-install-message]:empty {
+  display: none;
+}
+
+.install-close {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #7b1f16;
+  border-radius: 8px;
+  background: transparent;
+  color: #7b1f16;
+  font: inherit;
+  cursor: pointer;
+}

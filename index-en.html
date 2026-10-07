@@ -447,7 +447,7 @@
       }
 
       .home-mobile-section-kicker {
-        display: block !important;
+        display: block;
         position: relative;
         margin: 22px 22px 12px;
         padding-top: 10px;
@@ -459,7 +459,7 @@
       }
 
       .home-mobile-intro-cards {
-        display: flex !important;
+        display: flex;
         gap: 12px;
         margin: 0 16px 16px;
         overflow-x: auto;
@@ -929,12 +929,12 @@
       </div>
     </main>
 
-    <p class="home-mobile-section-kicker">Shortcuts</p>
+    <p class="home-mobile-section-kicker home-shortcuts-kicker">Shortcuts<span class="home-shortcuts-swipe" role="img" aria-label="Swipe to see more shortcuts">&#8594;</span></p>
     <section class="home-mobile-quicklinks" aria-label="Site shortcuts" data-home-mobile-slider>
       <article class="home-mobile-quicklink-card">
         <a class="home-mobile-quicklink-card__image" href="catalogo/index-en.html" data-track="click_catalog"><img src="images/tappeti-verona-shahmansouri-duomo-verona-360.webp" srcset="images/tappeti-verona-shahmansouri-duomo-verona-360.webp 360w, images/tappeti-verona-shahmansouri-duomo-verona-640.webp 640w, images/tappeti-verona-shahmansouri-duomo-verona.webp 1500w" sizes="286px" alt="Selection of Persian rugs at Shahmansouri in Verona" width="900" height="675" loading="lazy" decoding="async"></a>
         <h2>Catalog</h2>
-        <p>An online selection of Persian and Oriental rugs, with images and useful details for a first orientation.</p>
+        <p>Explore our selection of <a href="tappeti-persiani-verona/index-en.html">Persian and Oriental rugs</a>, with photographs, measurements and details.</p>
           <p class="home-mobile-quicklink-card__cta"><a href="catalogo/index-en.html" data-track="click_catalog">View the catalog</a></p>
       </article>
       <article class="home-mobile-quicklink-card">
@@ -957,32 +957,30 @@
       </article>
     </section>
 
-    <footer class="site-footer-global">
-      <div class="site-footer-global__grid">
-        <div>
-          <span class="site-footer-global__logo-badge">
-            <img class="site-footer-global__logo" src="images/logo-shahmansouri-tappeti-verona-320.webp" srcset="images/logo-shahmansouri-tappeti-verona-320.webp 320w, images/logo-shahmansouri-tappeti-verona.webp 1080w" sizes="180px" alt="Shahmansouri Persian Carpets logo" width="280" height="160" loading="lazy" decoding="async">
-          </span>
-          <strong>Shahmansouri Persian Carpets</strong>
-          <p>Carpets, Persian crafts, washing and restoration in the historic centre of Verona.</p>
-        </div>
-        <div>
-          <p>Stradone Arcidiacono Pacifico, 14 - Verona</p>
-          <p><a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a></p>
-          <p><a href="mailto:shahmansouri@tiscali.it" data-track="click_email">shahmansouri@tiscali.it</a></p>
-          <p><a href="contacts-en.html" data-track="click_contact_page">Contacts</a></p>
-        </div>
-        <div>
-          <p><a href="index.html?show-language=1" data-track="change_language" data-language-target="it">Cambia lingua</a></p>
-          <p><a href="privacy-policy-en.html">Privacy Policy</a></p>
-          <p><a href="cookie-policy-en.html">Cookie Policy</a></p>
-          <p><a href="returns-and-refunds.html">Returns and refunds</a></p>
-          <p><a href="shipping-and-delivery.html">Shipping and delivery</a></p>
-          <p><a href="terms-of-sale.html">Terms of sale</a></p>
-          <p class="footer-copyright">&copy; 2026 Shahmansouri</p>
-        </div>
+<footer class="site-footer-global">
+   <div class="site-footer-global__grid">
+    <div class="site-footer-global__meta-lines">
+      <p class="site-footer-global__contact-line"><span class="site-footer-global__address">Stradone Arcidiacono Pacifico, 14 - Verona</span> <span aria-hidden="true">|</span> <a href="tel:+390458013280" data-track="click_phone">+39 045 801 3280</a> <span aria-hidden="true">|</span> <a href="mailto:shahmansouri@tiscali.it" data-track="click_email">shahmansouri@tiscali.it</a> <span aria-hidden="true">|</span> <a href="contacts-en.html" data-track="click_contact_page">Contacts</a></p>
+      <div class="site-footer-global__utility-line footer-utility-links" data-footer-utility-links>
+        <button type="button" class="footer-language-trigger" data-open-language-overlay>Change language</button>
+        <span aria-hidden="true">|</span>
+        <a href="privacy-policy-en.html">Privacy Policy</a>
+        <span aria-hidden="true">|</span>
+        <a href="cookie-policy-en.html">Cookie Policy</a>
+        <span aria-hidden="true">|</span>
+        <a href="returns-and-refunds.html">Returns and refunds</a>
+        <span aria-hidden="true">|</span>
+        <a href="shipping-and-delivery.html">Shipping and delivery</a>
+        <span aria-hidden="true">|</span>
+        <a href="terms-of-sale.html">Terms of sale</a>
+        <span aria-hidden="true">|</span>
+        <button type="button" class="footer-link-button" data-manage-cookies>Manage cookies</button>
+        <span aria-hidden="true">|</span>
+        <span class="footer-copyright">&copy; 2026 Shahmansouri</span>
       </div>
-    </footer>
+    </div>
+   </div>
+  </footer>
   </div>
   <script src="js/analytics.js" defer></script>
   <script src="js/main.js"></script>

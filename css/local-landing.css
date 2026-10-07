@@ -433,6 +433,14 @@
   color: #6f1d1b;
 }
 
+@media (max-width: 768px) {
+  .local-faq summary {
+    box-sizing: border-box;
+    min-height: 44px;
+    padding-block: 11px;
+  }
+}
+
 .local-faq p {
   margin: 10px 0 0;
 }
@@ -847,6 +855,13 @@ body.local-hub-lightbox-open {
   width: 21px;
   height: 21px;
   flex: 0 0 auto;
+}
+
+.local-hub-whatsapp-button > span {
+  min-width: 0;
+  white-space: normal;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .local-hub-whatsapp-button .local-button__whatsapp-icon {
@@ -1355,7 +1370,7 @@ body.local-hub-lightbox-open {
     margin-top: 14px;
   }
 
-  .local-washing-page .local-hero .local-cta a:last-child {
+  .local-washing-page .local-hero .local-cta a[data-track="click_service_valutazione"] {
     display: none;
   }
 

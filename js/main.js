@@ -2,6 +2,10 @@ const COOKIE_CONSENT_KEY = 'shahmansouri_cookie_consent_v1';
 const STORE_MAP_URL = 'https://maps.app.goo.gl/zpeoCrwWZPhkYZ7K6';
 const isEnglishPage = document.documentElement.lang.toLowerCase().startsWith('en');
 
+function getSiteScrollBehavior() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+}
+
 const siteText = isEnglishPage
   ? {
       cookieTitle: 'Cookies and external content',
@@ -135,7 +139,7 @@ function setupBackToTop() {
   button.innerHTML = '&uarr;';
 
   button.addEventListener('click', function () {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: getSiteScrollBehavior() });
   });
 
   document.body.appendChild(button);
@@ -146,6 +150,27 @@ function setupBackToTop() {
   }
 
   window.addEventListener('scroll', updateVisibility, { passive: true });
+  window.addEventListener('resize', updateVisibility);
+  updateVisibility();
+}
+
+function setupHomeFooterActionVisibility() {
+  if (!document.body.classList.contains('home-page')) return;
+  const footer = document.querySelector('.site-footer-global');
+  if (!footer) return;
+
+  function updateVisibility() {
+    const rect = footer.getBoundingClientRect();
+    document.body.classList.toggle('home-footer-in-view',
+      rect.top < window.innerHeight && rect.bottom > 0);
+  }
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(updateVisibility);
+    observer.observe(footer);
+  } else {
+    window.addEventListener('scroll', updateVisibility, { passive: true });
+  }
   window.addEventListener('resize', updateVisibility);
   updateVisibility();
 }
@@ -653,6 +678,48 @@ function initClickableGuideCards() {
     });
   });
 }
+
+function setupHomeExpandableIntro() {
+  const track = document.querySelector('.home-page .home-mobile-intro-cards');
+  if (!track) return;
+  const cards = Array.from(track.children);
+  if (cards.length < 2) return;
+  const first = cards[0];
+  const extra = cards.slice(1);
+  const mobile = window.matchMedia('(max-width: 768px)');
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'home-intro-read-more';
+  const content = document.createElement('div');
+  content.className = 'home-intro-expanded';
+  content.id = 'home-intro-expanded';
+  button.setAttribute('aria-controls', content.id);
+  first.querySelector('p').append(' ', button);
+  first.querySelector('.home-mobile-primary-actions').before(content);
+  function label() {
+    button.textContent = content.hidden
+      ? (isEnglishPage ? 'Read more...' : 'Leggi di pi\u00f9...')
+      : (isEnglishPage ? 'Read less' : 'Mostra meno');
+    button.setAttribute('aria-expanded', String(!content.hidden));
+  }
+  button.addEventListener('click', function () {
+    content.hidden = !content.hidden;
+    label();
+  });
+  function sync() {
+    track.classList.toggle('home-intro-single', mobile.matches);
+    button.hidden = !mobile.matches;
+    content.hidden = true;
+    extra.forEach(function (card) { (mobile.matches ? content : track).appendChild(card); });
+    label();
+  }
+  // Only the shortcuts keep slider indicators; the intro is expandable on mobile.
+  track.removeAttribute('data-home-mobile-slider');
+  mobile.addEventListener('change', sync);
+  sync();
+}
+
+setupHomeExpandableIntro();
 
 function setupHomeMobileSliderIndicators() {
   const tracks = Array.from(document.querySelectorAll('[data-home-mobile-slider]'));
@@ -1299,7 +1366,7 @@ function setupCarpetMobileToc() {
       window.setTimeout(function () {
         const offset = 84;
         const targetTop = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top: Math.max(0, targetTop), behavior: 'smooth' });
+        window.scrollTo({ top: Math.max(0, targetTop), behavior: getSiteScrollBehavior() });
       }, 50);
     });
   });
@@ -1370,7 +1437,7 @@ function setupCultureMobileLayout() {
     if (!target) return;
     event.preventDefault();
     const top = target.getBoundingClientRect().top + window.scrollY - 84;
-    window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+    window.scrollTo({ top: Math.max(0, top), behavior: getSiteScrollBehavior() });
   });
 }
 
@@ -1565,7 +1632,7 @@ function setupCraftsMobilePage() {
     navLink.addEventListener('click', function (event) {
       event.preventDefault();
       window.setTimeout(function () {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        section.scrollIntoView({ behavior: getSiteScrollBehavior(), block: 'start' });
       }, 20);
     });
     sectionNav.appendChild(navLink);
@@ -1574,10 +1641,22 @@ function setupCraftsMobilePage() {
     if (gallery && gallery.children.length > 1) {
       const dots = document.createElement('div');
       dots.className = 'craft-mobile-gallery-dots';
-      dots.setAttribute('aria-hidden', 'true');
+      dots.setAttribute('role', 'group');
+      dots.setAttribute('aria-label', isEnglish ? 'Gallery: ' + label : 'Galleria: ' + label);
       Array.from(gallery.children).forEach(function (_, dotIndex) {
-        const dot = document.createElement('span');
-        if (dotIndex === 0) dot.classList.add('is-active');
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', (isEnglish ? 'Show image ' : 'Mostra immagine ') + (dotIndex + 1));
+        dot.setAttribute('aria-current', dotIndex === 0 ? 'true' : 'false');
+        dot.addEventListener('click', function () {
+          const card = gallery.children[dotIndex];
+          const firstCard = gallery.firstElementChild;
+          if (!card || !firstCard) return;
+          gallery.scrollTo({
+            left: card.offsetLeft - firstCard.offsetLeft,
+            behavior: getSiteScrollBehavior()
+          });
+        });
         dots.appendChild(dot);
       });
       gallery.after(dots);
@@ -1590,7 +1669,7 @@ function setupCraftsMobilePage() {
           Math.max(0, Math.round(gallery.scrollLeft / (firstCard.getBoundingClientRect().width + gap)))
         );
         Array.from(dots.children).forEach(function (dot, dotIndex) {
-          dot.classList.toggle('is-active', dotIndex === activeIndex);
+          dot.setAttribute('aria-current', dotIndex === activeIndex ? 'true' : 'false');
         });
       }, { passive: true });
     }
@@ -1620,6 +1699,7 @@ document.addEventListener('DOMContentLoaded', function () {
   injectCookieBanner();
   injectFooterUtilityLinks();
   normalizeFooterLayout();
+  setupHomeFooterActionVisibility();
   setupCookieButtons();
   setupContactForms();
   applyCookieConsent(getCookieConsent());

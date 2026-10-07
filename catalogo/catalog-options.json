@@ -66,12 +66,16 @@
   "fallbackCategory": "Senza categoria",
   "categoryLabelsEn": {
     "Tappeti": "Rugs",
+    "Nomadici": "Nomadic",
+    "Maiolica": "Maiolica",
     "Khatam": "Khatam",
     "Papier-mâché": "Papier-mâché",
     "Ceramiche": "Ceramics",
     "Senza categoria": "Uncategorized"
   },
   "subcategoryLabelsEn": {
+    "Miniatura": "Miniature",
+    "100% Lana": "100% Wool",
     "Classico": "Classic",
     "Antico": "Antique",
     "Fine": "Fine",

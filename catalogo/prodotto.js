@@ -477,7 +477,8 @@ function getProductTrackingPayload() {
 function isProductAnalyticsAllowed() {
     try {
         return typeof window.gtag === "function"
-            && window.localStorage.getItem("shahmansouri_cookie_consent_v1") === "accepted";
+            && typeof window.ShahmansouriAnalytics?.isAllowed === "function"
+            && window.ShahmansouriAnalytics.isAllowed();
     } catch (_error) {
         return false;
     }

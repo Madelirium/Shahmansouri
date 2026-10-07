@@ -4,6 +4,114 @@
  * di style.css per migliorare la fruibilità su tablet e smartphone.
  */
 
+.home-intro-read-more[hidden],
+.home-intro-expanded[hidden] {
+  display: none !important;
+}
+
+.home-shortcuts-swipe {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .home-page .home-mobile-section-kicker {
+    margin: 28px 22px 12px;
+    padding-top: 10px;
+  }
+
+  .home-page .home-mobile-section-kicker:first-of-type {
+    margin-top: -4px;
+    padding-top: 0;
+  }
+
+  .home-page .home-mobile-section-kicker::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 64px;
+    height: 3px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(122, 44, 13, 0.78), rgba(212, 177, 102, 0.8));
+  }
+
+  .home-page .home-mobile-section-kicker:first-of-type::before {
+    display: none;
+  }
+
+  .home-page .home-shortcuts-kicker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .home-page .home-shortcuts-swipe {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: #7b1f16;
+  }
+
+  body.home-page {
+    overflow-x: hidden;
+    overflow-x: clip;
+    overscroll-behavior-x: none;
+  }
+
+  .home-page .home-mobile-intro-cards.home-intro-single {
+    display: block;
+    overflow: hidden;
+    overflow: clip;
+    padding: 0;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+    overscroll-behavior-x: none;
+    touch-action: pan-y pinch-zoom;
+    -webkit-overflow-scrolling: auto;
+  }
+
+  .home-page .home-mobile-intro-cards.home-intro-single > .home-mobile-intro-card {
+    display: block;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    min-height: 0;
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .home-page .home-intro-read-more {
+    display: inline;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    box-shadow: none;
+    color: #7b1f16;
+    font: inherit;
+    font-size: 0.9em;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .home-page .home-intro-single .home-intro-expanded .home-mobile-intro-card {
+    display: block;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+    min-height: 0;
+    padding: 0;
+    margin: 14px 0 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
 @media (max-width: 900px) {
   .page {
     margin: 0 auto 32px;
@@ -274,15 +382,15 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3px;
+    gap: 5px;
     min-width: 0;
-    min-height: 52px;
-    padding: 5px 2px;
+    min-height: 60px;
+    padding: 8px 2px;
     border-radius: 10px;
     color: #fff;
-    font-size: 0.68rem;
+    font-size: 0.8rem;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.2;
     text-align: center;
     text-decoration: none;
   }
@@ -297,7 +405,7 @@
   }
 
   .contact-quick-bar__link--whatsapp {
-    background: #159f58;
+    background: #08783f;
   }
 
   .contact-quick-bar__link--instagram {
@@ -305,12 +413,18 @@
   }
 
   .contact-quick-bar__link--maps {
-    background: #b98713;
+    background: #85600b;
   }
 
   .contact-quick-bar__link:focus-visible {
     outline: 3px solid #5f180f;
     outline-offset: 2px;
+  }
+
+  @media (max-width: 359px) {
+    .contact-quick-bar {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   .contact-gallery--double[data-contact-gallery-slider] {
@@ -558,19 +672,36 @@
   .artigianato-content .craft-mobile-gallery-dots {
       display: flex;
       justify-content: center;
-      gap: 7px;
+      gap: 0;
       margin: 7px 0 14px;
     }
-  .artigianato-content .craft-mobile-gallery-dots span {
+  .artigianato-content .craft-mobile-gallery-dots button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+    }
+  .artigianato-content .craft-mobile-gallery-dots button::before {
+      content: '';
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: rgba(122, 44, 13, 0.22);
     }
-  .artigianato-content .craft-mobile-gallery-dots span.is-active {
+  .artigianato-content .craft-mobile-gallery-dots button[aria-current="true"]::before {
       width: 18px;
       border-radius: 999px;
       background: #8a211a;
+    }
+  .artigianato-content .craft-mobile-gallery-dots button:focus-visible {
+      outline: 2px solid #8a211a;
+      outline-offset: -4px;
+      border-radius: 7px;
     }
   .artigianato-content .craft-mobile-final-cta {
       display: flex;
@@ -847,6 +978,7 @@
     }
 
   .tappeti-content .carpet-mobile-section {
+      container: carpet-editorial / inline-size;
       box-sizing: border-box;
       width: 100%;
       max-width: 100%;
@@ -970,6 +1102,19 @@
       object-fit: cover;
       border-radius: 10px;
     }
+
+  /* Keep the reading column usable, including with larger inherited text. */
+  @container carpet-editorial (max-width: 19em) {
+    .tappeti-content .article .carpet-mobile-inline-figure,
+    .tappeti-content .article .carpet-mobile-loom-figure,
+    .tappeti-content .article .carpet-mobile-knot-figure {
+      float: none;
+      clear: both;
+      width: min(100%, 200px);
+      max-width: 100%;
+      margin: 10px auto 14px;
+    }
+  }
 
   .tappeti-content .article h2 {
       margin-top: 28px;
@@ -1230,7 +1375,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 36px;
+    min-height: 44px;
     padding: 5px 8px;
     border-radius: 7px;
     overflow-wrap: anywhere;
@@ -1450,6 +1595,10 @@
     position: relative;
   }
 
+  .home-page .home-mobile-intro-card:first-child .home-mobile-intro-card__image img {
+    object-position: center 28%;
+  }
+
   .home-page .home-mobile-intro-card:first-child .home-mobile-intro-card__image::after {
     content: "";
     position: absolute;
@@ -1507,13 +1656,13 @@
   }
 
   .home-page .home-mobile-quicklink-card {
-    flex-basis: 300px;
-    min-width: 300px;
-    max-width: 300px;
-    min-height: 440px;
-    grid-template-rows: 204px 2.55em minmax(0, 1fr) auto;
+    flex: 0 0 85%;
+    min-width: 0;
+    max-width: none;
+    min-height: 0;
+    grid-template-rows: auto auto 1fr auto;
     gap: 0;
-    padding: 14px 14px 16px;
+    padding: 12px 12px 14px;
     background: #e2c783;
     box-shadow:
       0 12px 22px rgba(88, 51, 16, 0.12),
@@ -1521,31 +1670,34 @@
   }
 
   .home-page .home-mobile-quicklink-card__image {
-    height: 192px;
-    margin: 0 0 12px;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    margin: 0 0 14px;
     border-radius: 10px;
   }
 
   .home-page .home-mobile-quicklink-card .home-mobile-quicklink-card__image img {
-    height: 192px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .home-page .home-mobile-quicklink-card h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 2.55em;
+    min-height: 0;
     margin: 0;
     text-align: center;
   }
 
   .home-page .home-mobile-quicklink-card p:not(.home-mobile-quicklink-card__cta) {
-    display: -webkit-box;
-    margin: 8px 2px 10px;
-    overflow: hidden;
+    display: block;
+    margin: 10px 2px 14px;
+    overflow: visible;
     line-height: 1.45;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: unset;
   }
 
   .home-page .home-mobile-quicklink-card .home-mobile-quicklink-card__cta {
@@ -1559,6 +1711,16 @@
     min-height: 44px;
   }
 
+  .home-page .home-mobile-quicklinks {
+    align-items: stretch;
+    padding-right: 0;
+  }
+
+  .home-page .home-mobile-quicklinks + .home-mobile-slider-dots button {
+    width: 44px;
+    height: 44px;
+  }
+
   .home-page .home-mobile-section-kicker:not(:first-of-type)::before {
     width: 88px;
     height: 2px;
@@ -1568,6 +1730,12 @@
   .home-page .floating-actions {
     right: 18px;
     gap: 8px;
+  }
+
+  .home-page.home-footer-in-view .floating-actions,
+  .home-page.home-footer-in-view .site-back-to-top {
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .home-page .floating-action,

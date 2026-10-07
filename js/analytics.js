@@ -1,6 +1,10 @@
 (function () {
   const ANALYTICS_ID = 'G-3J9NJQF75Y';
   const CONSENT_KEY = 'shahmansouri_cookie_consent_v1';
+  // Only the public site may send production analytics, never local previews.
+  const IS_PUBLIC_SITE = window.location.protocol === 'https:'
+    && ['shahmansouri.com', 'www.shahmansouri.com'].includes(window.location.hostname.toLowerCase())
+    && !window.location.port;
   let loaded = false;
   let configured = false;
 
@@ -19,6 +23,7 @@
   }
 
   function applyDefaultConsent() {
+    if (!IS_PUBLIC_SITE) return;
     ensureAnalyticsRuntime();
     window.gtag('consent', 'default', DENIED_CONSENT);
   }
@@ -34,6 +39,7 @@
   }
 
   function loadAnalytics() {
+    if (!IS_PUBLIC_SITE) return;
     if (loaded) {
       configureAnalytics();
       return;
@@ -49,6 +55,7 @@
   }
 
   function grantAnalytics() {
+    if (!IS_PUBLIC_SITE) return;
     applyDefaultConsent();
     ensureAnalyticsRuntime();
     window.gtag('consent', 'update', {
@@ -58,6 +65,7 @@
   }
 
   function denyAnalytics() {
+    if (!IS_PUBLIC_SITE) return;
     applyDefaultConsent();
     if (loaded) {
       window.gtag('consent', 'update', DENIED_CONSENT);
@@ -78,6 +86,7 @@
   };
 
   function isAnalyticsGranted() {
+    if (!IS_PUBLIC_SITE) return false;
     try {
       return window.localStorage.getItem(CONSENT_KEY) === 'accepted';
     } catch (error) {
@@ -288,6 +297,7 @@
   }
 
   window.ShahmansouriAnalytics.sanitizeTrackingUrl = sanitizeTrackingUrl;
+  window.ShahmansouriAnalytics.isAllowed = isAnalyticsGranted;
   window.ShahmansouriAnalytics.trackElement = trackElement;
   window.ShahmansouriAnalytics.trackEvent = trackEvent;
   applyDefaultConsent();
