@@ -31,6 +31,35 @@ const quickMaterialSelect = document.querySelector("[data-quick-material]");
 const quickSortSelect = document.querySelector("[data-quick-sort]");
 const quickSortToggle = document.querySelector("[data-quick-sort-toggle]");
 const quickSortPanel = document.querySelector("[data-quick-sort-panel]");
+const mobileSortSelect = createMobileSortControl();
+
+function createMobileSortControl() {
+    if (!openFiltersButton || !(quickSortSelect instanceof HTMLSelectElement)) return null;
+    const actions = document.createElement("div");
+    actions.className = "catalog-mobile-actions";
+    openFiltersButton.before(actions);
+    actions.appendChild(openFiltersButton);
+    const label = document.createElement("label");
+    label.className = "catalog-mobile-sort";
+    const caption = document.createElement("span");
+    caption.textContent = document.documentElement.lang.startsWith("en") ? "Sort" : "Ordina";
+    const select = document.createElement("select");
+    select.setAttribute("aria-label", caption.textContent);
+    Array.from(quickSortSelect.options).forEach((option) => select.appendChild(option.cloneNode(true)));
+    const value = document.createElement("span");
+    value.className = "catalog-mobile-sort-value";
+    value.setAttribute("aria-hidden", "true");
+    value.textContent = select.selectedOptions[0]?.textContent || "";
+    label.append(caption, value, select);
+    actions.appendChild(label);
+    select.addEventListener("change", () => {
+        quickSortSelect.value = select.value;
+        value.textContent = select.selectedOptions[0]?.textContent || "";
+        requestCatalogResultsScroll();
+        renderCatalog();
+    });
+    return select;
+}
 const quickLengthMinInput = document.querySelector("[data-quick-length-min]");
 const quickLengthInput = document.querySelector("[data-quick-length-max]");
 const quickWidthMinInput = document.querySelector("[data-quick-width-min]");
@@ -50,6 +79,7 @@ let minimumLength = null;
 let quickMeasureUnit = "cm";
 let shouldScrollToCatalogResults = false;
 let visibleProductCount = 24;
+let catalogAutoLoadObserver = null;
 let catalogImageRecoveryTimers = [];
 
 function placeQuickFiltersAboveCatalog() {
@@ -62,6 +92,7 @@ function placeQuickFiltersAboveCatalog() {
 }
 
 function requestCatalogResultsScroll() {
+    if (isMobileFiltersMode() && filtersPanel?.classList.contains("is-open")) return;
     shouldScrollToCatalogResults = true;
 }
 
@@ -75,7 +106,7 @@ function scrollToCatalogResults() {
     const targetTop = window.scrollY + catalogLayout.getBoundingClientRect().top - 10;
 
     window.requestAnimationFrame(() => {
-        window.scrollTo({ top: Math.max(targetTop, 0), behavior: "smooth" });
+        window.scrollTo({ top: Math.max(targetTop, 0), behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
     });
 }
 
@@ -132,7 +163,7 @@ const DEFAULT_CATALOG_COLUMNS = "4";
 const CATALOG_PAGE_SIZE = 24;
 
 const isEnglishCatalog = document.documentElement.lang.toLowerCase().startsWith("en");
-const CARD_IMAGE_SIZES = "(max-width: 759px) calc(100vw - 72px), (max-width: 1399px) 320px, 240px";
+const CARD_IMAGE_SIZES = "(max-width: 759px) calc(50vw - 37px), 300px";
 const catalogI18n = isEnglishCatalog
     ? {
         locale: "en-GB",
@@ -512,6 +543,20 @@ function buildTypeTree(host, mobile) {
     if (!host) return;
     host.replaceChildren();
     host.setAttribute("role", "group");
+    if (mobile) {
+        const all = document.createElement("button");
+        all.type = "button";
+        all.textContent = isEnglishCatalog ? "All types" : "Tutte le tipologie";
+        all.dataset.typeCategory = "";
+        all.dataset.typeSubtype = "";
+        all.addEventListener("click", () => {
+            setQuickCheckboxFilter("categories", "");
+            setQuickCheckboxFilter("subcategories", "");
+            renderCatalog();
+            closeMobileTypeDropdown(host);
+        });
+        host.append(all);
+    }
     getUniqueCategories(catalogProducts).forEach((category, index) => {
         const row = document.createElement("div");
         row.className = "type-tree-row";
@@ -525,10 +570,14 @@ function buildTypeTree(host, mobile) {
         const name = document.createElement("button");
         let openSubtypes;
         name.type = "button";
+        name.dataset.typeCategory = category;
         name.textContent = translateCategory(category);
         name.addEventListener("click", () => {
             choose();
-            if (mobile) openSubtypes?.();
+            if (mobile) {
+                if (openSubtypes) openSubtypes();
+                else closeMobileTypeDropdown(host);
+            }
         });
         row.append(name);
         const subtypes = getUniqueSubcategories(catalogProducts.filter((product) => getProductCategoryValues(product).includes(category)));
@@ -564,15 +613,25 @@ function buildTypeTree(host, mobile) {
             row.addEventListener("keydown", (event) => { if (event.key === "Escape" && !panel.hidden) { event.stopPropagation(); expand(false); arrow.focus(); } });
             const allSubtypes = document.createElement("button");
             allSubtypes.type = "button";
+            allSubtypes.dataset.typeCategory = category;
+            allSubtypes.dataset.typeSubtype = "";
             allSubtypes.className = "type-tree-all";
             allSubtypes.textContent = isEnglishCatalog ? "All" : "Tutti";
-            allSubtypes.addEventListener("click", () => choose());
+            allSubtypes.addEventListener("click", () => {
+                choose();
+                if (mobile) closeMobileTypeDropdown(host);
+            });
             panel.append(allSubtypes);
             subtypes.forEach((subtype) => {
                 const child = document.createElement("button");
                 child.type = "button";
+                child.dataset.typeCategory = category;
+                child.dataset.typeSubtype = subtype;
                 child.textContent = subtype;
-                child.addEventListener("click", () => choose(subtype));
+                child.addEventListener("click", () => {
+                    choose(subtype);
+                    if (mobile) closeMobileTypeDropdown(host);
+                });
                 panel.append(child);
             });
             row.append(arrow, panel);
@@ -580,6 +639,34 @@ function buildTypeTree(host, mobile) {
         host.append(row);
     });
 }
+
+function closeMobileTypeDropdown(host, restoreFocus = true) {
+    const details = host?.closest("details");
+    if (!details || !isMobileFiltersMode()) return;
+    details.open = false;
+    if (restoreFocus) details.querySelector("summary")?.focus({ preventScroll: true });
+}
+
+document.addEventListener("click", (event) => {
+    const tree = document.querySelector("[data-mobile-type-tree]");
+    const details = tree?.closest("details");
+    if (details?.open && !details.contains(event.target)) closeMobileTypeDropdown(tree, false);
+});
+
+document.addEventListener("focusin", (event) => {
+    const tree = document.querySelector("[data-mobile-type-tree]");
+    const details = tree?.closest("details");
+    if (details?.open && !details.contains(event.target)) closeMobileTypeDropdown(tree, false);
+});
+
+document.addEventListener("keydown", (event) => {
+    const tree = document.querySelector("[data-mobile-type-tree]");
+    if (event.key === "Escape" && isMobileFiltersMode() && tree?.closest("details")?.open) {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        closeMobileTypeDropdown(tree);
+    }
+});
 
 function syncQuickCategoryControl(value) {
     if (!(quickCategoryToggle instanceof HTMLButtonElement)) {
@@ -601,6 +688,10 @@ function syncQuickSortControl() {
     }
 
     const selectedValue = quickSortSelect.value;
+    if (mobileSortSelect) {
+        mobileSortSelect.value = selectedValue;
+        mobileSortSelect.previousElementSibling.textContent = mobileSortSelect.selectedOptions[0]?.textContent || "";
+    }
     const selectedOption = Array.from(quickSortSelect.options).find((option) => option.value === selectedValue);
     const label = isEnglishCatalog ? "Sort" : "Ordina";
     quickSortToggle.textContent = `${label}: ${selectedOption?.textContent || ""}`;
@@ -752,7 +843,8 @@ function matchesSearch(product, query) {
         product.description,
         product.descriptionEn,
         ...(Array.isArray(product.materialsEn) ? product.materialsEn : []),
-        ...(Array.isArray(product.tags) ? product.tags : [])
+        ...(Array.isArray(product.tags) ? product.tags : []),
+        ...(Array.isArray(product.tagsEn) ? product.tagsEn : [])
     ].filter(Boolean).join(" ");
 
     return normalizeText(haystack).includes(query);
@@ -813,10 +905,35 @@ function sortProducts(products) {
     return sortedProducts.reverse();
 }
 
-function getResponsiveCatalogImageSources(product) {
+function getCatalogImageLayout() {
+    if (!productGrid) return { sizes: CARD_IMAGE_SIZES, priorityCount: 2 };
+
+    const style = window.getComputedStyle(productGrid);
+    const columns = style.gridTemplateColumns.split(/\s+/).filter((value) => value && value !== "none").length || 1;
+    const gap = Number.parseFloat(style.columnGap) || 0;
+    const width = (productGrid.getBoundingClientRect().width - gap * (columns - 1)) / columns;
+    return {
+        sizes: width > 0 ? `${Math.ceil(width)}px` : CARD_IMAGE_SIZES,
+        priorityCount: Math.min(columns, 4)
+    };
+}
+
+function syncCatalogImageSizes() {
+    const { sizes } = getCatalogImageLayout();
+    productGrid?.querySelectorAll(".product-card__media img[srcset]").forEach((image) => {
+        if (image.sizes !== sizes) image.sizes = sizes;
+    });
+}
+
+if (productGrid && typeof ResizeObserver === "function") {
+    new ResizeObserver(syncCatalogImageSizes).observe(productGrid);
+}
+
+function getResponsiveCatalogImageSources(product, sizes = CARD_IMAGE_SIZES) {
     const imagePath = typeof product?.coverImage === "string" ? product.coverImage : "";
     const image360 = typeof product?.coverImage360 === "string" ? product.coverImage360 : "";
     const image640 = typeof product?.coverImage640 === "string" ? product.coverImage640 : "";
+    const image1200 = typeof product?.coverImage1200 === "string" ? product.coverImage1200 : "";
 
     if (!imagePath) {
         return {
@@ -828,21 +945,20 @@ function getResponsiveCatalogImageSources(product) {
     }
 
     const srcsetParts = [];
-    if (image640) {
-        srcsetParts.push(`${image640} 640w`);
-    } else if (image360) {
-        // La variante da 360 px rende poco leggibili le linee sottili del
-        // watermark nelle schede del catalogo. Usala solo come ripiego.
+    if (image360) {
         srcsetParts.push(`${image360} 360w`);
     }
-    if (srcsetParts.length) {
-        srcsetParts.push(`${imagePath} 1080w`);
+    if (image640) {
+        srcsetParts.push(`${image640} 640w`);
+    }
+    if (image1200) {
+        srcsetParts.push(`${image1200} 1200w`);
     }
 
     return {
         src: image640 || image360 || imagePath,
         srcset: srcsetParts.join(", "),
-        sizes: srcsetParts.length ? CARD_IMAGE_SIZES : "",
+        sizes: srcsetParts.length ? sizes : "",
         fallbackSrc: imagePath
     };
 }
@@ -850,6 +966,11 @@ function getResponsiveCatalogImageSources(product) {
 function retryCatalogImage(event) {
     const image = event.target;
     if (!(image instanceof HTMLImageElement) || !image.matches(".product-card__media img")) {
+        return;
+    }
+
+    // A pending request is not a failure; replacing it can restart a slow download.
+    if (!image.complete || image.naturalWidth > 0) {
         return;
     }
 
@@ -875,11 +996,19 @@ function retryCatalogImage(event) {
 }
 
 productGrid?.addEventListener("error", retryCatalogImage, true);
+productGrid?.addEventListener("load", (event) => {
+    const image = event.target;
+    if (image instanceof HTMLImageElement && image.matches(".product-card__media img")) {
+        image.classList.remove("is-load-error");
+    }
+}, true);
 
 function ensureCatalogImageRendered(image) {
     if (!(image instanceof HTMLImageElement)) return;
 
-    if (!image.complete || image.naturalWidth === 0) {
+    if (!image.complete) return;
+
+    if (image.naturalWidth === 0) {
         retryCatalogImage({ target: image });
         return;
     }
@@ -903,7 +1032,7 @@ function scheduleCatalogImageRecovery() {
     }, delay));
 }
 
-function createProductCard(product, index = 0) {
+function createProductCard(product, index = 0, imageLayout = getCatalogImageLayout()) {
     const productPage = isEnglishCatalog && product.hasEnglish && product.slugEn
         ? `products/${product.slugEn}.html`
         : `products/${product.slug}.html`;
@@ -947,9 +1076,9 @@ function createProductCard(product, index = 0) {
         `;
     }
 
-    const image = getResponsiveCatalogImageSources(product);
-    const imageLoading = index < 8 ? "eager" : "lazy";
-    const imageDecoding = index < 8 ? "sync" : "async";
+    const image = getResponsiveCatalogImageSources(product, imageLayout.sizes);
+    const imageLoading = index < imageLayout.priorityCount ? "eager" : "lazy";
+    const imageDecoding = "async";
     const imageFetchPriority = index === 0 ? ' fetchpriority="high"' : "";
     const imageSrcset = image.srcset ? ` srcset="${image.srcset}" sizes="${image.sizes}"` : "";
 
@@ -1158,7 +1287,7 @@ function resetCatalogFilters() {
     renderSliderValues(getFormState());
     requestCatalogResultsScroll();
     renderCatalog();
-    setFiltersOpen(false);
+    if (!isMobileFiltersMode() || !filtersPanel?.classList.contains("is-open")) setFiltersOpen(false);
 }
 
 function renderNoResultsState() {
@@ -1253,6 +1382,24 @@ function updateCatalogLoadMore(shownCount, totalCount) {
     if (button instanceof HTMLButtonElement) {
         button.hidden = shownCount >= totalCount;
     }
+    if ("IntersectionObserver" in window) {
+        if (!catalogAutoLoadObserver) {
+            catalogAutoLoadObserver = new IntersectionObserver((entries) => {
+                if (!entries.some((entry) => entry.isIntersecting)) return;
+                const trigger = document.querySelector("[data-catalog-load-more]");
+                if (!trigger || trigger.hidden || trigger.dataset.hasMore !== "true") return;
+                catalogAutoLoadObserver.unobserve(trigger);
+                visibleProductCount += CATALOG_PAGE_SIZE;
+                renderCatalog(true);
+            }, { rootMargin: "0px 0px 300px 0px" });
+        }
+        controls.dataset.hasMore = String(shownCount < totalCount);
+        catalogAutoLoadObserver.unobserve(controls);
+        if (shownCount < totalCount && !controls.hidden) {
+            catalogAutoLoadObserver.observe(controls);
+        }
+        if (button) button.hidden = true;
+    }
 }
 
 function renderCatalog(preserveVisibleCount = false) {
@@ -1267,8 +1414,39 @@ function renderCatalog(preserveVisibleCount = false) {
     }
 
     const filters = getFormState();
+    const typeSummary = categoryOptions?.closest("details")?.querySelector("summary");
+    if (typeSummary) {
+        let selection = typeSummary.querySelector(".filters-type-selection");
+        if (!selection) {
+            const caption = document.createElement("span");
+            caption.className = "filters-type-caption";
+            caption.textContent = isEnglishCatalog ? "Type" : "Tipologia";
+            selection = document.createElement("span");
+            selection.className = "filters-type-selection";
+            const label = document.createElement("span");
+            label.className = "filters-type-label";
+            label.append(caption, selection);
+            typeSummary.replaceChildren(label);
+        }
+        selection.textContent = [
+            ...filters.categories.map(translateCategory),
+            ...filters.subcategories
+        ].join(" · ") || (isEnglishCatalog ? "All types" : "Tutte le tipologie");
+    }
     syncCatalogUrl(filters);
     const filteredProducts = sortProducts(filterProducts(filters));
+    document.querySelectorAll("[data-show-filter-results]").forEach((button) => {
+        button.textContent = isEnglishCatalog ? `Show ${filteredProducts.length} products` : `Mostra ${filteredProducts.length} prodotti`;
+    });
+    document.querySelectorAll("[data-mobile-type-tree] [data-type-category]").forEach((button) => {
+        const categorySelected = button.dataset.typeCategory
+            ? filters.categories.includes(button.dataset.typeCategory)
+            : filters.categories.length === 0;
+        const subtypeSelected = button.hasAttribute("data-type-subtype")
+            ? (button.dataset.typeSubtype ? filters.subcategories.includes(button.dataset.typeSubtype) : filters.subcategories.length === 0)
+            : true;
+        button.setAttribute("aria-pressed", String(categorySelected && subtypeSelected));
+    });
     if (!preserveVisibleCount) {
         visibleProductCount = CATALOG_PAGE_SIZE;
     }
@@ -1282,7 +1460,15 @@ function renderCatalog(preserveVisibleCount = false) {
     if (quickResultsCount) {
         quickResultsCount.textContent = catalogI18n.labels.results(filteredProducts.length, catalogProducts.length);
     }
-    productGrid.innerHTML = visibleProducts.map((product, index) => createProductCard(product, index)).join("");
+    const imageLayout = getCatalogImageLayout();
+    if (preserveVisibleCount) {
+        // Keep existing images in place when adding the next batch.
+        const existingCount = productGrid.children.length;
+        productGrid.insertAdjacentHTML("beforeend", visibleProducts.slice(existingCount)
+            .map((product, index) => createProductCard(product, existingCount + index, imageLayout)).join(""));
+    } else {
+        productGrid.innerHTML = visibleProducts.map((product, index) => createProductCard(product, index, imageLayout)).join("");
+    }
     scheduleCatalogImageRecovery();
     productGrid.classList.remove("product-grid--skeleton");
     productGrid.setAttribute("aria-busy", "false");
@@ -1395,6 +1581,34 @@ function setInertState(element, shouldBeInert) {
     element.inert = false;
 }
 
+const filtersBackgroundState = new Map();
+const filtersOriginalRole = filtersPanel?.getAttribute("role");
+const filtersOriginalModal = filtersPanel?.getAttribute("aria-modal");
+const filtersOriginalLabel = filtersPanel?.getAttribute("aria-label");
+
+function syncFiltersBackground(isOpen) {
+    if (!isOpen) {
+        filtersBackgroundState.forEach((wasInert, element) => {
+            element.inert = wasInert;
+        });
+        filtersBackgroundState.clear();
+        return;
+    }
+
+    // Isolate siblings along the panel's ancestor path, never the panel itself.
+    let branch = filtersPanel;
+    while (branch?.parentElement) {
+        Array.from(branch.parentElement.children).forEach((element) => {
+            if (element === branch || element === filtersOverlay ||
+                element.matches("script, style, link") || filtersBackgroundState.has(element)) return;
+            filtersBackgroundState.set(element, element.inert);
+            element.inert = true;
+        });
+        if (branch.parentElement === document.body) break;
+        branch = branch.parentElement;
+    }
+}
+
 function getFiltersFocusableElements() {
     if (!filtersPanel) {
         return [];
@@ -1411,7 +1625,9 @@ function getFiltersFocusableElements() {
             return false;
         }
 
-        return element.getAttribute("tabindex") !== "-1";
+        return element.getAttribute("tabindex") !== "-1" &&
+            !element.closest("[hidden], [inert]") && element.getClientRects().length > 0 &&
+            window.getComputedStyle(element).visibility !== "hidden";
     });
 }
 
@@ -1422,7 +1638,9 @@ function focusFirstFiltersControl() {
     }
 
     window.setTimeout(() => {
-        firstFocusable.focus();
+        if (isMobileFiltersMode() && filtersPanel?.classList.contains("is-open")) {
+            firstFocusable.focus({ preventScroll: true });
+        }
     }, 80);
 }
 
@@ -1431,12 +1649,20 @@ function syncFiltersAccessibility(isOpen) {
         return;
     }
 
-    if (!isMobileFiltersMode()) {
-        setInertState(filtersPanel, false);
-        return;
+    const isModalOpen = isMobileFiltersMode() && isOpen;
+    setInertState(filtersPanel, isMobileFiltersMode() && !isOpen);
+    syncFiltersBackground(isModalOpen);
+    if (isModalOpen) {
+        filtersPanel.setAttribute("role", "dialog");
+        filtersPanel.setAttribute("aria-modal", "true");
+        filtersPanel.setAttribute("aria-label", filtersOriginalLabel ||
+            filtersPanel.querySelector(".filters-card__header .eyebrow")?.textContent.trim() || openFiltersButton?.textContent.trim() || "Filters");
+    } else {
+        for (const [attribute, value] of [["role", filtersOriginalRole], ["aria-modal", filtersOriginalModal], ["aria-label", filtersOriginalLabel]]) {
+            if (value == null) filtersPanel.removeAttribute(attribute);
+            else filtersPanel.setAttribute(attribute, value);
+        }
     }
-
-    setInertState(filtersPanel, !isOpen);
 }
 
 function setFiltersOpen(isOpen) {
@@ -1465,7 +1691,7 @@ function setFiltersOpen(isOpen) {
 
     if (!isOpen && wasOpen && openFiltersButton instanceof HTMLButtonElement) {
         window.requestAnimationFrame(() => {
-            openFiltersButton.focus();
+            openFiltersButton.focus({ preventScroll: true });
         });
     }
 }
@@ -1663,6 +1889,48 @@ if (quickMeasuresClearButton) {
     });
 }
 
+function setupMobileFiltersActions() {
+    if (!filtersPanel || !catalogForm) return;
+    const measureHeading = filtersPanel.querySelector(".mobile-measure-heading > span");
+    if (measureHeading) measureHeading.textContent = isEnglishCatalog ? "Size" : "Misure";
+    const measureNote = filtersPanel.querySelector(".filters-field__note");
+    if (measureNote) measureNote.textContent = isEnglishCatalog
+        ? "Up to 15 cm extra allowed (about 6 in)."
+        : "Tolleranza fino a 15 cm in più (circa 6 in).";
+    const header = filtersPanel.querySelector(".filters-card__header");
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "filters-card__close";
+    close.textContent = isEnglishCatalog ? "Close" : "Chiudi";
+    close.addEventListener("click", () => setFiltersOpen(false));
+    header?.append(close);
+    const actions = document.createElement("div");
+    actions.className = "filters-card__actions";
+    if (resetButton) {
+        resetButton.type = "button";
+        resetButton.textContent = isEnglishCatalog ? "Reset" : "Azzera";
+        actions.append(resetButton);
+    }
+    const show = document.createElement("button");
+    show.type = "button";
+    show.className = "button filters-card__show";
+    show.dataset.showFilterResults = "";
+    show.textContent = isEnglishCatalog ? "Show products" : "Mostra prodotti";
+    show.addEventListener("click", () => {
+        setFiltersOpen(false);
+        requestCatalogResultsScroll();
+        scrollToCatalogResults();
+    });
+    actions.append(show);
+    filtersPanel.append(actions);
+    catalogForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        show.click();
+    });
+}
+
+setupMobileFiltersActions();
+
 if (resetButton) {
     resetButton.addEventListener("click", () => {
         window.requestAnimationFrame(resetCatalogFilters);
@@ -1762,6 +2030,30 @@ document.addEventListener("click", (event) => {
     }
 });
 
+document.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab" || !isMobileFiltersMode() || !filtersPanel?.classList.contains("is-open")) return;
+    const focusable = getFiltersFocusableElements();
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (!first) {
+        event.preventDefault();
+        return;
+    }
+    if (!filtersPanel.contains(document.activeElement) ||
+        (event.shiftKey && document.activeElement === first) ||
+        (!event.shiftKey && document.activeElement === last)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus({ preventScroll: true });
+    }
+});
+
+document.addEventListener("focusin", (event) => {
+    if (isMobileFiltersMode() && filtersPanel?.classList.contains("is-open") &&
+        !filtersPanel.contains(event.target)) {
+        getFiltersFocusableElements()[0]?.focus({ preventScroll: true });
+    }
+});
+
 window.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         setFiltersOpen(false);
@@ -1781,6 +2073,7 @@ window.addEventListener("keydown", (event) => {
 });
 
 window.addEventListener("resize", () => {
+    syncCatalogImageSizes();
     if (!isMobileFiltersMode()) {
         if (filtersPanel) {
             filtersPanel.classList.remove("is-open");
@@ -1789,6 +2082,7 @@ window.addEventListener("resize", () => {
             filtersOverlay.hidden = true;
         }
         document.body.classList.remove("filters-open");
+        openFiltersButton?.setAttribute("aria-expanded", "false");
     }
 
     syncFiltersAccessibility(Boolean(filtersPanel && filtersPanel.classList.contains("is-open")));
