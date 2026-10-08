@@ -1,7 +1,36 @@
-.install-button {
+.actions .save-contact__link {
   width: 100%;
+  gap: 10px;
+  background: #fff3d3;
+  border-color: #7b1f16;
+  color: #7b1f16;
+  box-shadow: 0 3px 8px rgba(88, 51, 16, 0.12);
+}
+
+.save-contact__link svg {
+  flex-shrink: 0;
+}
+
+.save-contact p {
+  margin: 8px 4px 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #653514;
+}
+
+.actions .install-button {
+  width: 100%;
+  gap: 10px;
+  background: #7b1f16;
+  border-color: #7b1f16;
+  color: #fff8df;
+  box-shadow: 0 3px 8px rgba(88, 51, 16, 0.12);
   font-family: inherit;
   cursor: pointer;
+}
+
+.install-button svg {
+  flex-shrink: 0;
 }
 
 .install-button[hidden],
