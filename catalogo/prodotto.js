@@ -509,6 +509,99 @@ function sendProductTrackingEvent(eventName, extraPayload = {}) {
     }));
 }
 
+function prepareProductContactDialog() {
+    const sheet = productContactDialog?.querySelector(".product-contact-dialog__sheet");
+    if (!sheet) return;
+    sheet.querySelector(".eyebrow")?.remove();
+    sheet.querySelector("h2").textContent = isEnglishProduct ? "Request price and availability" : "Richiedi prezzo e disponibilit\u00e0";
+    sheet.querySelector("p:not(.product-contact-dialog__fallback)")?.remove();
+    const actions = sheet.querySelector(".product-contact-dialog__actions");
+    const whatsapp = actions?.querySelector('a[href^="https://wa.me/"]');
+    const email = actions?.querySelector('a[href^="mailto:"]');
+    const phone = actions?.querySelector('a[href^="tel:"]');
+    if (!whatsapp || !email || !phone) return;
+    actions.querySelector('[data-product-track="click_product_price_request"]')?.remove();
+    const name = productPageRoot.dataset.productName || document.querySelector("h1")?.textContent.trim() || "";
+    const size = productPageRoot.dataset.productSize || "";
+    const summary = document.createElement("p");
+    summary.className = "product-contact-dialog__summary";
+    const summaryText = document.createElement("span");
+    const summaryName = document.createElement("strong");
+    summaryName.textContent = name;
+    const summarySize = document.createElement("span");
+    summarySize.textContent = size.replace(/\s+x\s+/g, " \u00d7 ");
+    summaryText.append(summaryName, summarySize);
+    if (productHeroImage) {
+        const thumbnail = document.createElement("img");
+        thumbnail.src = productHeroImage.currentSrc || productHeroImage.src;
+        thumbnail.alt = "";
+        thumbnail.width = 180;
+        thumbnail.height = 220;
+        summary.append(thumbnail);
+    }
+    summary.append(summaryText);
+    sheet.querySelector("h2").after(summary);
+    const url = productPageRoot.dataset.productUrl || document.querySelector('link[rel="canonical"]')?.href || location.href;
+    const reference = [name, size].filter(Boolean).join(" - ");
+    const message = isEnglishProduct
+        ? `Hello, I would like to know the price and availability of this product: ${reference}.\n${url}`
+        : `Buongiorno, vorrei conoscere prezzo e disponibilit\u00e0 di questo prodotto: ${reference}.\n${url}`;
+    const whatsappUrl = new URL(whatsapp.href);
+    whatsappUrl.searchParams.set("text", message);
+    whatsapp.href = whatsappUrl.href;
+    whatsapp.className = "button product-contact-dialog__whatsapp";
+    whatsapp.textContent = isEnglishProduct ? "Message us on WhatsApp" : "Scrivici su WhatsApp";
+    whatsapp.insertAdjacentHTML("afterbegin", '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.05 4.94A9.84 9.84 0 0 0 12.02 2a9.94 9.94 0 0 0-8.6 14.94L2 22l5.22-1.36A9.93 9.93 0 0 0 12.02 22h.01a9.99 9.99 0 0 0 7.02-17.06Zm-7.03 15.37h-.01a8.22 8.22 0 0 1-4.18-1.14l-.3-.18-3.1.81.83-3.02-.2-.31a8.29 8.29 0 1 1 6.96 3.84Zm4.54-6.2c-.25-.13-1.48-.73-1.72-.81-.23-.08-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.56.06-.25-.13-1.07-.39-2.04-1.24-.75-.67-1.26-1.49-1.41-1.74-.15-.25-.02-.39.11-.52.12-.12.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.57-1.37-.78-1.88-.21-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.02 2.61.13.17 1.76 2.69 4.27 3.77.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.48-.6 1.69-1.17.21-.58.21-1.07.15-1.17-.06-.1-.23-.15-.48-.27Z"/></svg>');
+    const subject = isEnglishProduct ? `Product enquiry - ${name}` : `Informazioni prodotto - ${name}`;
+    email.href = `mailto:shahmansouri@tiscali.it?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
+    email.textContent = isEnglishProduct ? "Contact us by email" : "Contattaci via email";
+    email.className = "button product-contact-dialog__email";
+    email.insertAdjacentHTML("afterbegin", '<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>');
+    const phoneText = document.createElement("span");
+    const phoneCaption = document.createElement("span");
+    phoneCaption.textContent = isEnglishProduct ? "Call the shop" : "Chiama il negozio";
+    const phoneNumber = document.createElement("small");
+    const digits = phone.getAttribute("href").replace(/^tel:/, "");
+    phoneNumber.textContent = digits === "+390458013280" ? "+39 045 801 3280" : digits;
+    phoneText.append(phoneCaption, phoneNumber);
+    phone.replaceChildren(phoneText);
+    phone.className = "button product-contact-dialog__phone";
+    phone.insertAdjacentHTML("afterbegin", '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg>');
+    actions.append(whatsapp, email, phone);
+    sheet.querySelector(".product-contact-dialog__fallback")?.remove();
+    const emailFallback = document.createElement("div");
+    emailFallback.className = "product-contact-dialog__email-fallback";
+    const address = document.createElement("input");
+    address.type = "text";
+    address.readOnly = true;
+    address.value = "shahmansouri@tiscali.it";
+    address.setAttribute("aria-label", isEnglishProduct ? "Shop email address" : "Indirizzo email del negozio");
+    const copy = document.createElement("button");
+    copy.type = "button";
+    copy.textContent = isEnglishProduct ? "Copy email" : "Copia email";
+    const status = document.createElement("span");
+    status.setAttribute("role", "status");
+    copy.addEventListener("click", async () => {
+        copy.disabled = true;
+        let copied = false;
+        try {
+            await navigator.clipboard.writeText(address.value);
+            copied = true;
+        } catch (_error) {
+            address.focus({ preventScroll: true });
+            address.select();
+            try { copied = document.execCommand("copy"); } catch (_copyError) { /* Keep the address selected for manual copying. */ }
+        } finally {
+            copy.disabled = false;
+        }
+        status.textContent = copied
+            ? (isEnglishProduct ? "Email address copied." : "Indirizzo email copiato.")
+            : (isEnglishProduct ? "Select and copy the address manually." : "Seleziona e copia l'indirizzo manualmente.");
+    });
+    emailFallback.append(address, copy, status);
+    actions.append(emailFallback);
+}
+
 function openProductContactDialog(triggerElement) {
     if (!(productContactDialog instanceof HTMLDialogElement) || typeof productContactDialog.showModal !== "function") {
         return;
@@ -526,6 +619,7 @@ function openProductContactDialog(triggerElement) {
 
     if (!productContactDialog.open) {
         productContactDialog.showModal();
+        document.body.classList.add("product-contact-open");
     }
 
     const closeButton = productContactDialog.querySelector("[data-product-contact-close]");
@@ -549,7 +643,7 @@ function closeProductContactDialog() {
     if (lastTriggerId) {
         const triggerElement = document.getElementById(lastTriggerId);
         if (triggerElement instanceof HTMLElement) {
-            triggerElement.focus();
+            triggerElement.focus({ preventScroll: true });
         }
     }
 }
@@ -563,6 +657,8 @@ function bindProductContactDialog() {
         return;
     }
 
+    prepareProductContactDialog();
+    productContactDialog.addEventListener("close", () => document.body.classList.remove("product-contact-open"));
     productContactOpenButtons.forEach((button) => {
         button.addEventListener("click", (event) => {
             event.preventDefault();
