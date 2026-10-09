@@ -395,6 +395,7 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="layout.css">
 </head>
 <body>
   <div id="languageOverlay" class="language-overlay" role="dialog" aria-modal="true" aria-label="Select language" hidden>
@@ -421,29 +422,27 @@
     </header>
 
     <main>
-      <h1 class="qr-title">Quick contacts</h1>
-      <nav class="actions" aria-label="Quick contacts">
-        <a class="action-link action-link--primary" href="https://shahmansouri.com/index-en.html" data-qr-button="home" data-qr-action="website" data-track="click_qr_button">Visit the website</a>
-        <div class="save-contact">
-          <a class="action-link save-contact__link" href="/qr/shahmansouri.vcf" aria-describedby="save-contact-note" data-qr-button="save_contact" data-qr-action="contact" data-track="click_qr_button"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="5" y="3" width="16" height="18" rx="2"/><path d="M2 7h5M2 12h5M2 17h5"/><circle cx="13" cy="9" r="2.5"/><path d="M9 17v-1a4 4 0 0 1 8 0v1"/></svg><span>Save the contact</span></a>
-          <p id="save-contact-note">For iPhone and Android: open the contact card and confirm saving it to your contacts. If a file is downloaded, open it from your downloads.</p>
-        </div>
-        <button class="action-link install-button" type="button" data-install-site aria-controls="install-help" aria-expanded="false" hidden><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-5M8 17h4M19 3v8M15 7h8"/></svg><span>Add to your phone</span></button>
-        <a class="action-link action-link--primary action-link--whatsapp" href="https://wa.me/393392668950" data-qr-button="whatsapp" data-qr-action="whatsapp" data-track="click_qr_button">WhatsApp</a>
-        <a class="action-link" href="tel:+390458013280" data-qr-button="telefono" data-qr-action="phone" data-track="click_qr_button">Call the shop</a>
-        <a class="action-link action-link--maps" href="https://maps.app.goo.gl/zpeoCrwWZPhkYZ7K6" data-qr-button="google_maps" data-qr-action="maps" data-track="click_qr_button">Google Maps</a>
-        <a class="action-link action-link--instagram" href="https://www.instagram.com/shahmansouri_tappeti_persiani/" data-qr-button="instagram" data-qr-action="instagram" data-track="click_qr_button" data-track-secondary="click_social_instagram">Instagram</a>
-        <a class="action-link action-link--facebook" href="https://www.facebook.com/profile.php?id=100047379565616" data-qr-button="facebook" data-qr-action="facebook" data-track="click_qr_button" data-track-secondary="click_social_facebook">Facebook</a>
-      </nav>
-      <section id="install-help" class="install-help" aria-labelledby="install-help-title" hidden>
-        <h2 id="install-help-title">Keep Shahmansouri close at hand</h2>
-        <p>The icon opens the live website: an internet connection is required.</p>
-        <p data-install-message role="status"></p>
-        <p><strong>iPhone:</strong> open the site in Safari, tap Share and choose Add to Home Screen. If Share is not visible, look in the browser menu.</p>
-        <p><strong>Android:</strong> look for Install app or Add to Home screen in your browser menu.</p>
-        <p>If the QR opened inside another app, choose Open in browser first. On a computer, look for Install in Chrome or Edge, or Add to Dock in Safari on a compatible Mac.</p>
-        <button type="button" class="install-close" data-install-close>Close instructions</button>
-      </section>
+      <h1 class="qr-title">Shahmansouri Persian Carpets</h1>
+      <div class="actions qr-actions">
+        <a class="action-link action-link--primary" href="https://shahmansouri.com/catalogo/index-en.html" data-qr-button="catalog" data-qr-action="catalog" data-track="click_qr_button"><span>Explore the catalog</span><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+        <nav class="qr-contact-grid" aria-label="Contact the shop">
+          <a class="action-link action-link--primary action-link--whatsapp" href="https://wa.me/393392668950" data-qr-button="whatsapp" data-qr-action="whatsapp" data-track="click_qr_button"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11a9 9 0 0 1-13 8l-5 2 2-5A9 9 0 1 1 21 11Z"/><path d="m9 7 1 3-1 1a7 7 0 0 0 4 3l1-1 3 1"/></svg><span>WhatsApp</span></a>
+          <a class="action-link" href="tel:+390458013280" data-qr-button="telefono" data-qr-action="phone" data-track="click_qr_button"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m7 3 3 5-2 2a15 15 0 0 0 6 6l2-2 5 3-1 3c-1 2-7 0-11-4S3 6 4 5Z"/></svg><span>Call</span></a>
+<a class="action-link action-link--maps" href="https://maps.app.goo.gl/zpeoCrwWZPhkYZ7K6" data-qr-button="google_maps" data-qr-action="maps" data-track="click_qr_button"><img class="qr-maps-icon" src="/qr/maps-pin.svg" width="28" height="28" alt="" aria-hidden="true"><span>Directions</span></a>
+        </nav>
+        <nav class="qr-social-links" aria-label="Website and social media">
+          <a class="qr-website-link" href="https://shahmansouri.com/index-en.html" data-qr-button="home" data-qr-action="website" data-track="click_qr_button"><span class="qr-social-icon"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 7h14M5 17h14"/></svg></span><span>Visit the website</span></a>
+          <a class="action-link action-link--instagram" href="https://www.instagram.com/shahmansouri_tappeti_persiani/" data-qr-button="instagram" data-qr-action="instagram" data-track="click_qr_button" data-track-secondary="click_social_instagram"><span class="qr-social-icon"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></span><span>Instagram</span></a>
+          <a class="action-link action-link--facebook" href="https://www.facebook.com/profile.php?id=100047379565616" data-qr-button="facebook" data-qr-action="facebook" data-track="click_qr_button" data-track-secondary="click_social_facebook"><span class="qr-social-icon"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="currentColor"><path d="M14.5 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.8 1.8-1.8H18V2.4c-.8-.1-1.7-.2-2.5-.2-2.6 0-4.5 1.6-4.5 4.6v2.7H8V13h3v9Z"/></svg></span><span>Facebook</span></a>
+        </nav>
+        <section class="qr-save-section" aria-label="Save our details">
+          <div class="save-contact">
+<a class="action-link save-contact__link qr-device-button" href="/qr/shahmansouri.vcf" data-qr-button="save_contact" data-qr-action="contact" data-track="click_qr_button"><img class="qr-device-logo" src="/qr/apple.svg" width="30" height="30" alt="" aria-hidden="true"><span><strong>iPhone</strong><small>Save the contact</small></span></a>
+          </div>
+<button class="action-link install-button qr-device-button" type="button" data-install-site hidden><img class="qr-device-logo" src="/qr/android.svg" width="30" height="30" alt="" aria-hidden="true"><span><strong>Android</strong><small>Add to Home Screen</small></span></button>
+          <p class="qr-install-status" data-install-message role="status" aria-live="polite"></p>
+        </section>
+      </div>
     </main>
 
     <footer class="footer">

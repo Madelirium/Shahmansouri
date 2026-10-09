@@ -1,0 +1,51 @@
+.page { max-width: 520px; padding: 24px 20px 18px; }
+.brand { margin-bottom: 16px; }
+.brand__logo { width: min(166px, 46vw); padding: 8px; border: 0; background: #7b1f16; box-shadow: 0 3px 8px rgba(49, 9, 0, 0.12); }
+.qr-title { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.qr-intro { margin: 0 0 22px; text-align: center; line-height: 1.55; font-size: 1rem; }
+.qr-intro span { font-size: 0.88rem; color: #79563a; }
+.page .qr-actions { display: block; margin-bottom: 0; }
+.qr-actions .action-link { min-height: 50px; padding: 12px; border-radius: 10px; background: #fff3d3; box-shadow: none; color: #7b1f16; line-height: 1.35; gap: 10px; }
+.qr-actions > .action-link--primary { min-height: 56px; background: #7b1f16; border-color: #7b1f16; color: #fff8df; justify-content: space-between; padding-inline: 18px; }
+.qr-actions svg { flex-shrink: 0; }
+.qr-contact-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+.qr-contact-grid .action-link { flex-direction: column; min-height: 88px; gap: 8px; padding: 12px 4px; font-size: 0.88rem; }
+.qr-contact-grid .action-link span { overflow-wrap: anywhere; }
+.qr-contact-grid .action-link--whatsapp { background: #087c43; border-color: #087c43; color: white; }
+.qr-contact-grid .action-link--maps { background: #fff; border-color: #dadce0; color: #3c4043; }
+.qr-save-section { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 24px; padding-top: 22px; border-top: 1px solid rgba(108, 41, 33, 0.2); }
+.qr-save-section .save-contact { min-width: 0; display: flex; }
+.qr-save-section .save-contact__link { border-color: #7b1f16; background: #fff8e8; }
+.qr-save-section .save-contact > p { margin: 8px 0 0; font-size: 0.84rem; text-align: center; }
+.qr-contact-help { margin-top: 2px; font-size: 0.86rem; }
+.qr-contact-help summary { min-height: 44px; padding: 10px 6px; text-align: center; cursor: pointer; color: #7b1f16; }
+.qr-contact-help p { margin: 0 0 12px; padding: 12px; background: #fff3d3; border-radius: 8px; text-align: left; }
+.qr-save-section .qr-device-button { flex-direction: column; justify-content: center; min-height: 132px; height: 100%; padding: 14px 8px; gap: 10px; text-align: center; }
+.qr-device-button > svg, .qr-device-logo { width: 30px; height: 30px; flex-shrink: 0; }
+.qr-device-button span { min-width: 0; }
+.qr-device-button strong, .qr-device-button small { display: block; }
+.qr-device-button strong { font-size: 0.95rem; }
+.qr-device-button small { margin-top: 4px; font-size: 0.8rem; font-weight: 400; line-height: 1.4; }
+.qr-save-section .install-button { margin: 0; border-color: #315b42; background: #315b42; color: white; text-decoration: none; }
+.qr-save-section .save-contact__link { border-color: #51463f; background: #51463f; color: white; }
+.qr-save-section .install-help { grid-column: 1 / -1; margin-top: 0; padding: 14px; text-align: left; }
+.qr-install-status { grid-column: 1 / -1; margin: 0; font-size: 0.84rem; line-height: 1.45; color: #653514; }
+.qr-install-status:empty { display: none; }
+.qr-social-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px; font-size: 0.82rem; }
+.qr-social-links .action-link, .qr-social-links .qr-website-link { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; min-height: 96px; padding: 12px 4px; border: 1px solid rgba(108, 41, 33, 0.25); border-radius: 10px; background: #fff3d3; box-shadow: none; color: #7b1f16; font-size: 0.88rem; font-weight: 700; text-align: center; text-decoration: none; }
+.qr-social-icon { display: flex; align-items: center; justify-content: center; width: 30px; height: 30px; color: #7b1f16; }
+.qr-social-icon svg { width: 30px; height: 30px; }
+.qr-social-links .qr-website-link { background: #7b1f16; border-color: #7b1f16; color: white; }
+.qr-social-links .action-link--instagram { background: #94375f; border-color: #94375f; color: white; }
+.qr-social-links .action-link--facebook { background: #31578d; border-color: #31578d; color: white; }
+.qr-social-links .qr-social-icon { color: inherit; }
+.footer { margin-top: 10px; font-size: 0.82rem; }
+.footer p { margin: 0; }
+.footer-language-links a { min-height: 44px; align-items: center; }
+.qr-actions :is(a, button, summary):focus-visible { outline: 3px solid #7b1f16; outline-offset: 3px; }
+@media (max-width: 360px) {
+  .page { padding: 20px 14px 14px; }
+  .qr-contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .qr-contact-grid .action-link { font-size: 0.82rem; }
+  .qr-contact-grid .action-link--whatsapp { grid-column: 1 / -1; flex-direction: row; min-height: 50px; }
+}

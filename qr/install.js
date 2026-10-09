@@ -1,9 +1,7 @@
 (() => {
   const button = document.querySelector('[data-install-site]');
-  const help = document.getElementById('install-help');
-  const close = document.querySelector('[data-install-close]');
   const message = document.querySelector('[data-install-message]');
-  if (!button || !help || !close || !message) return;
+  if (!button || !message) return;
 
   const english = document.documentElement.lang === 'en';
   const standalone = window.matchMedia('(display-mode: standalone)');
@@ -13,61 +11,49 @@
     button.hidden = standalone.matches || window.navigator.standalone === true;
   }
 
-  function showHelp(text = '') {
+  function showMessage(text) {
     message.textContent = text;
-    help.hidden = false;
-    button.setAttribute('aria-expanded', 'true');
-    help.scrollIntoView({ behavior: 'auto', block: 'nearest' });
-    close.focus({ preventScroll: true });
-  }
-
-  function closeHelp() {
-    help.hidden = true;
-    button.setAttribute('aria-expanded', 'false');
-    button.focus({ preventScroll: true });
   }
 
   window.addEventListener('beforeinstallprompt', event => {
     event.preventDefault();
     pendingPrompt = event;
+    message.textContent = '';
   });
 
   window.addEventListener('appinstalled', () => {
     pendingPrompt = null;
     button.hidden = true;
-    help.hidden = true;
-    button.setAttribute('aria-expanded', 'false');
+    message.textContent = '';
   });
 
   button.addEventListener('click', async () => {
     if (!pendingPrompt) {
-      if (help.hidden) showHelp();
-      else closeHelp();
+      message.textContent = '';
       return;
     }
 
     const prompt = pendingPrompt;
     pendingPrompt = null;
+    message.textContent = '';
     button.disabled = true;
     try {
       await prompt.prompt();
       const choice = await prompt.userChoice;
       if (choice.outcome !== 'accepted') {
-        showHelp(english
+        showMessage(english
           ? 'You can add the site later from your browser menu.'
           : 'Puoi aggiungere il sito in seguito dal menu del browser.');
       }
     } catch {
-      showHelp();
+      showMessage(english
+        ? 'Installation could not start. Try adding the site from your browser menu.'
+        : 'Non riesco ad avviare l\'installazione. Prova ad aggiungere il sito dal menu del browser.');
     } finally {
       button.disabled = false;
     }
   });
 
-  close.addEventListener('click', closeHelp);
-  help.addEventListener('keydown', event => {
-    if (event.key === 'Escape') closeHelp();
-  });
   standalone.addEventListener('change', updateButton);
   updateButton();
 })();
