@@ -45,10 +45,12 @@
   </script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/carpet-editorial-mobile.css?v=20261009-1">
+  <script src="js/carpet-editorial-mobile.js?v=20261009-1" defer></script>
   <style>
   </style>
 </head>
-<body>
+<body class="carpet-editorial-page">
   <div class="page">
     <header class="header">
       <div class="logo-area">
@@ -393,7 +395,7 @@
           button.setAttribute("aria-current", index === 0 ? "true" : "false");
           button.addEventListener("click", function () {
             const card = track.children[index];
-            if (card) track.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
+            if (card) track.scrollTo({ left: card.offsetLeft, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
           });
           dots.appendChild(button);
         });

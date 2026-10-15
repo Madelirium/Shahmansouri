@@ -1,0 +1,160 @@
+.culture-index-label { display: none; }
+
+@media (max-width: 768px) {
+  .culture-editorial-page :is(.culture-content, .persia-content) .article > h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 20px;
+  }
+  .culture-editorial-page .culture-mobile-nav { margin-bottom: 28px; }
+  .culture-editorial-page .culture-index-label {
+    display: block;
+    grid-column: 1 / -1;
+    margin: 0 0 2px;
+    color: #87623e;
+    font-size: .78rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .culture-editorial-page :is(.culture-content, .persia-content) .article .culture-mobile-nav a {
+    min-height: 44px;
+    padding: 9px 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border-color: rgba(176, 136, 52, .2);
+    background: rgba(255, 249, 232, .45);
+    font-size: .9rem;
+    font-weight: 400;
+    line-height: 1.35;
+    overflow-wrap: normal;
+    text-decoration: none;
+  }
+  .culture-editorial-page .culture-mobile-section {
+    margin: 0 0 28px;
+    padding: 22px 0 0;
+    border: 0;
+    border-top: 1px solid rgba(156, 122, 61, .3);
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .culture-editorial-page .culture-mobile-section:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+  }
+  .culture-editorial-page :is(.culture-content, .persia-content) .article .culture-mobile-section > :is(h2, h3) {
+    padding: 0;
+    margin: 0 0 16px;
+    border: 0;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+  .culture-editorial-page :is(.culture-content, .persia-content) .article p,
+  .culture-editorial-page :is(.culture-content, .persia-content) .article li {
+    font-size: 1rem;
+    line-height: 1.65;
+    text-align: left;
+    overflow-wrap: break-word;
+  }
+  .culture-editorial-page :is(.culture-content, .persia-content) .article p { margin: 0 0 16px; }
+  .culture-editorial-page :is(.culture-content, .persia-content) .article .culture-index-label { font-size: .78rem; }
+  .culture-editorial-page :is(.culture-content, .persia-content) .article .article-inline-media { gap: 8px; }
+  .culture-editorial-page :is(.culture-content, .persia-content) .article .article-figure--right img {
+    max-height: 260px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  .culture-editorial-page :is(.culture-content, .persia-content) figcaption {
+    font-size: .78rem;
+    line-height: 1.4;
+    color: #79563a;
+  }
+  .culture-editorial-page .article-list-pair { display: block; }
+  .culture-editorial-page .article-list-pair__column {
+    margin: 0 0 18px;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+  .culture-editorial-page .article-list-pair__column h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 16px 0 10px;
+  }
+  .culture-editorial-page :is(.culture-content, .persia-content) .culture-mobile-section > ul > li {
+    padding: 12px 0;
+  }
+  .culture-editorial-page .persia-content .article-figure-pair__grid img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    border-radius: 6px;
+  }
+  .culture-editorial-page .culture-mobile-nav a:focus-visible {
+    outline: 2px solid #7b1f16;
+    outline-offset: 3px;
+  }
+  .culture-editorial-page .site-footer-global.site-footer-global--compact {
+    margin: 28px 14px 0;
+    padding: 20px 16px 12px;
+    border: 1px solid rgba(156, 122, 61, .2);
+    border-bottom: 0;
+    border-radius: 12px 12px 0 0;
+    background: #f6eac6;
+    box-shadow: none;
+    text-align: center;
+  }
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__meta-lines {
+    gap: 12px;
+  }
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__contact-line {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 8px;
+    padding: 0;
+    font-size: .88rem;
+    line-height: 1.5;
+  }
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__address {
+    padding-bottom: 12px;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__contact-line a[href^="mailto:"] {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    overflow-wrap: anywhere;
+  }
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__contact-line a:last-of-type {
+    grid-column: 2;
+    grid-row: 2;
+    width: auto;
+    justify-self: stretch;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__utility-line {
+    gap: 0 6px;
+    padding: 10px 0 0;
+    border-top: 1px solid rgba(156, 122, 61, .2);
+    border-radius: 0;
+    color: #79563a;
+    font-size: .75rem;
+    line-height: 1.4;
+  }
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__utility-line a,
+  .culture-editorial-page .site-footer-global--compact .site-footer-global__utility-line button {
+    color: inherit;
+    padding: 5px 2px;
+  }
+  .culture-editorial-page .site-footer-global--compact .footer-copyright {
+    font-size: .72rem;
+    margin-top: 4px;
+    padding-top: 12px;
+  }
+}

@@ -1,0 +1,248 @@
+.carpet-index-label,
+.carpet-index-return {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .carpet-editorial-page .tappeti-content .article {
+    overflow-x: visible;
+  }
+
+  .carpet-editorial-page .carpet-mobile-toc {
+    margin: 12px 0 28px;
+  }
+
+  .carpet-editorial-page .carpet-index-label {
+    display: block;
+    margin: 0 0 10px;
+    color: #87623e;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .carpet-editorial-page .carpet-mobile-toc a {
+    min-height: 44px;
+    padding: 9px 10px;
+    border-radius: 8px;
+    border-color: rgba(176, 136, 52, 0.2);
+    background: rgba(255, 249, 232, 0.45);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .carpet-editorial-page .tappeti-content .carpet-mobile-section {
+    display: flow-root;
+    margin: 0 0 28px;
+    padding: 22px 0 0;
+    border: 0;
+    border-top: 1px solid rgba(156, 122, 61, 0.3);
+    border-radius: 0;
+    background: none;
+  }
+
+  .carpet-editorial-page .tappeti-content .carpet-mobile-section:first-of-type {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-mobile-section > h2 {
+    padding: 0;
+    margin: 0 0 16px;
+    font-size: 1.25rem;
+    line-height: 1.35;
+  }
+
+  .carpet-editorial-page .tappeti-content .article p,
+  .carpet-editorial-page .tappeti-content .article li {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .carpet-editorial-page .tappeti-content .article p {
+    margin: 0 0 16px;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-mobile-section > h2 + p {
+    margin: 0 0 16px;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-editorial-hero {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 18px;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-editorial-hero img {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+
+  .carpet-editorial-page .carpet-editorial-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-editorial-gallery figure {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-editorial-gallery img {
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+  }
+
+  .carpet-editorial-page .tappeti-content figcaption {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    color: #79563a;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-mobile-loom-figure,
+  .carpet-editorial-page .tappeti-content .article .carpet-mobile-knot-figure {
+    float: none;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 18px;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-mobile-loom-figure img {
+    aspect-ratio: 16 / 9;
+    max-height: 210px;
+    object-position: center 40%;
+    border-radius: 6px;
+  }
+
+  .carpet-editorial-page .carpet-terminology-list {
+    display: block;
+    margin: 0;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-terminology-list > p {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: baseline;
+    gap: 12px;
+    margin: 0;
+    padding: 12px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(176, 136, 52, 0.22);
+    border-radius: 0;
+    background: none;
+    overflow-wrap: normal;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-care-tips {
+    display: block;
+    margin-top: 20px;
+  }
+
+  .carpet-editorial-page .tappeti-content .article .carpet-care-tips > li {
+    position: relative;
+    margin: 0;
+    padding: 14px 0 14px 18px;
+    border: 0;
+    border-top: 1px solid rgba(176, 136, 52, 0.22);
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .carpet-editorial-page .carpet-care-tips > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 25px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #7b1f16;
+  }
+
+  .carpet-editorial-page .carpet-index-return {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 6px 0;
+    font-size: 0.85rem;
+    color: #79563a;
+    text-underline-offset: 4px;
+  }
+
+  .carpet-editorial-page .carpet-products-carousel__dots button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .carpet-editorial-page .carpet-products-carousel__dots {
+    flex-wrap: wrap;
+    gap: 0;
+  }
+
+  .carpet-editorial-page .site-footer-global {
+    margin: 24px 14px 0;
+    padding: 18px 8px 14px;
+    border: 0;
+    border-top: 1px solid rgba(156, 122, 61, 0.3);
+    background: none;
+    box-shadow: none;
+  }
+
+  .carpet-editorial-page .site-footer-global__grid > div,
+  .carpet-editorial-page .site-footer-global__contact-line,
+  .carpet-editorial-page .site-footer-global__utility-line {
+    border: 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .carpet-editorial-page .site-footer-global__contact-line {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+  }
+
+  .carpet-editorial-page .site-footer-global__contact-line a {
+    background: none;
+    overflow-wrap: normal;
+  }
+
+  .carpet-editorial-page .site-footer-global__contact-line a:last-of-type {
+    width: auto;
+  }
+
+  .carpet-editorial-page .site-footer-global__utility-line {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 8px;
+    font-size: 0.78rem;
+  }
+
+  .carpet-editorial-page .site-footer-global__utility-line > :first-child,
+  .carpet-editorial-page .site-footer-global__utility-line .footer-copyright {
+    grid-column: 1 / -1;
+  }
+
+  .carpet-editorial-page :is(.carpet-mobile-toc a, .carpet-index-return):focus-visible {
+    outline: 2px solid #7b1f16;
+    outline-offset: 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .carpet-editorial-page .tappeti-content .article .carpet-terminology-list > p {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+}

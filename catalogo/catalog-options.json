@@ -1,6 +1,7 @@
 {
   "categories": [
     "Ceramiche",
+    "Cesellatura",
     "Khatam",
     "Maiolica",
     "Miniatura",
@@ -16,14 +17,25 @@
       "Piatti",
       "Vasi"
     ],
+    "Cesellatura": [],
     "Khatam": [
       "Altri oggetti",
       "Astucci",
       "Cofanetti",
       "Miniatura",
+      "Pipa",
       "Scatole"
     ],
-    "Maiolica": [],
+    "Maiolica": [
+      "Animale",
+      "Coppa",
+      "Piastrella",
+      "Piatto",
+      "Porta Ombrelli",
+      "Porta Penne",
+      "Statua",
+      "Vaso"
+    ],
     "Miniatura": [],
     "Nomadici": [],
     "Papier-mâché": [
@@ -58,6 +70,7 @@
   ],
   "origins": [
     "Caucaso",
+    "Pakistan",
     "Persia"
   ],
   "availabilities": [
@@ -71,7 +84,9 @@
     "Khatam": "Khatam",
     "Papier-mâché": "Papier-mâché",
     "Ceramiche": "Ceramics",
-    "Senza categoria": "Uncategorized"
+    "Senza categoria": "Uncategorized",
+    "Cesellatura": "Metal chasing",
+    "Miniatura": "Miniature"
   },
   "subcategoryLabelsEn": {
     "Miniatura": "Miniature",
@@ -90,7 +105,16 @@
     "Oggetti decorativi": "Decorative objects",
     "Vasi": "Vases",
     "Piatti": "Plates",
-    "Ciotole": "Bowls"
+    "Ciotole": "Bowls",
+    "Coppa": "Bowl",
+    "Statua": "Statue",
+    "Piatto": "Plate",
+    "Vaso": "Vase",
+    "Porta Ombrelli": "Decorative Umbrella Stand",
+    "Piastrella": "Tile",
+    "Porta Penne": "Pencil Holders",
+    "Animale": "Animals",
+    "Pipa": "Pipe"
   },
   "materialLabelsEn": {
     "Lana": "wool",
@@ -102,7 +126,8 @@
     "Vello Misto Lana E Seta": "wool and silk pile"
   },
   "originLabelsEn": {
-    "Persia": "Persia"
+    "Persia": "Persia",
+    "Pakistan": "Pakistan"
   },
   "availabilityLabelsEn": {},
   "aiKnowledgeByCategory": {},
