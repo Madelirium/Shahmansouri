@@ -15817,5 +15817,1374 @@
     "watermarkPositions": [
       []
     ]
+  },
+  {
+    "id": "turkmeno-130x75",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-30T18:03:36.620Z",
+    "updatedAt": "2026-10-30T18:03:36.620Z",
+    "reviewedAt": "",
+    "slug": "turkmeno-130x75",
+    "title": "Turkmeno",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "turkmeno-130x75-en",
+    "titleEn": "Turkmen",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [],
+    "subcategoriesEn": [],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 75,
+    "lengthCm": 130,
+    "dimensions": "130 x 75 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Turkmeno persiano con motivi geometrici avorio e arancio su campo scuro, cornici rosse decorate e un’ampia fascia laterale a piccoli motivi ripetuti.",
+    "longDescription": "Il campo scuro presenta file regolari di motivi geometrici allungati, alternati nei toni avorio e arancio, con piccoli centri rossi. Sottili linee scandiscono il disegno, racchiuso da cornici a rombi e dettagli chiari su fondo rosso. Su un lato, un’ampia fascia rossa ripete piccoli elementi angolari, creando una composizione asimmetrica. Il retro è rivestito da un tessuto rosso mattone.",
+    "descriptionEn": "Persian Turkmen rug with ivory and orange geometric motifs on a dark field, decorated red borders and a broad side band of small repeating motifs.",
+    "longDescriptionEn": "The dark field features regular rows of elongated geometric motifs alternating in ivory and orange tones, with small red centres. Fine lines divide the design, framed by diamonds and pale details on a red ground. Along one side, a broad red band repeats small angular elements, creating an asymmetrical composition. The back is lined with brick-red fabric.",
+    "alt": "Turkmeno persiano con motivi geometrici avorio e arancio su campo scuro e ampia fascia laterale rossa decorata.",
+    "altEn": "Persian Turkmen rug with ivory and orange geometric motifs on a dark field and a broad decorated red side band.",
+    "tags": [
+      "Turkmeno",
+      "tappeto persiano",
+      "motivi geometrici",
+      "dettagli avorio",
+      "fascia laterale rossa"
+    ],
+    "tagsEn": [
+      "Turkmen",
+      "Persian rug",
+      "geometric motifs",
+      "ivory details",
+      "red side band"
+    ],
+    "coverImage": "/catalogo/products/media/turkmeno-130x75-01.webp",
+    "coverImage360": "/catalogo/products/media/turkmeno-130x75-01-360.webp",
+    "coverImage640": "/catalogo/products/media/turkmeno-130x75-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/turkmeno-130x75-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/turkmeno-130x75-01.webp",
+      "/catalogo/products/media/turkmeno-130x75-02.webp"
+    ],
+    "seoTitle": "Turkmeno persiano a motivi geometrici | Shahmansouri",
+    "seoDescription": "Turkmeno persiano con disegno geometrico avorio e arancio, cornici a rombi e ampia fascia rossa laterale a piccoli motivi ripetuti.",
+    "seoTitleEn": "Persian Turkmen Rug with Geometric Motifs | Shahmansouri",
+    "seoDescriptionEn": "Persian Turkmen rug with ivory and orange geometric patterns, diamond borders and a broad red side band of small repeating motifs.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-088",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [],
+      [
+        {
+          "x": 0.4986111111111111,
+          "y": 0.49777777777777776
+        }
+      ]
+    ]
+  },
+  {
+    "id": "turkmeno-130x90",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-30T18:12:36.631Z",
+    "updatedAt": "2026-10-30T18:12:36.631Z",
+    "reviewedAt": "",
+    "slug": "turkmeno-130x90",
+    "title": "Turkmeno",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "turkmeno-130x90-en",
+    "titleEn": "Turkmen",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [],
+    "subcategoriesEn": [],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 90,
+    "lengthCm": 130,
+    "dimensions": "130 x 90 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Turkmeno persiano a fasce rosse alternate a sottili disegni geometrici, con un’ampia fascia avorio a motivi angolari rossi e scuri.",
+    "longDescription": "Ampie fasce rosse si alternano a strisce più sottili decorate con rombi, piccoli elementi geometrici e linee intrecciate nei toni avorio, arancio e scuri. Lungo un lato, una fascia avorio più larga presenta una sequenza di forme ramificate dai profili seghettati. Il contrasto tra le superfici rosse e il disegno minuto delle strisce scandisce la composizione.",
+    "descriptionEn": "Persian Turkmen textile with red bands alternating with fine geometric patterns and a broad ivory band of red and dark angular motifs.",
+    "longDescriptionEn": "Broad red bands alternate with narrower stripes decorated with diamonds, small geometric elements and interlacing lines in ivory, orange and dark tones. Along one side, a wider ivory band carries a sequence of branching forms with serrated outlines. The contrast between the red areas and the finely patterned stripes gives rhythm to the composition.",
+    "alt": "Turkmeno persiano a fasce rosse con sottili strisce geometriche e ampia fascia avorio a motivi angolari rossi e scuri.",
+    "altEn": "Persian Turkmen textile with red bands, narrow geometric stripes and a broad ivory band of red and dark angular motifs.",
+    "tags": [
+      "Turkmeno",
+      "tappeto persiano",
+      "fasce rosse",
+      "disegno geometrico",
+      "fascia avorio"
+    ],
+    "tagsEn": [
+      "Turkmen",
+      "Persian textile",
+      "red bands",
+      "geometric design",
+      "ivory band"
+    ],
+    "coverImage": "/catalogo/products/media/turkmeno-130x90-01.webp",
+    "coverImage360": "/catalogo/products/media/turkmeno-130x90-01-360.webp",
+    "coverImage640": "/catalogo/products/media/turkmeno-130x90-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/turkmeno-130x90-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/turkmeno-130x90-01.webp",
+      "/catalogo/products/media/turkmeno-130x90-02.webp"
+    ],
+    "seoTitle": "Turkmeno persiano a fasce rosse | Shahmansouri",
+    "seoDescription": "Turkmeno persiano con fasce rosse, strisce a rombi e motivi intrecciati e un’ampia fascia avorio decorata con forme seghettate.",
+    "seoTitleEn": "Persian Turkmen Textile with Red Bands | Shahmansouri",
+    "seoDescriptionEn": "Persian Turkmen textile with red bands, diamond and interlacing patterns and a broad ivory band decorated with serrated forms.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-092",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.4986111111111111,
+          "y": 0.5092250922509225
+        }
+      ],
+      [
+        {
+          "x": 0.49722222222222223,
+          "y": 0.5
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-105x54",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-30T18:22:38.031Z",
+    "updatedAt": "2026-10-30T18:22:38.031Z",
+    "reviewedAt": "",
+    "slug": "qashqai-105x54",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-105x54-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [],
+    "subcategoriesEn": [],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 54,
+    "lengthCm": 105,
+    "dimensions": "105 x 54 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Qashqai persiano composto da due pannelli rossi con medaglioni romboidali chiari, piccoli motivi policromi e bordure geometriche.",
+    "longDescription": "Due pannelli a fondo rosso presentano ciascuno un medaglione romboidale chiaro, con forme ramificate scure e un piccolo centro azzurro e ocra. Intorno si distribuiscono rosette e minuti elementi geometrici policromi. Le bordure alternano forme angolari delineate in avorio. Una fascia tessuta a piccoli disegni e cordoncini chiari collega i pannelli. Il retro presenta fasce rosse, scure, avorio e ocra attraversate da un fitto reticolo di piccoli rombi.",
+    "descriptionEn": "Persian Qashqai textile comprising two red panels with pale diamond-shaped medallions, small multicoloured motifs and geometric borders.",
+    "longDescriptionEn": "Each of the two red panels features a pale diamond-shaped medallion with dark branching forms and a small light blue and ochre centre. Rosettes and tiny multicoloured geometric elements surround the medallions. The borders alternate angular forms outlined in ivory. A patterned woven band with pale cords connects the panels. The back has red, dark, ivory and ochre bands covered with a dense lattice of small diamonds.",
+    "alt": "Qashqai persiano a due pannelli rossi con medaglioni romboidali chiari, rosette policrome e bordure geometriche.",
+    "altEn": "Persian Qashqai textile with two red panels, pale diamond-shaped medallions, multicoloured rosettes and geometric borders.",
+    "tags": [
+      "Qashqai",
+      "manufatto persiano",
+      "due pannelli",
+      "medaglioni romboidali",
+      "fondo rosso"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "Persian textile",
+      "two panels",
+      "diamond-shaped medallions",
+      "red field"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-105x54-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-105x54-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-105x54-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/qashqai-105x54-01.webp",
+      "/catalogo/products/media/qashqai-105x54-02.webp",
+      "/catalogo/products/media/qashqai-105x54-03.webp"
+    ],
+    "seoTitle": "Qashqai persiano a due pannelli rossi | Shahmansouri",
+    "seoDescription": "Qashqai persiano con due pannelli rossi, medaglioni romboidali chiari e rosette policrome, uniti da una fascia tessuta con cordoncini.",
+    "seoTitleEn": "Persian Qashqai Textile with Two Red Panels | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai textile with two red panels, pale diamond-shaped medallions and multicoloured rosettes, joined by a woven band with cords.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-089",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.49780701754385964,
+          "y": 0.4986111111111111
+        }
+      ],
+      [
+        {
+          "x": 0.4977578475336323,
+          "y": 0.4986111111111111
+        }
+      ],
+      [
+        {
+          "x": 0.49772727272727274,
+          "y": 0.4986111111111111
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-khorjin-104x54",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-30T18:29:56.895Z",
+    "updatedAt": "2026-10-30T18:29:56.895Z",
+    "reviewedAt": "",
+    "slug": "qashqai-khorjin-104x54",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-khorjin-104x54-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Khorjin"
+    ],
+    "subcategoriesEn": [
+      "Khorjin"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 54,
+    "lengthCm": 104,
+    "dimensions": "104 x 54 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Khorjin Qashqai persiano con due tasche a fondo chiaro, fitto disegno geometrico, bordure sottili e cordoncini di chiusura.",
+    "longDescription": "Questa bisaccia Qashqai presenta due tasche decorate con una fitta trama di piccoli rombi e forme angolari su fondo chiaro. I dettagli scuri si alternano a tonalità rosa, arancio e azzurre. Sottili bordure concentriche racchiudono i campi, mentre fasce geometriche e cordoncini accompagnano le aperture. Sul retro, il fondo beige lascia più spazio tra i motivi romboidali policromi, disposti in file con alcune variazioni.",
+    "descriptionEn": "Persian Qashqai khorjin with two pale-ground pockets, dense geometric patterns, narrow borders and fastening cords.",
+    "longDescriptionEn": "This Qashqai saddlebag has two pockets decorated with a dense arrangement of small diamonds and angular forms on a pale ground. Dark details alternate with pink, orange and light blue tones. Narrow concentric borders frame the fields, while geometric bands and cords accompany the openings. On the back, the beige ground leaves more space between the multicoloured diamond motifs, arranged in rows with some variations.",
+    "alt": "Khorjin Qashqai persiano con due tasche chiare a fitto disegno geometrico, bordure sottili e cordoncini di chiusura.",
+    "altEn": "Persian Qashqai khorjin with two pale pockets, dense geometric patterns, narrow borders and fastening cords.",
+    "tags": [
+      "Qashqai",
+      "Khorjin",
+      "bisaccia persiana",
+      "disegno geometrico",
+      "fondo chiaro"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "khorjin",
+      "Persian saddlebag",
+      "geometric design",
+      "pale ground"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-104x54-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-104x54-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-104x54-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/qashqai-104x54-01.webp",
+      "/catalogo/products/media/qashqai-104x54-02.webp"
+    ],
+    "seoTitle": "Khorjin Qashqai persiano a fondo chiaro | Shahmansouri",
+    "seoDescription": "Bisaccia Qashqai persiana con piccoli rombi su fondo chiaro, bordure geometriche e retro beige a motivi policromi più distanziati.",
+    "seoTitleEn": "Persian Qashqai Khorjin with a Pale Ground | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai saddlebag with small diamonds on a pale ground, geometric borders and a beige back with more widely spaced coloured motifs.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-090",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.49786324786324787,
+          "y": 0.5083333333333333
+        }
+      ],
+      [
+        {
+          "x": 0.4978165938864629,
+          "y": 0.5013888888888889
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qucian-namakdan-66x54",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T14:23:59.162Z",
+    "updatedAt": "2026-10-31T14:23:59.162Z",
+    "reviewedAt": "",
+    "slug": "qucian-namakdan-66x54",
+    "title": "Qucian",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qucian-namakdan-66x54-en",
+    "titleEn": "Qucian",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Namakdan"
+    ],
+    "subcategoriesEn": [
+      "Namakdan"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 54,
+    "lengthCm": 66,
+    "dimensions": "66 x 54 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Namakdan Qucian persiano con collo stretto, disegno geometrico avorio e bruno su fondo scuro, bordure concentriche e retro rosso mattone.",
+    "longDescription": "Questo Namakdan Qucian presenta un corpo ampio e un collo stretto decorato su entrambi i lati. Piccoli motivi cruciformi avorio e bruni si dispongono a rombo sul campo scuro, intorno a un elemento centrale chiaro. Le bordure concentriche alternano profili dentellati, linee sottili e forme angolari rosse e blu su fondo avorio. Il collo riprende il disegno della cornice in scala ridotta. Il retro del corpo è in tessuto rosso mattone, con finiture laterali a tratti policromi.",
+    "descriptionEn": "Persian Qucian namakdan with a narrow neck, ivory and brown geometric patterns on a dark ground, concentric borders and a brick-red back.",
+    "longDescriptionEn": "This Qucian namakdan has a broad body and a narrow neck decorated on both sides. Small ivory and brown cross-shaped motifs form a diamond arrangement on the dark field around a pale central element. The concentric borders alternate toothed outlines, fine lines and angular red and blue forms on an ivory ground. The neck repeats the border design on a smaller scale. The back of the body is brick-red fabric, with sections of multicoloured edging along the sides.",
+    "alt": "Namakdan Qucian persiano con motivi cruciformi avorio e bruni su campo scuro, bordure concentriche e collo decorato.",
+    "altEn": "Persian Qucian namakdan with ivory and brown cross-shaped motifs on a dark field, concentric borders and a decorated neck.",
+    "tags": [
+      "Qucian",
+      "Namakdan",
+      "manufatto persiano",
+      "motivi cruciformi",
+      "bordure concentriche"
+    ],
+    "tagsEn": [
+      "Qucian",
+      "namakdan",
+      "Persian textile",
+      "cross-shaped motifs",
+      "concentric borders"
+    ],
+    "coverImage": "/catalogo/products/media/qucian-66x54-01.webp",
+    "coverImage360": "/catalogo/products/media/qucian-66x54-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qucian-66x54-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/qucian-66x54-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/qucian-66x54-01.webp",
+      "/catalogo/products/media/qucian-66x54-02.webp"
+    ],
+    "seoTitle": "Namakdan Qucian persiano a motivi cruciformi | Shahmansouri",
+    "seoDescription": "Namakdan Qucian persiano con motivi cruciformi disposti a rombo, cornici avorio, rosse e blu, collo decorato e retro rosso mattone.",
+    "seoTitleEn": "Persian Qucian Namakdan with Cross Motifs | Shahmansouri",
+    "seoDescriptionEn": "Persian Qucian namakdan with cross-shaped motifs in a diamond arrangement, ivory, red and blue borders, a decorated neck and a brick-red back.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-096",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.5,
+          "y": 0.4986111111111111
+        }
+      ],
+      [
+        {
+          "x": 0.4984567901234568,
+          "y": 0.4986111111111111
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-qashoqdan-75x35",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T14:34:48.750Z",
+    "updatedAt": "2026-10-31T14:34:48.750Z",
+    "reviewedAt": "",
+    "slug": "qashqai-qashoqdan-75x35",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-qashoqdan-75x35-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Qashoqdan"
+    ],
+    "subcategoriesEn": [
+      "Qashoqdan"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 35,
+    "lengthCm": 75,
+    "dimensions": "75 x 35 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Qashoqdan Qashqai persiano con medaglione geometrico blu su fondo rosa, pannelli laterali decorati, nappe fucsia e retro a righe multicolori.",
+    "longDescription": "Il corpo centrale a fondo rosa presenta un ampio medaglione geometrico blu, con dettagli arancio, bruni e rossi. Quattro forme angolari ne accompagnano gli angoli, mentre piccoli motivi cruciformi completano il campo. Due pannelli laterali su fondo arancio riprendono il disegno geometrico entro bordi blu e rossi. Nappe fucsia, alcune con fili gialli e scuri, arricchiscono il profilo. Il retro alterna righe rosse, blu, arancio, rosa e scure.",
+    "descriptionEn": "Persian Qashqai qashoqdan with a blue geometric medallion on a pink ground, decorated side panels, fuchsia tassels and a multicoloured striped back.",
+    "longDescriptionEn": "The pink central body features a large blue geometric medallion with orange, brown and red details. Four angular forms accompany its corners, while small cross-shaped motifs complete the field. Two side panels on an orange ground repeat the geometric design within blue and red borders. Fuchsia tassels, some with yellow and dark threads, decorate the outline. The back alternates red, blue, orange, pink and dark stripes.",
+    "alt": "Qashoqdan Qashqai persiano con medaglione blu su fondo rosa, pannelli laterali arancio decorati e nappe fucsia.",
+    "altEn": "Persian Qashqai qashoqdan with a blue medallion on a pink ground, decorated orange side panels and fuchsia tassels.",
+    "tags": [
+      "Qashqai",
+      "Qashoqdan",
+      "manufatto persiano",
+      "medaglione geometrico",
+      "nappe fucsia"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "qashoqdan",
+      "Persian textile",
+      "geometric medallion",
+      "fuchsia tassels"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-75x35-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-75x35-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-75x35-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/qashqai-75x35-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/qashqai-75x35-01.webp",
+      "/catalogo/products/media/qashqai-75x35-02.webp"
+    ],
+    "seoTitle": "Qashoqdan Qashqai persiano con nappe | Shahmansouri",
+    "seoDescription": "Qashoqdan Qashqai persiano con disegno geometrico blu e arancio, fondo rosa, pannelli laterali decorati, nappe fucsia e retro a righe.",
+    "seoTitleEn": "Persian Qashqai Qashoqdan with Tassels | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai qashoqdan with blue and orange geometric patterns, a pink ground, decorated side panels, fuchsia tassels and a striped back.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-098",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.5,
+          "y": 0.4978813559322034
+        }
+      ],
+      [
+        {
+          "x": 0.4986111111111111,
+          "y": 0.4979166666666667
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-28x28",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T15:15:43.533Z",
+    "updatedAt": "2026-10-31T15:15:43.533Z",
+    "reviewedAt": "",
+    "slug": "qashqai-28x28",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-28x28-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [],
+    "subcategoriesEn": [],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 28,
+    "lengthCm": 28,
+    "dimensions": "28 x 28 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Qashqai persiano a fondo rosso con medaglione romboidale, bordura avorio, nappe multicolori e cordoncini intrecciati rossi e gialli.",
+    "longDescription": "Il campo rosso racchiude un medaglione romboidale bruno, delineato in rosa e decorato con piccoli motivi avorio e rossi. Forme ramificate verdi e rosa occupano gli angoli, accompagnate da dettagli gialli e chiari. Una sottile cornice scura separa il campo dalla bordura avorio a motivi policromi ripetuti. Il bordo inferiore presenta nappe blu, gialle, arancio, rosa, rosse e chiare. Due cordoncini intrecciati rossi e gialli terminano con una nappa scura e una ocra. Il retro è in tessuto giallo chiaro.",
+    "descriptionEn": "Persian Qashqai textile on a red ground with a diamond-shaped medallion, an ivory border, multicoloured tassels and braided red and yellow cords.",
+    "longDescriptionEn": "The red field holds a brown diamond-shaped medallion outlined in pink and decorated with small ivory and red motifs. Green and pink branching forms occupy the corners, accompanied by yellow and pale details. A narrow dark frame separates the field from the ivory border of repeating multicoloured motifs. Blue, yellow, orange, pink, red and pale tassels line the lower edge. Two braided red and yellow cords end in one dark tassel and one ochre tassel. The back is pale yellow fabric.",
+    "alt": "Qashqai persiano rosso con medaglione romboidale, bordura avorio, nappe multicolori e cordoncini rossi e gialli.",
+    "altEn": "Red Persian Qashqai textile with a diamond-shaped medallion, an ivory border, multicoloured tassels and red and yellow cords.",
+    "tags": [
+      "Qashqai",
+      "manufatto persiano",
+      "medaglione romboidale",
+      "nappe multicolori",
+      "cordoncini intrecciati"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "Persian textile",
+      "diamond-shaped medallion",
+      "multicoloured tassels",
+      "braided cords"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-28x28-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-28x28-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-28x28-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/qashqai-28x28-01.webp",
+      "/catalogo/products/media/qashqai-28x28-02.webp"
+    ],
+    "seoTitle": "Qashqai persiano con nappe multicolori | Shahmansouri",
+    "seoDescription": "Qashqai persiano con medaglione bruno sul campo rosso, cornice avorio decorata, nappe multicolori e cordoncini intrecciati.",
+    "seoTitleEn": "Persian Qashqai with Multicoloured Tassels | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai textile with a brown medallion on a red field, a decorated ivory border, multicoloured tassels and braided cords.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-099",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      [
+        {
+          "x": 0.49809885931558934,
+          "y": 0.5
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qucian-khorjin-97x37",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T16:25:06.085Z",
+    "updatedAt": "2026-10-31T16:25:06.085Z",
+    "reviewedAt": "",
+    "slug": "qucian-khorjin-97x37",
+    "title": "Qucian",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qucian-khorjin-97x37-en",
+    "titleEn": "Qucian",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Khorjin"
+    ],
+    "subcategoriesEn": [
+      "Khorjin"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 37,
+    "lengthCm": 97,
+    "dimensions": "97 x 37 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Khorjin Qucian persiano con due pannelli rossi a disegno geometrico, bordure avorio e retro a righe azzurre, ocra e avorio.",
+    "longDescription": "Due pannelli dal disegno simile compongono il fronte di questo Khorjin Qucian persiano. Sul fondo rosso spiccano grandi forme scure con profili avorio e rossi, disposte attorno a un rettangolo ocra con due motivi stellati. Le bordure avorio raccolgono piccoli motivi geometrici multicolori ripetuti. Una fascia a righe azzurre, ocra e avorio unisce i due pannelli; la stessa sequenza di colori percorre tutto il retro, creando un contrasto con il disegno del fronte.",
+    "descriptionEn": "Persian Qucian Khorjin with two red panels featuring geometric designs, ivory borders and a back striped in blue, ochre and ivory.",
+    "longDescriptionEn": "Two panels with similar designs form the front of this Persian Qucian Khorjin. Large dark shapes outlined in ivory and red stand out against the red ground, arranged around an ochre rectangle containing two star motifs. The ivory borders feature small repeating multicoloured geometric motifs. A band striped in blue, ochre and ivory joins the two panels. The same sequence of colours runs across the entire back, contrasting with the patterned front.",
+    "alt": "Khorjin Qucian con due pannelli rossi a motivi geometrici scuri, bordure avorio e fascia centrale a righe azzurre e ocra.",
+    "altEn": "Qucian Khorjin with two red panels, dark geometric motifs, ivory borders and a central band striped in blue and ochre.",
+    "tags": [
+      "Qucian",
+      "Khorjin",
+      "bisaccia persiana",
+      "motivi geometrici",
+      "retro a righe"
+    ],
+    "tagsEn": [
+      "Qucian",
+      "Khorjin",
+      "Persian saddlebag",
+      "geometric motifs",
+      "striped back"
+    ],
+    "coverImage": "/catalogo/products/media/qucian-97x37-01.webp",
+    "coverImage360": "/catalogo/products/media/qucian-97x37-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qucian-97x37-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/qucian-97x37-01.webp",
+      "/catalogo/products/media/qucian-97x37-02.webp"
+    ],
+    "seoTitle": "Khorjin Qucian persiano a motivi geometrici | Shahmansouri",
+    "seoDescription": "Khorjin Qucian con due pannelli decorati su fondo rosso, bordure avorio a piccoli motivi policromi e retro a righe azzurre, ocra e avorio.",
+    "seoTitleEn": "Persian Qucian Khorjin with Geometric Motifs | Shahmansouri",
+    "seoDescriptionEn": "Qucian Khorjin with two patterned red panels, ivory borders with small multicoloured motifs and a back striped in blue, ochre and ivory.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-097",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.49473684210526314,
+          "y": 0.4986111111111111
+        }
+      ],
+      [
+        {
+          "x": 0.4975124378109453,
+          "y": 0.4986111111111111
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-sofreh-190x84",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T16:35:55.379Z",
+    "updatedAt": "2026-10-31T16:35:55.379Z",
+    "reviewedAt": "",
+    "slug": "qashqai-sofreh-190x84",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-sofreh-190x84-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Sofreh"
+    ],
+    "subcategoriesEn": [
+      "Sofreh"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 84,
+    "lengthCm": 190,
+    "dimensions": "190 x 84 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Sofreh Qashqai persiano dal campo color cammello, con un piccolo rombo multicolore e fasce a zigzag rosse, ocra, azzurre e blu scuro.",
+    "longDescription": "Un ampio campo color cammello lascia spazio a un piccolo rombo a scacchi rossi, azzurri, ocra e gialli. Lungo i lati, sequenze di punte rosse e ocra si intrecciano al blu scuro del bordo, formando una cornice dal ritmo serrato. Alle estremità il disegno si arricchisce di fasce trasversali, dove ritorna anche l’azzurro, separate da sottili righe con piccoli dettagli policromi. Il carattere di questo Sofreh Qashqai persiano nasce dall’equilibrio fra il centro essenziale e i margini fitti di colore.",
+    "descriptionEn": "Persian Qashqai Sofreh with a camel-coloured field, a small multicoloured diamond and zigzag bands in red, ochre, light blue and dark blue.",
+    "longDescriptionEn": "A broad camel-coloured field surrounds a small diamond of red, light blue, ochre and yellow squares. Along the sides, rows of red and ochre points interlock with the dark blue border, forming a closely spaced geometric frame. Across the ends, patterned bands also introduce light blue, separated by narrow stripes with small multicoloured details. The character of this Persian Qashqai Sofreh comes from the balance between its simple centre and richly coloured edges.",
+    "alt": "Sofreh Qashqai color cammello con piccolo rombo multicolore, lati a punte rosse e ocra e fasce geometriche alle estremità.",
+    "altEn": "Camel-coloured Qashqai Sofreh with a small multicoloured diamond, red and ochre pointed borders and geometric bands at the ends.",
+    "tags": [
+      "Qashqai",
+      "Sofreh",
+      "manufatto persiano",
+      "motivi a zigzag",
+      "campo color cammello"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "Sofreh",
+      "Persian textile",
+      "zigzag motifs",
+      "camel-coloured field"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-190x84-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-190x84-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-190x84-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/qashqai-190x84-01.webp",
+      "/catalogo/products/media/qashqai-190x84-02.webp"
+    ],
+    "seoTitle": "Sofreh Qashqai con campo color cammello | Shahmansouri",
+    "seoDescription": "Sofreh Qashqai persiano con piccolo rombo a scacchi, cornice a punte rosse e ocra su blu scuro e fasce policrome alle estremità.",
+    "seoTitleEn": "Qashqai Sofreh with Camel-Coloured Field | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai Sofreh with a small chequered diamond, red and ochre pointed borders on dark blue and multicoloured bands at the ends.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-095",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.49736842105263157,
+          "y": 0.4986111111111111
+        }
+      ],
+      []
+    ]
+  },
+  {
+    "id": "turkmeno-117x108",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T16:41:38.267Z",
+    "updatedAt": "2026-10-31T16:41:38.267Z",
+    "reviewedAt": "",
+    "slug": "turkmeno-117x108",
+    "title": "Turkmeno",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "turkmeno-117x108-en",
+    "titleEn": "Turkmen",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [],
+    "subcategoriesEn": [],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 108,
+    "lengthCm": 117,
+    "dimensions": "117 x 108 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Manufatto turkmeno persiano con un’ampia parte rossa senza disegno e un pannello geometrico a rombi dentellati avorio, rossi e scuri.",
+    "longDescription": "Due parti ben distinte caratterizzano questo manufatto turkmeno persiano. Un’ampia superficie rossa, attraversata da leggere variazioni di tono, si affianca a un pannello rettangolare ricco di disegno. Qui rombi dai contorni dentellati avorio racchiudono motivi stellati rossi e scuri, disposti in file sfalsate. Una bordura avorio con forme uncinate ripetute e sottili cornici rosse delimita la composizione. Piccoli motivi geometrici decorano le fasce esterne, mentre frange chiare rifiniscono le due estremità.",
+    "descriptionEn": "Persian Turkmen textile with a broad plain red section and a geometric panel of serrated diamonds in ivory, red and dark tones.",
+    "longDescriptionEn": "Two distinct sections define this Persian Turkmen textile. A broad red surface with subtle tonal variations adjoins a richly patterned rectangular panel. Here, diamonds with serrated ivory outlines enclose red and dark star motifs, arranged in staggered rows. An ivory border of repeating hooked forms and narrow red frames surrounds the design. Small geometric motifs decorate the outer bands, while pale fringes finish both ends.",
+    "alt": "Manufatto turkmeno con ampia parte rossa e pannello a rombi dentellati avorio, motivi stellati e bordure geometriche.",
+    "altEn": "Turkmen textile with a broad plain red section, a panel of ivory serrated diamonds, star motifs and geometric borders.",
+    "tags": [
+      "Turkmeno",
+      "manufatto persiano",
+      "rombi dentellati",
+      "motivi stellati",
+      "fondo rosso"
+    ],
+    "tagsEn": [
+      "Turkmen",
+      "Persian textile",
+      "serrated diamonds",
+      "star motifs",
+      "red ground"
+    ],
+    "coverImage": "/catalogo/products/media/turkmeno-117x108-01.webp",
+    "coverImage360": "/catalogo/products/media/turkmeno-117x108-01-360.webp",
+    "coverImage640": "/catalogo/products/media/turkmeno-117x108-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/turkmeno-117x108-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/turkmeno-117x108-01.webp"
+    ],
+    "seoTitle": "Turkmeno persiano con rombi dentellati | Shahmansouri",
+    "seoDescription": "Manufatto turkmeno persiano con superficie rossa senza disegno, pannello a rombi avorio e motivi stellati, bordure uncinate e frange chiare.",
+    "seoTitleEn": "Persian Turkmen with Serrated Diamonds | Shahmansouri",
+    "seoDescriptionEn": "Persian Turkmen textile with a plain red section, a panel of ivory diamonds and star motifs, hooked borders and pale fringes.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-101",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.49850299401197606,
+          "y": 0.4986111111111111
+        }
+      ]
+    ]
+  },
+  {
+    "id": "turkmeno-namakdan-60x40",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T16:57:14.397Z",
+    "updatedAt": "2026-10-31T16:57:14.397Z",
+    "reviewedAt": "",
+    "slug": "turkmeno-namakdan-60x40",
+    "title": "Turkmeno",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "turkmeno-namakdan-60x40-en",
+    "titleEn": "Turkmen",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Namakdan"
+    ],
+    "subcategoriesEn": [
+      "Namakdan"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 40,
+    "lengthCm": 60,
+    "dimensions": "60 x 40 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Namakdan turkmeno persiano con fasce rosse e arancio a motivi geometrici scuri, collo decorato e retro a righe multicolori.",
+    "longDescription": "Il fronte di questo Namakdan turkmeno persiano alterna fasce rosse e arancio, percorse da sequenze di motivi geometrici scuri dalle forme uncinate e angolari. Sottili bande a spina di pesce, con dettagli avorio, gialli e azzurri, separano i diversi disegni. La decorazione prosegue sul collo, dove una fascia scura vicino all’apertura ospita piccoli motivi avorio. Sul retro, righe orizzontali di diversa larghezza accostano rosso, arancio, giallo, rosa, avorio e toni scuri, con sottili passaggi azzurri.",
+    "descriptionEn": "Persian Turkmen Namakdan with red and orange bands of dark geometric motifs, a decorated neck and a multicoloured striped back.",
+    "longDescriptionEn": "The front of this Persian Turkmen Namakdan alternates red and orange bands filled with repeating dark geometric motifs in hooked and angular forms. Narrow herringbone bands with ivory, yellow and light blue details separate the different patterns. The decoration continues up the neck, where a dark band near the opening holds small ivory motifs. On the back, horizontal stripes of varying widths combine red, orange, yellow, pink, ivory and dark tones, with fine lines of light blue.",
+    "alt": "Namakdan turkmeno rosso e arancio con fasce a motivi geometrici scuri, sottili bande policrome e collo decorato.",
+    "altEn": "Red and orange Turkmen Namakdan with bands of dark geometric motifs, narrow multicoloured bands and a decorated neck.",
+    "tags": [
+      "Turkmeno",
+      "Namakdan",
+      "manufatto persiano",
+      "motivi uncinati",
+      "retro a righe"
+    ],
+    "tagsEn": [
+      "Turkmen",
+      "Namakdan",
+      "Persian textile",
+      "hooked motifs",
+      "striped back"
+    ],
+    "coverImage": "/catalogo/products/media/turkmeno-60x40-01.webp",
+    "coverImage360": "/catalogo/products/media/turkmeno-60x40-01-360.webp",
+    "coverImage640": "/catalogo/products/media/turkmeno-60x40-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/turkmeno-60x40-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/turkmeno-60x40-01.webp",
+      "/catalogo/products/media/turkmeno-60x40-02.webp"
+    ],
+    "seoTitle": "Namakdan turkmeno a fasce geometriche | Shahmansouri",
+    "seoDescription": "Namakdan turkmeno persiano con motivi scuri su fasce rosse e arancio, dettagli avorio sul collo e retro a righe multicolori.",
+    "seoTitleEn": "Turkmen Namakdan with Geometric Bands | Shahmansouri",
+    "seoDescriptionEn": "Persian Turkmen Namakdan with dark motifs on red and orange bands, ivory details on the neck and a multicoloured striped back.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-102",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.4981751824817518,
+          "y": 0.4986111111111111
+        }
+      ],
+      [
+        {
+          "x": 0.49818181818181817,
+          "y": 0.4986111111111111
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-27x31",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T17:20:29.618Z",
+    "updatedAt": "2026-10-31T17:20:29.618Z",
+    "reviewedAt": "",
+    "slug": "qashqai-27x31",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-27x31-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [],
+    "subcategoriesEn": [],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 31,
+    "lengthCm": 27,
+    "dimensions": "27 x 31 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Manufatto Qashqai persiano con rombo avorio su fondo rosso, motivi verde grigio, bordura floreale e cordoncino intrecciato.",
+    "longDescription": "Un rombo avorio con dettagli rossi occupa il centro del campo rosso, circondato da forme uncinate verde grigio e piccoli motivi avorio e arancio. Una cornice avorio e nera separa il campo dalla bordura esterna, dove si ripetono fiori rossi su fondo verde grigio. Un profilo arancio rifinisce i lati e il bordo inferiore. Il retro presenta una superficie rossa con margini arancio dal contorno dentellato. Un cordoncino intrecciato chiaro, nero e rosso è fissato ai due angoli superiori.",
+    "descriptionEn": "Persian Qashqai textile with an ivory diamond on a red ground, grey-green motifs, a floral border and a braided cord.",
+    "longDescriptionEn": "An ivory diamond with red details sits at the centre of the red field, surrounded by grey-green hooked forms and small ivory and orange motifs. An ivory and black frame separates the field from the outer border, where red flowers repeat on a grey-green ground. Orange edging finishes the sides and lower edge. The back has a red surface with serrated orange margins. A braided cord in pale, black and red strands is attached to the two upper corners.",
+    "alt": "Qashqai persiano rosso con rombo avorio, motivi verde grigio, bordura a fiori rossi e cordoncino intrecciato.",
+    "altEn": "Red Persian Qashqai textile with an ivory diamond, grey-green motifs, a red floral border and a braided cord.",
+    "tags": [
+      "Qashqai",
+      "manufatto persiano",
+      "rombo avorio",
+      "bordura floreale",
+      "cordoncino intrecciato"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "Persian textile",
+      "ivory diamond",
+      "floral border",
+      "braided cord"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-27x31-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-27x31-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-27x31-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/qashqai-27x31-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/qashqai-27x31-01.webp",
+      "/catalogo/products/media/qashqai-27x31-02.webp"
+    ],
+    "seoTitle": "Qashqai con rombo avorio e bordura floreale | Shahmansouri",
+    "seoDescription": "Manufatto Qashqai persiano con rombo avorio, forme uncinate verde grigio, cornice avorio e nera, retro rosso e cordoncino intrecciato.",
+    "seoTitleEn": "Qashqai with Ivory Diamond and Floral Border | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai textile with an ivory diamond, grey-green hooked forms, an ivory and black frame, a red back and a braided cord.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-103",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.5,
+          "y": 0.4986111111111111
+        }
+      ],
+      [
+        {
+          "x": 0.49806201550387597,
+          "y": 0.49722222222222223
+        }
+      ]
+    ]
+  },
+  {
+    "id": "turkmeno-108x108",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T17:30:10.325Z",
+    "updatedAt": "2026-10-31T17:30:10.325Z",
+    "reviewedAt": "",
+    "slug": "turkmeno-108x108",
+    "title": "Turkmeno",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "turkmeno-108x108-en",
+    "titleEn": "Turkmen",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [],
+    "subcategoriesEn": [],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 108,
+    "lengthCm": 108,
+    "dimensions": "108 x 108 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Manufatto turkmeno persiano con ampia parte rossa senza disegno e pannello a motivi geometrici rossi e scuri, scanditi da linee avorio e ocra.",
+    "longDescription": "Un’ampia superficie rossa senza disegno si accosta a un pannello rettangolare dalla composizione fitta e regolare. Nel campo decorato, forme geometriche rosse e scure si ripetono in file, alternate a linee angolari avorio e ocra e piccoli rombi. Numerose cornici concentriche accompagnano il disegno: bordure a rombi, sottili fasce policrome e sequenze di minuti elementi chiari sul rosso. Questo manufatto turkmeno persiano unisce così la semplicità della parte superiore alla ricchezza geometrica del pannello.",
+    "descriptionEn": "Persian Turkmen textile with a broad plain red section and a panel of red and dark geometric motifs, divided by ivory and ochre lines.",
+    "longDescriptionEn": "A broad plain red surface adjoins a rectangular panel with a dense, orderly design. Within the patterned field, red and dark geometric forms repeat in rows, alternating with angular ivory and ochre lines and small diamonds. Multiple concentric frames surround the design, combining diamond borders, narrow multicoloured bands and rows of tiny pale elements on red. This Persian Turkmen textile brings together the simplicity of the upper section and the rich geometry of the panel.",
+    "alt": "Manufatto turkmeno con ampia parte rossa e pannello geometrico rosso e scuro, dettagli avorio e ocra e bordure concentriche.",
+    "altEn": "Turkmen textile with a broad plain red section and a red and dark geometric panel, ivory and ochre details and concentric borders.",
+    "tags": [
+      "Turkmeno",
+      "manufatto persiano",
+      "motivi geometrici",
+      "bordure a rombi",
+      "fondo rosso"
+    ],
+    "tagsEn": [
+      "Turkmen",
+      "Persian textile",
+      "geometric motifs",
+      "diamond borders",
+      "red ground"
+    ],
+    "coverImage": "/catalogo/products/media/turkmeno-108x108-01.webp",
+    "coverImage360": "/catalogo/products/media/turkmeno-108x108-01-360.webp",
+    "coverImage640": "/catalogo/products/media/turkmeno-108x108-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/turkmeno-108x108-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/turkmeno-108x108-01.webp"
+    ],
+    "seoTitle": "Turkmeno persiano con bordure a rombi | Shahmansouri",
+    "seoDescription": "Manufatto turkmeno persiano con ampia parte rossa, pannello a geometrie ripetute, dettagli avorio e ocra e cornici concentriche a rombi.",
+    "seoTitleEn": "Persian Turkmen with Diamond Borders | Shahmansouri",
+    "seoDescriptionEn": "Persian Turkmen textile with a broad red section, a panel of repeating geometric motifs, ivory and ochre details and concentric diamond borders.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-100",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.4986111111111111,
+          "y": 0.4984126984126984
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-khorjin-88x54",
+    "classificationSource": "auto",
+    "createdAt": "2026-10-31T17:45:04.801Z",
+    "updatedAt": "2026-10-31T17:45:04.801Z",
+    "reviewedAt": "",
+    "slug": "qashqai-khorjin-88x54",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-khorjin-88x54-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Khorjin"
+    ],
+    "subcategoriesEn": [
+      "Khorjin"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 54,
+    "lengthCm": 88,
+    "dimensions": "88 x 54 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Khorjin Qashqai persiano con due pannelli avorio a piccoli motivi geometrici, bordure arancio e blu scuro e retro decorato su fondo chiaro.",
+    "longDescription": "Due pannelli avorio compongono il fronte di questo Khorjin Qashqai persiano. Piccoli motivi geometrici scuri si ripetono in file serrate, intervallati da rombi arancio e dettagli rossi. Le bordure alternano triangoli arancio e blu scuro, affiancati da sottili cornici rosse e scure. Nella fascia di raccordo si trovano cordoncini e asole blu scuro. Il retro, anch’esso chiaro, presenta motivi più grandi dalle forme triangolari e angolari, distribuiti in file nei toni del rosso, arancio, bruno e blu.",
+    "descriptionEn": "Persian Qashqai Khorjin with two ivory panels of small geometric motifs, orange and dark blue borders and a patterned back on a pale ground.",
+    "longDescriptionEn": "Two ivory panels form the front of this Persian Qashqai Khorjin. Small dark geometric motifs repeat in closely spaced rows, interspersed with orange diamonds and red details. The borders alternate orange and dark blue triangles, alongside narrow red and dark frames. Dark blue cords and loops sit within the connecting band. The pale back features larger triangular and angular motifs arranged in rows, in shades of red, orange, brown and blue.",
+    "alt": "Khorjin Qashqai con due pannelli avorio a piccoli motivi scuri e arancio, bordure triangolari e asole blu scuro.",
+    "altEn": "Qashqai Khorjin with two ivory panels of small dark and orange motifs, triangular borders and dark blue loops.",
+    "tags": [
+      "Qashqai",
+      "Khorjin",
+      "bisaccia persiana",
+      "fondo avorio",
+      "bordure geometriche"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "Khorjin",
+      "Persian saddlebag",
+      "ivory ground",
+      "geometric borders"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-88x54-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-88x54-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-88x54-01-640.webp",
+    "coverImage1200": "/catalogo/products/media/qashqai-88x54-01-1200.webp",
+    "gallery": [
+      "/catalogo/products/media/qashqai-88x54-01.webp",
+      "/catalogo/products/media/qashqai-88x54-02.webp"
+    ],
+    "seoTitle": "Khorjin Qashqai con pannelli avorio | Shahmansouri",
+    "seoDescription": "Khorjin Qashqai persiano con piccoli motivi su avorio, bordure a triangoli arancio e blu scuro e retro chiaro a grandi forme geometriche.",
+    "seoTitleEn": "Qashqai Khorjin with Ivory Panels | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai Khorjin with small motifs on ivory, orange and dark blue triangular borders and a pale back with large geometric forms.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-093",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.4979757085020243,
+          "y": 0.5
+        }
+      ],
+      [
+        {
+          "x": 0.49789915966386555,
+          "y": 0.4986111111111111
+        }
+      ]
+    ]
   }
 ]
