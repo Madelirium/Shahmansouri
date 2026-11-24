@@ -1,0 +1,24 @@
+.lucy-guide .lucy-hero img { object-position: 50% 10%; }
+.lucy-guide .lucy-gallery__photos { grid-template-columns: 1fr; max-width: 440px; }
+.lucy-guide .lucy-gallery img { aspect-ratio: 4 / 5; object-position: 50% 35%; }
+@media (max-width: 560px) {
+  .lucy-guide .lucy-gallery__photos { max-width: 280px; }
+}
+
+.hapu-opening .hapu-heading { grid-area: heading; }
+.hapu-opening .hapu-story { grid-area: story; }
+.hapu-opening .lucy-first-aid { grid-area: steps; }
+.hapu-opening .lucy-hero { grid-area: photo; }
+.hapu-story p { margin: 0 0 18px; font-size: 1.02rem; line-height: 1.65; }
+.hapu-story p:last-child { margin-bottom: 0; }
+.lucy-guide .hapu-opening { grid-template-areas: 'heading' 'steps' 'photo' 'story'; grid-template-columns: minmax(0,1fr); gap: 24px; }
+@media (min-width: 901px) {
+  .lucy-guide .lucy-intro, .lucy-guide .lucy-topics, .lucy-guide .lucy-reading, .lucy-guide .lucy-gallery { max-width: 1120px; width: calc(100% - 80px); }
+  .lucy-guide .hapu-opening { grid-template-columns: minmax(0,1.65fr) minmax(260px,1fr); grid-template-areas: 'heading photo' 'story photo' 'steps steps'; column-gap: 40px; row-gap: 24px; align-items: start; }
+  .hapu-opening .lucy-hero { margin-top: 12px; }
+  .hapu-opening .lucy-first-aid { margin-top: 8px; padding-top: 24px; border-top: 1px solid #cdbb98; }
+  .hapu-opening .lucy-first-aid ol { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; }
+  .hapu-opening .lucy-first-aid li { border-bottom: 0; margin: 0; }
+  .hapu-opening .lucy-caution { margin-top: 12px; }
+}
+

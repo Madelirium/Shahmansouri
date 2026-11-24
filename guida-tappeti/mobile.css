@@ -1,0 +1,27 @@
+.guide-mobile-start, .guide-back-groups { display: none; }
+.guide-original-intro > summary { display: none; }
+@media (max-width: 759px) {
+  .guide-index-page .tappeti-content .guide-index-article > h1 { display: block; margin: 20px 0 14px; font-size: clamp(1.65rem, 7vw, 2rem); line-height: 1.2; text-align: left; }
+  .guide-mobile-start { display: block; }
+  .guide-index-page .guide-mobile-lead { margin: 0 0 18px; font-size: 16px; line-height: 1.55; }
+  .guide-mobile-start nav { display: grid; grid-template-columns: minmax(0,1fr); gap: 10px; margin-bottom: 16px; }
+  .guide-mobile-start nav a { display: block; min-height: 48px; padding: 12px 14px; border: 1px solid #b58b3d; border-radius: 8px; background: #fff3ce; font-size: 16px; line-height: 1.35; text-decoration: none; }
+  .guide-mobile-start nav span { display: block; margin-top: 5px; font-size: 14px; color: #6b4b3b; }
+  .guide-original-intro { margin-bottom: 24px; border-bottom: 1px solid #cdbb98; }
+  .guide-original-intro > summary { display: list-item; min-height: 48px; padding: 12px 4px; font-weight: 600; cursor: pointer; }
+  .guide-original-intro > div p { font-size: 16px; line-height: 1.6; }
+  .guide-index-section, #guide-groups { scroll-margin-top: 96px; }
+  .guide-index-section h2 { font-size: 1.4rem; line-height: 1.3; text-align: left; }
+  .guide-index-page .guide-index-grid { grid-template-columns: minmax(0,1fr); gap: 12px; }
+  .guide-index-page .guide-index-card { position: relative; padding: 16px; }
+  .guide-index-page .guide-index-card h3 { font-size: 20px; line-height: 1.3; }
+  .guide-index-page .guide-index-card p { font-size: 16px; line-height: 1.5; }
+  .guide-index-card h3 a::after { content: ''; position: absolute; inset: 0; }
+  .guide-index-card:focus-within { outline: 3px solid #7b1f16; outline-offset: 2px; }
+  .guide-back-groups { display: inline-flex; min-height: 44px; align-items: center; margin-top: 12px; }
+  .guide-mobile-start a:focus-visible, .guide-original-intro summary:focus-visible, .guide-back-groups:focus-visible { outline: 3px solid #7b1f16; outline-offset: 3px; }
+}
+@media (max-width: 759px) and (prefers-reduced-motion: reduce) {
+  .guide-index-page .guide-index-card { transition: none; transform: none; }
+}
+

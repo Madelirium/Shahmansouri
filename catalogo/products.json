@@ -2580,7 +2580,7 @@
     "id": "khorjin-bakhtiari-vecchio-sumak",
     "classificationSource": "auto",
     "createdAt": "",
-    "updatedAt": "",
+    "updatedAt": "2026-11-08T17:05:50.039Z",
     "reviewedAt": "",
     "slug": "khorjin-bakhtiari-vecchio-sumak",
     "title": "Khorjin",
@@ -2621,7 +2621,7 @@
     "longDescription": "Questo khorjin persiano Baktiari è una bisaccia di vecchia lavorazione, realizzata con una decorazione geometrica ricca e ordinata. I due pannelli mostrano medaglioni centrali, motivi tribali e bordure fitte, con tonalità scure, rossi caldi, blu profondi e piccoli dettagli chiari che danno ritmo al disegno. La struttura a doppia bisaccia conserva il carattere pratico e decorativo di questi manufatti, nati per l’uso quotidiano ma oggi apprezzati anche come pezzi da collezione e d’arredo. Un oggetto tessile con forte presenza, legato alla tradizione Baktiari e al mondo dei manufatti tribali persiani.",
     "descriptionEn": "Vintage Persian Baktiari khorjin, woven in sumak technique, with geometric motifs, deep colours and a traditional double saddlebag structure.",
     "longDescriptionEn": "This vintage Persian Baktiari khorjin is a traditional double saddlebag with a strong tribal character. The two woven panels show central medallions, geometric motifs and detailed borders, with deep dark tones, warm reds, rich blues and lighter accents that bring rhythm to the composition. Originally made as a practical textile object, this khorjin is now appreciated as a decorative and collectible Persian textile.",
-    "alt": "Khorjin persiano Baktiari vecchio in lavorazione sumak con disegno geometrico e doppia bisaccia",
+    "alt": "Khorjin",
     "altEn": "Vintage Persian Baktiari sumak khorjin with geometric design and double saddlebag structure",
     "tags": [
       "khorjin persiano",
@@ -2637,12 +2637,13 @@
       "tribal textile",
       "Persian handicraft"
     ],
-    "coverImage": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2.webp",
-    "coverImage360": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2-360.webp",
-    "coverImage640": "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2-640.webp",
+    "coverImage": "/catalogo/products/media/khorjin-89x67-01.webp",
+    "coverImage360": "/catalogo/products/media/khorjin-89x67-01-360.webp",
+    "coverImage640": "/catalogo/products/media/khorjin-89x67-01-640.webp",
     "coverImage1200": "",
     "gallery": [
-      "/catalogo/products/media/khorjin-bakthiari-vecchio-sumak-watermark-v2.webp"
+      "/catalogo/products/media/khorjin-89x67-01.webp",
+      "/catalogo/products/media/khorjin-89x67-02.webp"
     ],
     "seoTitle": "Khorjin Baktiari vecchio in sumak | Bisaccia persiana",
     "seoDescription": "Khorjin persiano Baktiari di vecchia lavorazione in sumak, con doppia bisaccia, motivi geometrici e colori profondi.",
@@ -2661,7 +2662,10 @@
     "gtin": "",
     "mpn": "262351",
     "watermarkOpacity": 1,
-    "watermarkPositions": []
+    "watermarkPositions": [
+      [],
+      []
+    ]
   },
   {
     "id": "tappeto-persiano-isfahan-firmato-seta-105x75",
@@ -17182,6 +17186,208 @@
       [
         {
           "x": 0.49789915966386555,
+          "y": 0.4986111111111111
+        }
+      ]
+    ]
+  },
+  {
+    "id": "turkmeno-khorjin-100x52",
+    "classificationSource": "auto",
+    "createdAt": "2026-11-01T10:30:29.440Z",
+    "updatedAt": "2026-11-01T10:30:29.440Z",
+    "reviewedAt": "",
+    "slug": "turkmeno-khorjin-100x52",
+    "title": "Turkmeno",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "turkmeno-khorjin-100x52-en",
+    "titleEn": "Turkmen",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Khorjin"
+    ],
+    "subcategoriesEn": [
+      "Khorjin"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 52,
+    "lengthCm": 100,
+    "dimensions": "100 x 52 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Khorjin turkmeno persiano con due pannelli rosso scuro a motivi geometrici, dettagli ocra, fascia centrale a riquadri e frange rosse e blu scuro.",
+    "longDescription": "Due pannelli rosso scuro presentano sequenze orizzontali di forme geometriche allungate, con dettagli ocra e avorio su un disegno dai toni scuri. Bordure fitte di piccoli motivi angolari e sottili cornici rosse racchiudono ciascun campo. La fascia di raccordo alterna riquadri rossi e blu scuro attraversati da righe chiare; lungo le aperture si dispongono cordoncini e asole bruni. Il retro dei due pannelli è chiaro e senza disegno. Frange rosse e blu scuro completano le estremità di questo Khorjin turkmeno persiano.",
+    "descriptionEn": "Persian Turkmen Khorjin with two dark red geometric panels, ochre details, a chequered connecting band and red and dark blue fringes.",
+    "longDescriptionEn": "Two dark red panels feature horizontal rows of elongated geometric forms, with ochre and ivory details within a dark-toned design. Borders filled with small angular motifs and narrow red frames surround each field. The connecting band alternates red and dark blue blocks crossed by pale stripes, while brown cords and loops line the openings. The back of each panel is pale and unpatterned. Red and dark blue fringes finish the ends of this Persian Turkmen Khorjin.",
+    "alt": "Khorjin turkmeno con due pannelli rosso scuro a motivi geometrici, dettagli ocra, fascia a riquadri e frange rosse e blu scuro.",
+    "altEn": "Turkmen Khorjin with two dark red geometric panels, ochre details, a chequered band and red and dark blue fringes.",
+    "tags": [
+      "Turkmeno",
+      "Khorjin",
+      "bisaccia persiana",
+      "dettagli ocra",
+      "frange multicolori"
+    ],
+    "tagsEn": [
+      "Turkmen",
+      "Khorjin",
+      "Persian saddlebag",
+      "ochre details",
+      "multicoloured fringes"
+    ],
+    "coverImage": "/catalogo/products/media/turkmeno-100x52-01.webp",
+    "coverImage360": "/catalogo/products/media/turkmeno-100x52-01-360.webp",
+    "coverImage640": "/catalogo/products/media/turkmeno-100x52-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/turkmeno-100x52-01.webp",
+      "/catalogo/products/media/turkmeno-100x52-02.webp"
+    ],
+    "seoTitle": "Khorjin turkmeno con dettagli ocra | Shahmansouri",
+    "seoDescription": "Khorjin turkmeno persiano con due campi geometrici rosso scuro, bordure minute, raccordo a riquadri rossi e blu e retro chiaro senza disegno.",
+    "seoTitleEn": "Turkmen Khorjin with Ochre Details | Shahmansouri",
+    "seoDescriptionEn": "Persian Turkmen Khorjin with two dark red geometric fields, detailed borders, a red and blue chequered band and a plain pale back.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-091",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.5,
+          "y": 0.5
+        }
+      ],
+      [
+        {
+          "x": 0.49507389162561577,
+          "y": 0.5041666666666667
+        }
+      ]
+    ]
+  },
+  {
+    "id": "qashqai-khorjin-104x46",
+    "classificationSource": "auto",
+    "createdAt": "2026-11-01T11:21:44.226Z",
+    "updatedAt": "2026-11-01T11:21:44.226Z",
+    "reviewedAt": "",
+    "slug": "qashqai-khorjin-104x46",
+    "title": "Qashqai",
+    "language": "it",
+    "hasEnglish": true,
+    "slugEn": "qashqai-khorjin-104x46-en",
+    "titleEn": "Qashqai",
+    "category": "Nomadici",
+    "categories": [
+      "Nomadici"
+    ],
+    "categoryEn": "Nomadic",
+    "categoriesEn": [
+      "Nomadic"
+    ],
+    "subcategories": [
+      "Khorjin"
+    ],
+    "subcategoriesEn": [
+      "Khorjin"
+    ],
+    "materials": [],
+    "material": "",
+    "materialsEn": [],
+    "materialEn": "",
+    "availability": "Disponibile",
+    "availabilityEn": "Available",
+    "widthCm": 46,
+    "lengthCm": 104,
+    "dimensions": "104 x 46 cm",
+    "origin": "Persia",
+    "originEn": "Persia",
+    "description": "Khorjin Qashqai persiano con due pannelli a rombi e ottagoni rossi, avorio e blu scuro, bordure uncinate e fascia centrale arancio.",
+    "longDescription": "Due pannelli decorati alternano file di rombi entro riquadri e motivi ottagonali, nei toni del rosso, avorio e blu scuro. Piccoli dettagli geometrici riempiono le forme, mentre una bordura continua a motivi uncinati racchiude ciascun campo. La fascia centrale arancio presenta forme scure allungate rivolte verso l’interno, affiancate da stretti bordi geometrici. Due bande color prugna con piccoli tratti chiari separano il raccordo dai pannelli. Il retro di questo Khorjin Qashqai persiano è scuro, percorso da sottili righe blu e bordeaux.",
+    "descriptionEn": "Persian Qashqai Khorjin with two panels of red, ivory and dark blue diamonds and octagons, hooked borders and an orange connecting band.",
+    "longDescriptionEn": "Two patterned panels alternate rows of diamonds within rectangular compartments and octagonal motifs, in red, ivory and dark blue. Small geometric details fill the shapes, while a continuous border of hooked motifs surrounds each field. The orange connecting band features elongated dark forms pointing inwards, flanked by narrow geometric borders. Two plum-coloured bands with small pale marks separate the connecting section from the panels. The back of this Persian Qashqai Khorjin is dark, crossed by fine blue and burgundy stripes.",
+    "alt": "Khorjin Qashqai con due pannelli a rombi e ottagoni rossi, avorio e blu scuro, bordure uncinate e raccordo arancio.",
+    "altEn": "Qashqai Khorjin with two panels of red, ivory and dark blue diamonds and octagons, hooked borders and an orange connecting band.",
+    "tags": [
+      "Qashqai",
+      "Khorjin",
+      "bisaccia persiana",
+      "rombi e ottagoni",
+      "bordure uncinate"
+    ],
+    "tagsEn": [
+      "Qashqai",
+      "Khorjin",
+      "Persian saddlebag",
+      "diamonds and octagons",
+      "hooked borders"
+    ],
+    "coverImage": "/catalogo/products/media/qashqai-104x46-01.webp",
+    "coverImage360": "/catalogo/products/media/qashqai-104x46-01-360.webp",
+    "coverImage640": "/catalogo/products/media/qashqai-104x46-01-640.webp",
+    "coverImage1200": "",
+    "gallery": [
+      "/catalogo/products/media/qashqai-104x46-01.webp",
+      "/catalogo/products/media/qashqai-104x46-02.webp"
+    ],
+    "seoTitle": "Khorjin Qashqai con rombi e ottagoni | Shahmansouri",
+    "seoDescription": "Khorjin Qashqai persiano a riquadri geometrici, con bordure uncinate, raccordo arancio, bande color prugna e retro a sottili righe scure.",
+    "seoTitleEn": "Qashqai Khorjin with Diamonds and Octagons | Shahmansouri",
+    "seoDescriptionEn": "Persian Qashqai Khorjin with geometric compartments, hooked borders, an orange connecting band, plum-coloured bands and a finely striped dark back.",
+    "seoTitleSource": "ai",
+    "seoDescriptionSource": "ai",
+    "seoTitleEnSource": "ai",
+    "seoDescriptionEnSource": "ai",
+    "priceOnRequest": true,
+    "priceValue": null,
+    "salePriceValue": null,
+    "salePriceNote": "",
+    "salePriceStart": "",
+    "salePriceEnd": "",
+    "currency": "EUR",
+    "merchantAvailability": "in_stock",
+    "condition": "new",
+    "brand": "Shahmansouri",
+    "gtin": "",
+    "mpn": "ART-094",
+    "watermarkOpacity": 1,
+    "watermarkPositions": [
+      [
+        {
+          "x": 0.49731182795698925,
+          "y": 0.5
+        }
+      ],
+      [
+        {
+          "x": 0.5,
           "y": 0.4986111111111111
         }
       ]
